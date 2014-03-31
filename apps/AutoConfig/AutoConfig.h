@@ -1,5 +1,6 @@
- #ifndef AUTOCONFIG_H
- #define AUTOCONFIG_H
+#ifndef AUTOCONFIG_H
+#define AUTOCONFIG_H
+
  
  enum {
  	AM_AUTOCONFIGMSG = 1
@@ -10,4 +11,4 @@
  	nx_uint8_t dstRank;
  } AutoConfigMsg;
 
- #endif
+#endif

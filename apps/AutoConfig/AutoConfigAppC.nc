@@ -5,10 +5,14 @@ configuration AutoConfigAppC {
 }
 implementation {
 	components MainC;
-	components AutoConfigC as App;
 	components LedsC;
+	components AutoConfigC as App;
 	components new TimerMilliC() as Timeout;
 	components ActiveMessageC;
+
+	components new AMSenderC(AM_AUTOCONFIGMSG);
+	components new AMReceiverC(AM_AUTOCONFIGMSG);
+
 	components RF230ActiveMessageC as RF230ActiveMessageCRSSI;
 	components RF230ActiveMessageC as RF230ActiveMessageCPower;
 
@@ -19,6 +23,10 @@ implementation {
 	App.Boot -> MainC;
 	App.Leds -> LedsC;
 	App.Timeout -> Timeout;
+	App.Packet -> AMSenderC;
+	App.AMPacket -> AMSenderC;
+	App.AMSend -> AMSenderC;
+	App.Receive -> AMReceiverC;
 	App.AMControl -> ActiveMessageC;
 
 
