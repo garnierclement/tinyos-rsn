@@ -18,7 +18,7 @@ module AutoConfigC {
 implementation {
 
 	event void Boot.booted() {
-		
+		call AMControl.start();										// Wakes up radio
 	}
 
 	event void Timeout.fired() {
@@ -26,7 +26,13 @@ implementation {
 	}
 
 	event void AMControl.startDone(error_t err) {
-
+		if (err == SUCCESS)
+		{
+			call Timeout.startPeriodic(TIMEOUT_PERIOD_MILLI);		// Wait for AutoConfigMsg
+		}
+		else {
+			AMControl.start();										// Restart the radio if it doesn't work
+		}
 	}
 
 	event void AMControl.stopDone(error_t err) {
@@ -38,6 +44,10 @@ implementation {
 	}
 
 	event message_t* Receive.receive(message_t* msg, void* payload, uint8_t len) {
-		
+		if (len == sizeof(AutoConfigMsg))
+    	{
+      		AutoConfigMsg* acpkt = (AutoConfigMsg*)payload;
+	    }
+    	return msg;
 	}
 }
