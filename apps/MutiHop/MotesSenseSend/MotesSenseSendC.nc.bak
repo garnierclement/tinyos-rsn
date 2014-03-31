@@ -1,0 +1,269 @@
+/*
+ *
+ *
+ */
+
+#include <Timer.h>
+//#include <avr/wdt.h>
+#include "../MotesSense.h"
+module MotesSenseSendC {
+    uses interface Boot;
+    uses interface Leds;
+    uses interface Timer<TMilli> as Timer0;
+    uses interface Packet;
+    uses interface AMPacket;
+    uses interface AMSend;
+    uses interface Receive;
+    uses interface SplitControl as AMControl;
+
+    uses interface PacketField<uint8_t> as PacketRSSI;
+    uses interface PacketField<uint8_t> as  PacketTransmitPower;
+
+    uses interface UartStream;
+    uses interface StdControl as UartControl;
+
+    uses interface Buffer<uint8_t>;
+    uses interface UartLogger as Logger;
+}
+implementation {
+     uint16_t counter=0;
+     uint16_t array_counter = 0;
+     int16_t valueRSSI;
+
+     RelayMsg* sendmsg;
+
+     bool RSSI = FALSE;
+      message_t pkt;
+      message_t ppp;
+      int16_t message_counter = 0;
+      bool busy = FALSE;
+
+       bool radiobusy = FALSE;
+       uint8_t uartbuf [UART_BUF_SIZE];
+    uint16_t uartlen = UART_BUF_SIZE;
+    bool uarttask = FALSE;
+
+     uint8_t radiobuf [RADIO_BUF_SIZE];
+    uint16_t radiolen = RADIO_BUF_SIZE;
+    bool radiotask = FALSE;
+
+    void clearBuf(uint8_t* buf, uint16_t len);
+    void copyRadioBuf();
+    void sendToRadio();
+    void sendToUart();
+
+      task void getRadioFromBuffer() {
+        uint16_t got, aidx;
+        char logs[128];
+        atomic
+        if (!radiotask) {
+            radiotask = TRUE;
+            radiolen = RADIO_BUF_SIZE;
+            dbg("MotesSenseSendC", "Task radio begin[radiolen:%d]\n", radiolen);
+            clearBuf(radiobuf, RADIO_BUF_SIZE);
+            dbg("MotesSenseSendC", "radio buf cleared\n");
+            if (call Buffer.size() >= radiolen) {
+                if (call Buffer.dataAt(radiolen - 1) == '*') {
+                    call Logger.log("Got good data.\n");
+                    radiolen = call Buffer.get(radiobuf, 0, radiolen);
+                    sendToRadio();
+                } else {
+                    if (call Buffer.find((uint8_t)'*', &aidx)) {
+                        call Buffer.clear(aidx + 1);
+                    } else {
+                        call Buffer.clearAll();
+                    }
+                    post getRadioFromBuffer();
+                }
+            } else {
+                
+            }
+            radiotask = FALSE;
+        }
+    }
+
+     task void putUartToBuffer() {
+        uint16_t sent;
+        atomic
+        if (!uarttask) {
+            uarttask = TRUE;
+            dbg("MotesSenseSendC", "Task uart begin[uartlen:%d]\n", uartlen);
+            sent = call Buffer.put(uartbuf, 0, uartlen);
+            dbg("MotesSenseSendC", "Task uart sent buffer[sent:%d]\n", sent);
+            if (sent == 0)
+                call Buffer.clearAll();
+            else
+                post getRadioFromBuffer();
+            clearBuf(uartbuf, UART_BUF_SIZE);
+            dbg("MotesSenseSendC", "uart buf cleared\n");
+            uartlen = UART_BUF_SIZE;
+            if (call UartStream.receive(uartbuf, UART_BUF_SIZE) != SUCCESS) {
+                post putUartToBuffer();
+            }
+            uarttask = FALSE;
+        }
+    }
+
+        async event void UartStream.receivedByte(uint8_t byte) {
+    }
+
+    async event void UartStream.receiveDone(uint8_t* buf, uint16_t len, error_t error) {
+        dbg("MotesSenseSendC", "Task uart received.\n");
+        //call Leds.led1Toggle();
+        if (error == SUCCESS)
+            uartlen = len;
+        else
+            uartlen = 0;
+        post putUartToBuffer();
+    }
+
+    async event void UartStream.sendDone(uint8_t* buf, uint16_t len, error_t error) {
+    }
+
+    void clearBuf(uint8_t* buf, uint16_t len) {
+        uint16_t i ;
+        for (i = 0; i < len; ++i) {
+            buf[i] = 0;
+        }
+    }
+
+    void copyRadioBuf() {
+        int i;
+        MotesSenseMsg* mspkt;
+        dbg("MotesSenseSendC", "Task radio buffer copy[radiolen:%d]\n", radiolen);
+        mspkt = (MotesSenseMsg*) (call Packet.getPayload(&pkt, sizeof(MotesSenseMsg)));
+        for (i = 0; i < radiolen; i++)
+            mspkt->msg[i] = radiobuf[i];
+	mspkt->nodeid = TOS_NODE_ID;
+        mspkt->counter = counter++;
+	
+    }
+
+    void sendToRadio() {
+        dbg("MotesSenseSendC", "Task radio begin[radiolen:%d]\n", radiolen);
+        if (!radiobusy) {
+            copyRadioBuf();
+	    call  PacketTransmitPower.set(&pkt,0xff);
+            if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(MotesSenseMsg)) == SUCCESS) {
+                dbg("MotesSenseSendC", "Task radio send SUCCESS\n");
+                radiobusy = TRUE;
+            } else {
+            }
+        }
+    }
+
+    void sendToUart() {
+    }
+
+    event void Boot.booted() {
+        call Leds.set(7);
+        call AMControl.start();
+    }
+
+    event void Timer0.fired() {
+       // call Leds.led1Toggle();
+    }
+
+    event void AMControl.startDone(error_t err) {
+          if (err == SUCCESS) {
+            dbg("MotesSenseSendC", "AMControl started.\m");
+            call Timer0.startPeriodic(TIMER_PERIOD_MILLI);
+            if (call UartControl.start() == SUCCESS) {
+                dbg("MotesSenseSendC", "UartControl started.\m");
+                atomic {
+                    call Leds.set(0);
+                    uartlen = 0;
+                    post putUartToBuffer();
+                }
+            } else {
+                dbgerror("MotesSenseSendC", "UartControl start FAIL.\m");
+            }
+        } else {
+            dbgerror("MotesSenseSendC", "AMControl start FAIL.\m");
+            call AMControl.start();
+        }
+	
+    }
+
+    event void AMControl.stopDone(error_t err) {
+    }
+
+
+
+
+
+    /****RSSI*****/
+
+
+    task void SendRidio()
+    {
+	//message_counter--;   AM_BROADCAST_ADDR
+	atomic
+	if(!RSSI)
+	{	
+		RSSI = TRUE;
+		if (call AMSend.send(33, 
+          &ppp, sizeof(RelayMsg)) == SUCCESS) {
+                busy = TRUE;
+                }
+		RSSI = FALSE;
+	 }
+    }
+
+    int16_t getRssi(message_t *msg){
+    if(call PacketRSSI.isSet(msg))
+      return (int16_t) call PacketRSSI.get(msg);
+    else
+      return 0xFFFF;
+    }
+
+
+      event message_t* Receive.receive(message_t* msg, void* payload, uint8_t len){
+     if (len == sizeof(MotesSenseMsg)) {
+      MotesSenseMsg* rcvmsg = (MotesSenseMsg*)payload;
+
+
+      if(array_counter == 0)
+      {
+	RelayMsg* sendmsg =(RelayMsg*)(call Packet.getPayload(&ppp, sizeof(RelayMsg)));
+      if (sendmsg == NULL) {
+	return NULL;
+      }
+      }
+       call Leds.led0Toggle();
+
+      /*sendmsg->nodeid = rcvmsg->nodeid;
+      sendmsg->counter = rcvmsg->counter;
+      sendmsg->RSSI = getRssi(msg);
+          post SendRidio();
+      */
+      
+     sendmsg->nodeid[array_counter] = rcvmsg->nodeid;
+      //TOS_NODE_ID;
+      //rcvmsg->nodeid;
+      sendmsg->counter[array_counter] = rcvmsg->counter;
+      sendmsg->RSSI[array_counter] = getRssi(msg);
+      //ppp[message_counter++] = sendmsg;
+      array_counter++;
+      if(array_counter == ARRAY_SIZE)
+      {
+	  array_counter = 0;
+          post SendRidio();
+      }
+  }
+   return msg;
+  }
+
+
+  event void AMSend.sendDone(message_t* msg, error_t err) {
+    if (&ppp == msg) {
+      busy = FALSE;
+      call Leds.led1Toggle();
+    }else if(&pkt == msg)
+    {
+	 dbg("MotesSenseSendC", "Task radio sent.\n");
+         radiobusy = FALSE;
+         call Leds.led2Toggle();
+    }
+  }
+}
