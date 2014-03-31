@@ -37,7 +37,8 @@ implementation {
 
 
 	event void Boot.booted() {
-		call AMControl.start();										// Wakes up radio
+		call AMControl.start();	
+		call Leds.led0On();									// Wakes up radio
 	}
 
 	event void AMControl.startDone(error_t err) {
@@ -64,17 +65,21 @@ implementation {
 	}
 
 	void handleAck(AutoConfigMsg* ackpkt) {
-		if (myRank != NOT_DEFINED && ackpkt->srcRank > myRank)
+		if (myRank != NOT_DEFINED && ackpkt->srcRank > myRank){
       		if (sentAutoConfig && !receivedAck) 
       		{
       			receivedAck = TRUE;
       			neighborsRank[1] = ackpkt->srcRank;
+      			call Leds.led1Off();
       		}
+      	}
+
 	}
 
 	void handleAutoConfig(AutoConfigMsg* acpkt) {
 		if (myRank == NOT_DEFINED)
 		{
+			call Leds.led1On();
 			myRank = acpkt->dstRank;
 			neighborsRank[0] = acpkt->srcRank;
 			sendAck(acpkt);
@@ -90,6 +95,7 @@ implementation {
 			if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
 			{
 				radioBusy = TRUE;
+				call Leds.led0Off();
 			}
 		}
 	}
@@ -135,6 +141,7 @@ implementation {
 				if (acpkt->ack == NOT_AUTOCONFIGACK)
 				{
 					call WaitAck.startPeriodic(WAITACK_PERIOD_MILLI);
+					call Leds.led2On();
 				}
 			}
 		}
