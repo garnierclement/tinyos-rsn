@@ -2,13 +2,12 @@
  #define AUTOCONFIG_H
  
  enum {
- 	AM_AUTOCONFIGMSG = 1,
-   	TIMER_PERIOD_MILLI = 2000
+ 	AM_AUTOCONFIGMSG = 1
  };
  
  typedef nx_struct AutoConfigMsg {
- 	nx_uint16_t nodeid;
- 	nx_uint16_t counter;
+ 	nx_uint8_t srcRank;
+ 	nx_uint8_t dstRank;
  } AutoConfigMsg;
 
  #endif
