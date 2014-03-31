@@ -3,6 +3,7 @@
 
 module AutoConfigC {
 	uses interface Boot;
+	uses interface Leds;
 
 }
 implementation {
