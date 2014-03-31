@@ -1,5 +1,5 @@
-#ifndef AUTOCONFIG_H
-#define AUTOCONFIG_H
+#ifndef BASECONFIG_H
+#define BASECONFIG_H
 
  
 enum {
