@@ -8,6 +8,7 @@ implementation {
 	components LedsC;
 	components AutoConfigC as App;
 	components new TimerMilliC() as Timeout;
+	components new TimerMilliC() as WaitAck;
 	components ActiveMessageC;
 
 	components new AMSenderC(AM_AUTOCONFIGMSG);
@@ -23,6 +24,7 @@ implementation {
 	App.Boot -> MainC;
 	App.Leds -> LedsC;
 	App.Timeout -> Timeout;
+	App.WaitAck -> WaitAck;
 	App.Packet -> AMSenderC;
 	App.AMPacket -> AMSenderC;
 	App.AMSend -> AMSenderC;
