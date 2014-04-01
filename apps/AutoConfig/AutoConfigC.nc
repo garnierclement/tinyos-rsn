@@ -142,7 +142,9 @@ implementation {
 				{
 					call WaitAck.startPeriodic(WAITACK_PERIOD_MILLI);
 					call Leds.led2On();
+					sentAutoConfig = TRUE;
 				}
+				
 			}
 		}
 
