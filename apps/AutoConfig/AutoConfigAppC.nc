@@ -33,5 +33,4 @@ implementation {
 	App.Receive -> AMReceiverC;
 	App.AMControl -> ActiveMessageC;
 
-
 }
