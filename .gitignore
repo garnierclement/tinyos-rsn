@@ -1,1 +1,6 @@
+# Mac OS X
 *.DS_Store
+
+# [make iris] and [make iris sim] builds
+build/
+simbuild/
