@@ -1,0 +1,93 @@
+<?xml version="1.0" ?><component abstract="" loc="38:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/UniqueLayerP.nc" nicename="tos.lib.rfxlink.layers.UniqueLayerP" qname="UniqueLayerP">
+      <parameters>
+      </parameters>
+      <module/>
+    <specification><interface loc="50:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/UniqueLayerP.nc" name="SubSend" provided="0" ref="0x2b9d555e0b38">
+      <component-ref nicename="tos.lib.rfxlink.layers.UniqueLayerP" qname="UniqueLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SubSend" ref="0x2b9d555e0b38" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.BareSend" qname="BareSend"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b9d555df020" scoped=""/>
+        <function-ref name="cancel" ref="0x2b9d555df1a8" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b9d555df330" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="51:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/UniqueLayerP.nc" name="SubReceive" provided="0" ref="0x2b9d555df6a0">
+      <component-ref nicename="tos.lib.rfxlink.layers.UniqueLayerP" qname="UniqueLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SubReceive" ref="0x2b9d555df6a0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.RadioReceive" qname="RadioReceive"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="receive" ref="0x2b9d555df9f0" scoped=""/>
+        <function-ref name="header" ref="0x2b9d555dfb78" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="55:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/UniqueLayerP.nc" name="NeighborhoodFlag" provided="0" ref="0x2b9d555d4a50">
+      <component-ref nicename="tos.lib.rfxlink.layers.UniqueLayerP" qname="UniqueLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="NeighborhoodFlag" ref="0x2b9d555d4a50" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.NeighborhoodFlag" qname="NeighborhoodFlag"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b9d555d4da0" scoped=""/>
+        <function-ref name="clearAll" ref="0x2b9d555dc020" scoped=""/>
+        <function-ref name="get" ref="0x2b9d555dc1a8" scoped=""/>
+        <function-ref name="set" ref="0x2b9d555dc330" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="42:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/UniqueLayerP.nc" name="Send" provided="1" ref="0x2b9d555e1358">
+      <component-ref nicename="tos.lib.rfxlink.layers.UniqueLayerP" qname="UniqueLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Send" ref="0x2b9d555e1358" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.BareSend" qname="BareSend"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b9d555e16a8" scoped=""/>
+        <function-ref name="cancel" ref="0x2b9d555e1830" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b9d555e19b8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="54:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/UniqueLayerP.nc" name="Neighborhood" provided="0" ref="0x2b9d555d7438">
+      <component-ref nicename="tos.lib.rfxlink.layers.UniqueLayerP" qname="UniqueLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Neighborhood" ref="0x2b9d555d7438" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.Neighborhood" qname="Neighborhood"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="getAge" ref="0x2b9d555d7788" scoped=""/>
+        <function-ref name="insertNode" ref="0x2b9d555d7910" scoped=""/>
+        <function-ref name="getNode" ref="0x2b9d555d7a98" scoped=""/>
+        <function-ref name="evicted" ref="0x2b9d555d7c20" scoped=""/>
+        <function-ref name="getIndex" ref="0x2b9d555d7da8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="43:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/UniqueLayerP.nc" name="RadioReceive" provided="1" ref="0x2b9d555e1c80">
+      <component-ref nicename="tos.lib.rfxlink.layers.UniqueLayerP" qname="UniqueLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="RadioReceive" ref="0x2b9d555e1c80" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.RadioReceive" qname="RadioReceive"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="receive" ref="0x2b9d555e0020" scoped=""/>
+        <function-ref name="header" ref="0x2b9d555e01a8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="45:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/UniqueLayerP.nc" name="Init" provided="1" ref="0x2b9d555e0420">
+      <component-ref nicename="tos.lib.rfxlink.layers.UniqueLayerP" qname="UniqueLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b9d555e0420" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b9d555e0770" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="53:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/UniqueLayerP.nc" name="UniqueConfig" provided="0" ref="0x2b9d555dfe40">
+      <component-ref nicename="tos.lib.rfxlink.layers.UniqueLayerP" qname="UniqueLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="UniqueConfig" ref="0x2b9d555dfe40" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.layers.UniqueConfig" qname="UniqueConfig"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="setSequenceNumber" ref="0x2b9d555de1c0" scoped=""/>
+        <function-ref name="reportChannelError" ref="0x2b9d555de348" scoped=""/>
+        <function-ref name="getSequenceNumber" ref="0x2b9d555de4d0" scoped=""/>
+        <function-ref name="getSender" ref="0x2b9d555de658" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

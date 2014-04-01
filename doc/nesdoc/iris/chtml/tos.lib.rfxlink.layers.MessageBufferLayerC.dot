@@ -1,0 +1,29 @@
+digraph "tos.lib.rfxlink.layers.MessageBufferLayerC" {
+  n0x2b9d55675970 [shape=ellipse, style=filled, label="SplitControl", fontsize=12];
+  "MessageBufferLayerC.MessageBufferLayerP" [fontsize=12, shape=box, style=dashed, label="MessageBufferLayerP", URL="../chtml/tos.lib.rfxlink.layers.MessageBufferLayerP.html"];
+  n0x2b9d556724b8 [shape=ellipse, style=filled, label="Send", fontsize=12];
+  "MessageBufferLayerC.MessageBufferLayerP" [fontsize=12, shape=box, style=dashed, label="MessageBufferLayerP", URL="../chtml/tos.lib.rfxlink.layers.MessageBufferLayerP.html"];
+  n0x2b9d55672e58 [shape=ellipse, style=filled, label="Receive", fontsize=12];
+  "MessageBufferLayerC.MessageBufferLayerP" [fontsize=12, shape=box, style=dashed, label="MessageBufferLayerP", URL="../chtml/tos.lib.rfxlink.layers.MessageBufferLayerP.html"];
+  n0x2b9d556714b0 [shape=ellipse, style=filled, label="RadioChannel", fontsize=12];
+  "MessageBufferLayerC.MessageBufferLayerP" [fontsize=12, shape=box, style=dashed, label="MessageBufferLayerP", URL="../chtml/tos.lib.rfxlink.layers.MessageBufferLayerP.html"];
+  "MainC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.system.MainC.html"];
+  "MessageBufferLayerC.MessageBufferLayerP" [fontsize=12, shape=box, style=dashed, label="MessageBufferLayerP", URL="../chtml/tos.lib.rfxlink.layers.MessageBufferLayerP.html"];
+  "MessageBufferLayerC.MessageBufferLayerP" [fontsize=12, shape=box, style=dashed, label="MessageBufferLayerP", URL="../chtml/tos.lib.rfxlink.layers.MessageBufferLayerP.html"];
+  n0x2b9d5566a4d0 [shape=ellipse, style=filled, label="RadioState", fontsize=12];
+  "MessageBufferLayerC.MessageBufferLayerP" [fontsize=12, shape=box, style=dashed, label="MessageBufferLayerP", URL="../chtml/tos.lib.rfxlink.layers.MessageBufferLayerP.html"];
+  "TaskletC" [fontsize=12, shape=box, URL="../chtml/tos.lib.rfxlink.util.TaskletC.html"];
+  "MessageBufferLayerC.MessageBufferLayerP" [fontsize=12, shape=box, style=dashed, label="MessageBufferLayerP", URL="../chtml/tos.lib.rfxlink.layers.MessageBufferLayerP.html"];
+  n0x2b9d556665a0 [shape=ellipse, style=filled, label="RadioSend", fontsize=12];
+  "MessageBufferLayerC.MessageBufferLayerP" [fontsize=12, shape=box, style=dashed, label="MessageBufferLayerP", URL="../chtml/tos.lib.rfxlink.layers.MessageBufferLayerP.html"];
+  n0x2b9d5566d020 [shape=ellipse, style=filled, label="RadioReceive", fontsize=12];
+  "n0x2b9d55675970" -> "MessageBufferLayerC.MessageBufferLayerP" [label="SplitControl", URL="../ihtml/tos.interfaces.SplitControl.html", fontsize=10];
+  "n0x2b9d556724b8" -> "MessageBufferLayerC.MessageBufferLayerP" [label="BareSend", URL="../ihtml/tos.lib.rfxlink.util.BareSend.html", fontsize=10];
+  "n0x2b9d55672e58" -> "MessageBufferLayerC.MessageBufferLayerP" [label="BareReceive", URL="../ihtml/tos.lib.rfxlink.util.BareReceive.html", fontsize=10];
+  "n0x2b9d556714b0" -> "MessageBufferLayerC.MessageBufferLayerP" [label="RadioChannel", URL="../ihtml/tos.lib.rfxlink.util.RadioChannel.html", fontsize=10];
+  "MainC" -> "MessageBufferLayerC.MessageBufferLayerP" [label="Init", URL="../ihtml/tos.interfaces.Init.html", fontsize=10];
+  "MessageBufferLayerC.MessageBufferLayerP" -> "n0x2b9d5566a4d0" [label="RadioState", URL="../ihtml/tos.lib.rfxlink.util.RadioState.html", fontsize=10];
+  "MessageBufferLayerC.MessageBufferLayerP" -> "TaskletC" [label="Tasklet", URL="../ihtml/tos.lib.rfxlink.util.Tasklet.html", fontsize=10];
+  "MessageBufferLayerC.MessageBufferLayerP" -> "n0x2b9d556665a0" [label="RadioSend", URL="../ihtml/tos.lib.rfxlink.util.RadioSend.html", fontsize=10];
+  "MessageBufferLayerC.MessageBufferLayerP" -> "n0x2b9d5566d020" [label="RadioReceive", URL="../ihtml/tos.lib.rfxlink.util.RadioReceive.html", fontsize=10];
+}

@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Component: tos.chips.atm128.spi.Atm128SpiP</title>
+  </head>
+  <body>
+    <h2>Component: tos.chips.atm128.spi.Atm128SpiP
+    </h2>
+    <b>module Atm128SpiP</b>
+    <p>
+ Primitives for accessing the SPI module on ATmega128
+ microcontroller.  This module assumes the bus has been reserved and
+ checks that the bus owner is in fact the person using the bus.
+ SpiPacket provides an asynchronous send interface where the
+ transmit data length is equal to the receive data length, while
+ SpiByte provides an interface for sending a single byte
+ synchronously. SpiByte allows a component to send a few bytes
+ in a simple fashion: if more than a handful need to be sent,
+ SpiPacket should be used.
+
+
+ <pre>
+  $Id: Atm128SpiP.nc,v 1.12 2010-06-29 22:07:43 scipio Exp $
+ </pre>
+
+ 
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        Philip Levis
+ 
+      </dd>
+      <dd>
+        Joe Polastre
+ 
+      </dd>
+      <dd>
+        Martin Turon &lt;mturon@xbow.com&gt;
+
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Provides</div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.FastSpiByte.html">FastSpiByte</a></div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.Init.html">Init</a></div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.Resource.html">Resource</a>[uint8_t]</div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.SpiByte.html">SpiByte</a></div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.SpiPacket.html">SpiPacket</a></div><p><div id=heading>Uses</div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.ArbiterInfo.html">ArbiterInfo</a></div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.McuPowerState.html">McuPowerState</a></div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.Resource.html">Resource</a> as <b>ResourceArbiter</b>[uint8_t]</div><div id=funcsig>interface <a href="../ihtml/tos.chips.atm128.spi.Atm128Spi.html">Atm128Spi</a> as <b>Spi</b></div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.TaskBasic.html">TaskBasic</a> as <b>zeroTask</b></div>
+  </body>
+</html>

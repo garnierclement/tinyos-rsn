@@ -1,0 +1,65 @@
+<?xml version="1.0" ?><interfacedef loc="35:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/RadioChannel.nc" nicename="tos.lib.rfxlink.util.RadioChannel" qname="RadioChannel">
+      <function event="" loc="48:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/RadioChannel.nc" name="setChannelDone" provided="0" ref="0x2b9d55242a88">
+        <documentation loc="44:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/RadioChannel.nc">
+          <short>
+ This event is signaled exactly once for each sucessfully posted state 
+ setChannel command when it is completed.</short>
+        </documentation>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.RadioChannel" qname="RadioChannel"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="42:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/RadioChannel.nc" name="setChannel" provided="0" ref="0x2b9d552422d0">
+        <documentation loc="37:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/RadioChannel.nc">
+          <short>
+ Sets the current channel.</short>
+          <long>
+ Sets the current channel. Returns EBUSY if the stack is unable
+ to change the channel this time (some other operation is in progress),
+ EALREADY if the selected channel is already set, SUCCESS otherwise.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.RadioChannel" qname="RadioChannel"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="42:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/RadioChannel.nc" name="channel" ref="0x2b9d55242060">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="53:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/RadioChannel.nc" name="getChannel" provided="0" ref="0x2b9d55240258">
+        <documentation loc="50:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/RadioChannel.nc">
+          <short>
+ Returns the currently selected channel.</short>
+          <long>
+ Returns the currently selected channel.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.RadioChannel" qname="RadioChannel"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>

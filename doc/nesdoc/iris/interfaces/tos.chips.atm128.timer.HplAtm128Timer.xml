@@ -1,0 +1,230 @@
+<?xml version="1.0" ?><interfacedef loc="55:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc" nicename="tos.chips.atm128.timer.HplAtm128Timer" qname="HplAtm128Timer">
+      <documentation loc="34:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc">
+        <short>
+ Basic interface to the hardware timers on an ATmega128.</short>
+        <long>
+ Basic interface to the hardware timers on an ATmega128.  
+ &lt;p&gt;
+ This interface is designed to be independent of whether the underlying 
+ hardware is an 8-bit or 16-bit wide counter.  As such, timer_size is 
+ specified via a generics parameter.  Because this is exposing a common 
+ subset of functionality that all ATmega128 hardware timers share, all 
+ that is exposed is access to the overflow capability.  Compare and capture
+ functionality are exposed on separate interfaces to allow easy 
+ configurability via wiring.
+ &lt;p&gt;
+ This interface provides four major groups of functionality:&lt;ol&gt;
+      &lt;li&gt;Timer Value: get/set current time
+      &lt;li&gt;Overflow Interrupt event
+      &lt;li&gt;Control of Overflow Interrupt: start/stop/clear...
+      &lt;li&gt;Timer Initialization: turn on/off clock source
+ &lt;/ol&gt;
+
+ @author Martin Turon &lt;mturon@xbow.com&gt;
+</long>
+      </documentation>
+      <parameters>
+        <typedef loc="55:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc" name="timer_size" ref="0x2b9d550a1418">
+          <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Timer" qname="HplAtm128Timer"/>
+          <type-var alignment="U:" size="U:"><typedef-ref name="timer_size" ref="0x2b9d550a1418" scoped=""/></type-var>
+        </typedef>
+      </parameters>
+      <function command="" loc="98:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc" name="off" provided="0" ref="0x2b9d5509c900">
+        <documentation loc="97:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc">
+          <short> Turn off the clock.</short>
+          <long> Turn off the clock. *</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Timer" qname="HplAtm128Timer"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="87:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc" name="test" provided="0" ref="0x2b9d5509da40">
+        <documentation loc="83:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc">
+          <short> 
+ Did an overflow interrupt occur?
+ </short>
+          <long> 
+ Did an overflow interrupt occur?
+ @return TRUE if overflow triggered, FALSE otherwise
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Timer" qname="HplAtm128Timer"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="bool" ref="0x2b9d54c5c4c8"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="61:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc" name="get" provided="0" ref="0x2b9d550a1cb8">
+        <documentation loc="57:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc">
+          <short> 
+ Get the current time.</short>
+          <long> 
+ Get the current time.
+ @return  the current time
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Timer" qname="HplAtm128Timer"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-var alignment="U:" size="U:"><typedef-ref name="timer_size" ref="0x2b9d550a1418" scoped=""/></type-var>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="104:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc" name="setScale" provided="0" ref="0x2b9d5509b290">
+        <documentation loc="100:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc">
+          <short> 
+ Turn on the clock.</short>
+          <long> 
+ Turn on the clock.
+ @param scale   Prescaler setting of clock -- see Atm128Timer.h
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Timer" qname="HplAtm128Timer"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="104:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc" name="scale" ref="0x2b9d5509b020">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="110:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc" name="getScale" provided="0" ref="0x2b9d5509ba10">
+        <documentation loc="106:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc">
+          <short> 
+ Get prescaler setting.</short>
+          <long> 
+ Get prescaler setting.
+ @return  Prescaler setting of clock -- see Atm128Timer.h
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Timer" qname="HplAtm128Timer"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="75:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc" name="reset" provided="0" ref="0x2b9d5509e4c0">
+        <documentation loc="74:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc">
+          <short> Clear the overflow interrupt flag.</short>
+          <long> Clear the overflow interrupt flag. *</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Timer" qname="HplAtm128Timer"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function event="" loc="70:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc" name="overflow" provided="0" ref="0x2b9d550a0d50">
+        <documentation loc="69:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc">
+          <short> Signalled on timer overflow interrupt.</short>
+          <long> Signalled on timer overflow interrupt. *</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Timer" qname="HplAtm128Timer"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="93:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc" name="isOn" provided="0" ref="0x2b9d5509c1d8">
+        <documentation loc="89:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc">
+          <short> 
+ Is overflow interrupt on? 
+ </short>
+          <long> 
+ Is overflow interrupt on? 
+ @return TRUE if overflow enabled, FALSE otherwise
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Timer" qname="HplAtm128Timer"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="bool" ref="0x2b9d54c5c4c8"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="67:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc" name="set" provided="0" ref="0x2b9d550a0630">
+        <documentation loc="63:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc">
+          <short> 
+ Set the current time.</short>
+          <long> 
+ Set the current time.
+ @param t     the time to set
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Timer" qname="HplAtm128Timer"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-var alignment="U:" size="U:"><typedef-ref name="timer_size" ref="0x2b9d550a1418" scoped=""/></type-var>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="67:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc" name="t" ref="0x2b9d550a03c0">
+            <type-var alignment="U:" size="U:"><typedef-ref name="timer_size" ref="0x2b9d550a1418" scoped=""/></type-var>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="78:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc" name="start" provided="0" ref="0x2b9d5509ebb8">
+        <documentation loc="77:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc">
+          <short> Enable the overflow interrupt.</short>
+          <long> Enable the overflow interrupt. *</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Timer" qname="HplAtm128Timer"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="81:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc" name="stop" provided="0" ref="0x2b9d5509d328">
+        <documentation loc="80:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Timer.nc">
+          <short> Turn off overflow interrupts.</short>
+          <long> Turn off overflow interrupts. *</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Timer" qname="HplAtm128Timer"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>

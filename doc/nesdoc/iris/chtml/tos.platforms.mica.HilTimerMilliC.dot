@@ -1,0 +1,20 @@
+digraph "tos.platforms.mica.HilTimerMilliC" {
+  n0x2b9d55070020 [shape=ellipse, style=filled, label="TimerMilli", fontsize=12];
+  "HilTimerMilliC.VirtualizeTimerC" [fontsize=12, shape=box, style=dashed, label="VirtualizeTimerC", URL="../chtml/tos.lib.timer.VirtualizeTimerC.html"];
+  n0x2b9d55068590 [shape=ellipse, style=filled, label="LocalTime", fontsize=12];
+  "HilTimerMilliC.CounterToLocalTimeC" [fontsize=12, shape=box, style=dashed, label="CounterToLocalTimeC", URL="../chtml/tos.lib.timer.CounterToLocalTimeC.html"];
+  n0x2b9d55071300 [shape=ellipse, style=filled, label="Init", fontsize=12];
+  "AlarmCounterMilliP" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.platforms.mica.AlarmCounterMilliP.html"];
+  "HilTimerMilliC.VirtualizeTimerC" [fontsize=12, shape=box, style=dashed, label="VirtualizeTimerC", URL="../chtml/tos.lib.timer.VirtualizeTimerC.html"];
+  "HilTimerMilliC.AlarmToTimerC" [fontsize=12, shape=box, style=dashed, label="AlarmToTimerC", URL="../chtml/tos.lib.timer.AlarmToTimerC.html"];
+  "HilTimerMilliC.AlarmToTimerC" [fontsize=12, shape=box, style=dashed, label="AlarmToTimerC", URL="../chtml/tos.lib.timer.AlarmToTimerC.html"];
+  "AlarmCounterMilliP" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.platforms.mica.AlarmCounterMilliP.html"];
+  "HilTimerMilliC.CounterToLocalTimeC" [fontsize=12, shape=box, style=dashed, label="CounterToLocalTimeC", URL="../chtml/tos.lib.timer.CounterToLocalTimeC.html"];
+  "AlarmCounterMilliP" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.platforms.mica.AlarmCounterMilliP.html"];
+  "n0x2b9d55070020" -> "HilTimerMilliC.VirtualizeTimerC" [label="Timer<TMilli>[uint8_t]", style=bold, URL="../ihtml/tos.lib.timer.Timer.html", fontsize=10];
+  "n0x2b9d55068590" -> "HilTimerMilliC.CounterToLocalTimeC" [label="LocalTime<TMilli>", URL="../ihtml/tos.lib.timer.LocalTime.html", fontsize=10];
+  "n0x2b9d55071300" -> "AlarmCounterMilliP" [label="Init", URL="../ihtml/tos.interfaces.Init.html", fontsize=10];
+  "HilTimerMilliC.VirtualizeTimerC" -> "HilTimerMilliC.AlarmToTimerC" [label="Timer<TMilli>", URL="../ihtml/tos.lib.timer.Timer.html", fontsize=10];
+  "HilTimerMilliC.AlarmToTimerC" -> "AlarmCounterMilliP" [label="Alarm<TMilli, uint32_t>", URL="../ihtml/tos.lib.timer.Alarm.html", fontsize=10];
+  "HilTimerMilliC.CounterToLocalTimeC" -> "AlarmCounterMilliP" [label="Counter<TMilli, uint32_t>", URL="../ihtml/tos.lib.timer.Counter.html", fontsize=10];
+}

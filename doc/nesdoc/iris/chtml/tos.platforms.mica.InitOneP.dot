@@ -1,0 +1,8 @@
+digraph "tos.platforms.mica.InitOneP" {
+  "PlatformC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.platforms.mica.PlatformC.html"];
+  "InitOneP.InitOne" [fontsize=12, shape=box, style=dashed, label="Atm128TimerInitC\n(InitOne)", URL="../chtml/tos.chips.atm128.timer.Atm128TimerInitC.html"];
+  "InitOneP.InitOne" [fontsize=12, shape=box, style=dashed, label="Atm128TimerInitC\n(InitOne)", URL="../chtml/tos.chips.atm128.timer.Atm128TimerInitC.html"];
+  "HplAtm128Timer1C" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.chips.atm1281.timer.HplAtm128Timer1C.html"];
+  "PlatformC" -> "InitOneP.InitOne" [label="Init", URL="../ihtml/tos.interfaces.Init.html", fontsize=10];
+  "InitOneP.InitOne" -> "HplAtm128Timer1C" [label="HplAtm128Timer<uint16_t>", URL="../ihtml/tos.chips.atm128.timer.HplAtm128Timer.html", fontsize=10];
+}

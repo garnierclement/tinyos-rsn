@@ -1,0 +1,166 @@
+<?xml version="1.0" ?><component loc="89:/home/tinyos/tinyos-main/tos/chips/atm128/spi/Atm128SpiP.nc" nicename="tos.chips.atm128.spi.Atm128SpiP" qname="Atm128SpiP" safe="">
+      <documentation loc="67:/home/tinyos/tinyos-main/tos/chips/atm128/spi/Atm128SpiP.nc">
+        <short>
+ Primitives for accessing the SPI module on ATmega128
+ microcontroller.</short>
+        <long>
+ Primitives for accessing the SPI module on ATmega128
+ microcontroller.  This module assumes the bus has been reserved and
+ checks that the bus owner is in fact the person using the bus.
+ SpiPacket provides an asynchronous send interface where the
+ transmit data length is equal to the receive data length, while
+ SpiByte provides an interface for sending a single byte
+ synchronously. SpiByte allows a component to send a few bytes
+ in a simple fashion: if more than a handful need to be sent,
+ SpiPacket should be used.
+
+
+ &lt;pre&gt;
+  $Id: Atm128SpiP.nc,v 1.12 2010-06-29 22:07:43 scipio Exp $
+ &lt;/pre&gt;
+
+ @author Philip Levis
+ @author Joe Polastre
+ @author Martin Turon &lt;mturon@xbow.com&gt;
+
+</long>
+      </documentation>
+      <module/>
+    <specification><interface loc="296:/home/tinyos/tinyos-main/tos/chips/atm128/spi/Atm128SpiP.nc" name="zeroTask" provided="0" ref="0x2b9d559beb58">
+      <component-ref nicename="tos.chips.atm128.spi.Atm128SpiP" qname="Atm128SpiP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="zeroTask" ref="0x2b9d559beb58" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.TaskBasic" qname="TaskBasic"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="postTask" ref="0x2b9d559bd020" scoped=""/>
+        <function-ref name="runTask" ref="0x2b9d559bd1a8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="94:/home/tinyos/tinyos-main/tos/chips/atm128/spi/Atm128SpiP.nc" name="SpiPacket" provided="1" ref="0x2b9d55980140">
+      <component-ref nicename="tos.chips.atm128.spi.Atm128SpiP" qname="Atm128SpiP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SpiPacket" ref="0x2b9d55980140" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.SpiPacket" qname="SpiPacket"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b9d55980490" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b9d55980618" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="99:/home/tinyos/tinyos-main/tos/chips/atm128/spi/Atm128SpiP.nc" name="ResourceArbiter" provided="0" ref="0x2b9d559a13c8">
+      <component-ref nicename="tos.chips.atm128.spi.Atm128SpiP" qname="Atm128SpiP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="ResourceArbiter" ref="0x2b9d559a13c8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Resource" qname="Resource"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="release" ref="0x2b9d559a1718" scoped=""/>
+        <function-ref name="immediateRequest" ref="0x2b9d559a18a0" scoped=""/>
+        <function-ref name="request" ref="0x2b9d559a1a28" scoped=""/>
+        <function-ref name="granted" ref="0x2b9d559a1bb0" scoped=""/>
+        <function-ref name="isOwner" ref="0x2b9d559a1d38" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="92:/home/tinyos/tinyos-main/tos/chips/atm128/spi/Atm128SpiP.nc" name="SpiByte" provided="1" ref="0x2b9d55981080">
+      <component-ref nicename="tos.chips.atm128.spi.Atm128SpiP" qname="Atm128SpiP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SpiByte" ref="0x2b9d55981080" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.SpiByte" qname="SpiByte"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="write" ref="0x2b9d559813d0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="91:/home/tinyos/tinyos-main/tos/chips/atm128/spi/Atm128SpiP.nc" name="Init" provided="1" ref="0x2b9d55947a20">
+      <component-ref nicename="tos.chips.atm128.spi.Atm128SpiP" qname="Atm128SpiP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b9d55947a20" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b9d55947d70" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="98:/home/tinyos/tinyos-main/tos/chips/atm128/spi/Atm128SpiP.nc" name="Spi" provided="0" ref="0x2b9d559a2150">
+      <component-ref nicename="tos.chips.atm128.spi.Atm128SpiP" qname="Atm128SpiP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Spi" ref="0x2b9d559a2150" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.atm128.spi.Atm128Spi" qname="Atm128Spi"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="initSlave" ref="0x2b9d559a24a0" scoped=""/>
+        <function-ref name="sleep" ref="0x2b9d5597d950" scoped=""/>
+        <function-ref name="isSpiEnabled" ref="0x2b9d559a27b0" scoped=""/>
+        <function-ref name="dataReady" ref="0x2b9d5597dad8" scoped=""/>
+        <function-ref name="initMaster" ref="0x2b9d559a2ac0" scoped=""/>
+        <function-ref name="setMasterBit" ref="0x2b9d559a2c48" scoped=""/>
+        <function-ref name="enableInterrupt" ref="0x2b9d559a2dd0" scoped=""/>
+        <function-ref name="read" ref="0x2b9d5597e020" scoped=""/>
+        <function-ref name="setMasterDoubleSpeed" ref="0x2b9d5597e1a8" scoped=""/>
+        <function-ref name="isInterruptEnabled" ref="0x2b9d5597e330" scoped=""/>
+        <function-ref name="setClock" ref="0x2b9d5597e4b8" scoped=""/>
+        <function-ref name="isInterruptPending" ref="0x2b9d5597e640" scoped=""/>
+        <function-ref name="setClockPolarity" ref="0x2b9d5597e7c8" scoped=""/>
+        <function-ref name="isMasterDoubleSpeed" ref="0x2b9d5597ea50" scoped=""/>
+        <function-ref name="setDataOrder" ref="0x2b9d5597ebd8" scoped=""/>
+        <function-ref name="write" ref="0x2b9d5597ed60" scoped=""/>
+        <function-ref name="enableSpi" ref="0x2b9d5597d020" scoped=""/>
+        <function-ref name="isMasterBitSet" ref="0x2b9d5597d1a8" scoped=""/>
+        <function-ref name="getClockPhase" ref="0x2b9d5597d330" scoped=""/>
+        <function-ref name="getClock" ref="0x2b9d5597d4b8" scoped=""/>
+        <function-ref name="hasWriteCollided" ref="0x2b9d5597d640" scoped=""/>
+        <function-ref name="getClockPolarity" ref="0x2b9d559a2628" scoped=""/>
+        <function-ref name="setClockPhase" ref="0x2b9d559a2938" scoped=""/>
+        <function-ref name="isOrderLsbFirst" ref="0x2b9d5597d7c8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="93:/home/tinyos/tinyos-main/tos/chips/atm128/spi/Atm128SpiP.nc" name="FastSpiByte" provided="1" ref="0x2b9d55981688">
+      <component-ref nicename="tos.chips.atm128.spi.Atm128SpiP" qname="Atm128SpiP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="FastSpiByte" ref="0x2b9d55981688" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.FastSpiByte" qname="FastSpiByte"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="splitWrite" ref="0x2b9d559819d8" scoped=""/>
+        <function-ref name="splitReadWrite" ref="0x2b9d55981b60" scoped=""/>
+        <function-ref name="splitRead" ref="0x2b9d55981ce8" scoped=""/>
+        <function-ref name="write" ref="0x2b9d55981e70" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="95:/home/tinyos/tinyos-main/tos/chips/atm128/spi/Atm128SpiP.nc" name="Resource" provided="1" ref="0x2b9d55980da8">
+      <component-ref nicename="tos.chips.atm128.spi.Atm128SpiP" qname="Atm128SpiP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Resource" ref="0x2b9d55980da8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Resource" qname="Resource"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="release" ref="0x2b9d5597f170" scoped=""/>
+        <function-ref name="immediateRequest" ref="0x2b9d5597f2f8" scoped=""/>
+        <function-ref name="request" ref="0x2b9d5597f480" scoped=""/>
+        <function-ref name="granted" ref="0x2b9d5597f608" scoped=""/>
+        <function-ref name="isOwner" ref="0x2b9d5597f790" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="100:/home/tinyos/tinyos-main/tos/chips/atm128/spi/Atm128SpiP.nc" name="ArbiterInfo" provided="0" ref="0x2b9d559a0020">
+      <component-ref nicename="tos.chips.atm128.spi.Atm128SpiP" qname="Atm128SpiP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="ArbiterInfo" ref="0x2b9d559a0020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.ArbiterInfo" qname="ArbiterInfo"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="inUse" ref="0x2b9d559a0370" scoped=""/>
+        <function-ref name="userId" ref="0x2b9d559a04f8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="101:/home/tinyos/tinyos-main/tos/chips/atm128/spi/Atm128SpiP.nc" name="McuPowerState" provided="0" ref="0x2b9d559a07c8">
+      <component-ref nicename="tos.chips.atm128.spi.Atm128SpiP" qname="Atm128SpiP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="McuPowerState" ref="0x2b9d559a07c8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.McuPowerState" qname="McuPowerState"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="update" ref="0x2b9d559a0b18" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

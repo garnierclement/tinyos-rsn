@@ -1,0 +1,189 @@
+<?xml version="1.0" ?><interfacedef loc="37:/home/tinyos/tinyos-main/tos/interfaces/PacketLink.nc" nicename="tos.interfaces.PacketLink" qname="PacketLink">
+      <documentation loc="32:/home/tinyos/tinyos-main/tos/interfaces/PacketLink.nc">
+        <short>
+ </short>
+        <long>
+ @author David Moss
+ @author Jon Wyant
+</long>
+      </documentation>
+      <function command="" loc="65:/home/tinyos/tinyos-main/tos/interfaces/PacketLink.nc" name="getRetryDelay" provided="0" ref="0x2b9d55246338">
+        <documentation loc="61:/home/tinyos/tinyos-main/tos/interfaces/PacketLink.nc">
+          <short>
+ </short>
+          <long>
+ @param 'message_t* ONE msg'
+ @return the delay between retry attempts in ms for this message
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.interfaces.PacketLink" qname="PacketLink"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="65:/home/tinyos/tinyos-main/tos/interfaces/PacketLink.nc" name="msg" ref="0x2b9d552460c8">
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="46:/home/tinyos/tinyos-main/tos/interfaces/PacketLink.nc" name="setRetries" provided="0" ref="0x2b9d55249648">
+        <documentation loc="39:/home/tinyos/tinyos-main/tos/interfaces/PacketLink.nc">
+          <short>
+ Set the maximum number of times attempt message delivery
+ Default is 0
+ </short>
+          <long>
+ Set the maximum number of times attempt message delivery
+ Default is 0
+ @param 'message_t* ONE msg'
+ @param maxRetries the maximum number of attempts to deliver
+     the message
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.interfaces.PacketLink" qname="PacketLink"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+            <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="46:/home/tinyos/tinyos-main/tos/interfaces/PacketLink.nc" name="msg" ref="0x2b9d55249060">
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+          <variable loc="46:/home/tinyos/tinyos-main/tos/interfaces/PacketLink.nc" name="maxRetries" ref="0x2b9d552493c8">
+            <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="59:/home/tinyos/tinyos-main/tos/interfaces/PacketLink.nc" name="getRetries" provided="0" ref="0x2b9d552473d0">
+        <documentation loc="55:/home/tinyos/tinyos-main/tos/interfaces/PacketLink.nc">
+          <short> 
+ </short>
+          <long> 
+ @param 'message_t* ONE msg'
+ @return the maximum number of retry attempts for this message
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.interfaces.PacketLink" qname="PacketLink"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="59:/home/tinyos/tinyos-main/tos/interfaces/PacketLink.nc" name="msg" ref="0x2b9d55247160">
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="53:/home/tinyos/tinyos-main/tos/interfaces/PacketLink.nc" name="setRetryDelay" provided="0" ref="0x2b9d55248968">
+        <documentation loc="48:/home/tinyos/tinyos-main/tos/interfaces/PacketLink.nc">
+          <short>
+ Set a delay between each retry attempt
+ </short>
+          <long>
+ Set a delay between each retry attempt
+ @param msg
+ @param retryDelay the delay betweeen retry attempts, in milliseconds
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.interfaces.PacketLink" qname="PacketLink"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+            <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="53:/home/tinyos/tinyos-main/tos/interfaces/PacketLink.nc" name="msg" ref="0x2b9d55248380">
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+          <variable loc="53:/home/tinyos/tinyos-main/tos/interfaces/PacketLink.nc" name="retryDelay" ref="0x2b9d552486e8">
+            <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="71:/home/tinyos/tinyos-main/tos/interfaces/PacketLink.nc" name="wasDelivered" provided="0" ref="0x2b9d55244290">
+        <documentation loc="67:/home/tinyos/tinyos-main/tos/interfaces/PacketLink.nc">
+          <short>
+ </short>
+          <long>
+ @param 'message_t* ONE msg'
+ @return TRUE if the message was delivered.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.interfaces.PacketLink" qname="PacketLink"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="bool" ref="0x2b9d54c5c4c8"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="71:/home/tinyos/tinyos-main/tos/interfaces/PacketLink.nc" name="msg" ref="0x2b9d55244020">
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+    </interfacedef>

@@ -1,0 +1,229 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Interface: tos.chips.atm128.spi.Atm128Spi</title>
+  </head>
+  <body>
+    <h2>Interface: tos.chips.atm128.spi.Atm128Spi</h2>
+    <b>interface Atm128Spi</b><p><p><div id=heading>Commands</div><div id=funcsig><span id=funcnameshort>command void <a href="#enableInterrupt">enableInterrupt</a>(bool enabled)
+      </span></div><div id=funcsig><span id=funcnameshort>command void <a href="#enableSpi">enableSpi</a>(bool busOn)
+      </span></div><div id=funcsig><span id=funcnameshort>command uint8_t <a href="#getClock">getClock</a>()
+      </span></div><div id=funcsig><span id=funcnameshort>command bool <a href="#getClockPhase">getClockPhase</a>()
+      </span></div><div id=funcsig><span id=funcnameshort>command bool <a href="#getClockPolarity">getClockPolarity</a>()
+      </span></div><div id=funcsig><span id=funcnameshort>command bool <a href="#hasWriteCollided">hasWriteCollided</a>()
+      </span></div><div id=funcsig><span id=funcnameshort>command void <a href="#initMaster">initMaster</a>()
+      </span><menu> Initialize the ATmega128 SPI bus into master mode.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command void <a href="#initSlave">initSlave</a>()
+      </span><menu> Initialize the ATmega128 SPI bus into slave mode.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command bool <a href="#isInterruptEnabled">isInterruptEnabled</a>()
+      </span></div><div id=funcsig><span id=funcnameshort>command bool <a href="#isInterruptPending">isInterruptPending</a>()
+      </span></div><div id=funcsig><span id=funcnameshort>command bool <a href="#isMasterBitSet">isMasterBitSet</a>()
+      </span></div><div id=funcsig><span id=funcnameshort>command bool <a href="#isMasterDoubleSpeed">isMasterDoubleSpeed</a>()
+      </span></div><div id=funcsig><span id=funcnameshort>command bool <a href="#isOrderLsbFirst">isOrderLsbFirst</a>()
+      </span></div><div id=funcsig><span id=funcnameshort>command bool <a href="#isSpiEnabled">isSpiEnabled</a>()
+      </span></div><div id=funcsig><span id=funcnameshort>command uint8_t <a href="#read">read</a>()
+      </span><menu> 
+ Read the SPI data register 
+ 
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command void <a href="#setClock">setClock</a>(uint8_t speed)
+      </span></div><div id=funcsig><span id=funcnameshort>command void <a href="#setClockPhase">setClockPhase</a>(bool sampleOnTrailing)
+      </span></div><div id=funcsig><span id=funcnameshort>command void <a href="#setClockPolarity">setClockPolarity</a>(bool highWhenIdle)
+      </span></div><div id=funcsig><span id=funcnameshort>command void <a href="#setDataOrder">setDataOrder</a>(bool lsbFirst)
+      </span></div><div id=funcsig><span id=funcnameshort>command void <a href="#setMasterBit">setMasterBit</a>(bool isMaster)
+      </span></div><div id=funcsig><span id=funcnameshort>command void <a href="#setMasterDoubleSpeed">setMasterDoubleSpeed</a>(bool on)
+      </span></div><div id=funcsig><span id=funcnameshort>command void <a href="#sleep">sleep</a>()
+      </span><menu> Disable and sleep the ATmega128 SPI bus.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command void <a href="#write">write</a>(uint8_t data)
+      </span><menu> 
+ Write the SPI data register 
+ 
+      </menu>
+    </div><p><div id=heading>Events</div><div id=funcsig><span id=funcnameshort>event void <a href="#dataReady">dataReady</a>(uint8_t data)
+      </span><menu>
+ Interrupt signalling SPI data cycle is complete.
+      </menu>
+    </div><p><div id=heading>Commands - Details</div>
+    <a name="enableInterrupt"></a>
+    <h4>enableInterrupt
+    </h4>
+    <span id=funcnameshort>command void <b>enableInterrupt</b>(bool enabled)
+    </span><hr>
+    <a name="enableSpi"></a>
+    <h4>enableSpi
+    </h4>
+    <span id=funcnameshort>command void <b>enableSpi</b>(bool busOn)
+    </span><hr>
+    <a name="getClock"></a>
+    <h4>getClock
+    </h4>
+    <span id=funcnameshort>command uint8_t <b>getClock</b>()
+    </span><hr>
+    <a name="getClockPhase"></a>
+    <h4>getClockPhase
+    </h4>
+    <span id=funcnameshort>command bool <b>getClockPhase</b>()
+    </span><hr>
+    <a name="getClockPolarity"></a>
+    <h4>getClockPolarity
+    </h4>
+    <span id=funcnameshort>command bool <b>getClockPolarity</b>()
+    </span><hr>
+    <a name="hasWriteCollided"></a>
+    <h4>hasWriteCollided
+    </h4>
+    <span id=funcnameshort>command bool <b>hasWriteCollided</b>()
+    </span><hr>
+    <a name="initMaster"></a>
+    <h4>initMaster
+    </h4>
+    <span id=funcnameshort>command void <b>initMaster</b>()
+    </span>
+    <p>
+    <menu>
+       Initialize the ATmega128 SPI bus into master mode. *
+    </menu>
+    <hr>
+    <a name="initSlave"></a>
+    <h4>initSlave
+    </h4>
+    <span id=funcnameshort>command void <b>initSlave</b>()
+    </span>
+    <p>
+    <menu>
+       Initialize the ATmega128 SPI bus into slave mode. *
+    </menu>
+    <hr>
+    <a name="isInterruptEnabled"></a>
+    <h4>isInterruptEnabled
+    </h4>
+    <span id=funcnameshort>command bool <b>isInterruptEnabled</b>()
+    </span><hr>
+    <a name="isInterruptPending"></a>
+    <h4>isInterruptPending
+    </h4>
+    <span id=funcnameshort>command bool <b>isInterruptPending</b>()
+    </span><hr>
+    <a name="isMasterBitSet"></a>
+    <h4>isMasterBitSet
+    </h4>
+    <span id=funcnameshort>command bool <b>isMasterBitSet</b>()
+    </span><hr>
+    <a name="isMasterDoubleSpeed"></a>
+    <h4>isMasterDoubleSpeed
+    </h4>
+    <span id=funcnameshort>command bool <b>isMasterDoubleSpeed</b>()
+    </span><hr>
+    <a name="isOrderLsbFirst"></a>
+    <h4>isOrderLsbFirst
+    </h4>
+    <span id=funcnameshort>command bool <b>isOrderLsbFirst</b>()
+    </span><hr>
+    <a name="isSpiEnabled"></a>
+    <h4>isSpiEnabled
+    </h4>
+    <span id=funcnameshort>command bool <b>isSpiEnabled</b>()
+    </span><hr>
+    <a name="read"></a>
+    <h4>read
+    </h4>
+    <span id=funcnameshort>command uint8_t <b>read</b>()
+    </span>
+    <p>
+    <menu>
+       
+ Read the SPI data register 
+ 
+      <p>
+      <dl>
+        <dt><b>Returns:</b>
+        <dd>
+          last data byte
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="setClock"></a>
+    <h4>setClock
+    </h4>
+    <span id=funcnameshort>command void <b>setClock</b>(uint8_t speed)
+    </span><hr>
+    <a name="setClockPhase"></a>
+    <h4>setClockPhase
+    </h4>
+    <span id=funcnameshort>command void <b>setClockPhase</b>(bool sampleOnTrailing)
+    </span><hr>
+    <a name="setClockPolarity"></a>
+    <h4>setClockPolarity
+    </h4>
+    <span id=funcnameshort>command void <b>setClockPolarity</b>(bool highWhenIdle)
+    </span><hr>
+    <a name="setDataOrder"></a>
+    <h4>setDataOrder
+    </h4>
+    <span id=funcnameshort>command void <b>setDataOrder</b>(bool lsbFirst)
+    </span><hr>
+    <a name="setMasterBit"></a>
+    <h4>setMasterBit
+    </h4>
+    <span id=funcnameshort>command void <b>setMasterBit</b>(bool isMaster)
+    </span><hr>
+    <a name="setMasterDoubleSpeed"></a>
+    <h4>setMasterDoubleSpeed
+    </h4>
+    <span id=funcnameshort>command void <b>setMasterDoubleSpeed</b>(bool on)
+    </span><hr>
+    <a name="sleep"></a>
+    <h4>sleep
+    </h4>
+    <span id=funcnameshort>command void <b>sleep</b>()
+    </span>
+    <p>
+    <menu>
+       Disable and sleep the ATmega128 SPI bus. *
+    </menu>
+    <hr>
+    <a name="write"></a>
+    <h4>write
+    </h4>
+    <span id=funcnameshort>command void <b>write</b>(uint8_t data)
+    </span>
+    <p>
+    <menu>
+       
+ Write the SPI data register 
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          <code>data</code> -    next data byte
+
+        </dd>
+      </dl>
+    </menu>
+    <p><div id=heading>Events - Details</div>
+    <a name="dataReady"></a>
+    <h4>dataReady
+    </h4>
+    <span id=funcnameshort>event void <b>dataReady</b>(uint8_t data)
+    </span>
+    <p>
+    <menu>
+      
+ Interrupt signalling SPI data cycle is complete. 
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          <code>data</code> -    data byte from data register
+
+        </dd>
+      </dl>
+    </menu>
+  </body>
+</html>

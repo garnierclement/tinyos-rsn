@@ -1,0 +1,16 @@
+<area shape="rect" id="node2" href="../chtml/tos.chips.atm1281.timer.Atm1281AlarmAsyncP.html" title="Atm1281AlarmAsyncP" alt="" coords="200,120,395,168">
+<area shape="poly" id="edge2" href="../ihtml/tos.lib.timer.Alarm.html" title="Alarm&lt;precision, uint32_t&gt;" alt="" coords="95,53 103,75 116,94 144,108 188,121 186,126 142,113 113,98 98,77 90,54">
+<area shape="rect" id="edge2" href="../ihtml/tos.lib.timer.Alarm.html" title="Alarm&lt;precision, uint32_t&gt;" alt="" coords="115,78,292,95">
+<area shape="rect" id="node5" href="../chtml/tos.chips.atm1281.timer.HplAtm1281Timer2AsyncC.html" title="HplAtm1281Timer2AsyncC" alt="" coords="177,235,417,293">
+<area shape="poly" id="edge8" href="../ihtml/tos.chips.atm128.timer.HplAtm128Timer.html" title="HplAtm128Timer&lt;uint8_t&gt;" alt="" coords="200,157 80,174 34,184 11,194 8,201 11,209 34,225 70,237 164,253 163,258 69,242 32,229 7,212 3,201 7,190 32,179 79,168 200,151">
+<area shape="rect" id="edge8" href="../ihtml/tos.chips.atm128.timer.HplAtm128Timer.html" title="HplAtm128Timer&lt;uint8_t&gt;" alt="" coords="9,193,184,210">
+<area shape="poly" id="edge10" href="../ihtml/tos.chips.atm1281.timer.HplAtm128TimerCtrl8.html" title="HplAtm128TimerCtrl8" alt="" coords="239,170 227,181 217,193 214,209 223,224 219,227 209,210 212,191 223,177 236,166">
+<area shape="rect" id="edge10" href="../ihtml/tos.chips.atm1281.timer.HplAtm128TimerCtrl8.html" title="HplAtm128TimerCtrl8" alt="" coords="215,193,353,210">
+<area shape="poly" id="edge12" href="../ihtml/tos.chips.atm128.timer.HplAtm128Compare.html" title="HplAtm128Compare&lt;uint8_t&gt;" alt="" coords="338,166 355,187 358,199 356,212 348,225 344,222 351,210 353,199 350,189 334,170">
+<area shape="rect" id="edge12" href="../ihtml/tos.chips.atm128.timer.HplAtm128Compare.html" title="HplAtm128Compare&lt;uint8_t&gt;" alt="" coords="355,193,552,210">
+<area shape="poly" id="edge14" href="../ihtml/tos.chips.atm1281.timer.HplAtm128TimerAsync.html" title="HplAtm128TimerAsync" alt="" coords="395,147 493,161 533,173 559,190 564,201 559,212 540,227 509,239 432,255 431,249 508,234 537,222 555,209 559,201 555,194 531,178 492,166 394,152">
+<area shape="rect" id="edge14" href="../ihtml/tos.chips.atm1281.timer.HplAtm128TimerAsync.html" title="HplAtm128TimerAsync" alt="" coords="560,193,707,210">
+<area shape="poly" id="edge4" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="300,54 300,106 295,106 295,54">
+<area shape="rect" id="edge4" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="297,78,317,95">
+<area shape="poly" id="edge6" href="../ihtml/tos.lib.timer.Counter.html" title="Counter&lt;precision, uint32_t&gt;" alt="" coords="392,53 333,112 329,109 388,50">
+<area shape="rect" id="edge6" href="../ihtml/tos.lib.timer.Counter.html" title="Counter&lt;precision, uint32_t&gt;" alt="" coords="361,78,552,95">

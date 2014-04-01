@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Component: tos.chips.atm128.timer.Atm128AlarmC</title>
+  </head>
+  <body>
+    <h2>Component: tos.chips.atm128.timer.Atm128AlarmC
+    </h2>
+    <b>generic module Atm128AlarmC(typedef frequency_tag, typedef timer_size, int mindt)</b>
+    <p>
+ Build a TEP102 Alarm from an Atmega128 hardware timer and one of its
+ compare registers.
+ 
+    <p>
+    <dl>
+      <dt><b>Parameters:</b>
+      <dd>
+        <code>frequency_tag</code> -  The frequency tag for this Alarm
+ 
+      </dd>
+      <dd>
+        <code>timer_size</code> -  The width of this Alarm
+ 
+      </dd>
+      <dd>
+        <code>mindt</code> -  The shortest time in the future this Alarm can be set
+   (in its own time units). Has to be at least 2, as setting a compare
+   register one above the current counter value is unreliable. Has to be
+   large enough that the Alarm time does not pass between the computation
+   of <code>expires</code> and actually setting the compare register.
+   Check this (for high-frequency timers) by inspecting the generated
+   assembly code...
+
+ 
+      </dd>
+      <dt><b>Author:</b>
+      <dd>
+        Martin Turon &lt;mturon@xbow.com&gt;
+ 
+      </dd>
+      <dd>
+        David Gay &lt;david.e.gay@intel.com&gt;
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Provides</div><div id=funcsig>interface <a href="../ihtml/tos.lib.timer.Alarm.html">Alarm</a>&lt;frequency_tag, timer_size&gt;</div><p><div id=heading>Uses</div><div id=funcsig>interface <a href="../ihtml/tos.chips.atm128.timer.HplAtm128Compare.html">HplAtm128Compare</a>&lt;timer_size&gt;</div><div id=funcsig>interface <a href="../ihtml/tos.chips.atm128.timer.HplAtm128Timer.html">HplAtm128Timer</a>&lt;timer_size&gt;</div>
+  </body>
+</html>

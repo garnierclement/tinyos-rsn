@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Component: tos.platforms.mica.InitOneP</title>
+  </head>
+  <body>
+    <h2>Component: tos.platforms.mica.InitOneP
+    </h2>
+    <b>configuration InitOneP</b>
+    <p>
+ Internal mica-family timer component. Sets up hardware timer 1 to run
+ at cpu clock / 256, at boot time. Assumes an ~8MHz CPU clock, replace
+ this component if you are running at a radically different frequency.
+
+ 
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        David Gay
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Wiring</div><p>
+    <map name="comp">
+      <area shape="rect" id="node1" href="../chtml/tos.platforms.mica.PlatformC.html" title="PlatformC" alt="" coords="41,5,151,64">
+
+      <area shape="rect" id="node2" href="../chtml/tos.chips.atm128.timer.Atm128TimerInitC.html" title="Atm128TimerInitC\n(InitOne)" alt="" coords="16,131,176,181">
+
+      <area shape="poly" id="edge2" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="99,64 99,117 93,117 93,64">
+
+      <area shape="rect" id="edge2" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="96,89,116,106">
+
+      <area shape="rect" id="node3" href="../chtml/tos.chips.atm1281.timer.HplAtm128Timer1C.html" title="HplAtm128Timer1C" alt="" coords="5,248,187,307">
+
+      <area shape="poly" id="edge4" href="../ihtml/tos.chips.atm128.timer.HplAtm128Timer.html" title="HplAtm128Timer&lt;uint16_t&gt;" alt="" coords="99,182 99,234 93,234 93,182">
+
+      <area shape="rect" id="edge4" href="../ihtml/tos.chips.atm128.timer.HplAtm128Timer.html" title="HplAtm128Timer&lt;uint16_t&gt;" alt="" coords="96,206,279,223">
+
+    </map>
+    <img src="tos.platforms.mica.InitOneP.png" usemap="#comp" id=imgwiring>
+  </body>
+</html>

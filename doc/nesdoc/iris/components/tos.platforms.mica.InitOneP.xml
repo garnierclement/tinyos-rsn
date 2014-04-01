@@ -1,0 +1,252 @@
+<?xml version="1.0" ?><component loc="21:/home/tinyos/tinyos-main/tos/platforms/mica/InitOneP.nc" nicename="tos.platforms.mica.InitOneP" qname="InitOneP">
+      <documentation loc="11:/home/tinyos/tinyos-main/tos/platforms/mica/InitOneP.nc">
+        <short>
+ Internal mica-family timer component.</short>
+        <long>
+ Internal mica-family timer component. Sets up hardware timer 1 to run
+ at cpu clock / 256, at boot time. Assumes an ~8MHz CPU clock, replace
+ this component if you are running at a radically different frequency.
+
+ @author David Gay
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="26:/home/tinyos/tinyos-main/tos/platforms/mica/InitOneP.nc">
+          <from><interface-ref name="SubInit" ref="0x2b9d54d83690" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x2b9d55acadc0" scoped=""/></to>
+        </wire>
+        <wire loc="27:/home/tinyos/tinyos-main/tos/platforms/mica/InitOneP.nc">
+          <from><interface-ref name="Timer" ref="0x2b9d55b01540" scoped=""/></from>
+          <to><interface-ref name="Timer" ref="0x2b9d55a316e8" scoped=""/></to>
+        </wire>
+      </wiring>
+    <specification/><referenced><interface loc="79:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128Timer1C.nc" name="Timer" provided="1" ref="0x2b9d55a316e8">
+      <component-ref nicename="tos.chips.atm1281.timer.HplAtm128Timer1C" qname="HplAtm128Timer1C"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Timer" ref="0x2b9d55a316e8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Timer" qname="HplAtm128Timer"/>
+        <arguments>
+          <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="off" ref="0x2b9d55a2b930" scoped=""/>
+        <function-ref name="test" ref="0x2b9d55a2b020" scoped=""/>
+        <function-ref name="get" ref="0x2b9d55a2e3a8" scoped=""/>
+        <function-ref name="setScale" ref="0x2b9d55a2bdb8" scoped=""/>
+        <function-ref name="getScale" ref="0x2b9d55a2a2f0" scoped=""/>
+        <function-ref name="reset" ref="0x2b9d55a2c1f8" scoped=""/>
+        <function-ref name="overflow" ref="0x2b9d55a2ed08" scoped=""/>
+        <function-ref name="isOn" ref="0x2b9d55a2b4a8" scoped=""/>
+        <function-ref name="set" ref="0x2b9d55a2e830" scoped=""/>
+        <function-ref name="start" ref="0x2b9d55a2c680" scoped=""/>
+        <function-ref name="stop" ref="0x2b9d55a2cb08" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="46:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128TimerInitC.nc" name="Init" provided="1" ref="0x2b9d55acadc0">
+      <component-ref nicename="tos.chips.atm128.timer.Atm128TimerInitC" qname="InitOneP.InitOne"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b9d55acadc0" scoped=""/></type-interface>
+      <attribute-value>
+        <attribute-ref name="atleastonce" ref="0x2b9d54c65d88"/>
+        <value-structured>
+          <type-tag alignment="I:1" size="I:0"><attribute-ref name="atleastonce" ref="0x2b9d54c65d88"/></type-tag>
+        </value-structured>
+      </attribute-value>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b9d55b01170" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="52:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformC.nc" name="SubInit" provided="0" ref="0x2b9d54d83690">
+      <component-ref nicename="tos.platforms.mica.PlatformC" qname="PlatformC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SubInit" ref="0x2b9d54d83690" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b9d54d839e0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="47:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128TimerInitC.nc" name="Timer" provided="0" ref="0x2b9d55b01540">
+      <component-ref nicename="tos.chips.atm128.timer.Atm128TimerInitC" qname="InitOneP.InitOne"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Timer" ref="0x2b9d55b01540" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Timer" qname="HplAtm128Timer"/>
+        <arguments>
+          <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="off" ref="0x2b9d55afe6f8" scoped=""/>
+        <function-ref name="test" ref="0x2b9d55affdb8" scoped=""/>
+        <function-ref name="get" ref="0x2b9d55b000f8" scoped=""/>
+        <function-ref name="setScale" ref="0x2b9d55afeb80" scoped=""/>
+        <function-ref name="getScale" ref="0x2b9d55afc088" scoped=""/>
+        <function-ref name="reset" ref="0x2b9d55aff020" scoped=""/>
+        <function-ref name="overflow" ref="0x2b9d55b00a58" scoped=""/>
+        <function-ref name="isOn" ref="0x2b9d55afe270" scoped=""/>
+        <function-ref name="set" ref="0x2b9d55b00580" scoped=""/>
+        <function-ref name="start" ref="0x2b9d55aff4a8" scoped=""/>
+        <function-ref name="stop" ref="0x2b9d55aff930" scoped=""/>
+      </interface-functions>
+    </interface><component loc="44:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformC.nc" nicename="tos.platforms.mica.PlatformC" qname="PlatformC">
+      <documentation loc="1:/home/tinyos/tinyos-main/tos/platforms/micaz/hardware.h">
+        <short>                                                                     
+  IMPORTANT: READ BEFORE DOWNLOADING, COPYING, INSTALLING OR USING.</short>
+        <long>                                                                     
+  IMPORTANT: READ BEFORE DOWNLOADING, COPYING, INSTALLING OR USING.  By
+  downloading, copying, installing or using the software you agree to
+  this license.  If you do not agree to this license, do not download,
+  install, copy or use the software.
+
+  Copyright (c) 2004-2005 Crossbow Technology, Inc.
+  Copyright (c) 2002-2003 Intel Corporation.
+  Copyright (c) 2000-2003 The Regents of the University  of California.    
+  All rights reserved.
+
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+
+ - Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+ - Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the
+   distribution.
+ - Neither the name of the copyright holder nor the names of
+   its contributors may be used to endorse or promote products derived
+   from this software without specific prior written permission.
+
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL
+ THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+ OF THE POSSIBILITY OF SUCH DAMAGE.
+
+  @author Jason Hill, Philip Levis, Nelson Lee, David Gay
+  @author Alan Broad &lt;abroad@xbow.com&gt;
+  @author Matt Miller &lt;mmiller@xbow.com&gt;
+  @author Martin Turon &lt;mturon@xbow.com&gt;
+
+  $Id: hardware.h,v 1.8 2010-06-29 22:07:54 scipio Exp $
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="58:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformC.nc">
+          <from><interface-ref name="Init" ref="0x2b9d54d75a70" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x2b9d54d89298" scoped=""/></to>
+        </wire>
+        <wire loc="59:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformC.nc">
+          <from><interface-ref name="Atm128Calibrate" ref="0x2b9d54d7e970" scoped=""/></from>
+          <to><interface-ref name="Atm128Calibrate" ref="0x2b9d54f08ae0" scoped=""/></to>
+        </wire>
+        <wire loc="61:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformC.nc">
+          <from><interface-ref name="MeasureClock" ref="0x2b9d54d88060" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x2b9d54f084b0" scoped=""/></to>
+        </wire>
+        <wire loc="62:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformC.nc">
+          <from><interface-ref name="MoteInit" ref="0x2b9d54d89938" scoped=""/></from>
+          <to><interface-ref name="PlatformInit" ref="0x2b9d54d8b720" scoped=""/></to>
+        </wire>
+        <wire loc="63:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformC.nc">
+          <from><interface-ref name="SubInit" ref="0x2b9d54d8bdb0" scoped=""/></from>
+          <to><interface-ref name="SubInit" ref="0x2b9d54d83690" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component><component loc="75:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128Timer1C.nc" nicename="tos.chips.atm1281.timer.HplAtm128Timer1C" qname="HplAtm128Timer1C">
+      <documentation loc="67:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128Timer1C.nc">
+        <short>
+ HPL interface to Atmega1281 timer 1.</short>
+        <long>
+ HPL interface to Atmega1281 timer 1.
+
+ @author Martin Turon &lt;mturon@xbow.com&gt;
+ @author David Gay &lt;dgay@intel-research.net&gt;
+ @author Janos Sallai &lt;janos.sallai@vanderbilt.edu&gt;
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="90:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128Timer1C.nc">
+          <from><interface-ref name="TimerCtrl" ref="0x2b9d55a615e8" scoped=""/></from>
+          <to><interface-ref name="TimerCtrl" ref="0x2b9d55a51c90" scoped=""/></to>
+        </wire>
+        <wire loc="91:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128Timer1C.nc">
+          <from><interface-ref name="Capture" ref="0x2b9d55a29ca0" scoped=""/></from>
+          <to><interface-ref name="Capture" ref="0x2b9d55a4e350" scoped=""/></to>
+        </wire>
+        <wire loc="89:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128Timer1C.nc">
+          <from><interface-ref name="Timer" ref="0x2b9d55a316e8" scoped=""/></from>
+          <to><interface-ref name="Timer" ref="0x2b9d55a58be8" scoped=""/></to>
+        </wire>
+        <wire loc="93:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128Timer1C.nc">
+          <from><interface-ref name="Compare" ref="0x2b9d55a5da20" scoped=""/>
+          <arguments>
+            <value cst="I:0">
+              <type-int alignment="I:1" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </from>
+          <to><interface-ref name="CompareA" ref="0x2b9d55a4bc48" scoped=""/></to>
+        </wire>
+        <wire loc="94:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128Timer1C.nc">
+          <from><interface-ref name="Compare" ref="0x2b9d55a5da20" scoped=""/>
+          <arguments>
+            <value cst="I:1">
+              <type-int alignment="I:1" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </from>
+          <to><interface-ref name="CompareB" ref="0x2b9d55a45020" scoped=""/></to>
+        </wire>
+        <wire loc="95:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128Timer1C.nc">
+          <from><interface-ref name="Compare" ref="0x2b9d55a5da20" scoped=""/>
+          <arguments>
+            <value cst="I:2">
+              <type-int alignment="I:1" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </from>
+          <to><interface-ref name="CompareC" ref="0x2b9d55a42360" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component><component loc="44(InitOneP.InitOne):/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128TimerInitC.nc" nicename="tos.chips.atm128.timer.Atm128TimerInitC" qname="InitOneP.InitOne">
+      <documentation loc="34:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128TimerInitC.nc">
+        <short>
+ Initialise an Atmega128 timer to a particular prescaler.</short>
+        <long>
+ Initialise an Atmega128 timer to a particular prescaler. Expected to be
+ used at boot time.
+ @param timer_size Integer type of the timer
+ @param prescaler Desired prescaler value
+
+ @author Martin Turon &lt;mturon@xbow.com&gt;
+ @author David Gay &lt;david.e.gay@intel.com&gt;
+</long>
+      </documentation>
+      <instance number="0">
+        <component-ref nicename="tos.chips.atm128.timer.Atm128TimerInitC" qname="Atm128TimerInitC"/>
+        <arguments>
+          <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+          </type-int>
+          <value cst="I:2">
+            <type-int alignment="I:1" cname="int" size="I:2"/>
+          </value>
+        </arguments>
+      </instance>
+      <module/>
+    </component></referenced></component>

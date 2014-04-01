@@ -1,0 +1,217 @@
+<?xml version="1.0" ?><interfacedef loc="37:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc" nicename="tos.lib.rfxlink.layers.ActiveMessageConfig" qname="ActiveMessageConfig">
+      <function command="" loc="52:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc" name="group" provided="0" ref="0x2b9d552e49a8">
+        <documentation loc="51:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc">
+          <short> Same as AMPacket.group *</short>
+        </documentation>
+        <interfacedef-ref nicename="tos.lib.rfxlink.layers.ActiveMessageConfig" qname="ActiveMessageConfig"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="am_group_t" ref="0x2b9d54fd4bf8"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="52:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc" name="msg" ref="0x2b9d552e4738">
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="63:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc" name="checkFrame" provided="0" ref="0x2b9d552e2040">
+        <documentation loc="57:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc">
+          <short>
+ Check if the packet is properly formatted, and if the user 
+ forgot to call Packet.clear then format it properly.</short>
+          <long>
+ Check if the packet is properly formatted, and if the user 
+ forgot to call Packet.clear then format it properly.
+ Return SUCCESS if the frame is now properly set up, 
+ or FAIL of the send operation should be aborted.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.lib.rfxlink.layers.ActiveMessageConfig" qname="ActiveMessageConfig"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="63:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc" name="msg" ref="0x2b9d552e3da0">
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="46:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc" name="source" provided="0" ref="0x2b9d552c2290">
+        <documentation loc="45:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc">
+          <short> Same as AMPacket.source *</short>
+        </documentation>
+        <interfacedef-ref nicename="tos.lib.rfxlink.layers.ActiveMessageConfig" qname="ActiveMessageConfig"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+            <typename><typedef-ref name="am_addr_t" ref="0x2b9d54fd3020"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="46:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc" name="msg" ref="0x2b9d552c2020">
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="40:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc" name="destination" provided="0" ref="0x2b9d552cfb68">
+        <documentation loc="39:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc">
+          <short> Same as AMPacket.destination *</short>
+        </documentation>
+        <interfacedef-ref nicename="tos.lib.rfxlink.layers.ActiveMessageConfig" qname="ActiveMessageConfig"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+            <typename><typedef-ref name="am_addr_t" ref="0x2b9d54fd3020"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="40:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc" name="msg" ref="0x2b9d552cf8f8">
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="49:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc" name="setSource" provided="0" ref="0x2b9d552e4020">
+        <documentation loc="48:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc">
+          <short> Same as AMPacket.setSource *</short>
+        </documentation>
+        <interfacedef-ref nicename="tos.lib.rfxlink.layers.ActiveMessageConfig" qname="ActiveMessageConfig"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+            <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b9d54fd3020"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="49:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc" name="msg" ref="0x2b9d552c2968">
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+          <variable loc="49:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc" name="addr" ref="0x2b9d552c2ca0">
+            <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b9d54fd3020"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="43:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc" name="setDestination" provided="0" ref="0x2b9d552c3868">
+        <documentation loc="42:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc">
+          <short> Same as AMPacket.setDestination *</short>
+        </documentation>
+        <interfacedef-ref nicename="tos.lib.rfxlink.layers.ActiveMessageConfig" qname="ActiveMessageConfig"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+            <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b9d54fd3020"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="43:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc" name="msg" ref="0x2b9d552c32b0">
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+          <variable loc="43:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc" name="addr" ref="0x2b9d552c35e8">
+            <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b9d54fd3020"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="55:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc" name="setGroup" provided="0" ref="0x2b9d552e3678">
+        <documentation loc="54:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc">
+          <short> Same as AMPacket.setGroup *</short>
+        </documentation>
+        <interfacedef-ref nicename="tos.lib.rfxlink.layers.ActiveMessageConfig" qname="ActiveMessageConfig"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="am_group_t" ref="0x2b9d54fd4bf8"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="55:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc" name="msg" ref="0x2b9d552e30c8">
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+          <variable loc="55:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageConfig.nc" name="grp" ref="0x2b9d552e33f8">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="am_group_t" ref="0x2b9d54fd4bf8"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+    </interfacedef>

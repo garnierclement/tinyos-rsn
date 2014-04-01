@@ -1,0 +1,38 @@
+digraph "AutoConfigAppC" {
+  "AutoConfigC" [fontsize=12, shape=box, URL="../chtml/AutoConfigC.html"];
+  "RF230ActiveMessageC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.chips.rf230.RF230ActiveMessageC.html"];
+  "AutoConfigC" [fontsize=12, shape=box, URL="../chtml/AutoConfigC.html"];
+  "RF230ActiveMessageC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.chips.rf230.RF230ActiveMessageC.html"];
+  "AutoConfigC" [fontsize=12, shape=box, URL="../chtml/AutoConfigC.html"];
+  "MainC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.system.MainC.html"];
+  "AutoConfigC" [fontsize=12, shape=box, URL="../chtml/AutoConfigC.html"];
+  "LedsC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.system.LedsC.html"];
+  "AutoConfigC" [fontsize=12, shape=box, URL="../chtml/AutoConfigC.html"];
+  "AutoConfigAppC.Timeout" [fontsize=12, shape=box,peripheries=2, style=dashed, label="TimerMilliC\n(Timeout)", URL="../chtml/tos.system.TimerMilliC.html"];
+  "AutoConfigC" [fontsize=12, shape=box, URL="../chtml/AutoConfigC.html"];
+  "AutoConfigAppC.WaitAck" [fontsize=12, shape=box,peripheries=2, style=dashed, label="TimerMilliC\n(WaitAck)", URL="../chtml/tos.system.TimerMilliC.html"];
+  "AutoConfigC" [fontsize=12, shape=box, URL="../chtml/AutoConfigC.html"];
+  "AutoConfigAppC.WaitForRadio" [fontsize=12, shape=box,peripheries=2, style=dashed, label="TimerMilliC\n(WaitForRadio)", URL="../chtml/tos.system.TimerMilliC.html"];
+  "AutoConfigC" [fontsize=12, shape=box, URL="../chtml/AutoConfigC.html"];
+  "AutoConfigAppC.AMSenderC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="AMSenderC", URL="../chtml/tos.system.AMSenderC.html"];
+  "AutoConfigC" [fontsize=12, shape=box, URL="../chtml/AutoConfigC.html"];
+  "AutoConfigAppC.AMSenderC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="AMSenderC", URL="../chtml/tos.system.AMSenderC.html"];
+  "AutoConfigC" [fontsize=12, shape=box, URL="../chtml/AutoConfigC.html"];
+  "AutoConfigAppC.AMSenderC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="AMSenderC", URL="../chtml/tos.system.AMSenderC.html"];
+  "AutoConfigC" [fontsize=12, shape=box, URL="../chtml/AutoConfigC.html"];
+  "AutoConfigAppC.AMReceiverC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="AMReceiverC", URL="../chtml/tos.system.AMReceiverC.html"];
+  "AutoConfigC" [fontsize=12, shape=box, URL="../chtml/AutoConfigC.html"];
+  "ActiveMessageC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.platforms.iris.ActiveMessageC.html"];
+  "AutoConfigC" -> "RF230ActiveMessageC" [label="PacketField<uint8_t>", URL="../ihtml/tos.lib.rfxlink.util.PacketField.html", fontsize=10];
+  "AutoConfigC" -> "RF230ActiveMessageC" [label="PacketField<uint8_t>", URL="../ihtml/tos.lib.rfxlink.util.PacketField.html", fontsize=10];
+  "AutoConfigC" -> "MainC" [label="Boot", URL="../ihtml/tos.interfaces.Boot.html", fontsize=10];
+  "AutoConfigC" -> "LedsC" [label="Leds", URL="../ihtml/tos.interfaces.Leds.html", fontsize=10];
+  "AutoConfigC" -> "AutoConfigAppC.Timeout" [label="Timer<TMilli>", URL="../ihtml/tos.lib.timer.Timer.html", fontsize=10];
+  "AutoConfigC" -> "AutoConfigAppC.WaitAck" [label="Timer<TMilli>", URL="../ihtml/tos.lib.timer.Timer.html", fontsize=10];
+  "AutoConfigC" -> "AutoConfigAppC.WaitForRadio" [label="Timer<TMilli>", URL="../ihtml/tos.lib.timer.Timer.html", fontsize=10];
+  "AutoConfigC" -> "AutoConfigAppC.AMSenderC" [label="Packet", URL="../ihtml/tos.interfaces.Packet.html", fontsize=10];
+  "AutoConfigC" -> "AutoConfigAppC.AMSenderC" [label="AMPacket", URL="../ihtml/tos.interfaces.AMPacket.html", fontsize=10];
+  "AutoConfigC" -> "AutoConfigAppC.AMSenderC" [label="AMSend", URL="../ihtml/tos.interfaces.AMSend.html", fontsize=10];
+  "AutoConfigC" -> "AutoConfigAppC.AMReceiverC" [label="Receive", URL="../ihtml/tos.interfaces.Receive.html", fontsize=10];
+  "AutoConfigC" -> "ActiveMessageC" [label="SplitControl", URL="../ihtml/tos.interfaces.SplitControl.html", fontsize=10];
+}

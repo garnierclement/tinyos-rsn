@@ -1,0 +1,6 @@
+<area shape="rect" id="node2" href="../chtml/tos.chips.atm128.timer.Atm128CounterC.html" title="Atm128CounterC\n(NCounter)" alt="" coords="17,120,175,171">
+<area shape="poly" id="edge2" href="../ihtml/tos.lib.timer.Counter.html" title="Counter&lt;TOne, uint16_t&gt;" alt="" coords="99,53 99,106 93,106 93,53">
+<area shape="rect" id="edge2" href="../ihtml/tos.lib.timer.Counter.html" title="Counter&lt;TOne, uint16_t&gt;" alt="" coords="96,78,263,95">
+<area shape="rect" id="node3" href="../chtml/tos.chips.atm1281.timer.HplAtm128Timer1C.html" title="HplAtm128Timer1C" alt="" coords="5,237,187,296">
+<area shape="poly" id="edge4" href="../ihtml/tos.chips.atm128.timer.HplAtm128Timer.html" title="HplAtm128Timer&lt;uint16_t&gt;" alt="" coords="99,171 99,224 93,224 93,171">
+<area shape="rect" id="edge4" href="../ihtml/tos.chips.atm128.timer.HplAtm128Timer.html" title="HplAtm128Timer&lt;uint16_t&gt;" alt="" coords="96,195,279,213">

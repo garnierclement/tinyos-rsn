@@ -1,0 +1,17 @@
+digraph "tos.chips.atm1281.timer.HplAtm1281Timer2AsyncC" {
+  n0x2b9d551113c0 [shape=ellipse, style=filled, label="TimerCtrl", fontsize=12];
+  "HplAtm1281Timer2AsyncP" [fontsize=12, shape=box, URL="../chtml/tos.chips.atm1281.timer.HplAtm1281Timer2AsyncP.html"];
+  n0x2b9d5510d9e8 [shape=ellipse, style=filled, label="TimerAsync", fontsize=12];
+  "HplAtm1281Timer2AsyncP" [fontsize=12, shape=box, URL="../chtml/tos.chips.atm1281.timer.HplAtm1281Timer2AsyncP.html"];
+  n0x2b9d551107f8 [shape=ellipse, style=filled, label="Compare", fontsize=12];
+  "HplAtm1281Timer2AsyncP" [fontsize=12, shape=box, URL="../chtml/tos.chips.atm1281.timer.HplAtm1281Timer2AsyncP.html"];
+  n0x2b9d550fa288 [shape=ellipse, style=filled, label="Timer", fontsize=12];
+  "HplAtm1281Timer2AsyncP" [fontsize=12, shape=box, URL="../chtml/tos.chips.atm1281.timer.HplAtm1281Timer2AsyncP.html"];
+  "McuSleepC" [fontsize=12, shape=box, URL="../chtml/tos.chips.atm1281.McuSleepC.html"];
+  "HplAtm1281Timer2AsyncP" [fontsize=12, shape=box, URL="../chtml/tos.chips.atm1281.timer.HplAtm1281Timer2AsyncP.html"];
+  "n0x2b9d551113c0" -> "HplAtm1281Timer2AsyncP" [label="HplAtm128TimerCtrl8", URL="../ihtml/tos.chips.atm1281.timer.HplAtm128TimerCtrl8.html", fontsize=10];
+  "n0x2b9d5510d9e8" -> "HplAtm1281Timer2AsyncP" [label="HplAtm128TimerAsync", URL="../ihtml/tos.chips.atm1281.timer.HplAtm128TimerAsync.html", fontsize=10];
+  "n0x2b9d551107f8" -> "HplAtm1281Timer2AsyncP" [label="HplAtm128Compare<uint8_t>", URL="../ihtml/tos.chips.atm128.timer.HplAtm128Compare.html", fontsize=10];
+  "n0x2b9d550fa288" -> "HplAtm1281Timer2AsyncP" [label="HplAtm128Timer<uint8_t>", URL="../ihtml/tos.chips.atm128.timer.HplAtm128Timer.html", fontsize=10];
+  "McuSleepC" -> "HplAtm1281Timer2AsyncP" [label="McuPowerOverride", URL="../ihtml/tos.interfaces.McuPowerOverride.html", fontsize=10];
+}

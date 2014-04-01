@@ -1,0 +1,116 @@
+<?xml version="1.0" ?><component abstract="" loc="35:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/Ieee154MessageLayerC.nc" nicename="tos.lib.rfxlink.layers.Ieee154MessageLayerC" qname="Ieee154MessageLayerC">
+      <parameters>
+      </parameters>
+      <module/>
+    <specification><interface loc="49:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/Ieee154MessageLayerC.nc" name="SubSend" provided="0" ref="0x2b9d554c9020">
+      <component-ref nicename="tos.lib.rfxlink.layers.Ieee154MessageLayerC" qname="Ieee154MessageLayerC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SubSend" ref="0x2b9d554c9020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.BareSend" qname="BareSend"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b9d554c9370" scoped=""/>
+        <function-ref name="cancel" ref="0x2b9d554c94f8" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b9d554c9680" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="50:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/Ieee154MessageLayerC.nc" name="SubReceive" provided="0" ref="0x2b9d554c99e0">
+      <component-ref nicename="tos.lib.rfxlink.layers.Ieee154MessageLayerC" qname="Ieee154MessageLayerC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SubReceive" ref="0x2b9d554c99e0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.BareReceive" qname="BareReceive"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="receive" ref="0x2b9d554c9d30" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="42:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/Ieee154MessageLayerC.nc" name="SendNotifier" provided="1" ref="0x2b9d554ce998">
+      <component-ref nicename="tos.lib.rfxlink.layers.Ieee154MessageLayerC" qname="Ieee154MessageLayerC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SendNotifier" ref="0x2b9d554ce998" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.SendNotifier" qname="SendNotifier"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="aboutToSend" ref="0x2b9d554cece8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="39:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/Ieee154MessageLayerC.nc" name="Packet" provided="1" ref="0x2b9d554d28d0">
+      <component-ref nicename="tos.lib.rfxlink.layers.Ieee154MessageLayerC" qname="Ieee154MessageLayerC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Packet" ref="0x2b9d554d28d0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Packet" qname="Packet"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b9d554d2c20" scoped=""/>
+        <function-ref name="payloadLength" ref="0x2b9d554d2da8" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b9d554cf020" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b9d554cf1a8" scoped=""/>
+        <function-ref name="setPayloadLength" ref="0x2b9d554cf330" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="48:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/Ieee154MessageLayerC.nc" name="RadioPacket" provided="0" ref="0x2b9d554ca150">
+      <component-ref nicename="tos.lib.rfxlink.layers.Ieee154MessageLayerC" qname="Ieee154MessageLayerC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="RadioPacket" ref="0x2b9d554ca150" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.RadioPacket" qname="RadioPacket"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b9d554ca4a0" scoped=""/>
+        <function-ref name="payloadLength" ref="0x2b9d554ca628" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b9d554ca7b0" scoped=""/>
+        <function-ref name="setPayloadLength" ref="0x2b9d554ca938" scoped=""/>
+        <function-ref name="headerLength" ref="0x2b9d554caac0" scoped=""/>
+        <function-ref name="metadataLength" ref="0x2b9d554cac48" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="47:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/Ieee154MessageLayerC.nc" name="Ieee154PacketLayer" provided="0" ref="0x2b9d554cd0c0">
+      <component-ref nicename="tos.lib.rfxlink.layers.Ieee154MessageLayerC" qname="Ieee154MessageLayerC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Ieee154PacketLayer" ref="0x2b9d554cd0c0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.layers.Ieee154PacketLayer" qname="Ieee154PacketLayer"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="getDestPan" ref="0x2b9d554cd410" scoped=""/>
+        <function-ref name="getDSN" ref="0x2b9d554cd598" scoped=""/>
+        <function-ref name="setFCF" ref="0x2b9d554cd720" scoped=""/>
+        <function-ref name="isAckFrame" ref="0x2b9d554cd8a8" scoped=""/>
+        <function-ref name="setSrcAddr" ref="0x2b9d554cda30" scoped=""/>
+        <function-ref name="createDataFrame" ref="0x2b9d554cdbb8" scoped=""/>
+        <function-ref name="setDSN" ref="0x2b9d554cdd40" scoped=""/>
+        <function-ref name="createAckReply" ref="0x2b9d554cc020" scoped=""/>
+        <function-ref name="getSrcAddr" ref="0x2b9d554cc1a8" scoped=""/>
+        <function-ref name="isDataFrame" ref="0x2b9d554cc330" scoped=""/>
+        <function-ref name="getAckRequired" ref="0x2b9d554cc4b8" scoped=""/>
+        <function-ref name="verifyAckReply" ref="0x2b9d554cc640" scoped=""/>
+        <function-ref name="localAddr" ref="0x2b9d554cc7c8" scoped=""/>
+        <function-ref name="requiresAckWait" ref="0x2b9d554cca50" scoped=""/>
+        <function-ref name="localPan" ref="0x2b9d554ccbd8" scoped=""/>
+        <function-ref name="setDestAddr" ref="0x2b9d554ccd60" scoped=""/>
+        <function-ref name="createAckFrame" ref="0x2b9d554cb020" scoped=""/>
+        <function-ref name="setFramePending" ref="0x2b9d554cb1a8" scoped=""/>
+        <function-ref name="setDestPan" ref="0x2b9d554cb330" scoped=""/>
+        <function-ref name="isForMe" ref="0x2b9d554cb4b8" scoped=""/>
+        <function-ref name="setAckRequired" ref="0x2b9d554cb640" scoped=""/>
+        <function-ref name="getFCF" ref="0x2b9d554cb7c8" scoped=""/>
+        <function-ref name="requiresAckReply" ref="0x2b9d554cb950" scoped=""/>
+        <function-ref name="getDestAddr" ref="0x2b9d554cbad8" scoped=""/>
+        <function-ref name="getFramePending" ref="0x2b9d554cbc60" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="40:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/Ieee154MessageLayerC.nc" name="Ieee154Send" provided="1" ref="0x2b9d554cf5e8">
+      <component-ref nicename="tos.lib.rfxlink.layers.Ieee154MessageLayerC" qname="Ieee154MessageLayerC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Ieee154Send" ref="0x2b9d554cf5e8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Ieee154Send" qname="Ieee154Send"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b9d554cf938" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b9d554cfac0" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b9d554cfc48" scoped=""/>
+        <function-ref name="cancel" ref="0x2b9d554cfdd0" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b9d554ce020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="41:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/Ieee154MessageLayerC.nc" name="Ieee154Receive" provided="1" ref="0x2b9d554ce380">
+      <component-ref nicename="tos.lib.rfxlink.layers.Ieee154MessageLayerC" qname="Ieee154MessageLayerC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Ieee154Receive" ref="0x2b9d554ce380" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Receive" qname="Receive"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="receive" ref="0x2b9d554ce6d0" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

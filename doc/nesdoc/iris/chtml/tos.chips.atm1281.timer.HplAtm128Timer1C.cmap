@@ -1,0 +1,13 @@
+<area shape="rect" id="node2" href="../chtml/tos.chips.atm1281.timer.HplAtm1281Timer1P.html" title="HplAtm1281Timer1P" alt="" coords="487,120,668,168">
+<area shape="poly" id="edge2" href="../ihtml/tos.chips.atm1281.timer.HplAtm128TimerCtrl16.html" title="HplAtm128TimerCtrl16" alt="" coords="74,53 84,75 100,94 119,101 152,108 248,120 473,136 472,141 247,125 151,113 117,106 97,98 79,78 69,55">
+<area shape="rect" id="edge2" href="../ihtml/tos.chips.atm1281.timer.HplAtm128TimerCtrl16.html" title="HplAtm128TimerCtrl16" alt="" coords="99,78,245,95">
+<area shape="poly" id="edge4" href="../ihtml/tos.chips.atm128.timer.HplAtm128Capture.html" title="HplAtm128Capture&lt;uint16_t&gt;" alt="" coords="246,53 252,75 264,94 298,111 350,123 473,137 473,143 349,129 296,116 261,98 247,77 241,54">
+<area shape="rect" id="edge4" href="../ihtml/tos.chips.atm128.timer.HplAtm128Capture.html" title="HplAtm128Capture&lt;uint16_t&gt;" alt="" coords="263,78,460,95">
+<area shape="poly" id="edge6" href="../ihtml/tos.chips.atm128.timer.HplAtm128Timer.html" title="HplAtm128Timer&lt;uint16_t&gt;" alt="" coords="468,53 468,75 474,95 488,110 484,114 470,97 462,76 463,53">
+<area shape="rect" id="edge6" href="../ihtml/tos.chips.atm128.timer.HplAtm128Timer.html" title="HplAtm128Timer&lt;uint16_t&gt;" alt="" coords="472,78,655,95">
+<area shape="poly" id="edge8" href="../ihtml/tos.chips.atm128.timer.HplAtm128Compare.html" title="HplAtm128Compare&lt;uint16_t&gt;[uint8_t]" alt="" coords="914,35 806,49 745,62 686,80 630,115 627,110 684,75 744,56 805,43 913,30">
+<area shape="rect" id="edge8" href="../ihtml/tos.chips.atm128.timer.HplAtm128Compare.html" title="HplAtm128Compare&lt;uint16_t&gt;[uint8_t]" alt="" coords="685,78,944,95">
+<area shape="poly" id="edge10" href="../ihtml/tos.chips.atm128.timer.HplAtm128Compare.html" title="HplAtm128Compare&lt;uint16_t&gt;[uint8_t]" alt="" coords="971,54 962,78 946,98 909,110 843,121 682,138 681,133 842,116 908,105 942,94 958,75 966,52">
+<area shape="rect" id="edge10" href="../ihtml/tos.chips.atm128.timer.HplAtm128Compare.html" title="HplAtm128Compare&lt;uint16_t&gt;[uint8_t]" alt="" coords="959,78,1217,95">
+<area shape="poly" id="edge12" href="../ihtml/tos.chips.atm128.timer.HplAtm128Compare.html" title="HplAtm128Compare&lt;uint16_t&gt;[uint8_t]" alt="" coords="1033,30 1144,43 1193,56 1212,65 1225,76 1229,87 1224,98 1202,106 1156,113 1012,125 682,143 682,137 1012,120 1155,107 1201,101 1221,94 1224,87 1221,79 1209,70 1191,61 1143,49 1033,35">
+<area shape="rect" id="edge12" href="../ihtml/tos.chips.atm128.timer.HplAtm128Compare.html" title="HplAtm128Compare&lt;uint16_t&gt;[uint8_t]" alt="" coords="1227,78,1485,95">

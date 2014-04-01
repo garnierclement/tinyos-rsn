@@ -1,0 +1,48 @@
+<?xml version="1.0" ?><component loc="41:/home/tinyos/tinyos-main/tos/platforms/micaz/MotePlatformP.nc" nicename="tos.platforms.micaz.MotePlatformP" qname="MotePlatformP" safe="">
+      <documentation loc="35:/home/tinyos/tinyos-main/tos/platforms/micaz/MotePlatformP.nc">
+        <short>
+ The micaZ portion of a mica-family initialisation that is
+ mote-specific.</short>
+        <long>
+ The micaZ portion of a mica-family initialisation that is
+ mote-specific.
+ 
+ @author David Gay
+</long>
+      </documentation>
+      <module/>
+    <specification><interface loc="45:/home/tinyos/tinyos-main/tos/platforms/micaz/MotePlatformP.nc" name="SubInit" provided="0" ref="0x2b9d54d8d4f8">
+      <component-ref nicename="tos.platforms.micaz.MotePlatformP" qname="MotePlatformP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SubInit" ref="0x2b9d54d8d4f8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b9d54d8d848" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="44:/home/tinyos/tinyos-main/tos/platforms/micaz/MotePlatformP.nc" name="SerialIdPin" provided="0" ref="0x2b9d54d95388">
+      <component-ref nicename="tos.platforms.micaz.MotePlatformP" qname="MotePlatformP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SerialIdPin" ref="0x2b9d54d95388" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.GeneralIO" qname="GeneralIO"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="makeInput" ref="0x2b9d54d956d8" scoped=""/>
+        <function-ref name="isInput" ref="0x2b9d54d95860" scoped=""/>
+        <function-ref name="toggle" ref="0x2b9d54d959e8" scoped=""/>
+        <function-ref name="isOutput" ref="0x2b9d54d95b70" scoped=""/>
+        <function-ref name="get" ref="0x2b9d54d95cf8" scoped=""/>
+        <function-ref name="makeOutput" ref="0x2b9d54d95e80" scoped=""/>
+        <function-ref name="set" ref="0x2b9d54d8d030" scoped=""/>
+        <function-ref name="clr" ref="0x2b9d54d8d1b8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="43:/home/tinyos/tinyos-main/tos/platforms/micaz/MotePlatformP.nc" name="PlatformInit" provided="1" ref="0x2b9d54d8e180">
+      <component-ref nicename="tos.platforms.micaz.MotePlatformP" qname="MotePlatformP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="PlatformInit" ref="0x2b9d54d8e180" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b9d54d8e4d0" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Component: tos.platforms.mica.CounterOne16C</title>
+  </head>
+  <body>
+    <h2>Component: tos.platforms.mica.CounterOne16C
+    </h2>
+    <b>configuration CounterOne16C</b>
+    <p>
+ 16-bit 32kHz Counter component as per TEP102 HAL guidelines. The mica
+ family 32kHz clock is built on hardware timer 1, and actually runs at
+ CPU frequency / 256. You can use the MeasureClockC.cyclesPerJiffy()
+ command to figure out the exact frequency.
+
+ 
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        David Gay &lt;dgay@intel-research.net&gt;
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Provides</div><div id=funcsig>interface <a href="../ihtml/tos.lib.timer.Counter.html">Counter</a>&lt;TOne, uint16_t&gt;</div><p><div id=heading>Wiring</div><p>
+    <map name="comp">
+      <area shape="rect" id="node2" href="../chtml/tos.chips.atm128.timer.Atm128CounterC.html" title="Atm128CounterC\n(NCounter)" alt="" coords="17,120,175,171">
+
+      <area shape="poly" id="edge2" href="../ihtml/tos.lib.timer.Counter.html" title="Counter&lt;TOne, uint16_t&gt;" alt="" coords="99,53 99,106 93,106 93,53">
+
+      <area shape="rect" id="edge2" href="../ihtml/tos.lib.timer.Counter.html" title="Counter&lt;TOne, uint16_t&gt;" alt="" coords="96,78,263,95">
+
+      <area shape="rect" id="node3" href="../chtml/tos.chips.atm1281.timer.HplAtm128Timer1C.html" title="HplAtm128Timer1C" alt="" coords="5,237,187,296">
+
+      <area shape="poly" id="edge4" href="../ihtml/tos.chips.atm128.timer.HplAtm128Timer.html" title="HplAtm128Timer&lt;uint16_t&gt;" alt="" coords="99,171 99,224 93,224 93,171">
+
+      <area shape="rect" id="edge4" href="../ihtml/tos.chips.atm128.timer.HplAtm128Timer.html" title="HplAtm128Timer&lt;uint16_t&gt;" alt="" coords="96,195,279,213">
+
+    </map>
+    <img src="tos.platforms.mica.CounterOne16C.png" usemap="#comp" id=imgwiring>
+  </body>
+</html>

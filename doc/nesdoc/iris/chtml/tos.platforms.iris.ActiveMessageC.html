@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Component: tos.platforms.iris.ActiveMessageC</title>
+  </head>
+  <body>
+    <h2>Component: tos.platforms.iris.ActiveMessageC
+    </h2>
+    <b>configuration ActiveMessageC</b>
+    <p><p><div id=heading>Provides</div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.AMPacket.html">AMPacket</a></div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.AMSend.html">AMSend</a>[uint8_t]</div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.LowPowerListening.html">LowPowerListening</a></div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.Packet.html">Packet</a></div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.PacketAcknowledgements.html">PacketAcknowledgements</a></div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.PacketLink.html">PacketLink</a></div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.PacketTimeStamp.html">PacketTimeStamp</a>&lt;TMicro, uint32_t&gt; as <b>PacketTimeStampMicro</b></div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.PacketTimeStamp.html">PacketTimeStamp</a>&lt;TMilli, uint32_t&gt; as <b>PacketTimeStampMilli</b></div><div id=funcsig>interface <a href="../ihtml/tos.lib.rfxlink.util.RadioChannel.html">RadioChannel</a></div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.Receive.html">Receive</a>[uint8_t]</div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.SendNotifier.html">SendNotifier</a>[am_id_t]</div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.Receive.html">Receive</a> as <b>Snoop</b>[uint8_t]</div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.SplitControl.html">SplitControl</a></div><p><div id=heading>Wiring</div><p>
+    <map name="comp">
+      <area shape="rect" id="node2" href="../chtml/tos.chips.rf230.RF230ActiveMessageC.html" title="RF230ActiveMessageC" alt="" coords="911,120,1119,179">
+
+      <area shape="poly" id="edge2" href="../ihtml/tos.interfaces.SplitControl.html" title="SplitControl" alt="" coords="115,48 166,73 225,93 281,104 355,114 536,128 897,144 897,149 536,134 355,119 280,110 223,99 164,78 112,53">
+
+      <area shape="rect" id="edge2" href="../ihtml/tos.interfaces.SplitControl.html" title="SplitControl" alt="" coords="224,78,299,95">
+
+      <area shape="poly" id="edge4" href="../ihtml/tos.interfaces.SendNotifier.html" title="SendNotifier[am_id_t]" alt="" coords="274,50 303,74 338,93 421,108 569,121 897,141 897,146 568,126 420,113 336,99 300,79 270,55">
+
+      <area shape="rect" id="edge4" href="../ihtml/tos.interfaces.SendNotifier.html" title="SendNotifier[am_id_t]" alt="" coords="337,78,479,95">
+
+      <area shape="poly" id="edge6" href="../ihtml/tos.interfaces.Packet.html" title="Packet" alt="" coords="427,46 475,71 530,93 598,107 693,120 897,139 897,144 693,125 597,113 529,99 472,76 425,51">
+
+      <area shape="rect" id="edge6" href="../ihtml/tos.interfaces.Packet.html" title="Packet" alt="" coords="529,78,572,95">
+
+      <area shape="poly" id="edge8" href="../ihtml/tos.interfaces.AMSend.html" title="AMSend[uint8_t]" alt="" coords="545,49 574,73 609,94 661,108 734,120 897,138 897,143 733,126 660,113 607,98 571,78 541,53">
+
+      <area shape="rect" id="edge8" href="../ihtml/tos.interfaces.AMSend.html" title="AMSend[uint8_t]" alt="" coords="608,78,716,95">
+
+      <area shape="poly" id="edge10" href="../ihtml/tos.interfaces.Receive.html" title="Receive[uint8_t]" alt="" coords="676,47 716,71 762,94 830,115 897,130 896,135 828,120 760,98 713,76 673,51">
+
+      <area shape="rect" id="edge10" href="../ihtml/tos.interfaces.Receive.html" title="Receive[uint8_t]" alt="" coords="761,78,864,95">
+
+      <area shape="poly" id="edge12" href="../ihtml/tos.interfaces.LowPowerListening.html" title="LowPowerListening" alt="" coords="848,51 868,73 892,94 922,111 919,116 889,98 865,77 844,55">
+
+      <area shape="rect" id="edge12" href="../ihtml/tos.interfaces.LowPowerListening.html" title="LowPowerListening" alt="" coords="891,78,1009,95">
+
+      <area shape="poly" id="edge14" href="../ihtml/tos.interfaces.Receive.html" title="Receive[uint8_t]" alt="" coords="1017,54 1017,106 1012,106 1012,54">
+
+      <area shape="rect" id="edge14" href="../ihtml/tos.interfaces.Receive.html" title="Receive[uint8_t]" alt="" coords="1015,78,1117,95">
+
+      <area shape="poly" id="edge16" href="../ihtml/tos.interfaces.PacketAcknowledgements.html" title="PacketAcknowledgements" alt="" coords="1199,55 1124,98 1089,116 1087,112 1121,94 1197,50">
+
+      <area shape="rect" id="edge16" href="../ihtml/tos.interfaces.PacketAcknowledgements.html" title="PacketAcknowledgements" alt="" coords="1153,78,1320,95">
+
+      <area shape="poly" id="edge18" href="../ihtml/tos.interfaces.PacketLink.html" title="PacketLink" alt="" coords="1436,52 1385,76 1326,99 1228,123 1133,139 1132,134 1227,118 1325,93 1383,71 1434,47">
+
+      <area shape="rect" id="edge18" href="../ihtml/tos.interfaces.PacketLink.html" title="PacketLink" alt="" coords="1375,78,1443,95">
+
+      <area shape="poly" id="edge20" href="../ihtml/tos.interfaces.AMPacket.html" title="AMPacket" alt="" coords="1586,50 1522,76 1449,99 1367,116 1284,129 1133,145 1132,140 1284,124 1366,111 1447,93 1520,71 1584,45">
+
+      <area shape="rect" id="edge20" href="../ihtml/tos.interfaces.AMPacket.html" title="AMPacket" alt="" coords="1507,78,1569,95">
+
+      <area shape="poly" id="edge22" href="../ihtml/tos.lib.rfxlink.util.RadioChannel.html" title="RadioChannel" alt="" coords="1743,51 1665,76 1575,99 1458,118 1340,132 1133,148 1132,142 1339,127 1458,113 1574,93 1663,71 1742,46">
+
+      <area shape="rect" id="edge22" href="../ihtml/tos.lib.rfxlink.util.RadioChannel.html" title="RadioChannel" alt="" coords="1647,78,1735,95">
+
+      <area shape="poly" id="edge24" href="../ihtml/tos.interfaces.PacketTimeStamp.html" title="PacketTimeStamp&lt;TMicro, uint32_t&gt;" alt="" coords="1956,52 1855,77 1740,99 1576,119 1411,134 1133,149 1133,144 1410,129 1575,114 1740,93 1854,72 1955,47">
+
+      <area shape="rect" id="edge24" href="../ihtml/tos.interfaces.PacketTimeStamp.html" title="PacketTimeStamp&lt;TMicro, uint32_t&gt;" alt="" coords="1835,78,2073,95">
+
+      <area shape="poly" id="edge26" href="../ihtml/tos.interfaces.PacketTimeStamp.html" title="PacketTimeStamp&lt;TMilli, uint32_t&gt;" alt="" coords="2244,53 2167,78 2079,99 1997,110 1889,119 1628,134 1133,150 1132,144 1628,128 1889,114 1996,104 2078,93 2165,73 2243,48">
+
+      <area shape="rect" id="edge26" href="../ihtml/tos.interfaces.PacketTimeStamp.html" title="PacketTimeStamp&lt;TMilli, uint32_t&gt;" alt="" coords="2159,78,2387,95">
+
+    </map>
+    <img src="tos.platforms.iris.ActiveMessageC.png" usemap="#comp" id=imgwiring>
+  </body>
+</html>

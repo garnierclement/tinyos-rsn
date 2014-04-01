@@ -1,0 +1,173 @@
+<?xml version="1.0" ?><interfacedef loc="76:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128TimerCtrl16.nc" nicename="tos.chips.atm1281.timer.HplAtm128TimerCtrl16" qname="HplAtm128TimerCtrl16">
+      <documentation loc="67:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128TimerCtrl16.nc">
+        <short>
+ HPL Interface to Atmega1281 16-bit timer control registers
+
+ </short>
+        <long>
+ HPL Interface to Atmega1281 16-bit timer control registers
+
+ @author Martin Turon &lt;mturon@xbow.com&gt;
+ @author Janos Sallai &lt;janos.sallai@vanderbilt.edu&gt;
+</long>
+      </documentation>
+      <function command="" loc="81:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128TimerCtrl16.nc" name="getControlC" provided="0" ref="0x2b9d55a251d8">
+        <interfacedef-ref nicename="tos.chips.atm1281.timer.HplAtm128TimerCtrl16" qname="HplAtm128TimerCtrl16"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="87:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128TimerCtrl16.nc" name="getInterruptMask" provided="0" ref="0x2b9d55a23578">
+        <documentation loc="86:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128TimerCtrl16.nc">
+          <short>Interrupt mask register: Direct access</short>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm1281.timer.HplAtm128TimerCtrl16" qname="HplAtm128TimerCtrl16"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="79:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128TimerCtrl16.nc" name="getControlA" provided="0" ref="0x2b9d55a27328">
+        <documentation loc="78:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128TimerCtrl16.nc">
+          <short>Timer control register: Direct access</short>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm1281.timer.HplAtm128TimerCtrl16" qname="HplAtm128TimerCtrl16"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="91:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128TimerCtrl16.nc" name="getInterruptFlag" provided="0" ref="0x2b9d55a62780">
+        <documentation loc="90:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128TimerCtrl16.nc">
+          <short>Interrupt flag register: Direct access</short>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm1281.timer.HplAtm128TimerCtrl16" qname="HplAtm128TimerCtrl16"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="88:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128TimerCtrl16.nc" name="setInterruptMask" provided="0" ref="0x2b9d55a62020">
+        <interfacedef-ref nicename="tos.chips.atm1281.timer.HplAtm128TimerCtrl16" qname="HplAtm128TimerCtrl16"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="88:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128TimerCtrl16.nc" name="mask" ref="0x2b9d55a23c78">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="83:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128TimerCtrl16.nc" name="setControlB" provided="0" ref="0x2b9d55a244c0">
+        <interfacedef-ref nicename="tos.chips.atm1281.timer.HplAtm128TimerCtrl16" qname="HplAtm128TimerCtrl16"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="83:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128TimerCtrl16.nc" name="control" ref="0x2b9d55a24250">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="92:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128TimerCtrl16.nc" name="setInterruptFlag" provided="0" ref="0x2b9d55a61290">
+        <interfacedef-ref nicename="tos.chips.atm1281.timer.HplAtm128TimerCtrl16" qname="HplAtm128TimerCtrl16"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="92:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128TimerCtrl16.nc" name="flags" ref="0x2b9d55a61020">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="80:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128TimerCtrl16.nc" name="getControlB" provided="0" ref="0x2b9d55a27a58">
+        <interfacedef-ref nicename="tos.chips.atm1281.timer.HplAtm128TimerCtrl16" qname="HplAtm128TimerCtrl16"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="84:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128TimerCtrl16.nc" name="setControlC" provided="0" ref="0x2b9d55a24de8">
+        <interfacedef-ref nicename="tos.chips.atm1281.timer.HplAtm128TimerCtrl16" qname="HplAtm128TimerCtrl16"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="84:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128TimerCtrl16.nc" name="control" ref="0x2b9d55a24b78">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="82:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128TimerCtrl16.nc" name="setControlA" provided="0" ref="0x2b9d55a25b00">
+        <interfacedef-ref nicename="tos.chips.atm1281.timer.HplAtm128TimerCtrl16" qname="HplAtm128TimerCtrl16"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="82:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128TimerCtrl16.nc" name="control" ref="0x2b9d55a25890">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+    </interfacedef>

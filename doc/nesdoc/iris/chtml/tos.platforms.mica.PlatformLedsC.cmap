@@ -1,0 +1,10 @@
+<area shape="rect" id="node2" href="../chtml/tos.chips.atm1281.HplAtm128GeneralIOC.html" title="HplAtm128GeneralIOC" alt="" coords="41,120,249,179">
+<area shape="poly" id="edge2" href="../ihtml/tos.interfaces.GeneralIO.html" title="GeneralIO" alt="" coords="55,52 65,74 78,94 92,109 88,113 74,98 60,76 50,54">
+<area shape="rect" id="edge2" href="../ihtml/tos.interfaces.GeneralIO.html" title="GeneralIO" alt="" coords="76,78,140,95">
+<area shape="poly" id="edge4" href="../ihtml/tos.interfaces.GeneralIO.html" title="GeneralIO" alt="" coords="148,54 148,106 143,106 143,54">
+<area shape="rect" id="edge4" href="../ihtml/tos.interfaces.GeneralIO.html" title="GeneralIO" alt="" coords="145,78,209,95">
+<area shape="poly" id="edge6" href="../ihtml/tos.interfaces.GeneralIO.html" title="GeneralIO" alt="" coords="241,54 231,76 217,98 202,113 198,109 213,94 226,74 236,52">
+<area shape="rect" id="edge6" href="../ihtml/tos.interfaces.GeneralIO.html" title="GeneralIO" alt="" coords="227,78,291,95">
+<area shape="rect" id="node5" href="../chtml/tos.platforms.mica.PlatformP.html" title="PlatformP" alt="" coords="309,5,405,53">
+<area shape="poly" id="edge8" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="360,54 360,111 355,111 355,54">
+<area shape="rect" id="edge8" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="357,78,377,95">

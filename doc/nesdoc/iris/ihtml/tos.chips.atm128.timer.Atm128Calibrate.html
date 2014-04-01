@@ -1,0 +1,158 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Interface: tos.chips.atm128.timer.Atm128Calibrate</title>
+  </head>
+  <body>
+    <h2>Interface: tos.chips.atm128.timer.Atm128Calibrate</h2>
+    <b>interface Atm128Calibrate</b><p>
+ This interface provides functions to compute ATmega128 configuration
+ values that are clock-rate dependent. These include:<ul>
+ <li>the ADC prescaler value necessary for full precision
+ <li>values for the UBRR registers to achieve a specific baud rate
+ <li>any adjustment necessary to values passed to some platform-provided
+   AlarmMicroXXC components to get more accurate timing
+ <li>the number of cycles per 1/32768s (a typical implementation of this
+   interface will measure this value at boot time and use it to compute
+   the values above)
+ </ul>
+
+ 
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        David Gay
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Commands</div><div id=funcsig><span id=funcnameshort>command uint32_t <a href="#actualMicro">actualMicro</a>(uint32_t n)
+      </span><menu>
+ Convert values used by AlarmMicro32C Alarms into actual microseconds.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command uint8_t <a href="#adcPrescaler">adcPrescaler</a>()
+      </span><menu>
+ Return the smallest ADC prescaler value which guaranteers full
+ ADC precision.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command uint16_t <a href="#baudrateRegister">baudrateRegister</a>(uint32_t baudrate)
+      </span><menu>
+ Return the value to use for the baudrate register to achieve a
+ particular baud rate.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command uint32_t <a href="#calibrateMicro">calibrateMicro</a>(uint32_t n)
+      </span><menu>
+ Convert n microseconds into a value suitable for use with
+ AlarmMicro32C Alarms.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command uint16_t <a href="#cyclesPerJiffy">cyclesPerJiffy</a>()
+      </span><menu>
+ Return CPU cycles per 1/32768s.
+      </menu>
+    </div><p><div id=heading>Commands - Details</div>
+    <a name="actualMicro"></a>
+    <h4>actualMicro
+    </h4>
+    <span id=funcnameshort>command uint32_t <b>actualMicro</b>(uint32_t n)
+    </span>
+    <p>
+    <menu>
+      
+ Convert values used by AlarmMicro32C Alarms into actual microseconds.
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          <code>n</code> -  A time expressed in AlarmMicro time units.
+ 
+        </dd>
+        <dt><b>Returns:</b>
+        <dd>
+          Time in microseconds that corresponds to AlarmMicro argument n.
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="adcPrescaler"></a>
+    <h4>adcPrescaler
+    </h4>
+    <span id=funcnameshort>command uint8_t <b>adcPrescaler</b>()
+    </span>
+    <p>
+    <menu>
+      
+ Return the smallest ADC prescaler value which guaranteers full
+ ADC precision.
+ 
+      <p>
+      <dl>
+        <dt><b>Returns:</b>
+        <dd>
+          ADC prescaler value.
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="baudrateRegister"></a>
+    <h4>baudrateRegister
+    </h4>
+    <span id=funcnameshort>command uint16_t <b>baudrateRegister</b>(uint32_t baudrate)
+    </span>
+    <p>
+    <menu>
+      
+ Return the value to use for the baudrate register to achieve a
+ particular baud rate. Assumes U2X=1 (the USART is being run at
+ double speed).
+
+    </menu>
+    <hr>
+    <a name="calibrateMicro"></a>
+    <h4>calibrateMicro
+    </h4>
+    <span id=funcnameshort>command uint32_t <b>calibrateMicro</b>(uint32_t n)
+    </span>
+    <p>
+    <menu>
+      
+ Convert n microseconds into a value suitable for use with
+ AlarmMicro32C Alarms.
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          <code>n</code> -  Time in microseconds.
+ 
+        </dd>
+        <dt><b>Returns:</b>
+        <dd>
+          AlarmMicro argument that best approximates n microseconds.
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="cyclesPerJiffy"></a>
+    <h4>cyclesPerJiffy
+    </h4>
+    <span id=funcnameshort>command uint16_t <b>cyclesPerJiffy</b>()
+    </span>
+    <p>
+    <menu>
+      
+ Return CPU cycles per 1/32768s.
+ 
+      <p>
+      <dl>
+        <dt><b>Returns:</b>
+        <dd>
+          CPU cycles.
+
+        </dd>
+      </dl>
+    </menu>
+  </body>
+</html>

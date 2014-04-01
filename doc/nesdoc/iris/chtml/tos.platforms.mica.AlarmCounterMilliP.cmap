@@ -1,0 +1,7 @@
+<area shape="rect" id="node2" href="../chtml/tos.chips.atm1281.timer.Atm128AlarmAsyncC.html" title="Atm128AlarmAsyncC" alt="" coords="185,120,383,179">
+<area shape="poly" id="edge2" href="../ihtml/tos.lib.timer.Counter.html" title="Counter&lt;TMilli, uint32_t&gt;" alt="" coords="96,53 103,75 116,94 139,107 173,120 171,125 136,112 113,98 98,77 91,55">
+<area shape="rect" id="edge2" href="../ihtml/tos.lib.timer.Counter.html" title="Counter&lt;TMilli, uint32_t&gt;" alt="" coords="115,78,279,95">
+<area shape="poly" id="edge4" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="287,54 287,106 281,106 281,54">
+<area shape="rect" id="edge4" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="284,78,304,95">
+<area shape="poly" id="edge6" href="../ihtml/tos.lib.timer.Alarm.html" title="Alarm&lt;TMilli, uint32_t&gt;" alt="" coords="393,54 329,112 325,108 389,50">
+<area shape="rect" id="edge6" href="../ihtml/tos.lib.timer.Alarm.html" title="Alarm&lt;TMilli, uint32_t&gt;" alt="" coords="361,78,512,95">

@@ -1,0 +1,142 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Component: tos.chips.rf230.RF230DriverLayerC</title>
+  </head>
+  <body>
+    <h2>Component: tos.chips.rf230.RF230DriverLayerC
+    </h2>
+    <b>configuration RF230DriverLayerC</b>
+    <p><p><div id=heading>Provides</div><div id=funcsig>interface <a href="../ihtml/tos.lib.timer.Alarm.html">Alarm</a>&lt;TRadio, tradio_size&gt;</div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.LinkPacketMetadata.html">LinkPacketMetadata</a></div><div id=funcsig>interface <a href="../ihtml/tos.lib.timer.LocalTime.html">LocalTime</a>&lt;TRadio&gt; as <b>LocalTimeRadio</b></div><div id=funcsig>interface <a href="../ihtml/tos.lib.rfxlink.util.PacketField.html">PacketField</a>&lt;uint8_t&gt; as <b>PacketLinkQuality</b></div><div id=funcsig>interface <a href="../ihtml/tos.lib.rfxlink.util.PacketField.html">PacketField</a>&lt;uint8_t&gt; as <b>PacketRSSI</b></div><div id=funcsig>interface <a href="../ihtml/tos.lib.rfxlink.util.PacketField.html">PacketField</a>&lt;uint8_t&gt; as <b>PacketTimeSyncOffset</b></div><div id=funcsig>interface <a href="../ihtml/tos.lib.rfxlink.util.PacketField.html">PacketField</a>&lt;uint8_t&gt; as <b>PacketTransmitPower</b></div><div id=funcsig>interface <a href="../ihtml/tos.lib.rfxlink.util.RadioCCA.html">RadioCCA</a></div><div id=funcsig>interface <a href="../ihtml/tos.lib.rfxlink.util.RadioPacket.html">RadioPacket</a></div><div id=funcsig>interface <a href="../ihtml/tos.lib.rfxlink.util.RadioReceive.html">RadioReceive</a></div><div id=funcsig>interface <a href="../ihtml/tos.lib.rfxlink.util.RadioSend.html">RadioSend</a></div><div id=funcsig>interface <a href="../ihtml/tos.lib.rfxlink.util.RadioState.html">RadioState</a></div><p><div id=heading>Uses</div><div id=funcsig>interface <a href="../ihtml/tos.chips.rf230.RF230DriverConfig.html">RF230DriverConfig</a> as <b>Config</b></div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.PacketTimeStamp.html">PacketTimeStamp</a>&lt;TRadio, uint32_t&gt;</div><div id=funcsig>interface <a href="../ihtml/tos.lib.rfxlink.util.RadioAlarm.html">RadioAlarm</a></div><div id=funcsig>interface <a href="../ihtml/tos.lib.rfxlink.util.PacketFlag.html">PacketFlag</a> as <b>RSSIFlag</b></div><div id=funcsig>interface <a href="../ihtml/tos.lib.rfxlink.util.PacketFlag.html">PacketFlag</a> as <b>TimeSyncFlag</b></div><div id=funcsig>interface <a href="../ihtml/tos.lib.rfxlink.util.PacketFlag.html">PacketFlag</a> as <b>TransmitPowerFlag</b></div><p><div id=heading>Wiring</div><p>
+    <map name="comp">
+      <area shape="rect" id="node2" href="../chtml/tos.chips.rf230.RF230DriverLayerP.html" title="RF230DriverLayerP" alt="" coords="1080,131,1251,179">
+
+      <area shape="poly" id="edge2" href="../ihtml/tos.lib.rfxlink.util.RadioCCA.html" title="RadioCCA" alt="" coords="165,50 248,79 346,104 489,120 687,133 1066,149 1066,154 687,138 489,125 345,109 246,84 163,55">
+
+      <area shape="rect" id="edge2" href="../ihtml/tos.lib.rfxlink.util.RadioCCA.html" title="RadioCCA" alt="" coords="345,89,408,106">
+
+      <area shape="rect" id="node9" href="../chtml/tos.platforms.iris.chips.rf230.HplRF230C.html" title="HplRF230C" alt="" coords="559,245,676,304">
+
+      <area shape="poly" id="edge36" href="../ihtml/tos.lib.timer.LocalTime.html" title="LocalTime&lt;TRadio&gt;" alt="" coords="1080,165 937,182 872,193 825,205 810,214 795,224 742,244 690,260 688,255 740,239 792,219 807,209 823,200 871,188 937,177 1080,160">
+
+      <area shape="rect" id="edge36" href="../ihtml/tos.lib.timer.LocalTime.html" title="LocalTime&lt;TRadio&gt;" alt="" coords="824,203,952,221">
+
+      <area shape="poly" id="edge40" href="../ihtml/tos.interfaces.GeneralIO.html" title="GeneralIO" alt="" coords="1081,174 1032,188 984,205 969,215 953,224 885,244 815,259 690,274 690,269 814,254 884,239 951,219 966,210 981,200 1030,183 1079,169">
+
+      <area shape="rect" id="edge40" href="../ihtml/tos.interfaces.GeneralIO.html" title="GeneralIO" alt="" coords="983,203,1047,221">
+
+      <area shape="poly" id="edge42" href="../ihtml/tos.interfaces.Resource.html" title="Resource" alt="" coords="1116,181 1074,205 1061,215 1048,224 994,235 899,248 690,270 690,265 898,242 993,230 1046,219 1058,211 1070,200 1113,177">
+
+      <area shape="rect" id="edge42" href="../ihtml/tos.interfaces.Resource.html" title="Resource" alt="" coords="1072,203,1131,221">
+
+      <area shape="poly" id="edge44" href="../ihtml/tos.interfaces.FastSpiByte.html" title="FastSpiByte" alt="" coords="1080,160 685,176 504,189 445,197 419,205 410,219 412,230 422,240 439,249 489,261 546,268 545,273 488,266 437,254 419,244 407,232 405,218 416,201 444,191 503,184 685,170 1080,154">
+
+      <area shape="rect" id="edge44" href="../ihtml/tos.interfaces.FastSpiByte.html" title="FastSpiByte" alt="" coords="417,203,493,221">
+
+      <area shape="poly" id="edge46" href="../ihtml/tos.interfaces.GeneralIO.html" title="GeneralIO" alt="" coords="1080,161 745,178 595,191 547,198 526,205 520,215 523,225 533,235 548,245 545,250 530,240 519,228 515,215 522,201 546,193 594,186 745,173 1080,155">
+
+      <area shape="rect" id="edge46" href="../ihtml/tos.interfaces.GeneralIO.html" title="GeneralIO" alt="" coords="524,203,588,221">
+
+      <area shape="poly" id="edge48" href="../ihtml/tos.interfaces.GeneralIO.html" title="GeneralIO" alt="" coords="1080,159 950,163 806,171 684,185 642,194 621,205 613,217 611,232 606,232 608,215 617,201 640,189 683,179 806,166 950,157 1079,153">
+
+      <area shape="rect" id="edge48" href="../ihtml/tos.interfaces.GeneralIO.html" title="GeneralIO" alt="" coords="619,203,683,221">
+
+      <area shape="poly" id="edge50" href="../ihtml/tos.interfaces.GpioCapture.html" title="GpioCapture" alt="" coords="1080,161 876,175 778,188 709,205 666,238 663,234 707,200 777,183 876,170 1080,155">
+
+      <area shape="rect" id="edge50" href="../ihtml/tos.interfaces.GpioCapture.html" title="GpioCapture" alt="" coords="708,203,788,221">
+
+      <area shape="poly" id="edge26" href="../ihtml/tos.chips.rf230.RF230DriverConfig.html" title="RF230DriverConfig" alt="" coords="1161,180 1152,202 1138,223 1119,238 1091,254 1088,249 1116,233 1134,220 1147,199 1156,178">
+
+      <area shape="rect" id="edge26" href="../ihtml/tos.chips.rf230.RF230DriverConfig.html" title="RF230DriverConfig" alt="" coords="1148,203,1265,221">
+
+      <area shape="poly" id="edge28" href="../ihtml/tos.lib.rfxlink.util.PacketFlag.html" title="PacketFlag" alt="" coords="1252,172 1271,185 1286,201 1291,213 1289,225 1274,245 1270,242 1284,223 1285,214 1282,204 1268,189 1249,177">
+
+      <area shape="rect" id="edge28" href="../ihtml/tos.lib.rfxlink.util.PacketFlag.html" title="PacketFlag" alt="" coords="1288,203,1356,221">
+
+      <area shape="poly" id="edge30" href="../ihtml/tos.lib.rfxlink.util.PacketFlag.html" title="PacketFlag" alt="" coords="1252,167 1317,182 1363,200 1382,218 1396,237 1392,241 1378,221 1360,205 1315,187 1250,172">
+
+      <area shape="rect" id="edge30" href="../ihtml/tos.lib.rfxlink.util.PacketFlag.html" title="PacketFlag" alt="" coords="1380,203,1448,221">
+
+      <area shape="poly" id="edge32" href="../ihtml/tos.lib.rfxlink.util.PacketFlag.html" title="PacketFlag" alt="" coords="1252,158 1350,172 1403,184 1454,200 1497,220 1535,243 1532,247 1494,224 1452,205 1402,189 1349,178 1251,163">
+
+      <area shape="rect" id="edge32" href="../ihtml/tos.lib.rfxlink.util.PacketFlag.html" title="PacketFlag" alt="" coords="1492,203,1560,221">
+
+      <area shape="poly" id="edge34" href="../ihtml/tos.interfaces.PacketTimeStamp.html" title="PacketTimeStamp&lt;TRadio, uint32_t&gt;" alt="" coords="1251,157 1399,172 1483,184 1566,200 1646,222 1718,247 1716,252 1644,227 1565,205 1482,189 1398,177 1251,163">
+
+      <area shape="rect" id="edge34" href="../ihtml/tos.interfaces.PacketTimeStamp.html" title="PacketTimeStamp&lt;TRadio, uint32_t&gt;" alt="" coords="1632,203,1872,221">
+
+      <area shape="poly" id="edge38" href="../ihtml/tos.lib.rfxlink.util.RadioAlarm.html" title="RadioAlarm" alt="" coords="1251,155 1609,173 1780,185 1842,193 1878,200 1915,218 1947,241 1944,246 1912,223 1876,205 1841,198 1780,191 1608,178 1251,161">
+
+      <area shape="rect" id="edge38" href="../ihtml/tos.lib.rfxlink.util.RadioAlarm.html" title="RadioAlarm" alt="" coords="1913,203,1987,221">
+
+      <area shape="rect" id="node21" href="../chtml/tos.lib.rfxlink.util.TaskletC.html" title="TaskletC" alt="" coords="2075,251,2157,299">
+
+      <area shape="poly" id="edge52" href="../ihtml/tos.lib.rfxlink.util.Tasklet.html" title="Tasklet" alt="" coords="1251,155 1669,172 1875,185 1949,192 1993,200 2036,218 2074,241 2072,245 2034,223 1991,205 1948,198 1874,190 1669,177 1251,160">
+
+      <area shape="rect" id="edge52" href="../ihtml/tos.lib.rfxlink.util.Tasklet.html" title="Tasklet" alt="" coords="2035,203,2079,221">
+
+      <area shape="rect" id="node22" href="../chtml/tos.platforms.micaz.BusyWaitMicroC.html" title="BusyWaitMicroC" alt="" coords="2181,251,2328,299">
+
+      <area shape="poly" id="edge54" href="../ihtml/tos.lib.timer.BusyWait.html" title="BusyWait&lt;TMicro, uint16_t&gt;" alt="" coords="1251,153 1442,156 1682,164 1915,178 2012,188 2085,200 2144,219 2198,242 2196,247 2142,224 2083,205 2011,193 1915,183 1682,169 1442,161 1251,158">
+
+      <area shape="rect" id="edge54" href="../ihtml/tos.lib.timer.BusyWait.html" title="BusyWait&lt;TMicro, uint16_t&gt;" alt="" coords="2141,203,2321,221">
+
+      <area shape="poly" id="edge4" href="../ihtml/tos.lib.rfxlink.util.PacketField.html" title="PacketField&lt;uint8_t&gt;" alt="" coords="323,51 396,80 482,104 596,120 754,132 1066,148 1066,154 753,138 595,125 481,109 394,85 321,56">
+
+      <area shape="rect" id="edge4" href="../ihtml/tos.lib.rfxlink.util.PacketField.html" title="PacketField&lt;uint8_t&gt;" alt="" coords="481,89,617,106">
+
+      <area shape="poly" id="edge6" href="../ihtml/tos.lib.rfxlink.util.RadioState.html" title="RadioState" alt="" coords="486,50 519,61 666,98 815,123 953,139 1066,147 1066,153 953,144 815,128 665,103 518,67 484,55">
+
+      <area shape="rect" id="edge6" href="../ihtml/tos.lib.rfxlink.util.RadioState.html" title="RadioState" alt="" coords="693,89,764,106">
+
+      <area shape="poly" id="edge8" href="../ihtml/tos.lib.rfxlink.util.PacketField.html" title="PacketField&lt;uint8_t&gt;" alt="" coords="701,54 766,81 838,104 956,128 1066,143 1066,149 955,134 837,109 764,86 699,59">
+
+      <area shape="rect" id="edge8" href="../ihtml/tos.lib.rfxlink.util.PacketField.html" title="PacketField&lt;uint8_t&gt;" alt="" coords="837,89,973,106">
+
+      <area shape="poly" id="edge10" href="../ihtml/tos.lib.rfxlink.util.RadioPacket.html" title="RadioPacket" alt="" coords="912,53 1022,104 1075,124 1073,129 1020,109 910,58">
+
+      <area shape="rect" id="edge10" href="../ihtml/tos.lib.rfxlink.util.RadioPacket.html" title="RadioPacket" alt="" coords="1021,89,1099,106">
+
+      <area shape="poly" id="edge12" href="../ihtml/tos.lib.rfxlink.util.RadioReceive.html" title="RadioReceive" alt="" coords="1075,56 1134,119 1131,122 1071,60">
+
+      <area shape="rect" id="edge12" href="../ihtml/tos.lib.rfxlink.util.RadioReceive.html" title="RadioReceive" alt="" coords="1117,89,1201,106">
+
+      <area shape="poly" id="edge14" href="../ihtml/tos.lib.timer.Alarm.html" title="Alarm&lt;TRadio, tradio_size&gt;" alt="" coords="51,179 56,201 68,219 93,229 137,239 267,253 545,270 545,275 266,259 136,244 91,234 65,223 51,203 46,180">
+
+      <area shape="rect" id="edge14" href="../ihtml/tos.lib.timer.Alarm.html" title="Alarm&lt;TRadio, tradio_size&gt;" alt="" coords="67,203,245,221">
+
+      <area shape="poly" id="edge16" href="../ihtml/tos.lib.rfxlink.util.PacketField.html" title="PacketField&lt;uint8_t&gt;" alt="" coords="1259,60 1200,123 1196,119 1255,57">
+
+      <area shape="rect" id="edge16" href="../ihtml/tos.lib.rfxlink.util.PacketField.html" title="PacketField&lt;uint8_t&gt;" alt="" coords="1225,89,1361,106">
+
+      <area shape="poly" id="edge18" href="../ihtml/tos.lib.timer.LocalTime.html" title="LocalTime&lt;TRadio&gt;" alt="" coords="253,179 253,201 261,220 273,227 298,234 372,247 545,266 545,272 371,252 297,239 271,232 257,223 248,202 248,179">
+
+      <area shape="rect" id="edge18" href="../ihtml/tos.lib.timer.LocalTime.html" title="LocalTime&lt;TRadio&gt;" alt="" coords="259,203,387,221">
+
+      <area shape="poly" id="edge20" href="../ihtml/tos.lib.rfxlink.util.RadioSend.html" title="RadioSend" alt="" coords="1465,58 1420,85 1368,109 1317,126 1265,139 1264,134 1315,121 1366,104 1417,80 1462,54">
+
+      <area shape="rect" id="edge20" href="../ihtml/tos.lib.rfxlink.util.RadioSend.html" title="RadioSend" alt="" coords="1407,89,1475,106">
+
+      <area shape="poly" id="edge22" href="../ihtml/tos.lib.rfxlink.util.PacketField.html" title="PacketField&lt;uint8_t&gt;" alt="" coords="1638,58 1564,85 1481,109 1369,132 1265,147 1264,142 1368,127 1479,104 1562,79 1636,53">
+
+      <area shape="rect" id="edge22" href="../ihtml/tos.lib.rfxlink.util.PacketField.html" title="PacketField&lt;uint8_t&gt;" alt="" coords="1543,89,1679,106">
+
+      <area shape="poly" id="edge24" href="../ihtml/tos.interfaces.LinkPacketMetadata.html" title="LinkPacketMetadata" alt="" coords="1869,58 1783,85 1685,109 1573,127 1460,140 1265,154 1265,149 1459,135 1572,122 1683,104 1781,80 1868,53">
+
+      <area shape="rect" id="edge24" href="../ihtml/tos.interfaces.LinkPacketMetadata.html" title="LinkPacketMetadata" alt="" coords="1757,89,1885,106">
+
+      <area shape="rect" id="node23" href="../chtml/tos.system.MainC.html" title="MainC" alt="" coords="2064,5,2147,64">
+
+      <area shape="poly" id="edge56" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="2065,61 2053,66 1974,94 1891,109 1767,123 1597,136 1265,153 1264,148 1597,130 1767,118 1890,104 1972,89 2051,62 2063,56">
+
+      <area shape="rect" id="edge56" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="1983,89,2003,106">
+
+      <area shape="rect" id="node24" href="../chtml/tos.system.RealMainP.html" title="RealMainP" alt="" coords="2171,11,2269,59">
+
+      <area shape="poly" id="edge58" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="2172,61 2160,66 2085,93 2008,109 1860,125 1655,138 1264,154 1264,149 1655,133 1859,120 2008,104 2084,88 2158,62 2170,56">
+
+      <area shape="rect" id="edge58" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="2089,89,2109,106">
+
+    </map>
+    <img src="tos.chips.rf230.RF230DriverLayerC.png" usemap="#comp" id=imgwiring>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" ?><interfacedef loc="35:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/TrafficMonitorConfig.nc" nicename="tos.lib.rfxlink.layers.TrafficMonitorConfig" qname="TrafficMonitorConfig">
+      <function command="" loc="40:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/TrafficMonitorConfig.nc" name="getBytes" provided="0" ref="0x2b9d552d0938">
+        <documentation loc="37:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/TrafficMonitorConfig.nc">
+          <short>
+ Returns the number of bytes in this message.</short>
+        </documentation>
+        <interfacedef-ref nicename="tos.lib.rfxlink.layers.TrafficMonitorConfig" qname="TrafficMonitorConfig"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="40:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/TrafficMonitorConfig.nc" name="msg" ref="0x2b9d552d06c8">
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+    </interfacedef>

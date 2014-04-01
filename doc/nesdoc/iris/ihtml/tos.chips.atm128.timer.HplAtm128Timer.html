@@ -1,0 +1,246 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Interface: tos.chips.atm128.timer.HplAtm128Timer</title>
+  </head>
+  <body>
+    <h2>Interface: tos.chips.atm128.timer.HplAtm128Timer</h2>
+    <b>interface HplAtm128Timer&lt;typedef timer_size&gt;</b><p>
+ Basic interface to the hardware timers on an ATmega128.  
+ <p>
+ This interface is designed to be independent of whether the underlying 
+ hardware is an 8-bit or 16-bit wide counter.  As such, timer_size is 
+ specified via a generics parameter.  Because this is exposing a common 
+ subset of functionality that all ATmega128 hardware timers share, all 
+ that is exposed is access to the overflow capability.  Compare and capture
+ functionality are exposed on separate interfaces to allow easy 
+ configurability via wiring.
+ <p>
+ This interface provides four major groups of functionality:<ol>
+      <li>Timer Value: get/set current time
+      <li>Overflow Interrupt event
+      <li>Control of Overflow Interrupt: start/stop/clear...
+      <li>Timer Initialization: turn on/off clock source
+ </ol>
+
+ 
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        Martin Turon &lt;mturon@xbow.com&gt;
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Commands</div><div id=funcsig><span id=funcnameshort>command timer_size <a href="#get">get</a>()
+      </span><menu> 
+ Get the current time.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command uint8_t <a href="#getScale">getScale</a>()
+      </span><menu> 
+ Get prescaler setting.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command bool <a href="#isOn">isOn</a>()
+      </span><menu> 
+ Is overflow interrupt on? 
+ 
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command void <a href="#off">off</a>()
+      </span><menu> Turn off the clock.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command void <a href="#reset">reset</a>()
+      </span><menu> Clear the overflow interrupt flag.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command void <a href="#set">set</a>(timer_size t)
+      </span><menu> 
+ Set the current time.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command void <a href="#setScale">setScale</a>(uint8_t scale)
+      </span><menu> 
+ Turn on the clock.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command void <a href="#start">start</a>()
+      </span><menu> Enable the overflow interrupt.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command void <a href="#stop">stop</a>()
+      </span><menu> Turn off overflow interrupts.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command bool <a href="#test">test</a>()
+      </span><menu> 
+ Did an overflow interrupt occur?
+ 
+      </menu>
+    </div><p><div id=heading>Events</div><div id=funcsig><span id=funcnameshort>event void <a href="#overflow">overflow</a>()
+      </span><menu> Signalled on timer overflow interrupt.
+      </menu>
+    </div><p><div id=heading>Commands - Details</div>
+    <a name="get"></a>
+    <h4>get
+    </h4>
+    <span id=funcnameshort>command timer_size <b>get</b>()
+    </span>
+    <p>
+    <menu>
+       
+ Get the current time.
+ 
+      <p>
+      <dl>
+        <dt><b>Returns:</b>
+        <dd>
+           the current time
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="getScale"></a>
+    <h4>getScale
+    </h4>
+    <span id=funcnameshort>command uint8_t <b>getScale</b>()
+    </span>
+    <p>
+    <menu>
+       
+ Get prescaler setting.
+ 
+      <p>
+      <dl>
+        <dt><b>Returns:</b>
+        <dd>
+           Prescaler setting of clock -- see Atm128Timer.h
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="isOn"></a>
+    <h4>isOn
+    </h4>
+    <span id=funcnameshort>command bool <b>isOn</b>()
+    </span>
+    <p>
+    <menu>
+       
+ Is overflow interrupt on? 
+ 
+      <p>
+      <dl>
+        <dt><b>Returns:</b>
+        <dd>
+          TRUE if overflow enabled, FALSE otherwise
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="off"></a>
+    <h4>off
+    </h4>
+    <span id=funcnameshort>command void <b>off</b>()
+    </span>
+    <p>
+    <menu>
+       Turn off the clock. *
+    </menu>
+    <hr>
+    <a name="reset"></a>
+    <h4>reset
+    </h4>
+    <span id=funcnameshort>command void <b>reset</b>()
+    </span>
+    <p>
+    <menu>
+       Clear the overflow interrupt flag. *
+    </menu>
+    <hr>
+    <a name="set"></a>
+    <h4>set
+    </h4>
+    <span id=funcnameshort>command void <b>set</b>(timer_size t)
+    </span>
+    <p>
+    <menu>
+       
+ Set the current time.
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          <code>t</code> -      the time to set
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="setScale"></a>
+    <h4>setScale
+    </h4>
+    <span id=funcnameshort>command void <b>setScale</b>(uint8_t scale)
+    </span>
+    <p>
+    <menu>
+       
+ Turn on the clock.
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          <code>scale</code> -    Prescaler setting of clock -- see Atm128Timer.h
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="start"></a>
+    <h4>start
+    </h4>
+    <span id=funcnameshort>command void <b>start</b>()
+    </span>
+    <p>
+    <menu>
+       Enable the overflow interrupt. *
+    </menu>
+    <hr>
+    <a name="stop"></a>
+    <h4>stop
+    </h4>
+    <span id=funcnameshort>command void <b>stop</b>()
+    </span>
+    <p>
+    <menu>
+       Turn off overflow interrupts. *
+    </menu>
+    <hr>
+    <a name="test"></a>
+    <h4>test
+    </h4>
+    <span id=funcnameshort>command bool <b>test</b>()
+    </span>
+    <p>
+    <menu>
+       
+ Did an overflow interrupt occur?
+ 
+      <p>
+      <dl>
+        <dt><b>Returns:</b>
+        <dd>
+          TRUE if overflow triggered, FALSE otherwise
+
+        </dd>
+      </dl>
+    </menu>
+    <p><div id=heading>Events - Details</div>
+    <a name="overflow"></a>
+    <h4>overflow
+    </h4>
+    <span id=funcnameshort>event void <b>overflow</b>()
+    </span>
+    <p>
+    <menu>
+       Signalled on timer overflow interrupt. *
+    </menu>
+  </body>
+</html>

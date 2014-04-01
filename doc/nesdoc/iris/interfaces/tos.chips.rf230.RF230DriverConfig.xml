@@ -1,0 +1,135 @@
+<?xml version="1.0" ?><interfacedef loc="35:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverConfig.nc" nicename="tos.chips.rf230.RF230DriverConfig" qname="RF230DriverConfig">
+      <function command="" loc="46:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverConfig.nc" name="maxPayloadLength" provided="0" ref="0x2b9d552c0c90">
+        <documentation loc="42:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverConfig.nc">
+          <short>
+ Returns the maximum length of the PHY payload including the 
+ length field but not counting the FCF field.</short>
+          <long>
+ Returns the maximum length of the PHY payload including the 
+ length field but not counting the FCF field.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.rf230.RF230DriverConfig" qname="RF230DriverConfig"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="40:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverConfig.nc" name="headerLength" provided="0" ref="0x2b9d552c04e8">
+        <documentation loc="37:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverConfig.nc">
+          <short>
+ Returns the length of a dummy header to align the payload properly.</short>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.rf230.RF230DriverConfig" qname="RF230DriverConfig"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="40:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverConfig.nc" name="msg" ref="0x2b9d552c0278">
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="52:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverConfig.nc" name="metadataLength" provided="0" ref="0x2b9d552bf780">
+        <documentation loc="48:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverConfig.nc">
+          <short>
+ Returns the length of a dummy metadata section to align the
+ metadata section properly.</short>
+          <long>
+ Returns the length of a dummy metadata section to align the
+ metadata section properly.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.rf230.RF230DriverConfig" qname="RF230DriverConfig"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="52:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverConfig.nc" name="msg" ref="0x2b9d552bf510">
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="59:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverConfig.nc" name="headerPreloadLength" provided="0" ref="0x2b9d552bd020">
+        <documentation loc="54:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverConfig.nc">
+          <short>
+ Gets the number of bytes we should read before the RadioReceive.header
+ event is fired.</short>
+          <long>
+ Gets the number of bytes we should read before the RadioReceive.header
+ event is fired. If the length of the packet is less than this amount, 
+ then that event is fired earlier. The header length must be at least one.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.rf230.RF230DriverConfig" qname="RF230DriverConfig"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="65:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverConfig.nc" name="requiresRssiCca" provided="0" ref="0x2b9d552bdb28">
+        <documentation loc="61:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverConfig.nc">
+          <short>
+ Returns TRUE if before sending this message we should make sure that
+ the channel is clear via a very basic (and quick) RSSI check.</short>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.rf230.RF230DriverConfig" qname="RF230DriverConfig"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="bool" ref="0x2b9d54c5c4c8"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="65:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverConfig.nc" name="msg" ref="0x2b9d552bd8b8">
+            <type-pointer alignment="I:1" size="I:2">
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
+                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+    </interfacedef>

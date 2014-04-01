@@ -1,0 +1,35 @@
+digraph "BaseConfigAppC" {
+  "BaseConfigC" [fontsize=12, shape=box, URL="../chtml/BaseConfigC.html"];
+  "RF230ActiveMessageC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.chips.rf230.RF230ActiveMessageC.html"];
+  "BaseConfigC" [fontsize=12, shape=box, URL="../chtml/BaseConfigC.html"];
+  "RF230ActiveMessageC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.chips.rf230.RF230ActiveMessageC.html"];
+  "BaseConfigC" [fontsize=12, shape=box, URL="../chtml/BaseConfigC.html"];
+  "MainC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.system.MainC.html"];
+  "BaseConfigC" [fontsize=12, shape=box, URL="../chtml/BaseConfigC.html"];
+  "LedsC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.system.LedsC.html"];
+  "BaseConfigC" [fontsize=12, shape=box, URL="../chtml/BaseConfigC.html"];
+  "BaseConfigAppC.Timeout" [fontsize=12, shape=box,peripheries=2, style=dashed, label="TimerMilliC\n(Timeout)", URL="../chtml/tos.system.TimerMilliC.html"];
+  "BaseConfigC" [fontsize=12, shape=box, URL="../chtml/BaseConfigC.html"];
+  "BaseConfigAppC.WaitAck" [fontsize=12, shape=box,peripheries=2, style=dashed, label="TimerMilliC\n(WaitAck)", URL="../chtml/tos.system.TimerMilliC.html"];
+  "BaseConfigC" [fontsize=12, shape=box, URL="../chtml/BaseConfigC.html"];
+  "BaseConfigAppC.AMSenderC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="AMSenderC", URL="../chtml/tos.system.AMSenderC.html"];
+  "BaseConfigC" [fontsize=12, shape=box, URL="../chtml/BaseConfigC.html"];
+  "BaseConfigAppC.AMSenderC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="AMSenderC", URL="../chtml/tos.system.AMSenderC.html"];
+  "BaseConfigC" [fontsize=12, shape=box, URL="../chtml/BaseConfigC.html"];
+  "BaseConfigAppC.AMSenderC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="AMSenderC", URL="../chtml/tos.system.AMSenderC.html"];
+  "BaseConfigC" [fontsize=12, shape=box, URL="../chtml/BaseConfigC.html"];
+  "BaseConfigAppC.AMReceiverC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="AMReceiverC", URL="../chtml/tos.system.AMReceiverC.html"];
+  "BaseConfigC" [fontsize=12, shape=box, URL="../chtml/BaseConfigC.html"];
+  "ActiveMessageC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.platforms.iris.ActiveMessageC.html"];
+  "BaseConfigC" -> "RF230ActiveMessageC" [label="PacketField<uint8_t>", URL="../ihtml/tos.lib.rfxlink.util.PacketField.html", fontsize=10];
+  "BaseConfigC" -> "RF230ActiveMessageC" [label="PacketField<uint8_t>", URL="../ihtml/tos.lib.rfxlink.util.PacketField.html", fontsize=10];
+  "BaseConfigC" -> "MainC" [label="Boot", URL="../ihtml/tos.interfaces.Boot.html", fontsize=10];
+  "BaseConfigC" -> "LedsC" [label="Leds", URL="../ihtml/tos.interfaces.Leds.html", fontsize=10];
+  "BaseConfigC" -> "BaseConfigAppC.Timeout" [label="Timer<TMilli>", URL="../ihtml/tos.lib.timer.Timer.html", fontsize=10];
+  "BaseConfigC" -> "BaseConfigAppC.WaitAck" [label="Timer<TMilli>", URL="../ihtml/tos.lib.timer.Timer.html", fontsize=10];
+  "BaseConfigC" -> "BaseConfigAppC.AMSenderC" [label="Packet", URL="../ihtml/tos.interfaces.Packet.html", fontsize=10];
+  "BaseConfigC" -> "BaseConfigAppC.AMSenderC" [label="AMPacket", URL="../ihtml/tos.interfaces.AMPacket.html", fontsize=10];
+  "BaseConfigC" -> "BaseConfigAppC.AMSenderC" [label="AMSend", URL="../ihtml/tos.interfaces.AMSend.html", fontsize=10];
+  "BaseConfigC" -> "BaseConfigAppC.AMReceiverC" [label="Receive", URL="../ihtml/tos.interfaces.Receive.html", fontsize=10];
+  "BaseConfigC" -> "ActiveMessageC" [label="SplitControl", URL="../ihtml/tos.interfaces.SplitControl.html", fontsize=10];
+}

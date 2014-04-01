@@ -1,0 +1,156 @@
+<?xml version="1.0" ?><interfacedef loc="41:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Compare.nc" nicename="tos.chips.atm128.timer.HplAtm128Compare" qname="HplAtm128Compare">
+      <documentation loc="34:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Compare.nc">
+        <short>
+ HPL Interface to Atmega128 compare registers.</short>
+        <long>
+ HPL Interface to Atmega128 compare registers.
+ @param size_type Integer type of compare register
+
+ @author Martin Turon &lt;mturon@xbow.com&gt;
+</long>
+      </documentation>
+      <parameters>
+        <typedef loc="41:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Compare.nc" name="size_type" ref="0x2b9d550a71c8">
+          <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Compare" qname="HplAtm128Compare"/>
+          <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b9d550a71c8" scoped=""/></type-var>
+        </typedef>
+      </parameters>
+      <function command="" loc="74:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Compare.nc" name="test" provided="0" ref="0x2b9d550be7f0">
+        <documentation loc="70:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Compare.nc">
+          <short> 
+ Did compare interrupt occur? 
+ </short>
+          <long> 
+ Did compare interrupt occur? 
+ @return TRUE if compare triggered, FALSE otherwise
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Compare" qname="HplAtm128Compare"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="bool" ref="0x2b9d54c5c4c8"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function event="" loc="58:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Compare.nc" name="fired" provided="0" ref="0x2b9d550c1b60">
+        <documentation loc="57:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Compare.nc">
+          <short> Signalled on  interrupt.</short>
+          <long> Signalled on  interrupt. *</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Compare" qname="HplAtm128Compare"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="48:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Compare.nc" name="get" provided="0" ref="0x2b9d550a7a80">
+        <documentation loc="44:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Compare.nc">
+          <short> 
+ Get the compare time to fire on.</short>
+          <long> 
+ Get the compare time to fire on.
+ @return  the compare time value
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Compare" qname="HplAtm128Compare"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b9d550a71c8" scoped=""/></type-var>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="62:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Compare.nc" name="reset" provided="0" ref="0x2b9d550bf290">
+        <documentation loc="61:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Compare.nc">
+          <short> Clear the compare interrupt flag.</short>
+          <long> Clear the compare interrupt flag. *</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Compare" qname="HplAtm128Compare"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="80:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Compare.nc" name="isOn" provided="0" ref="0x2b9d550bd020">
+        <documentation loc="76:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Compare.nc">
+          <short> 
+ Is compare interrupt on?
+ </short>
+          <long> 
+ Is compare interrupt on?
+ @return TRUE if compare enabled, FALSE otherwise
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Compare" qname="HplAtm128Compare"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="bool" ref="0x2b9d54c5c4c8"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="54:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Compare.nc" name="set" provided="0" ref="0x2b9d550c1420">
+        <documentation loc="50:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Compare.nc">
+          <short> 
+ Set the compare time to fire on.</short>
+          <long> 
+ Set the compare time to fire on.
+ @param t     the compare time to set
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Compare" qname="HplAtm128Compare"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b9d550a71c8" scoped=""/></type-var>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="54:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Compare.nc" name="t" ref="0x2b9d550c11b0">
+            <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b9d550a71c8" scoped=""/></type-var>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="65:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Compare.nc" name="start" provided="0" ref="0x2b9d550bf988">
+        <documentation loc="64:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Compare.nc">
+          <short> Enable the compare interrupt.</short>
+          <long> Enable the compare interrupt. *</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Compare" qname="HplAtm128Compare"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="68:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Compare.nc" name="stop" provided="0" ref="0x2b9d550be0d8">
+        <documentation loc="67:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Compare.nc">
+          <short> Turn off comparee interrupts.</short>
+          <long> Turn off comparee interrupts. *</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Compare" qname="HplAtm128Compare"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>

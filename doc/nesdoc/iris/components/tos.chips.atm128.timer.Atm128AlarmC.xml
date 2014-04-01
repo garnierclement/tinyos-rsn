@@ -1,0 +1,104 @@
+<?xml version="1.0" ?><component abstract="" loc="51:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128AlarmC.nc" nicename="tos.chips.atm128.timer.Atm128AlarmC" qname="Atm128AlarmC" safe="">
+      <documentation loc="34:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128AlarmC.nc">
+        <short>
+ Build a TEP102 Alarm from an Atmega128 hardware timer and one of its
+ compare registers.</short>
+        <long>
+ Build a TEP102 Alarm from an Atmega128 hardware timer and one of its
+ compare registers.
+ @param frequency_tag The frequency tag for this Alarm
+ @param timer_size The width of this Alarm
+ @param mindt The shortest time in the future this Alarm can be set
+   (in its own time units). Has to be at least 2, as setting a compare
+   register one above the current counter value is unreliable. Has to be
+   large enough that the Alarm time does not pass between the computation
+   of &lt;code&gt;expires&lt;/code&gt; and actually setting the compare register.
+   Check this (for high-frequency timers) by inspecting the generated
+   assembly code...
+
+ @author Martin Turon &lt;mturon@xbow.com&gt;
+ @author David Gay &lt;david.e.gay@intel.com&gt;
+</long>
+      </documentation>
+      <parameters>
+        <typedef loc="51:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128AlarmC.nc" name="frequency_tag" ref="0x2b9d55acc750">
+          <component-ref nicename="tos.chips.atm128.timer.Atm128AlarmC" qname="Atm128AlarmC"/>
+          <type-var alignment="U:" size="U:"><typedef-ref name="frequency_tag" ref="0x2b9d55acc750" scoped=""/></type-var>
+        </typedef>
+        <typedef loc="52:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128AlarmC.nc" name="timer_size" ref="0x2b9d55af8020">
+          <component-ref nicename="tos.chips.atm128.timer.Atm128AlarmC" qname="Atm128AlarmC"/>
+          <type-var alignment="U:" size="U:"><typedef-ref name="timer_size" ref="0x2b9d55af8020" scoped=""/></type-var>
+        </typedef>
+        <constant loc="53:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128AlarmC.nc" name="mindt" ref="0x2b9d55af8320">
+          <component-ref nicename="tos.chips.atm128.timer.Atm128AlarmC" qname="Atm128AlarmC"/>
+          <type-int alignment="I:1" cname="int" size="I:2"/>
+        </constant>
+      </parameters>
+      <module/>
+    <specification><interface loc="55:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128AlarmC.nc" name="Alarm" provided="1" ref="0x2b9d55af7358">
+      <component-ref nicename="tos.chips.atm128.timer.Atm128AlarmC" qname="Atm128AlarmC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Alarm" ref="0x2b9d55af7358" scoped=""/></type-interface>
+      <attribute-value>
+        <attribute-ref name="atmostonce" ref="0x2b9d54c65a20"/>
+        <value-structured>
+          <type-tag alignment="I:1" size="I:0"><attribute-ref name="atmostonce" ref="0x2b9d54c65a20"/></type-tag>
+        </value-structured>
+      </attribute-value>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.timer.Alarm" qname="Alarm"/>
+        <arguments>
+          <type-var alignment="U:" size="U:"><typedef-ref name="frequency_tag" ref="0x2b9d55acc750" scoped=""/></type-var>
+          <type-var alignment="U:" size="U:"><typedef-ref name="timer_size" ref="0x2b9d55af8020" scoped=""/></type-var>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="getNow" ref="0x2b9d55af4ab0" scoped=""/>
+        <function-ref name="fired" ref="0x2b9d55af5a58" scoped=""/>
+        <function-ref name="startAt" ref="0x2b9d55af44a8" scoped=""/>
+        <function-ref name="isRunning" ref="0x2b9d55af4020" scoped=""/>
+        <function-ref name="getAlarm" ref="0x2b9d55af3020" scoped=""/>
+        <function-ref name="start" ref="0x2b9d55af50f8" scoped=""/>
+        <function-ref name="stop" ref="0x2b9d55af55d0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="58:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128AlarmC.nc" name="HplAtm128Compare" provided="0" ref="0x2b9d55aee760">
+      <component-ref nicename="tos.chips.atm128.timer.Atm128AlarmC" qname="Atm128AlarmC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="HplAtm128Compare" ref="0x2b9d55aee760" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Compare" qname="HplAtm128Compare"/>
+        <arguments>
+          <type-var alignment="U:" size="U:"><typedef-ref name="timer_size" ref="0x2b9d55af8020" scoped=""/></type-var>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="test" ref="0x2b9d55aea020" scoped=""/>
+        <function-ref name="fired" ref="0x2b9d55aecd08" scoped=""/>
+        <function-ref name="get" ref="0x2b9d55aec3a8" scoped=""/>
+        <function-ref name="reset" ref="0x2b9d55aeb1f8" scoped=""/>
+        <function-ref name="isOn" ref="0x2b9d55aea4a8" scoped=""/>
+        <function-ref name="set" ref="0x2b9d55aec830" scoped=""/>
+        <function-ref name="start" ref="0x2b9d55aeb680" scoped=""/>
+        <function-ref name="stop" ref="0x2b9d55aebb08" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="57:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128AlarmC.nc" name="HplAtm128Timer" provided="0" ref="0x2b9d55af3638">
+      <component-ref nicename="tos.chips.atm128.timer.Atm128AlarmC" qname="Atm128AlarmC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="HplAtm128Timer" ref="0x2b9d55af3638" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Timer" qname="HplAtm128Timer"/>
+        <arguments>
+          <type-var alignment="U:" size="U:"><typedef-ref name="timer_size" ref="0x2b9d55af8020" scoped=""/></type-var>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="off" ref="0x2b9d55aef798" scoped=""/>
+        <function-ref name="test" ref="0x2b9d55af0e20" scoped=""/>
+        <function-ref name="get" ref="0x2b9d55af2220" scoped=""/>
+        <function-ref name="setScale" ref="0x2b9d55aefc20" scoped=""/>
+        <function-ref name="getScale" ref="0x2b9d55aee130" scoped=""/>
+        <function-ref name="reset" ref="0x2b9d55af0088" scoped=""/>
+        <function-ref name="overflow" ref="0x2b9d55af2b80" scoped=""/>
+        <function-ref name="isOn" ref="0x2b9d55aef310" scoped=""/>
+        <function-ref name="set" ref="0x2b9d55af26a8" scoped=""/>
+        <function-ref name="start" ref="0x2b9d55af0510" scoped=""/>
+        <function-ref name="stop" ref="0x2b9d55af0998" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

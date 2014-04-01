@@ -1,0 +1,20 @@
+<?xml version="1.0" ?><component loc="34:/home/tinyos/tinyos-main/tos/platforms/micaz/BusyWaitMicroC.nc" nicename="tos.platforms.micaz.BusyWaitMicroC" qname="BusyWaitMicroC">
+      <module/>
+    <specification><interface loc="36:/home/tinyos/tinyos-main/tos/platforms/micaz/BusyWaitMicroC.nc" name="BusyWait" provided="1" ref="0x2b9d55b833c0">
+      <component-ref nicename="tos.platforms.micaz.BusyWaitMicroC" qname="BusyWaitMicroC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="BusyWait" ref="0x2b9d55b833c0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.timer.BusyWait" qname="BusyWait"/>
+        <arguments>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54cf1430"/>
+            <typename><typedef-ref name="TMicro" ref="0x2b9d54cf1788"/></typename>
+          </type-tag>
+          <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="wait" ref="0x2b9d55b82150" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

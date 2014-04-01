@@ -1,0 +1,13 @@
+<area shape="rect" id="node2" href="../chtml/tos.platforms.mica.PlatformP.html" title="PlatformP" alt="" coords="31,120,127,168">
+<area shape="poly" id="edge2" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="81,54 81,106 76,106 76,54">
+<area shape="rect" id="edge2" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="79,78,99,95">
+<area shape="rect" id="node4" href="../chtml/tos.platforms.iris.MeasureClockC.html" title="MeasureClockC" alt="" coords="177,240,316,288">
+<area shape="poly" id="edge6" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="114,166 203,230 200,234 111,170">
+<area shape="rect" id="edge6" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="167,193,187,210">
+<area shape="rect" id="node5" href="../chtml/tos.platforms.micaz.MotePlatformC.html" title="MotePlatformC" alt="" coords="5,235,152,293">
+<area shape="poly" id="edge8" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="81,168 81,221 76,221 76,168">
+<area shape="rect" id="edge8" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="79,193,99,210">
+<area shape="poly" id="edge4" href="../ihtml/tos.chips.atm128.timer.Atm128Calibrate.html" title="Atm128Calibrate" alt="" coords="250,168 250,226 244,226 245,168">
+<area shape="rect" id="edge4" href="../ihtml/tos.chips.atm128.timer.Atm128Calibrate.html" title="Atm128Calibrate" alt="" coords="247,193,355,210">
+<area shape="poly" id="edge10" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="81,294 81,346 76,346 76,294">
+<area shape="rect" id="edge10" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="79,318,99,335">

@@ -1,0 +1,389 @@
+<?xml version="1.0" ?><component loc="42:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP">
+      <module/>
+    <specification><interface loc="52:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="RadioCCA" provided="1" ref="0x2b9d558212c0">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="RadioCCA" ref="0x2b9d558212c0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.RadioCCA" qname="RadioCCA"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="done" ref="0x2b9d55821610" scoped=""/>
+        <function-ref name="request" ref="0x2b9d55821798" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="74:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="BusyWait" provided="0" ref="0x2b9d55875c60">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="BusyWait" ref="0x2b9d55875c60" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.timer.BusyWait" qname="BusyWait"/>
+        <arguments>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54cf1430"/>
+            <typename><typedef-ref name="TMicro" ref="0x2b9d54cf1788"/></typename>
+          </type-tag>
+          <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="wait" ref="0x2b9d558409f0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="56:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="PacketRSSI" provided="1" ref="0x2b9d55855020">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="PacketRSSI" ref="0x2b9d55855020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.PacketField" qname="PacketField"/>
+        <arguments>
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b9d55854608" scoped=""/>
+        <function-ref name="get" ref="0x2b9d558540f8" scoped=""/>
+        <function-ref name="isSet" ref="0x2b9d55855ba0" scoped=""/>
+        <function-ref name="set" ref="0x2b9d55854b18" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="80:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="RSSIFlag" provided="0" ref="0x2b9d55873988">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="RSSIFlag" ref="0x2b9d55873988" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.PacketFlag" qname="PacketFlag"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b9d55873cd8" scoped=""/>
+        <function-ref name="get" ref="0x2b9d55873e60" scoped=""/>
+        <function-ref name="setValue" ref="0x2b9d55872020" scoped=""/>
+        <function-ref name="set" ref="0x2b9d558721a8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="47:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="SoftwareInit" provided="1" ref="0x2b9d55824bf0">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SoftwareInit" ref="0x2b9d55824bf0" scoped=""/></type-interface>
+      <attribute-value>
+        <attribute-ref name="exactlyonce" ref="0x2b9d54c64128"/>
+        <value-structured>
+          <type-tag alignment="I:1" size="I:0"><attribute-ref name="exactlyonce" ref="0x2b9d54c64128"/></type-tag>
+        </value-structured>
+      </attribute-value>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b9d55823020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="83:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="PacketTimeStamp" provided="0" ref="0x2b9d558712b0">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="PacketTimeStamp" ref="0x2b9d558712b0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.PacketTimeStamp" qname="PacketTimeStamp"/>
+        <arguments>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54cf1430"/>
+            <typename><typedef-ref name="TRadio" ref="0x2b9d54fc1140"/></typename>
+          </type-tag>
+          <type-int alignment="I:1" cname="unsigned long" size="I:4" unsigned="">
+            <typename><typedef-ref name="uint32_t" ref="0x2b9d54680608"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="timestamp" ref="0x2b9d5586f910" scoped=""/>
+        <function-ref name="clear" ref="0x2b9d5586e020" scoped=""/>
+        <function-ref name="isValid" ref="0x2b9d5586f230" scoped=""/>
+        <function-ref name="set" ref="0x2b9d5586e700" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="70:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="RSTN" provided="0" ref="0x2b9d55848df0">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="RSTN" ref="0x2b9d55848df0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.GeneralIO" qname="GeneralIO"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="makeInput" ref="0x2b9d55847170" scoped=""/>
+        <function-ref name="isInput" ref="0x2b9d558472f8" scoped=""/>
+        <function-ref name="toggle" ref="0x2b9d55847480" scoped=""/>
+        <function-ref name="isOutput" ref="0x2b9d55847608" scoped=""/>
+        <function-ref name="get" ref="0x2b9d55847790" scoped=""/>
+        <function-ref name="makeOutput" ref="0x2b9d55847918" scoped=""/>
+        <function-ref name="set" ref="0x2b9d55847aa0" scoped=""/>
+        <function-ref name="clr" ref="0x2b9d55847c28" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="86:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="RadioAlarm" provided="0" ref="0x2b9d5586dab8">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="RadioAlarm" ref="0x2b9d5586dab8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.RadioAlarm" qname="RadioAlarm"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="fired" ref="0x2b9d5586de08" scoped=""/>
+        <function-ref name="wait" ref="0x2b9d5586c020" scoped=""/>
+        <function-ref name="cancel" ref="0x2b9d5586c1a8" scoped=""/>
+        <function-ref name="isFree" ref="0x2b9d5586c330" scoped=""/>
+        <function-ref name="getNow" ref="0x2b9d5586c4b8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="49:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="RadioState" provided="1" ref="0x2b9d558232d0">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="RadioState" ref="0x2b9d558232d0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.RadioState" qname="RadioState"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="turnOff" ref="0x2b9d55823620" scoped=""/>
+        <function-ref name="turnOn" ref="0x2b9d558237a8" scoped=""/>
+        <function-ref name="setChannel" ref="0x2b9d55823930" scoped=""/>
+        <function-ref name="done" ref="0x2b9d55823ab8" scoped=""/>
+        <function-ref name="standby" ref="0x2b9d55823c40" scoped=""/>
+        <function-ref name="getChannel" ref="0x2b9d55823dc8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="75:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="LocalTime" provided="0" ref="0x2b9d5583d020">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="LocalTime" ref="0x2b9d5583d020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.timer.LocalTime" qname="LocalTime"/>
+        <arguments>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54cf1430"/>
+            <typename><typedef-ref name="TRadio" ref="0x2b9d54fc1140"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="get" ref="0x2b9d5583dba0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="55:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="PacketTransmitPower" provided="1" ref="0x2b9d55820b48">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="PacketTransmitPower" ref="0x2b9d55820b48" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.PacketField" qname="PacketField"/>
+        <arguments>
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b9d55856190" scoped=""/>
+        <function-ref name="get" ref="0x2b9d55858c38" scoped=""/>
+        <function-ref name="isSet" ref="0x2b9d55858728" scoped=""/>
+        <function-ref name="set" ref="0x2b9d558566a0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="53:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="RadioPacket" provided="1" ref="0x2b9d55821a50">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="RadioPacket" ref="0x2b9d55821a50" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.RadioPacket" qname="RadioPacket"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b9d55821da0" scoped=""/>
+        <function-ref name="payloadLength" ref="0x2b9d55820020" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b9d558201a8" scoped=""/>
+        <function-ref name="setPayloadLength" ref="0x2b9d55820330" scoped=""/>
+        <function-ref name="headerLength" ref="0x2b9d558204b8" scoped=""/>
+        <function-ref name="metadataLength" ref="0x2b9d55820640" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="69:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="SLP_TR" provided="0" ref="0x2b9d55843c00">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SLP_TR" ref="0x2b9d55843c00" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.GeneralIO" qname="GeneralIO"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="makeInput" ref="0x2b9d55848020" scoped=""/>
+        <function-ref name="isInput" ref="0x2b9d558481a8" scoped=""/>
+        <function-ref name="toggle" ref="0x2b9d55848330" scoped=""/>
+        <function-ref name="isOutput" ref="0x2b9d558484b8" scoped=""/>
+        <function-ref name="get" ref="0x2b9d55848640" scoped=""/>
+        <function-ref name="makeOutput" ref="0x2b9d558487c8" scoped=""/>
+        <function-ref name="set" ref="0x2b9d55848950" scoped=""/>
+        <function-ref name="clr" ref="0x2b9d55848ad8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="77:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="Config" provided="0" ref="0x2b9d55874100">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Config" ref="0x2b9d55874100" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.rf230.RF230DriverConfig" qname="RF230DriverConfig"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="maxPayloadLength" ref="0x2b9d55874450" scoped=""/>
+        <function-ref name="headerLength" ref="0x2b9d558745d8" scoped=""/>
+        <function-ref name="metadataLength" ref="0x2b9d55874760" scoped=""/>
+        <function-ref name="headerPreloadLength" ref="0x2b9d558748e8" scoped=""/>
+        <function-ref name="requiresRssiCca" ref="0x2b9d55874a70" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="51:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="RadioReceive" provided="1" ref="0x2b9d558229e8">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="RadioReceive" ref="0x2b9d558229e8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.RadioReceive" qname="RadioReceive"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="receive" ref="0x2b9d55822d38" scoped=""/>
+        <function-ref name="header" ref="0x2b9d55821020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="847:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="releaseSpi" provided="0" ref="0x2b9d55908d98">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="releaseSpi" ref="0x2b9d55908d98" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.TaskBasic" qname="TaskBasic"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="postTask" ref="0x2b9d55907170" scoped=""/>
+        <function-ref name="runTask" ref="0x2b9d559072f8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="57:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="PacketTimeSyncOffset" provided="1" ref="0x2b9d558523b0">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="PacketTimeSyncOffset" ref="0x2b9d558523b0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.PacketField" qname="PacketField"/>
+        <arguments>
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b9d55851a40" scoped=""/>
+        <function-ref name="get" ref="0x2b9d55851530" scoped=""/>
+        <function-ref name="isSet" ref="0x2b9d55851020" scoped=""/>
+        <function-ref name="set" ref="0x2b9d5584f020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="46:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="PlatformInit" provided="1" ref="0x2b9d55824138">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="PlatformInit" ref="0x2b9d55824138" scoped=""/></type-interface>
+      <attribute-value>
+        <attribute-ref name="exactlyonce" ref="0x2b9d54c64128"/>
+        <value-structured>
+          <type-tag alignment="I:1" size="I:0"><attribute-ref name="exactlyonce" ref="0x2b9d54c64128"/></type-tag>
+        </value-structured>
+      </attribute-value>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b9d55824488" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="65:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="SpiResource" provided="0" ref="0x2b9d5584a4f8">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SpiResource" ref="0x2b9d5584a4f8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Resource" qname="Resource"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="release" ref="0x2b9d5584a848" scoped=""/>
+        <function-ref name="immediateRequest" ref="0x2b9d5584a9d0" scoped=""/>
+        <function-ref name="request" ref="0x2b9d5584ab58" scoped=""/>
+        <function-ref name="granted" ref="0x2b9d5584ace0" scoped=""/>
+        <function-ref name="isOwner" ref="0x2b9d5584ae68" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="64:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="SELN" provided="0" ref="0x2b9d5584b130">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SELN" ref="0x2b9d5584b130" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.GeneralIO" qname="GeneralIO"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="makeInput" ref="0x2b9d5584b580" scoped=""/>
+        <function-ref name="isInput" ref="0x2b9d5584b708" scoped=""/>
+        <function-ref name="toggle" ref="0x2b9d5584b890" scoped=""/>
+        <function-ref name="isOutput" ref="0x2b9d5584ba18" scoped=""/>
+        <function-ref name="get" ref="0x2b9d5584bba0" scoped=""/>
+        <function-ref name="makeOutput" ref="0x2b9d5584bd28" scoped=""/>
+        <function-ref name="set" ref="0x2b9d5584a020" scoped=""/>
+        <function-ref name="clr" ref="0x2b9d5584a1a8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="58:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="PacketLinkQuality" provided="1" ref="0x2b9d5584f860">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="PacketLinkQuality" ref="0x2b9d5584f860" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.PacketField" qname="PacketField"/>
+        <arguments>
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b9d5584ee30" scoped=""/>
+        <function-ref name="get" ref="0x2b9d5584e920" scoped=""/>
+        <function-ref name="isSet" ref="0x2b9d5584e410" scoped=""/>
+        <function-ref name="set" ref="0x2b9d5584c388" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="50:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="RadioSend" provided="1" ref="0x2b9d558220c0">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="RadioSend" ref="0x2b9d558220c0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.RadioSend" qname="RadioSend"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b9d55822410" scoped=""/>
+        <function-ref name="ready" ref="0x2b9d55822598" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b9d55822720" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="72:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="IRQ" provided="0" ref="0x2b9d5583e5e8">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="IRQ" ref="0x2b9d5583e5e8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.GpioCapture" qname="GpioCapture"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="captureFallingEdge" ref="0x2b9d5583e938" scoped=""/>
+        <function-ref name="disable" ref="0x2b9d5583eac0" scoped=""/>
+        <function-ref name="captured" ref="0x2b9d5583ec48" scoped=""/>
+        <function-ref name="captureRisingEdge" ref="0x2b9d5583edd0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="67:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="FastSpiByte" provided="0" ref="0x2b9d558430f0">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="FastSpiByte" ref="0x2b9d558430f0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.FastSpiByte" qname="FastSpiByte"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="splitWrite" ref="0x2b9d55843440" scoped=""/>
+        <function-ref name="splitReadWrite" ref="0x2b9d558435c8" scoped=""/>
+        <function-ref name="splitRead" ref="0x2b9d55843750" scoped=""/>
+        <function-ref name="write" ref="0x2b9d558438d8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="81:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="TimeSyncFlag" provided="0" ref="0x2b9d55872518">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="TimeSyncFlag" ref="0x2b9d55872518" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.PacketFlag" qname="PacketFlag"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b9d55872868" scoped=""/>
+        <function-ref name="get" ref="0x2b9d558729f0" scoped=""/>
+        <function-ref name="setValue" ref="0x2b9d55872b78" scoped=""/>
+        <function-ref name="set" ref="0x2b9d55872d00" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="79:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="TransmitPowerFlag" provided="0" ref="0x2b9d55874e10">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="TransmitPowerFlag" ref="0x2b9d55874e10" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.PacketFlag" qname="PacketFlag"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b9d558731a8" scoped=""/>
+        <function-ref name="get" ref="0x2b9d55873330" scoped=""/>
+        <function-ref name="setValue" ref="0x2b9d558734b8" scoped=""/>
+        <function-ref name="set" ref="0x2b9d55873640" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="59:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="LinkPacketMetadata" provided="1" ref="0x2b9d5584c9d0">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="LinkPacketMetadata" ref="0x2b9d5584c9d0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.LinkPacketMetadata" qname="LinkPacketMetadata"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="highChannelQuality" ref="0x2b9d5584cd20" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="85:/home/tinyos/tinyos-main/tos/chips/rf230/RF230DriverLayerP.nc" name="Tasklet" provided="0" ref="0x2b9d5586d020">
+      <component-ref nicename="tos.chips.rf230.RF230DriverLayerP" qname="RF230DriverLayerP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Tasklet" ref="0x2b9d5586d020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.Tasklet" qname="Tasklet"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="schedule" ref="0x2b9d5586d370" scoped=""/>
+        <function-ref name="suspend" ref="0x2b9d5586d4f8" scoped=""/>
+        <function-ref name="resume" ref="0x2b9d5586d680" scoped=""/>
+        <function-ref name="run" ref="0x2b9d5586d808" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

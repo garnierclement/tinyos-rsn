@@ -1,0 +1,43 @@
+<?xml version="1.0" ?><component loc="56:/home/tinyos/tinyos-main/tos/platforms/iris/MeasureClockC.nc" nicename="tos.platforms.iris.MeasureClockC" qname="MeasureClockC">
+      <documentation loc="47:/home/tinyos/tinyos-main/tos/platforms/iris/MeasureClockC.nc">
+        <short>
+ Measure cpu clock frequency at boot time.</short>
+        <long>
+ Measure cpu clock frequency at boot time. Provides an Atm128Calibrate
+ interface so that other components can adjust their calibration as
+ needed.
+
+ @author David Gay
+ @author Janos Sallai
+</long>
+      </documentation>
+      <module/>
+    <specification><interface loc="61:/home/tinyos/tinyos-main/tos/platforms/iris/MeasureClockC.nc" name="Init" provided="1" ref="0x2b9d54f084b0">
+      <component-ref nicename="tos.platforms.iris.MeasureClockC" qname="MeasureClockC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b9d54f084b0" scoped=""/></type-interface>
+      <attribute-value>
+        <attribute-ref name="exactlyonce" ref="0x2b9d54c64128"/>
+        <value-structured>
+          <type-tag alignment="I:1" size="I:0"><attribute-ref name="exactlyonce" ref="0x2b9d54c64128"/></type-tag>
+        </value-structured>
+      </attribute-value>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b9d54f08800" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="62:/home/tinyos/tinyos-main/tos/platforms/iris/MeasureClockC.nc" name="Atm128Calibrate" provided="1" ref="0x2b9d54f08ae0">
+      <component-ref nicename="tos.platforms.iris.MeasureClockC" qname="MeasureClockC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Atm128Calibrate" ref="0x2b9d54f08ae0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.Atm128Calibrate" qname="Atm128Calibrate"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="baudrateRegister" ref="0x2b9d54f08e30" scoped=""/>
+        <function-ref name="cyclesPerJiffy" ref="0x2b9d54f07020" scoped=""/>
+        <function-ref name="calibrateMicro" ref="0x2b9d54f071a8" scoped=""/>
+        <function-ref name="actualMicro" ref="0x2b9d54f07330" scoped=""/>
+        <function-ref name="adcPrescaler" ref="0x2b9d54f074b8" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

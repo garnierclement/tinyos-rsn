@@ -1,0 +1,20 @@
+digraph "tos.chips.atm128.spi.HplAtm128SpiC" {
+  n0x2b9d559d2020 [shape=ellipse, style=filled, label="SpiBus", fontsize=12];
+  "HplAtm128SpiP" [fontsize=12, shape=box, URL="../chtml/tos.chips.atm128.spi.HplAtm128SpiP.html"];
+  "HplAtm128SpiP" [fontsize=12, shape=box, URL="../chtml/tos.chips.atm128.spi.HplAtm128SpiP.html"];
+  "McuSleepC" [fontsize=12, shape=box, URL="../chtml/tos.chips.atm1281.McuSleepC.html"];
+  "HplAtm128SpiP" [fontsize=12, shape=box, URL="../chtml/tos.chips.atm128.spi.HplAtm128SpiP.html"];
+  "HplAtm128GeneralIOC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.chips.atm1281.HplAtm128GeneralIOC.html"];
+  "HplAtm128SpiP" [fontsize=12, shape=box, URL="../chtml/tos.chips.atm128.spi.HplAtm128SpiP.html"];
+  "HplAtm128GeneralIOC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.chips.atm1281.HplAtm128GeneralIOC.html"];
+  "HplAtm128SpiP" [fontsize=12, shape=box, URL="../chtml/tos.chips.atm128.spi.HplAtm128SpiP.html"];
+  "HplAtm128GeneralIOC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.chips.atm1281.HplAtm128GeneralIOC.html"];
+  "HplAtm128SpiP" [fontsize=12, shape=box, URL="../chtml/tos.chips.atm128.spi.HplAtm128SpiP.html"];
+  "HplAtm128GeneralIOC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.chips.atm1281.HplAtm128GeneralIOC.html"];
+  "n0x2b9d559d2020" -> "HplAtm128SpiP" [label="Atm128Spi", URL="../ihtml/tos.chips.atm128.spi.Atm128Spi.html", fontsize=10];
+  "HplAtm128SpiP" -> "McuSleepC" [label="McuPowerState", URL="../ihtml/tos.interfaces.McuPowerState.html", fontsize=10];
+  "HplAtm128SpiP" -> "HplAtm128GeneralIOC" [label="GeneralIO", URL="../ihtml/tos.interfaces.GeneralIO.html", fontsize=10];
+  "HplAtm128SpiP" -> "HplAtm128GeneralIOC" [label="GeneralIO", URL="../ihtml/tos.interfaces.GeneralIO.html", fontsize=10];
+  "HplAtm128SpiP" -> "HplAtm128GeneralIOC" [label="GeneralIO", URL="../ihtml/tos.interfaces.GeneralIO.html", fontsize=10];
+  "HplAtm128SpiP" -> "HplAtm128GeneralIOC" [label="GeneralIO", URL="../ihtml/tos.interfaces.GeneralIO.html", fontsize=10];
+}

@@ -1,0 +1,153 @@
+<?xml version="1.0" ?><interfacedef loc="26:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128Calibrate.nc" nicename="tos.chips.atm128.timer.Atm128Calibrate" qname="Atm128Calibrate">
+      <documentation loc="11:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128Calibrate.nc">
+        <short>
+ This interface provides functions to compute ATmega128 configuration
+ values that are clock-rate dependent.</short>
+        <long>
+ This interface provides functions to compute ATmega128 configuration
+ values that are clock-rate dependent. These include:&lt;ul&gt;
+ &lt;li&gt;the ADC prescaler value necessary for full precision
+ &lt;li&gt;values for the UBRR registers to achieve a specific baud rate
+ &lt;li&gt;any adjustment necessary to values passed to some platform-provided
+   AlarmMicroXXC components to get more accurate timing
+ &lt;li&gt;the number of cycles per 1/32768s (a typical implementation of this
+   interface will measure this value at boot time and use it to compute
+   the values above)
+ &lt;/ul&gt;
+
+ @author David Gay
+</long>
+      </documentation>
+      <function command="" loc="60:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128Calibrate.nc" name="baudrateRegister" provided="0" ref="0x2b9d54d7e5e8">
+        <documentation loc="55:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128Calibrate.nc">
+          <short>
+ Return the value to use for the baudrate register to achieve a
+ particular baud rate.</short>
+          <long>
+ Return the value to use for the baudrate register to achieve a
+ particular baud rate. Assumes U2X=1 (the USART is being run at
+ double speed).
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.Atm128Calibrate" qname="Atm128Calibrate"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-int alignment="I:1" cname="unsigned long" size="I:4" unsigned="">
+              <typename><typedef-ref name="uint32_t" ref="0x2b9d54680608"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="60:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128Calibrate.nc" name="baudrate" ref="0x2b9d54d7e378">
+            <type-int alignment="I:1" cname="unsigned long" size="I:4" unsigned="">
+              <typename><typedef-ref name="uint32_t" ref="0x2b9d54680608"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="31:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128Calibrate.nc" name="cyclesPerJiffy" provided="0" ref="0x2b9d54d84d68">
+        <documentation loc="27:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128Calibrate.nc">
+          <short>
+ Return CPU cycles per 1/32768s.</short>
+          <long>
+ Return CPU cycles per 1/32768s.
+ @return CPU cycles.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.Atm128Calibrate" qname="Atm128Calibrate"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="39:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128Calibrate.nc" name="calibrateMicro" provided="0" ref="0x2b9d54d817b0">
+        <documentation loc="33:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128Calibrate.nc">
+          <short>
+ Convert n microseconds into a value suitable for use with
+ AlarmMicro32C Alarms.</short>
+          <long>
+ Convert n microseconds into a value suitable for use with
+ AlarmMicro32C Alarms.
+ @param n Time in microseconds.
+ @return AlarmMicro argument that best approximates n microseconds.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.Atm128Calibrate" qname="Atm128Calibrate"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned long" size="I:4" unsigned="">
+            <typename><typedef-ref name="uint32_t" ref="0x2b9d54680608"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-int alignment="I:1" cname="unsigned long" size="I:4" unsigned="">
+              <typename><typedef-ref name="uint32_t" ref="0x2b9d54680608"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="39:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128Calibrate.nc" name="n" ref="0x2b9d54d81540">
+            <type-int alignment="I:1" cname="unsigned long" size="I:4" unsigned="">
+              <typename><typedef-ref name="uint32_t" ref="0x2b9d54680608"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="46:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128Calibrate.nc" name="actualMicro" provided="0" ref="0x2b9d54d7f290">
+        <documentation loc="41:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128Calibrate.nc">
+          <short>
+ Convert values used by AlarmMicro32C Alarms into actual microseconds.</short>
+          <long>
+ Convert values used by AlarmMicro32C Alarms into actual microseconds.
+ @param n A time expressed in AlarmMicro time units.
+ @return Time in microseconds that corresponds to AlarmMicro argument n.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.Atm128Calibrate" qname="Atm128Calibrate"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned long" size="I:4" unsigned="">
+            <typename><typedef-ref name="uint32_t" ref="0x2b9d54680608"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-int alignment="I:1" cname="unsigned long" size="I:4" unsigned="">
+              <typename><typedef-ref name="uint32_t" ref="0x2b9d54680608"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="46:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128Calibrate.nc" name="n" ref="0x2b9d54d7f020">
+            <type-int alignment="I:1" cname="unsigned long" size="I:4" unsigned="">
+              <typename><typedef-ref name="uint32_t" ref="0x2b9d54680608"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="53:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128Calibrate.nc" name="adcPrescaler" provided="0" ref="0x2b9d54d7fad8">
+        <documentation loc="48:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128Calibrate.nc">
+          <short>
+ Return the smallest ADC prescaler value which guaranteers full
+ ADC precision.</short>
+          <long>
+ Return the smallest ADC prescaler value which guaranteers full
+ ADC precision.
+ @return ADC prescaler value.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.Atm128Calibrate" qname="Atm128Calibrate"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>

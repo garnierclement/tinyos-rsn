@@ -1,0 +1,65 @@
+<?xml version="1.0" ?><component abstract="" loc="44:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128TimerInitC.nc" nicename="tos.chips.atm128.timer.Atm128TimerInitC" qname="Atm128TimerInitC" safe="">
+      <documentation loc="34:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128TimerInitC.nc">
+        <short>
+ Initialise an Atmega128 timer to a particular prescaler.</short>
+        <long>
+ Initialise an Atmega128 timer to a particular prescaler. Expected to be
+ used at boot time.
+ @param timer_size Integer type of the timer
+ @param prescaler Desired prescaler value
+
+ @author Martin Turon &lt;mturon@xbow.com&gt;
+ @author David Gay &lt;david.e.gay@intel.com&gt;
+</long>
+      </documentation>
+      <parameters>
+        <typedef loc="44:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128TimerInitC.nc" name="timer_size" ref="0x2b9d55acbe08">
+          <component-ref nicename="tos.chips.atm128.timer.Atm128TimerInitC" qname="Atm128TimerInitC"/>
+          <type-var alignment="U:" size="U:"><typedef-ref name="timer_size" ref="0x2b9d55acbe08" scoped=""/></type-var>
+        </typedef>
+        <constant loc="44:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128TimerInitC.nc" name="prescaler" ref="0x2b9d55ac81a0">
+          <component-ref nicename="tos.chips.atm128.timer.Atm128TimerInitC" qname="Atm128TimerInitC"/>
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+          </type-int>
+        </constant>
+      </parameters>
+      <module/>
+    <specification><interface loc="46:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128TimerInitC.nc" name="Init" provided="1" ref="0x2b9d55ac8df0">
+      <component-ref nicename="tos.chips.atm128.timer.Atm128TimerInitC" qname="Atm128TimerInitC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b9d55ac8df0" scoped=""/></type-interface>
+      <attribute-value>
+        <attribute-ref name="atleastonce" ref="0x2b9d54c65d88"/>
+        <value-structured>
+          <type-tag alignment="I:1" size="I:0"><attribute-ref name="atleastonce" ref="0x2b9d54c65d88"/></type-tag>
+        </value-structured>
+      </attribute-value>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b9d55ac7170" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="47:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128TimerInitC.nc" name="Timer" provided="0" ref="0x2b9d55ac7670">
+      <component-ref nicename="tos.chips.atm128.timer.Atm128TimerInitC" qname="Atm128TimerInitC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Timer" ref="0x2b9d55ac7670" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Timer" qname="HplAtm128Timer"/>
+        <arguments>
+          <type-var alignment="U:" size="U:"><typedef-ref name="timer_size" ref="0x2b9d55acbe08" scoped=""/></type-var>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="off" ref="0x2b9d55b07798" scoped=""/>
+        <function-ref name="test" ref="0x2b9d55b08e20" scoped=""/>
+        <function-ref name="get" ref="0x2b9d55b09220" scoped=""/>
+        <function-ref name="setScale" ref="0x2b9d55b07c20" scoped=""/>
+        <function-ref name="getScale" ref="0x2b9d55b05130" scoped=""/>
+        <function-ref name="reset" ref="0x2b9d55b08088" scoped=""/>
+        <function-ref name="overflow" ref="0x2b9d55b09b80" scoped=""/>
+        <function-ref name="isOn" ref="0x2b9d55b07310" scoped=""/>
+        <function-ref name="set" ref="0x2b9d55b096a8" scoped=""/>
+        <function-ref name="start" ref="0x2b9d55b08510" scoped=""/>
+        <function-ref name="stop" ref="0x2b9d55b08998" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

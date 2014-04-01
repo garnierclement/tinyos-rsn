@@ -1,0 +1,196 @@
+<?xml version="1.0" ?><component loc="43:/home/tinyos/tinyos-main/tos/system/RandomC.nc" nicename="tos.system.RandomC" qname="RandomC">
+      <documentation loc="33:/home/tinyos/tinyos-main/tos/system/RandomC.nc">
+        <short>
+ The standard TinyOS random number generator.</short>
+        <long>
+ The standard TinyOS random number generator. If your system requires a 
+ specific random number generator, it should wire to that component
+ directly. 
+
+ @author  Barbara Hohlt 
+ @author  Phil Levis 
+ @date    March 1 2005
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="56:/home/tinyos/tinyos-main/tos/system/RandomC.nc">
+          <from><interface-ref name="Random" ref="0x2b9d556fc690" scoped=""/></from>
+          <to><interface-ref name="Random" ref="0x2b9d55729568" scoped=""/></to>
+        </wire>
+        <wire loc="55:/home/tinyos/tinyos-main/tos/system/RandomC.nc">
+          <from><interface-ref name="SeedInit" ref="0x2b9d556fa668" scoped=""/></from>
+          <to><interface-ref name="SeedInit" ref="0x2b9d556f7528" scoped=""/></to>
+        </wire>
+        <wire loc="54:/home/tinyos/tinyos-main/tos/system/RandomC.nc">
+          <from><interface-ref name="Init" ref="0x2b9d55700938" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x2b9d556fbb38" scoped=""/></to>
+        </wire>
+        <wire loc="52:/home/tinyos/tinyos-main/tos/system/RandomC.nc">
+          <from><interface-ref name="SoftwareInit" ref="0x2b9d54d76210" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x2b9d556fbb38" scoped=""/></to>
+        </wire>
+      </wiring>
+    <specification><interface loc="46:/home/tinyos/tinyos-main/tos/system/RandomC.nc" name="Random" provided="1" ref="0x2b9d556fc690">
+      <component-ref nicename="tos.system.RandomC" qname="RandomC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Random" ref="0x2b9d556fc690" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Random" qname="Random"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="rand16" ref="0x2b9d556fc9e0" scoped=""/>
+        <function-ref name="rand32" ref="0x2b9d556fcb68" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="45:/home/tinyos/tinyos-main/tos/system/RandomC.nc" name="SeedInit" provided="1" ref="0x2b9d556fa668">
+      <component-ref nicename="tos.system.RandomC" qname="RandomC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SeedInit" ref="0x2b9d556fa668" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.ParameterInit" qname="ParameterInit"/>
+        <arguments>
+          <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b9d556fc1e8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="44:/home/tinyos/tinyos-main/tos/system/RandomC.nc" name="Init" provided="1" ref="0x2b9d55700938">
+      <component-ref nicename="tos.system.RandomC" qname="RandomC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b9d55700938" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b9d55700c88" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced><interface loc="48:/home/tinyos/tinyos-main/tos/system/RandomMlcgC.nc" name="Random" provided="1" ref="0x2b9d55729568">
+      <component-ref nicename="tos.system.RandomMlcgC" qname="RandomMlcgC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Random" ref="0x2b9d55729568" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Random" qname="Random"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="rand16" ref="0x2b9d557298b8" scoped=""/>
+        <function-ref name="rand32" ref="0x2b9d55729a40" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="58:/home/tinyos/tinyos-main/tos/system/MainC.nc" name="SoftwareInit" provided="0" ref="0x2b9d54d76210">
+      <component-ref nicename="tos.system.MainC" qname="MainC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SoftwareInit" ref="0x2b9d54d76210" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b9d54d76560" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="47:/home/tinyos/tinyos-main/tos/system/RandomMlcgC.nc" name="SeedInit" provided="1" ref="0x2b9d556f7528">
+      <component-ref nicename="tos.system.RandomMlcgC" qname="RandomMlcgC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SeedInit" ref="0x2b9d556f7528" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.ParameterInit" qname="ParameterInit"/>
+        <arguments>
+          <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b9d557290c0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="46:/home/tinyos/tinyos-main/tos/system/RandomMlcgC.nc" name="Init" provided="1" ref="0x2b9d556fbb38">
+      <component-ref nicename="tos.system.RandomMlcgC" qname="RandomMlcgC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b9d556fbb38" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b9d556f7020" scoped=""/>
+      </interface-functions>
+    </interface><component loc="45:/home/tinyos/tinyos-main/tos/system/RandomMlcgC.nc" nicename="tos.system.RandomMlcgC" qname="RandomMlcgC" safe="">
+      <documentation loc="32:/home/tinyos/tinyos-main/tos/system/RandomMlcgC.nc">
+        <short> This code is a fast implementation of the Park-Miller Minimal Standard 
+  Generator for pseudo-random numbers.</short>
+        <long> This code is a fast implementation of the Park-Miller Minimal Standard 
+  Generator for pseudo-random numbers.  It uses the 32 bit multiplicative 
+  linear congruential generator, 
+
+		S' = (A x S) mod (2^31 - 1) 
+
+  for A = 16807.
+
+
+ @author Barbara Hohlt 
+ @date   March 1 2005
+</long>
+      </documentation>
+      <module/>
+    </component><component loc="56:/home/tinyos/tinyos-main/tos/system/MainC.nc" nicename="tos.system.MainC" qname="MainC">
+      <documentation loc="1:/home/tinyos/tinyos-main/tos/platforms/micaz/hardware.h">
+        <short>                                                                     
+  IMPORTANT: READ BEFORE DOWNLOADING, COPYING, INSTALLING OR USING.</short>
+        <long>                                                                     
+  IMPORTANT: READ BEFORE DOWNLOADING, COPYING, INSTALLING OR USING.  By
+  downloading, copying, installing or using the software you agree to
+  this license.  If you do not agree to this license, do not download,
+  install, copy or use the software.
+
+  Copyright (c) 2004-2005 Crossbow Technology, Inc.
+  Copyright (c) 2002-2003 Intel Corporation.
+  Copyright (c) 2000-2003 The Regents of the University  of California.    
+  All rights reserved.
+
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+
+ - Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+ - Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the
+   distribution.
+ - Neither the name of the copyright holder nor the names of
+   its contributors may be used to endorse or promote products derived
+   from this software without specific prior written permission.
+
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL
+ THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+ OF THE POSSIBILITY OF SUCH DAMAGE.
+
+  @author Jason Hill, Philip Levis, Nelson Lee, David Gay
+  @author Alan Broad &lt;abroad@xbow.com&gt;
+  @author Matt Miller &lt;mmiller@xbow.com&gt;
+  @author Martin Turon &lt;mturon@xbow.com&gt;
+
+  $Id: hardware.h,v 1.8 2010-06-29 22:07:54 scipio Exp $
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="72:/home/tinyos/tinyos-main/tos/system/MainC.nc">
+          <from><interface-ref name="Boot" ref="0x2b9d54d7add8" scoped=""/></from>
+          <to><interface-ref name="Boot" ref="0x2b9d54d77c40" scoped=""/></to>
+        </wire>
+        <wire loc="67:/home/tinyos/tinyos-main/tos/system/MainC.nc">
+          <from><interface-ref name="Scheduler" ref="0x2b9d54f25308" scoped=""/></from>
+          <to><interface-ref name="Scheduler" ref="0x2b9d54c5f080" scoped=""/></to>
+        </wire>
+        <wire loc="68:/home/tinyos/tinyos-main/tos/system/MainC.nc">
+          <from><interface-ref name="PlatformInit" ref="0x2b9d54f25ce0" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x2b9d54d75a70" scoped=""/></to>
+        </wire>
+        <wire loc="71:/home/tinyos/tinyos-main/tos/system/MainC.nc">
+          <from><interface-ref name="SoftwareInit" ref="0x2b9d54f24418" scoped=""/></from>
+          <to><interface-ref name="SoftwareInit" ref="0x2b9d54d76210" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component></referenced></component>

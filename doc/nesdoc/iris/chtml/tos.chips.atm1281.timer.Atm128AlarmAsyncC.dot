@@ -1,0 +1,23 @@
+digraph "tos.chips.atm1281.timer.Atm128AlarmAsyncC" {
+  n0x2b9d55081188 [shape=ellipse, style=filled, label="Alarm", fontsize=12];
+  "Atm128AlarmAsyncC.Atm1281AlarmAsyncP" [fontsize=12, shape=box, style=dashed, label="Atm1281AlarmAsyncP", URL="../chtml/tos.chips.atm1281.timer.Atm1281AlarmAsyncP.html"];
+  n0x2b9d550838b0 [shape=ellipse, style=filled, label="Init", fontsize=12];
+  "Atm128AlarmAsyncC.Atm1281AlarmAsyncP" [fontsize=12, shape=box, style=dashed, label="Atm1281AlarmAsyncP", URL="../chtml/tos.chips.atm1281.timer.Atm1281AlarmAsyncP.html"];
+  n0x2b9d550984d0 [shape=ellipse, style=filled, label="Counter", fontsize=12];
+  "Atm128AlarmAsyncC.Atm1281AlarmAsyncP" [fontsize=12, shape=box, style=dashed, label="Atm1281AlarmAsyncP", URL="../chtml/tos.chips.atm1281.timer.Atm1281AlarmAsyncP.html"];
+  "Atm128AlarmAsyncC.Atm1281AlarmAsyncP" [fontsize=12, shape=box, style=dashed, label="Atm1281AlarmAsyncP", URL="../chtml/tos.chips.atm1281.timer.Atm1281AlarmAsyncP.html"];
+  "HplAtm1281Timer2AsyncC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.chips.atm1281.timer.HplAtm1281Timer2AsyncC.html"];
+  "Atm128AlarmAsyncC.Atm1281AlarmAsyncP" [fontsize=12, shape=box, style=dashed, label="Atm1281AlarmAsyncP", URL="../chtml/tos.chips.atm1281.timer.Atm1281AlarmAsyncP.html"];
+  "HplAtm1281Timer2AsyncC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.chips.atm1281.timer.HplAtm1281Timer2AsyncC.html"];
+  "Atm128AlarmAsyncC.Atm1281AlarmAsyncP" [fontsize=12, shape=box, style=dashed, label="Atm1281AlarmAsyncP", URL="../chtml/tos.chips.atm1281.timer.Atm1281AlarmAsyncP.html"];
+  "HplAtm1281Timer2AsyncC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.chips.atm1281.timer.HplAtm1281Timer2AsyncC.html"];
+  "Atm128AlarmAsyncC.Atm1281AlarmAsyncP" [fontsize=12, shape=box, style=dashed, label="Atm1281AlarmAsyncP", URL="../chtml/tos.chips.atm1281.timer.Atm1281AlarmAsyncP.html"];
+  "HplAtm1281Timer2AsyncC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.chips.atm1281.timer.HplAtm1281Timer2AsyncC.html"];
+  "n0x2b9d55081188" -> "Atm128AlarmAsyncC.Atm1281AlarmAsyncP" [label="Alarm<precision, uint32_t>", URL="../ihtml/tos.lib.timer.Alarm.html", fontsize=10];
+  "n0x2b9d550838b0" -> "Atm128AlarmAsyncC.Atm1281AlarmAsyncP" [label="Init", URL="../ihtml/tos.interfaces.Init.html", fontsize=10];
+  "n0x2b9d550984d0" -> "Atm128AlarmAsyncC.Atm1281AlarmAsyncP" [label="Counter<precision, uint32_t>", URL="../ihtml/tos.lib.timer.Counter.html", fontsize=10];
+  "Atm128AlarmAsyncC.Atm1281AlarmAsyncP" -> "HplAtm1281Timer2AsyncC" [label="HplAtm128Timer<uint8_t>", URL="../ihtml/tos.chips.atm128.timer.HplAtm128Timer.html", fontsize=10];
+  "Atm128AlarmAsyncC.Atm1281AlarmAsyncP" -> "HplAtm1281Timer2AsyncC" [label="HplAtm128TimerCtrl8", URL="../ihtml/tos.chips.atm1281.timer.HplAtm128TimerCtrl8.html", fontsize=10];
+  "Atm128AlarmAsyncC.Atm1281AlarmAsyncP" -> "HplAtm1281Timer2AsyncC" [label="HplAtm128Compare<uint8_t>", URL="../ihtml/tos.chips.atm128.timer.HplAtm128Compare.html", fontsize=10];
+  "Atm128AlarmAsyncC.Atm1281AlarmAsyncP" -> "HplAtm1281Timer2AsyncC" [label="HplAtm128TimerAsync", URL="../ihtml/tos.chips.atm1281.timer.HplAtm128TimerAsync.html", fontsize=10];
+}

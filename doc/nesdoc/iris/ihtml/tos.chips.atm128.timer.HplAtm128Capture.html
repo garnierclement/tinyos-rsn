@@ -1,0 +1,210 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Interface: tos.chips.atm128.timer.HplAtm128Capture</title>
+  </head>
+  <body>
+    <h2>Interface: tos.chips.atm128.timer.HplAtm128Capture</h2>
+    <b>interface HplAtm128Capture&lt;typedef size_type&gt;</b><p>
+ HPL Interface to Atmega128 capture capabilities.
+ 
+    <p>
+    <dl>
+      <dt><b>Parameters:</b>
+      <dd>
+        <code>size_type</code> -  Integer type of capture register
+
+ 
+      </dd>
+      <dt><b>Author:</b>
+      <dd>
+        Martin Turon &lt;mturon@xbow.com&gt;
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Commands</div><div id=funcsig><span id=funcnameshort>command size_type <a href="#get">get</a>()
+      </span><menu> 
+ Get the time to be captured.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command bool <a href="#isOn">isOn</a>()
+      </span><menu> 
+ Is capture interrupt on? 
+ 
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command void <a href="#reset">reset</a>()
+      </span><menu> Clear the capture interrupt flag.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command void <a href="#set">set</a>(size_type t)
+      </span><menu> 
+ Set the time to be captured.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command void <a href="#setEdge">setEdge</a>(bool up)
+      </span><menu> 
+ Sets the capture edge.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command void <a href="#start">start</a>()
+      </span><menu> Enable the capture interrupt.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command void <a href="#stop">stop</a>()
+      </span><menu> Turn off capture interrupts.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command bool <a href="#test">test</a>()
+      </span><menu> 
+ Did a capture interrupt occur?
+ 
+      </menu>
+    </div><p><div id=heading>Events</div><div id=funcsig><span id=funcnameshort>event void <a href="#captured">captured</a>(size_type t)
+      </span><menu> 
+ Signalled on capture interrupt.
+      </menu>
+    </div><p><div id=heading>Commands - Details</div>
+    <a name="get"></a>
+    <h4>get
+    </h4>
+    <span id=funcnameshort>command size_type <b>get</b>()
+    </span>
+    <p>
+    <menu>
+       
+ Get the time to be captured.
+ 
+      <p>
+      <dl>
+        <dt><b>Returns:</b>
+        <dd>
+           the capture time
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="isOn"></a>
+    <h4>isOn
+    </h4>
+    <span id=funcnameshort>command bool <b>isOn</b>()
+    </span>
+    <p>
+    <menu>
+       
+ Is capture interrupt on? 
+ 
+      <p>
+      <dl>
+        <dt><b>Returns:</b>
+        <dd>
+          TRUE if capture enabled, FALSE otherwise
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="reset"></a>
+    <h4>reset
+    </h4>
+    <span id=funcnameshort>command void <b>reset</b>()
+    </span>
+    <p>
+    <menu>
+       Clear the capture interrupt flag. *
+    </menu>
+    <hr>
+    <a name="set"></a>
+    <h4>set
+    </h4>
+    <span id=funcnameshort>command void <b>set</b>(size_type t)
+    </span>
+    <p>
+    <menu>
+       
+ Set the time to be captured.
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          <code>t</code> -      the time of the next capture event
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="setEdge"></a>
+    <h4>setEdge
+    </h4>
+    <span id=funcnameshort>command void <b>setEdge</b>(bool up)
+    </span>
+    <p>
+    <menu>
+       
+ Sets the capture edge.
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          <code>up</code> -    TRUE = detect rising edge, FALSE = detect falling edge
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="start"></a>
+    <h4>start
+    </h4>
+    <span id=funcnameshort>command void <b>start</b>()
+    </span>
+    <p>
+    <menu>
+       Enable the capture interrupt. *
+    </menu>
+    <hr>
+    <a name="stop"></a>
+    <h4>stop
+    </h4>
+    <span id=funcnameshort>command void <b>stop</b>()
+    </span>
+    <p>
+    <menu>
+       Turn off capture interrupts. *
+    </menu>
+    <hr>
+    <a name="test"></a>
+    <h4>test
+    </h4>
+    <span id=funcnameshort>command bool <b>test</b>()
+    </span>
+    <p>
+    <menu>
+       
+ Did a capture interrupt occur?
+ 
+      <p>
+      <dl>
+        <dt><b>Returns:</b>
+        <dd>
+          TRUE if capture triggered, FALSE otherwise
+
+        </dd>
+      </dl>
+    </menu>
+    <p><div id=heading>Events - Details</div>
+    <a name="captured"></a>
+    <h4>captured
+    </h4>
+    <span id=funcnameshort>event void <b>captured</b>(size_type t)
+    </span>
+    <p>
+    <menu>
+       
+ Signalled on capture interrupt.
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          <code>t</code> -      the time of the capture event
+
+        </dd>
+      </dl>
+    </menu>
+  </body>
+</html>

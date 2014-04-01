@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Component: tos.platforms.mica.AlarmOne16C</title>
+  </head>
+  <body>
+    <h2>Component: tos.platforms.mica.AlarmOne16C
+    </h2>
+    <b>generic configuration AlarmOne16C()</b>
+    <p>
+ 16-bit 32kHz Alarm component as per TEP102 HAL guidelines. The mica
+ family 32kHz Alarm is built on hardware timer 1, and actually runs at
+ CPU frequency / 256. You can use the MeasureClockC.cyclesPerJiffy()
+ command to figure out the exact frequency.
+ <p>
+ Assumes an ~8MHz CPU clock, replace this component if you are running at
+ a radically different frequency.
+ <p>
+ Upto three of these alarms can be created (one per hardware compare
+ register).
+
+ 
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        David Gay &lt;dgay@intel-research.net&gt;
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Provides</div><div id=funcsig>interface <a href="../ihtml/tos.lib.timer.Alarm.html">Alarm</a>&lt;TOne, uint16_t&gt;</div><p><div id=heading>Wiring</div><p>
+    <map name="comp">
+      <area shape="rect" id="node2" href="../chtml/tos.chips.atm128.timer.Atm128AlarmC.html" title="Atm128AlarmC\n(NAlarm)" alt="" coords="46,120,185,171">
+
+      <area shape="poly" id="edge2" href="../ihtml/tos.lib.timer.Alarm.html" title="Alarm&lt;TOne, uint16_t&gt;" alt="" coords="118,53 118,106 113,106 113,53">
+
+      <area shape="rect" id="edge2" href="../ihtml/tos.lib.timer.Alarm.html" title="Alarm&lt;TOne, uint16_t&gt;" alt="" coords="115,78,269,95">
+
+      <area shape="rect" id="node3" href="../chtml/tos.chips.atm1281.timer.HplAtm128Timer1C.html" title="HplAtm128Timer1C" alt="" coords="25,237,206,296">
+
+      <area shape="poly" id="edge4" href="../ihtml/tos.chips.atm128.timer.HplAtm128Timer.html" title="HplAtm128Timer&lt;uint16_t&gt;" alt="" coords="47,167 27,179 12,196 9,205 9,212 19,227 14,230 4,214 3,204 8,193 24,175 44,162">
+
+      <area shape="rect" id="edge4" href="../ihtml/tos.chips.atm128.timer.HplAtm128Timer.html" title="HplAtm128Timer&lt;uint16_t&gt;" alt="" coords="10,195,193,213">
+
+      <area shape="poly" id="edge6" href="../ihtml/tos.chips.atm128.timer.HplAtm128Compare.html" title="HplAtm128Compare&lt;uint16_t&gt;" alt="" coords="173,169 195,194 198,213 189,229 184,227 193,212 190,196 169,173">
+
+      <area shape="rect" id="edge6" href="../ihtml/tos.chips.atm128.timer.HplAtm128Compare.html" title="HplAtm128Compare&lt;uint16_t&gt;" alt="" coords="195,195,401,213">
+
+    </map>
+    <img src="tos.platforms.mica.AlarmOne16C.png" usemap="#comp" id=imgwiring>
+  </body>
+</html>
