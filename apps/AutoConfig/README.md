@@ -1,4 +1,6 @@
-# Auto Configuration Algorithm
+# Application AutiConfig 
+
+Auto configuration algorithm for wireless motes.
 
 ## Concept
 
