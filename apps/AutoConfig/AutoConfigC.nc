@@ -22,11 +22,11 @@ implementation {
 	/* Variables */
 	bool radioBusy = FALSE;
   	message_t pkt;
-  	uint8_t myRank = NOT_DEFINED;
+  	uint8_t myRank = NOT_DEFINED;			// Rank of the node
   	bool receivedAck = FALSE;
   	bool sentAutoConfig = FALSE;
-  	uint8_t neighborsRank[2]; // 0 left 1 right
-  	uint8_t attempt = 0;
+  	uint8_t neighborsRank[2]; 				// 0 left (closer to the sink)  1 right
+  	uint8_t attempt = 0;					// AutoCOnfigMsg retransmission attempts
 
   	/* Functions */
   	void createAutoConfigMsg(uint8_t pwr);
@@ -40,7 +40,7 @@ implementation {
 
 	event void Boot.booted() {
 		call AMControl.start();	
-		call Leds.led0On();									// Wakes up radio
+		call Leds.led0On();
 	}
 
 	event void AMControl.startDone(error_t err) {
