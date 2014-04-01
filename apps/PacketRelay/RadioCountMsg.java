@@ -7,12 +7,12 @@
 public class RadioCountMsg extends net.tinyos.message.Message {
 
     /** The default size of this message type in bytes. */
-    public static final int DEFAULT_MESSAGE_SIZE = 2;
+    public static final int DEFAULT_MESSAGE_SIZE = 28;
 
     /** The Active Message type associated with this message. */
     public static final int AM_TYPE = 6;
 
-    /** Create a new RadioCountMsg of size 2. */
+    /** Create a new RadioCountMsg of size 28. */
     public RadioCountMsg() {
         super(DEFAULT_MESSAGE_SIZE);
         amTypeSet(AM_TYPE);
@@ -85,7 +85,23 @@ public class RadioCountMsg extends net.tinyos.message.Message {
     public String toString() {
       String s = "Message <RadioCountMsg> \n";
       try {
+        s += "  [messageType=0x"+Long.toHexString(get_messageType())+"]\n";
+      } catch (ArrayIndexOutOfBoundsException aioobe) { /* Skip field */ }
+      try {
+        s += "  [nodeId=0x"+Long.toHexString(get_nodeId())+"]\n";
+      } catch (ArrayIndexOutOfBoundsException aioobe) { /* Skip field */ }
+      try {
         s += "  [counter=0x"+Long.toHexString(get_counter())+"]\n";
+      } catch (ArrayIndexOutOfBoundsException aioobe) { /* Skip field */ }
+      try {
+        s += "  [payloadsize=0x"+Long.toHexString(get_payloadsize())+"]\n";
+      } catch (ArrayIndexOutOfBoundsException aioobe) { /* Skip field */ }
+      try {
+        s += "  [buffer=";
+        for (int i = 0; i < 21; i++) {
+          s += "0x"+Long.toHexString(getElement_buffer(i) & 0xff)+" ";
+        }
+        s += "]\n";
       } catch (ArrayIndexOutOfBoundsException aioobe) { /* Skip field */ }
       return s;
     }
@@ -93,9 +109,135 @@ public class RadioCountMsg extends net.tinyos.message.Message {
     // Message-type-specific access methods appear below.
 
     /////////////////////////////////////////////////////////
+    // Accessor methods for field: messageType
+    //   Field type: short, unsigned
+    //   Offset (bits): 0
+    //   Size (bits): 8
+    /////////////////////////////////////////////////////////
+
+    /**
+     * Return whether the field 'messageType' is signed (false).
+     */
+    public static boolean isSigned_messageType() {
+        return false;
+    }
+
+    /**
+     * Return whether the field 'messageType' is an array (false).
+     */
+    public static boolean isArray_messageType() {
+        return false;
+    }
+
+    /**
+     * Return the offset (in bytes) of the field 'messageType'
+     */
+    public static int offset_messageType() {
+        return (0 / 8);
+    }
+
+    /**
+     * Return the offset (in bits) of the field 'messageType'
+     */
+    public static int offsetBits_messageType() {
+        return 0;
+    }
+
+    /**
+     * Return the value (as a short) of the field 'messageType'
+     */
+    public short get_messageType() {
+        return (short)getUIntBEElement(offsetBits_messageType(), 8);
+    }
+
+    /**
+     * Set the value of the field 'messageType'
+     */
+    public void set_messageType(short value) {
+        setUIntBEElement(offsetBits_messageType(), 8, value);
+    }
+
+    /**
+     * Return the size, in bytes, of the field 'messageType'
+     */
+    public static int size_messageType() {
+        return (8 / 8);
+    }
+
+    /**
+     * Return the size, in bits, of the field 'messageType'
+     */
+    public static int sizeBits_messageType() {
+        return 8;
+    }
+
+    /////////////////////////////////////////////////////////
+    // Accessor methods for field: nodeId
+    //   Field type: int, unsigned
+    //   Offset (bits): 8
+    //   Size (bits): 16
+    /////////////////////////////////////////////////////////
+
+    /**
+     * Return whether the field 'nodeId' is signed (false).
+     */
+    public static boolean isSigned_nodeId() {
+        return false;
+    }
+
+    /**
+     * Return whether the field 'nodeId' is an array (false).
+     */
+    public static boolean isArray_nodeId() {
+        return false;
+    }
+
+    /**
+     * Return the offset (in bytes) of the field 'nodeId'
+     */
+    public static int offset_nodeId() {
+        return (8 / 8);
+    }
+
+    /**
+     * Return the offset (in bits) of the field 'nodeId'
+     */
+    public static int offsetBits_nodeId() {
+        return 8;
+    }
+
+    /**
+     * Return the value (as a int) of the field 'nodeId'
+     */
+    public int get_nodeId() {
+        return (int)getUIntBEElement(offsetBits_nodeId(), 16);
+    }
+
+    /**
+     * Set the value of the field 'nodeId'
+     */
+    public void set_nodeId(int value) {
+        setUIntBEElement(offsetBits_nodeId(), 16, value);
+    }
+
+    /**
+     * Return the size, in bytes, of the field 'nodeId'
+     */
+    public static int size_nodeId() {
+        return (16 / 8);
+    }
+
+    /**
+     * Return the size, in bits, of the field 'nodeId'
+     */
+    public static int sizeBits_nodeId() {
+        return 16;
+    }
+
+    /////////////////////////////////////////////////////////
     // Accessor methods for field: counter
     //   Field type: int, unsigned
-    //   Offset (bits): 0
+    //   Offset (bits): 24
     //   Size (bits): 16
     /////////////////////////////////////////////////////////
 
@@ -117,14 +259,14 @@ public class RadioCountMsg extends net.tinyos.message.Message {
      * Return the offset (in bytes) of the field 'counter'
      */
     public static int offset_counter() {
-        return (0 / 8);
+        return (24 / 8);
     }
 
     /**
      * Return the offset (in bits) of the field 'counter'
      */
     public static int offsetBits_counter() {
-        return 0;
+        return 24;
     }
 
     /**
@@ -153,6 +295,222 @@ public class RadioCountMsg extends net.tinyos.message.Message {
      */
     public static int sizeBits_counter() {
         return 16;
+    }
+
+    /////////////////////////////////////////////////////////
+    // Accessor methods for field: payloadsize
+    //   Field type: int, unsigned
+    //   Offset (bits): 40
+    //   Size (bits): 16
+    /////////////////////////////////////////////////////////
+
+    /**
+     * Return whether the field 'payloadsize' is signed (false).
+     */
+    public static boolean isSigned_payloadsize() {
+        return false;
+    }
+
+    /**
+     * Return whether the field 'payloadsize' is an array (false).
+     */
+    public static boolean isArray_payloadsize() {
+        return false;
+    }
+
+    /**
+     * Return the offset (in bytes) of the field 'payloadsize'
+     */
+    public static int offset_payloadsize() {
+        return (40 / 8);
+    }
+
+    /**
+     * Return the offset (in bits) of the field 'payloadsize'
+     */
+    public static int offsetBits_payloadsize() {
+        return 40;
+    }
+
+    /**
+     * Return the value (as a int) of the field 'payloadsize'
+     */
+    public int get_payloadsize() {
+        return (int)getUIntBEElement(offsetBits_payloadsize(), 16);
+    }
+
+    /**
+     * Set the value of the field 'payloadsize'
+     */
+    public void set_payloadsize(int value) {
+        setUIntBEElement(offsetBits_payloadsize(), 16, value);
+    }
+
+    /**
+     * Return the size, in bytes, of the field 'payloadsize'
+     */
+    public static int size_payloadsize() {
+        return (16 / 8);
+    }
+
+    /**
+     * Return the size, in bits, of the field 'payloadsize'
+     */
+    public static int sizeBits_payloadsize() {
+        return 16;
+    }
+
+    /////////////////////////////////////////////////////////
+    // Accessor methods for field: buffer
+    //   Field type: short[], unsigned
+    //   Offset (bits): 56
+    //   Size of each element (bits): 8
+    /////////////////////////////////////////////////////////
+
+    /**
+     * Return whether the field 'buffer' is signed (false).
+     */
+    public static boolean isSigned_buffer() {
+        return false;
+    }
+
+    /**
+     * Return whether the field 'buffer' is an array (true).
+     */
+    public static boolean isArray_buffer() {
+        return true;
+    }
+
+    /**
+     * Return the offset (in bytes) of the field 'buffer'
+     */
+    public static int offset_buffer(int index1) {
+        int offset = 56;
+        if (index1 < 0 || index1 >= 21) throw new ArrayIndexOutOfBoundsException();
+        offset += 0 + index1 * 8;
+        return (offset / 8);
+    }
+
+    /**
+     * Return the offset (in bits) of the field 'buffer'
+     */
+    public static int offsetBits_buffer(int index1) {
+        int offset = 56;
+        if (index1 < 0 || index1 >= 21) throw new ArrayIndexOutOfBoundsException();
+        offset += 0 + index1 * 8;
+        return offset;
+    }
+
+    /**
+     * Return the entire array 'buffer' as a short[]
+     */
+    public short[] get_buffer() {
+        short[] tmp = new short[21];
+        for (int index0 = 0; index0 < numElements_buffer(0); index0++) {
+            tmp[index0] = getElement_buffer(index0);
+        }
+        return tmp;
+    }
+
+    /**
+     * Set the contents of the array 'buffer' from the given short[]
+     */
+    public void set_buffer(short[] value) {
+        for (int index0 = 0; index0 < value.length; index0++) {
+            setElement_buffer(index0, value[index0]);
+        }
+    }
+
+    /**
+     * Return an element (as a short) of the array 'buffer'
+     */
+    public short getElement_buffer(int index1) {
+        return (short)getUIntBEElement(offsetBits_buffer(index1), 8);
+    }
+
+    /**
+     * Set an element of the array 'buffer'
+     */
+    public void setElement_buffer(int index1, short value) {
+        setUIntBEElement(offsetBits_buffer(index1), 8, value);
+    }
+
+    /**
+     * Return the total size, in bytes, of the array 'buffer'
+     */
+    public static int totalSize_buffer() {
+        return (168 / 8);
+    }
+
+    /**
+     * Return the total size, in bits, of the array 'buffer'
+     */
+    public static int totalSizeBits_buffer() {
+        return 168;
+    }
+
+    /**
+     * Return the size, in bytes, of each element of the array 'buffer'
+     */
+    public static int elementSize_buffer() {
+        return (8 / 8);
+    }
+
+    /**
+     * Return the size, in bits, of each element of the array 'buffer'
+     */
+    public static int elementSizeBits_buffer() {
+        return 8;
+    }
+
+    /**
+     * Return the number of dimensions in the array 'buffer'
+     */
+    public static int numDimensions_buffer() {
+        return 1;
+    }
+
+    /**
+     * Return the number of elements in the array 'buffer'
+     */
+    public static int numElements_buffer() {
+        return 21;
+    }
+
+    /**
+     * Return the number of elements in the array 'buffer'
+     * for the given dimension.
+     */
+    public static int numElements_buffer(int dimension) {
+      int array_dims[] = { 21,  };
+        if (dimension < 0 || dimension >= 1) throw new ArrayIndexOutOfBoundsException();
+        if (array_dims[dimension] == 0) throw new IllegalArgumentException("Array dimension "+dimension+" has unknown size");
+        return array_dims[dimension];
+    }
+
+    /**
+     * Fill in the array 'buffer' with a String
+     */
+    public void setString_buffer(String s) { 
+         int len = s.length();
+         int i;
+         for (i = 0; i < len; i++) {
+             setElement_buffer(i, (short)s.charAt(i));
+         }
+         setElement_buffer(i, (short)0); //null terminate
+    }
+
+    /**
+     * Read the array 'buffer' as a String
+     */
+    public String getString_buffer() { 
+         char carr[] = new char[Math.min(net.tinyos.message.Message.MAX_CONVERTED_STRING_LENGTH,21)];
+         int i;
+         for (i = 0; i < carr.length; i++) {
+             if ((char)getElement_buffer(i) == (char)0) break;
+             carr[i] = (char)getElement_buffer(i);
+         }
+         return new String(carr,0,i);
     }
 
 }
