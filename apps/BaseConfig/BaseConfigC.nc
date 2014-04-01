@@ -29,15 +29,15 @@ implementation {
 
   	/* Functions */
   	void createAutoConfigMsg(uint8_t pwr);
-  	void createAutoConfigAck(AutoConfigMsg* srcpkt);
   	void handleAck(AutoConfigMsg* ackpkt);
-	void handleAutoConfig(AutoConfigMsg* acpkt); 	
-	void sendAck(AutoConfigMsg* srcpkt);
 	void sendAutoConfigMsg(uint8_t pwr);
+	AutoConfigMsg* getAutoConfigPayload(message_t* msg);
 
 
 	event void Boot.booted() {
-		call AMControl.start();	
+		call AMControl.start();
+		call Leds.led0On();	
+	
 										// Wakes up radio
 	}
 
@@ -45,7 +45,6 @@ implementation {
 		if (err == SUCCESS)
 		{
 			sendAutoConfigMsg(ONE_HOP_POWER);
-			call Leds.led0On();	
 		}
 		else {
 			call AMControl.start();										// Restart the radio if it doesn't work
@@ -58,8 +57,7 @@ implementation {
       		AutoConfigMsg* acpkt = (AutoConfigMsg*)payload;
       		/* Check if the received message is an Ack and handle it */
       		handleAck(acpkt);
-      		/* Check if the received message is AutoCOnfig, if so set id, send Ack and forge new AutoContigMsg */
-      		handleAutoConfig(acpkt);
+     
 
 	    }
     	return msg;
@@ -71,34 +69,15 @@ implementation {
       		{
       			receivedAck = TRUE;
       			neighborsRank[1] = ackpkt->srcRank;
-      			call Leds.led1Off();
+      			call Leds.led2On();
       		}
       	}
 
 	}
 
-	void handleAutoConfig(AutoConfigMsg* acpkt) {
-		if (myRank == NOT_DEFINED)
-		{
-			call Leds.led1On();
-			myRank = acpkt->dstRank;
-			neighborsRank[0] = acpkt->srcRank;
-			sendAck(acpkt);
-			sendAutoConfigMsg(ONE_HOP_POWER);
-		}
-	}
 
-	void sendAck(AutoConfigMsg* srcpkt) {
-		if (!radioBusy)
-		{
-			createAutoConfigAck(srcpkt);
-			call  PacketTransmitPower.set(&pkt,srcpkt->txPower);
-			if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
-			{
-				radioBusy = TRUE;
-				call Leds.led0Off();
-			}
-		}
+	AutoConfigMsg* getAutoConfigPayload(message_t* msg) {
+		return (AutoConfigMsg*)(call Packet.getPayload(msg, sizeof(AutoConfigMsg)));
 	}
 
 	void createAutoConfigMsg(uint8_t pwr) {
@@ -117,35 +96,28 @@ implementation {
 			if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
 			{
 				radioBusy = TRUE;
+				call Leds.led1On();
+
 			}
 		}
 	}
 
-	void createAutoConfigAck(AutoConfigMsg* srcpkt) {
-		AutoConfigMsg* ackpkt = (AutoConfigMsg*)(call Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
-		ackpkt->ack = IS_AUTOCONFIGACK;
-		ackpkt->srcRank = myRank;
-		ackpkt->dstRank = srcpkt->srcRank;
-		ackpkt->txPower = srcpkt->txPower;
-
-
-	}
 
 	event void AMSend.sendDone(message_t* msg, error_t err) {
+		AutoConfigMsg* acpkt = getAutoConfigPayload(msg);
 
 		if (&pkt == msg)
 		{
 			radioBusy = FALSE;
 			if (err == SUCCESS)
 			{
-				AutoConfigMsg* acpkt = (AutoConfigMsg*)(msg);
+				
 				if (acpkt->ack == NOT_AUTOCONFIGACK)
 				{
 					call WaitAck.startPeriodic(WAITACK_PERIOD_MILLI);
-					call Leds.led2On();
 					sentAutoConfig = TRUE;
-
 				}
+				
 			}
 		}
 
@@ -167,14 +139,18 @@ implementation {
 		}
 		else if (attempt <= MAX_ATTEMPT) {
 			sendAutoConfigMsg(ONE_HOP_POWER);
+			call Leds.led2Toggle();
 		}
 		else if (attempt > MAX_ATTEMPT && attempt <= 2*MAX_ATTEMPT)
 		{
 			sendAutoConfigMsg(TWO_HOP_POWER);
+			call Leds.led2Toggle();
+
 		}
 		else {
 			call WaitAck.stop();
 			neighborsRank[1] = NOT_DEFINED;
+			call Leds.led1Toggle();
 		}
 
 	}
