@@ -6,6 +6,7 @@ module AutoConfigC {
 	uses interface Leds;
 	uses interface Timer<TMilli> as Timeout;
 	uses interface Timer<TMilli> as WaitAck;
+	uses interface Timer<TMilli> as WaitForRadio;
 	uses interface Packet;
 	uses interface AMPacket;
 	uses interface AMSend;
@@ -34,6 +35,7 @@ implementation {
 	void handleAutoConfig(AutoConfigMsg* acpkt); 	
 	void sendAck(AutoConfigMsg* srcpkt);
 	void sendAutoConfigMsg(uint8_t pwr);
+	AutoConfigMsg* getAutoConfigPayload(message_t* msg);
 
 
 	event void Boot.booted() {
@@ -108,7 +110,12 @@ implementation {
 		acpkt->dstRank = (pwr == ONE_HOP_POWER) ? (myRank + ONE_HOP) : (myRank + TWO_HOP);
 	}
 
+	AutoConfigMsg* getAutoConfigPayload(message_t* msg) {
+		return (AutoConfigMsg*)(call Packet.getPayload(msg, sizeof(AutoConfigMsg)));
+	}
+
 	void sendAutoConfigMsg(uint8_t pwr) {
+
 		if (!radioBusy)
 		{
 			createAutoConfigMsg(pwr);
@@ -117,7 +124,14 @@ implementation {
 			{
 				radioBusy = TRUE;
 			}
+		}else{
+			call WaitForRadio.startPeriodic(WAITFORRADIO_PERIOD_MILLI);
+			//sendAutoConfigMsg(pwr);
 		}
+	}
+
+	event void WaitForRadio.fired(){
+		sendAutoConfigMsg(ONE_HOP_POWER);
 	}
 
 	void createAutoConfigAck(AutoConfigMsg* srcpkt) {
@@ -131,17 +145,17 @@ implementation {
 	}
 
 	event void AMSend.sendDone(message_t* msg, error_t err) {
+		AutoConfigMsg* acpkt = getAutoConfigPayload(msg);
 
 		if (&pkt == msg)
 		{
 			radioBusy = FALSE;
 			if (err == SUCCESS)
 			{
-				AutoConfigMsg* acpkt = (AutoConfigMsg*)(msg);
+				
 				if (acpkt->ack == NOT_AUTOCONFIGACK)
 				{
 					call WaitAck.startPeriodic(WAITACK_PERIOD_MILLI);
-					call Leds.led2On();
 					sentAutoConfig = TRUE;
 				}
 				
@@ -166,10 +180,13 @@ implementation {
 		}
 		else if (attempt <= MAX_ATTEMPT) {
 			sendAutoConfigMsg(ONE_HOP_POWER);
+			call Leds.led2Toggle();
 		}
 		else if (attempt > MAX_ATTEMPT && attempt <= 2*MAX_ATTEMPT)
 		{
 			sendAutoConfigMsg(TWO_HOP_POWER);
+			call Leds.led0Toggle();
+
 		}
 		else {
 			call WaitAck.stop();
