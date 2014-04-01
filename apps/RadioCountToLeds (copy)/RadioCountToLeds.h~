@@ -1,0 +1,19 @@
+ #ifndef RADIO_COUNT_TO_LEDS_H
+ #define RADIO_COUNT_TO_LEDS_H
+ 
+//constant
+enum {
+  AM_RADIO_COUNT_MSG = 7,
+  TIMER_ONESHOT_MILLI = 500,
+  TIMER_PERIODIC_MILLI = 500
+};
+
+ 
+typedef nx_struct pingpongMess {
+  nx_uint16_t nodeid;
+  nx_uint16_t counter;
+  nx_uint32_t time;
+} pingpongMess;
+ #endif
+
+
