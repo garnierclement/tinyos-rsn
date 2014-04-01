@@ -21,7 +21,7 @@ implementation {
 	/* Variables */
 	bool radioBusy = FALSE;
   	message_t pkt;
-  	uint8_t myRank = NOT_DEFINED;
+  	uint8_t myRank = 0;
   	bool receivedAck = FALSE;
   	bool sentAutoConfig = FALSE;
   	uint8_t neighborsRank[2]; // 0 left 1 right
@@ -38,13 +38,14 @@ implementation {
 
 	event void Boot.booted() {
 		call AMControl.start();	
-		call Leds.led0On();									// Wakes up radio
+										// Wakes up radio
 	}
 
 	event void AMControl.startDone(error_t err) {
 		if (err == SUCCESS)
 		{
-			call Timeout.startPeriodic(TIMEOUT_PERIOD_MILLI);		// Wait for AutoConfigMsg
+			sendAutoConfigMsg(ONE_HOP_POWER);
+			call Leds.led0On();	
 		}
 		else {
 			call AMControl.start();										// Restart the radio if it doesn't work
@@ -142,6 +143,8 @@ implementation {
 				{
 					call WaitAck.startPeriodic(WAITACK_PERIOD_MILLI);
 					call Leds.led2On();
+					sentAutoConfig = TRUE;
+
 				}
 			}
 		}
