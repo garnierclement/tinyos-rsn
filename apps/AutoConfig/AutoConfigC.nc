@@ -38,34 +38,39 @@ implementation {
 	AutoConfigMsg* getAutoConfigPayload(message_t* msg);
 
 
+	/* At boot time, wake up the radio */
 	event void Boot.booted() {
 		call AMControl.start();	
 		call Leds.led0On();
 	}
 
+	/* When the radio has started */
 	event void AMControl.startDone(error_t err) {
-		if (err == SUCCESS)
-		{
-			call Timeout.startPeriodic(TIMEOUT_PERIOD_MILLI);		// Wait for AutoConfigMsg
+		if (err == SUCCESS){
+			// Wait for AutoConfigMsg
+			call Timeout.startPeriodic(TIMEOUT_PERIOD_MILLI);		
 		}
 		else {
-			call AMControl.start();										// Restart the radio if it doesn't work
+			// Restart the radio if it doesn't work
+			call AMControl.start();										
 		}
 	}
 
+	/* Upon receiving a message */
 	event message_t* Receive.receive(message_t* msg, void* payload, uint8_t len) {
 		if (len == sizeof(AutoConfigMsg))
     	{
       		AutoConfigMsg* acpkt = (AutoConfigMsg*)payload;
-      		/* Check if the received message is an Ack and handle it */
+      		// Check if the received message is an Ack and handle it 
       		handleAck(acpkt);
-      		/* Check if the received message is AutoCOnfig, if so set id, send Ack and forge new AutoContigMsg */
+      		// Check if the received message is AutoCOnfig, if so set myRank (node id), send Ack and forge new AutoContigMsg
       		handleAutoConfig(acpkt);
 
 	    }
     	return msg;
 	}
 
+	/* Upon receiving an Ack for a previous sent AutoConfigMsg */
 	void handleAck(AutoConfigMsg* ackpkt) {
 		if (myRank != NOT_DEFINED && ackpkt->srcRank > myRank){
       		if (sentAutoConfig && !receivedAck) 
@@ -75,9 +80,9 @@ implementation {
       			call Leds.led1Off();
       		}
       	}
-
 	}
 
+	/* Upon receiving an AutoConfigMsg */
 	void handleAutoConfig(AutoConfigMsg* acpkt) {
 		if (myRank == NOT_DEFINED)
 		{
