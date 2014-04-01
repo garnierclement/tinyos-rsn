@@ -135,7 +135,7 @@ implementation {
     cleanUp();
   }
   
-  void sendNext() {
+    void sendNext() {
   
     uint16_t nodePrev;
     radio_count_msg_t* rcm = (radio_count_msg_t*)call Packet.getPayload(&packet, sizeof(radio_count_msg_t));
@@ -178,6 +178,8 @@ implementation {
       cleanUp();
     }
   }
+  
+
   
   task void initializeSending() {
     int i=0;
@@ -276,7 +278,7 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
     printf("RadioCountToLedsC : Test");
 
 
-/*  for (i=0; i<packetId; i++) 
+    for (i=0; i<packetId; i++) 
 	{
       spy=spy->next;
     }
@@ -306,7 +308,7 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
       }
     }
     finish_packet_rcv(nodeId); 
-*/
+
 
   }
   
@@ -370,12 +372,12 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
     struct rcv_msg* temp;
     int i=0;
     uint16_t amount;
-    radio_count_msg_t* rcm = (radio_count_msg_t*)payload;
-    dbg("WSN_Project", "rcm->counter: '%d'\n", rcm->counter);
-    packetId=rcm->counter;
-    rcm->messageType = PIECEMESSAGE_TYPE;
+    radio_count_msg_t* rcmtr = (radio_count_msg_t*)payload;
+    dbg("WSN_Project", "rcmtr->counter: '%d'\n", rcmtr->counter);
+    packetId=rcmtr->counter;
+    rcmtr->messageType = PIECEMESSAGE_TYPE;
     //nodeId = call AMPacket.source(bufPtr);
-    nodeId = rcm->nodeId;
+    nodeId = rcmtr->nodeId;
     PrevNode = nodeId-1;
     temp = rcv_buffers[nodeId].received;
     
@@ -399,12 +401,12 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
       uint16_t leftToCopy = ((rcv_buffers[nodeId].total_payload_size)-(packetId*MAX_BUFFER_SIZE));
       // assert leftToCopy <=MAX_BUFFER_SIZE;
       dbg("WSN_Project", "Last package received. Left to copy = %d, rcv_buffers[nodeId].total_payload_size=%d, pacetId = %d, packedId*MAX_BUFFER_SIZE = %d\n", leftToCopy,rcv_buffers[nodeId].total_payload_size, packetId, packetId*MAX_BUFFER_SIZE);
-      memcpy(rcv_buffers[nodeId].receiving + (packetId*MAX_BUFFER_SIZE), rcm->buffer, leftToCopy);
+      memcpy(rcv_buffers[nodeId].receiving + (packetId*MAX_BUFFER_SIZE), rcmtr->buffer, leftToCopy);
     } 
     else 
     {
       // not the last package. Copy the whole buffer to the rcver
-      memcpy(rcv_buffers[nodeId].receiving + (packetId*MAX_BUFFER_SIZE), rcm->buffer, MAX_BUFFER_SIZE);
+      memcpy(rcv_buffers[nodeId].receiving + (packetId*MAX_BUFFER_SIZE), rcmtr->buffer, MAX_BUFFER_SIZE);
     }
     
     //check if all packages are arived. If not return, else proceed the received package
@@ -444,24 +446,13 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
       printf("RadioCountToLedsC (node %d): Node %d received a package with payloadaddress %d. Transfer process...\n", TOS_NODE_ID, TOS_NODE_ID, payload);
 		if (bufPtr != NULL && payload != NULL) 
 			{
-			switch (((uint8_t *)payload)[0]) 
-				{ 
-				case PIECEMESSAGE_TYPE: 
-					{
-					transferdata(bufPtr,payload,len);
-					printf("RadioCountToLedsC (node %d):  Transfer done, TOS_NODE_ID");
-					break;
-					}
-				default: 
-					{
-					printf("RadioCountToLedsC (node %d): Received packet of length %hhu from node %d. But it has an unknown type\n", TOS_NODE_ID, len, (call AMPacket.source(bufPtr)));
-					dbg("WSN_Project", "Unknown package received\n");
-      // TO DO 
-					return bufPtr;
-					}   
-				}
-			}	
+			transferdata(bufPtr,payload,len);
+			printf("RadioCountToLedsC (node %d):  Transfer done, TOS_NODE_ID");
+			return bufPtr;
+			}   
 	}
+				
+	
 
     
     // GATEWAY

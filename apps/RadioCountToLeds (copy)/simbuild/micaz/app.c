@@ -806,7 +806,7 @@ extern void *malloc(size_t __size) __attribute((__leaf__)) __attribute((__nothro
 #line 482
 extern void free(void *__ptr) __attribute((__leaf__)) __attribute((__nothrow__)) ;
 #line 741
-typedef int (*__compar_fn_t)(const void *arg_0x2b8744b14cf8, const void *arg_0x2b8744b1f020);
+typedef int (*__compar_fn_t)(const void *arg_0x2b5fb5abacf8, const void *arg_0x2b5fb5ac5020);
 #line 775
 __extension__ 
 #line 792
@@ -824,7 +824,7 @@ extern double sqrt(double __x) __attribute((__leaf__)) __attribute((__nothrow__)
 #line 185
 extern double floor(double __x) __attribute((__leaf__)) __attribute((__nothrow__)) __attribute((const)) ;
 #line 251
-extern double erfc(double arg_0x2b8744b96618) __attribute((__leaf__)) __attribute((__nothrow__)) ;
+extern double erfc(double arg_0x2b5fb5b3c618) __attribute((__leaf__)) __attribute((__nothrow__)) ;
 # 193 "/usr/include/math.h" 3
 enum __nesc_unnamed4262 {
 
@@ -1200,8 +1200,8 @@ typedef struct hashtable hashtable_t;
 #line 78
 struct hashtable *
 create_hashtable(unsigned int minsize, 
-unsigned int (*hashfunction)(void *arg_0x2b8744de68e8), 
-int (*key_eq_fn)(void *arg_0x2b8744de40c8, void *arg_0x2b8744de4368));
+unsigned int (*hashfunction)(void *arg_0x2b5fb5d8c8e8), 
+int (*key_eq_fn)(void *arg_0x2b5fb5d8a0c8, void *arg_0x2b5fb5d8a368));
 #line 103
 #line 102
 int 
@@ -1814,7 +1814,7 @@ struct tm;
 
 struct tm;
 # 46 "/home/tinyos/tinyos-main/tos/lib/tossim/randomlib.h"
-static inline void RandomInitialise(int arg_0x2b8744ff5610, int arg_0x2b8744ff5878);
+static inline void RandomInitialise(int arg_0x2b5fb5f9b610, int arg_0x2b5fb5f9b878);
 static double RandomUniform(void );
 # 51 "/home/tinyos/tinyos-main/tos/lib/tossim/sim_noise.c"
 int numCase1 = 0;
@@ -3709,11 +3709,11 @@ static error_t MeasureClockC$Init$init(void );
 # 67 "/home/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc"
 static error_t SimSchedulerBasicP$TaskBasic$postTask(
 # 49 "/home/tinyos/tinyos-main/tos/lib/tossim/SimSchedulerBasicP.nc"
-uint8_t arg_0x2b87450f6108);
+uint8_t arg_0x2b5fb609c108);
 # 75 "/home/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc"
 static void SimSchedulerBasicP$TaskBasic$default$runTask(
 # 49 "/home/tinyos/tinyos-main/tos/lib/tossim/SimSchedulerBasicP.nc"
-uint8_t arg_0x2b87450f6108);
+uint8_t arg_0x2b5fb609c108);
 # 57 "/home/tinyos/tinyos-main/tos/interfaces/Scheduler.nc"
 static void SimSchedulerBasicP$Scheduler$init(void );
 
@@ -3743,7 +3743,7 @@ static long long int SimMoteP$SimMote$getStartTime(void );
 # 80 "/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc"
 static error_t TossimActiveMessageC$AMSend$send(
 # 47 "/home/tinyos/tinyos-main/tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x2b87453e0220, 
+am_id_t arg_0x2b5fb6386220, 
 # 80 "/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc"
 am_addr_t addr, 
 #line 71
@@ -3766,7 +3766,7 @@ message_t *
 
 TossimActiveMessageC$Snoop$default$receive(
 # 49 "/home/tinyos/tinyos-main/tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x2b874540c020, 
+am_id_t arg_0x2b5fb63b2020, 
 # 71 "/home/tinyos/tinyos-main/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -3813,7 +3813,7 @@ message_t *
 
 TossimActiveMessageC$Receive$default$receive(
 # 48 "/home/tinyos/tinyos-main/tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x2b87453de340, 
+am_id_t arg_0x2b5fb6384340, 
 # 71 "/home/tinyos/tinyos-main/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -3985,7 +3985,7 @@ error_t error);
 # 110 "/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc"
 static void /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$AMSend$sendDone(
 # 48 "/home/tinyos/tinyos-main/tos/system/AMQueueImplP.nc"
-am_id_t arg_0x2b874572c960, 
+am_id_t arg_0x2b5fb66ca960, 
 # 103 "/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -3998,7 +3998,7 @@ error_t error);
 # 75 "/home/tinyos/tinyos-main/tos/interfaces/Send.nc"
 static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$Send$send(
 # 46 "/home/tinyos/tinyos-main/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x2b874572d788, 
+uint8_t arg_0x2b5fb66cb788, 
 # 67 "/home/tinyos/tinyos-main/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -4012,7 +4012,7 @@ uint8_t len);
 #line 100
 static void /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$Send$default$sendDone(
 # 46 "/home/tinyos/tinyos-main/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x2b874572d788, 
+uint8_t arg_0x2b5fb66cb788, 
 # 96 "/home/tinyos/tinyos-main/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -4089,11 +4089,11 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$TimerFrom$fire
 #line 83
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$default$fired(
 # 48 "/home/tinyos/tinyos-main/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b87459abc28);
+uint8_t arg_0x2b5fb6949c28);
 # 64 "/home/tinyos/tinyos-main/tos/lib/timer/Timer.nc"
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$startPeriodic(
 # 48 "/home/tinyos/tinyos-main/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b87459abc28, 
+uint8_t arg_0x2b5fb6949c28, 
 # 64 "/home/tinyos/tinyos-main/tos/lib/timer/Timer.nc"
 uint32_t dt);
 # 82 "/home/tinyos/tinyos-main/tos/lib/timer/Counter.nc"
@@ -4172,7 +4172,7 @@ int sim_main_start_mote(void )   ;
 # 75 "/home/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc"
 static void SimSchedulerBasicP$TaskBasic$runTask(
 # 49 "/home/tinyos/tinyos-main/tos/lib/tossim/SimSchedulerBasicP.nc"
-uint8_t arg_0x2b87450f6108);
+uint8_t arg_0x2b5fb609c108);
 
 
 
@@ -4340,7 +4340,7 @@ static am_addr_t TossimActiveMessageC$amAddress(void );
 # 110 "/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc"
 static void TossimActiveMessageC$AMSend$sendDone(
 # 47 "/home/tinyos/tinyos-main/tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x2b87453e0220, 
+am_id_t arg_0x2b5fb6386220, 
 # 103 "/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -4359,7 +4359,7 @@ message_t *
 
 TossimActiveMessageC$Snoop$receive(
 # 49 "/home/tinyos/tinyos-main/tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x2b874540c020, 
+am_id_t arg_0x2b5fb63b2020, 
 # 71 "/home/tinyos/tinyos-main/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -4378,7 +4378,7 @@ message_t *
 
 TossimActiveMessageC$Receive$receive(
 # 48 "/home/tinyos/tinyos-main/tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x2b87453de340, 
+am_id_t arg_0x2b5fb6384340, 
 # 71 "/home/tinyos/tinyos-main/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -4803,12 +4803,12 @@ message_t * msg);
 static am_addr_t RadioCountToLedsC$AMPacket$source(
 #line 84
 message_t * amsg);
-# 182 "RadioCountToLedsC.nc"
+# 184 "RadioCountToLedsC.nc"
 enum RadioCountToLedsC$__nesc_unnamed4332 {
-#line 182
+#line 184
   RadioCountToLedsC$initializeSending = 3U
 };
-#line 182
+#line 184
 typedef int RadioCountToLedsC$__nesc_sillytask_initializeSending[RadioCountToLedsC$initializeSending];
 #line 74
 bool RadioCountToLedsC$useacks[1000];
@@ -4850,11 +4850,11 @@ static inline void RadioCountToLedsC$AMControl$stopDone(error_t err);
 
 
 static void RadioCountToLedsC$sendNext(void );
-#line 182
+#line 184
 static inline void RadioCountToLedsC$initializeSending$runTask(void );
-#line 218
+#line 220
 static inline void RadioCountToLedsC$simulatedSensorInterrupt(uint16_t size, void *sensorBuffer);
-#line 241
+#line 243
 static inline void RadioCountToLedsC$SensorTimer$fired(void );
 
 
@@ -4866,7 +4866,7 @@ static inline void RadioCountToLedsC$SensorTimer$fired(void );
 
 
 
-static inline void RadioCountToLedsC$finish_packet_rcv(__nesc_nxbase_nx_uint16_t nodeId);
+static void RadioCountToLedsC$finish_packet_rcv(__nesc_nxbase_nx_uint16_t nodeId);
 
 
 
@@ -4877,13 +4877,13 @@ static inline void RadioCountToLedsC$finish_packet_rcv(__nesc_nxbase_nx_uint16_t
 
 
 static inline void RadioCountToLedsC$handleData(message_t *bufPtr, void *payload, uint8_t len);
-#line 313
+#line 315
 static inline void RadioCountToLedsC$initializeReceiving(message_t *bufPtr, void *payload, uint8_t leng);
-#line 365
+#line 367
 static inline void RadioCountToLedsC$transferdata(message_t *bufPtr, void *payload, uint8_t len);
-#line 440
+#line 442
 static inline message_t *RadioCountToLedsC$Receive$receive(message_t *bufPtr, void *payload, uint8_t len);
-#line 523
+#line 514
 static void RadioCountToLedsC$AMSend$sendDone(message_t *bufPtr, error_t error);
 # 46 "/home/tinyos/tinyos-main/tos/interfaces/GeneralIO.nc"
 static void LedsP$Led0$makeOutput(void );
@@ -4963,7 +4963,7 @@ static inline void /*RadioCountToLedsAppC.AMSenderC.SenderC.AMQueueEntryP*/AMQue
 # 80 "/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc"
 static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$AMSend$send(
 # 48 "/home/tinyos/tinyos-main/tos/system/AMQueueImplP.nc"
-am_id_t arg_0x2b874572c960, 
+am_id_t arg_0x2b5fb66ca960, 
 # 80 "/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc"
 am_addr_t addr, 
 #line 71
@@ -4980,7 +4980,7 @@ uint8_t len);
 # 100 "/home/tinyos/tinyos-main/tos/interfaces/Send.nc"
 static void /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$Send$sendDone(
 # 46 "/home/tinyos/tinyos-main/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x2b874572d788, 
+uint8_t arg_0x2b5fb66cb788, 
 # 96 "/home/tinyos/tinyos-main/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -5380,7 +5380,7 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$TimerFrom$stop
 
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$fired(
 # 48 "/home/tinyos/tinyos-main/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b87459abc28);
+uint8_t arg_0x2b5fb6949c28);
 #line 71
 enum /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$__nesc_unnamed4338 {
 #line 71
@@ -5832,29 +5832,7 @@ static __inline  uint16_t __nesc_ntoh_uint16(const void * source)
   return ((uint16_t )base[0] << 8) | base[1];
 }
 
-# 262 "RadioCountToLedsC.nc"
-static inline void RadioCountToLedsC$handleData(message_t *bufPtr, void *payload, uint8_t len)
-#line 262
-{
-
-  uint16_t nodeId;
-  uint16_t packetId;
-  struct rcv_msg *spy;
-  int i = 0;
-  uint16_t amount;
-  radio_count_msg_t *rcm = (radio_count_msg_t *)payload;
-
-#line 270
-  sim_log_debug(166U, "WSN_Project", "rcm->counter: '%d'\n", __nesc_ntoh_uint16(rcm->counter.nxdata));
-  packetId = __nesc_ntoh_uint16(rcm->counter.nxdata);
-
-  nodeId = __nesc_ntoh_uint16(rcm->nodeId.nxdata);
-  spy = RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].received;
-
-  printf("RadioCountToLedsC : Test");
-}
-
-# 340 "/usr/lib/x86_64-linux-gnu/ncc/nesc_nx.h"
+#line 340
 static __inline  uint32_t __nesc_ntoh_uint32(const void * source)
 #line 340
 {
@@ -5866,6 +5844,67 @@ static __inline  uint32_t __nesc_ntoh_uint32(const void * source)
   (uint32_t )base[2] << 8)) | base[3];
 }
 
+# 264 "RadioCountToLedsC.nc"
+static inline void RadioCountToLedsC$handleData(message_t *bufPtr, void *payload, uint8_t len)
+#line 264
+{
+
+  uint16_t nodeId;
+  uint16_t packetId;
+  struct rcv_msg *spy;
+  int i = 0;
+  uint16_t amount;
+  radio_count_msg_t *rcm = (radio_count_msg_t *)payload;
+
+#line 272
+  sim_log_debug(166U, "WSN_Project", "rcm->counter: '%d'\n", __nesc_ntoh_uint16(rcm->counter.nxdata));
+  packetId = __nesc_ntoh_uint16(rcm->counter.nxdata);
+
+  nodeId = __nesc_ntoh_uint16(rcm->nodeId.nxdata);
+  spy = RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].received;
+
+  printf("RadioCountToLedsC : Test");
+
+
+  for (i = 0; i < packetId; i++) 
+    {
+      spy = spy->next;
+    }
+
+  spy->packet_got = TRUE;
+
+
+  if ((packetId + 1) * (28 - 7) >= __nesc_ntoh_uint32(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].total_payload_size.nxdata)) {
+
+      uint16_t leftToCopy = __nesc_ntoh_uint32(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].total_payload_size.nxdata) - packetId * (28 - 7);
+
+      sim_log_debug(167U, "WSN_Project", "Last package received. Left to copy = %d, rcv_buffers[nodeId].total_payload_size=%d, pacetId = %d, packedId*MAX_BUFFER_SIZE = %d\n", leftToCopy, __nesc_ntoh_uint32(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].total_payload_size.nxdata), packetId, packetId * (28 - 7));
+      memcpy(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].receiving + packetId * (28 - 7), rcm->buffer, leftToCopy);
+    }
+  else 
+#line 295
+    {
+
+      memcpy(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].receiving + packetId * (28 - 7), rcm->buffer, 28 - 7);
+    }
+
+
+  spy = RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].received;
+  amount = __nesc_ntoh_uint16(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].amount.nxdata);
+  for (i = 0; i < amount; i++) {
+      if (spy->packet_got == TRUE) {
+          spy = spy->next;
+        }
+      else 
+#line 306
+        {
+          return;
+        }
+    }
+  RadioCountToLedsC$finish_packet_rcv(nodeId);
+}
+
+# 347 "/usr/lib/x86_64-linux-gnu/ncc/nesc_nx.h"
 static __inline  uint32_t __nesc_hton_uint32(void * target, uint32_t value)
 #line 347
 {
@@ -5891,9 +5930,9 @@ static __inline  uint16_t __nesc_hton_uint16(void * target, uint16_t value)
   return value;
 }
 
-# 313 "RadioCountToLedsC.nc"
+# 315 "RadioCountToLedsC.nc"
 static inline void RadioCountToLedsC$initializeReceiving(message_t *bufPtr, void *payload, uint8_t leng)
-#line 313
+#line 315
 {
 
   radio_start_msg_t *rcm = (radio_start_msg_t *)payload;
@@ -5906,7 +5945,7 @@ static inline void RadioCountToLedsC$initializeReceiving(message_t *bufPtr, void
 
   uint16_t nodeId = __nesc_ntoh_uint16(rcm->nodeId.nxdata);
 
-#line 324
+#line 326
   RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].receiving = (nx_uint8_t *)malloc(__nesc_ntoh_uint32(rcm->total_payload_size.nxdata));
   __nesc_hton_uint16(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].amount.nxdata, nb);
   __nesc_hton_uint32(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].total_payload_size.nxdata, __nesc_ntoh_uint32(rcm->total_payload_size.nxdata));
@@ -5928,11 +5967,11 @@ static inline void RadioCountToLedsC$initializeReceiving(message_t *bufPtr, void
         }
     }
   else 
-#line 343
+#line 345
     {
       struct rcv_msg *msg_stuff = (struct rcv_msg *)malloc(sizeof(struct rcv_msg ));
 
-#line 345
+#line 347
       msg_stuff->next = (struct rcv_msg *)(void *)0;
       msg_stuff->packet_got = FALSE;
       RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].received = msg_stuff;
@@ -5975,21 +6014,7 @@ inline static error_t RadioCountToLedsC$AMSend$send(am_addr_t addr, message_t * 
 #line 80
 }
 #line 80
-# 252 "RadioCountToLedsC.nc"
-static inline void RadioCountToLedsC$finish_packet_rcv(__nesc_nxbase_nx_uint16_t nodeId)
-#line 252
-{
-  uint32_t i;
-
-#line 254
-  sim_log_debug(165U, "WSN_Project", "All packages received from node %d. Could forward it to the gateway now.... Content: amount = %d, total_buffer_size = %d. buffer will come \n", nodeId, __nesc_ntoh_uint16(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].amount.nxdata), __nesc_ntoh_uint32(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].total_payload_size.nxdata));
-  printf("WSN_Project: All packages received from node %d. Could forward it to the gateway now.... Content: amount = %d, total_buffer_size = %d. buffer will come \n", nodeId, __nesc_ntoh_uint16(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].amount.nxdata), __nesc_ntoh_uint32(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].total_payload_size.nxdata));
-
-  for (i = 0; i < __nesc_ntoh_uint32(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].total_payload_size.nxdata); i++) {
-    }
-}
-
-#line 365
+# 367 "RadioCountToLedsC.nc"
 static inline void RadioCountToLedsC$transferdata(message_t *bufPtr, void *payload, uint8_t len)
 {
   uint16_t nodeId;
@@ -5998,14 +6023,14 @@ static inline void RadioCountToLedsC$transferdata(message_t *bufPtr, void *paylo
   struct rcv_msg *temp;
   int i = 0;
   uint16_t amount;
-  radio_count_msg_t *rcm = (radio_count_msg_t *)payload;
+  radio_count_msg_t *rcmtr = (radio_count_msg_t *)payload;
 
-#line 374
-  sim_log_debug(167U, "WSN_Project", "rcm->counter: '%d'\n", __nesc_ntoh_uint16(rcm->counter.nxdata));
-  packetId = __nesc_ntoh_uint16(rcm->counter.nxdata);
-  __nesc_hton_uint8(rcm->messageType.nxdata, 7);
+#line 376
+  sim_log_debug(168U, "WSN_Project", "rcmtr->counter: '%d'\n", __nesc_ntoh_uint16(rcmtr->counter.nxdata));
+  packetId = __nesc_ntoh_uint16(rcmtr->counter.nxdata);
+  __nesc_hton_uint8(rcmtr->messageType.nxdata, 7);
 
-  nodeId = __nesc_ntoh_uint16(rcm->nodeId.nxdata);
+  nodeId = __nesc_ntoh_uint16(rcmtr->nodeId.nxdata);
   PrevNode = nodeId - 1;
   temp = RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].received;
 
@@ -6028,13 +6053,13 @@ static inline void RadioCountToLedsC$transferdata(message_t *bufPtr, void *paylo
 
       uint16_t leftToCopy = __nesc_ntoh_uint32(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].total_payload_size.nxdata) - packetId * (28 - 7);
 
-      sim_log_debug(168U, "WSN_Project", "Last package received. Left to copy = %d, rcv_buffers[nodeId].total_payload_size=%d, pacetId = %d, packedId*MAX_BUFFER_SIZE = %d\n", leftToCopy, __nesc_ntoh_uint32(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].total_payload_size.nxdata), packetId, packetId * (28 - 7));
-      memcpy(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].receiving + packetId * (28 - 7), rcm->buffer, leftToCopy);
+      sim_log_debug(169U, "WSN_Project", "Last package received. Left to copy = %d, rcv_buffers[nodeId].total_payload_size=%d, pacetId = %d, packedId*MAX_BUFFER_SIZE = %d\n", leftToCopy, __nesc_ntoh_uint32(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].total_payload_size.nxdata), packetId, packetId * (28 - 7));
+      memcpy(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].receiving + packetId * (28 - 7), rcmtr->buffer, leftToCopy);
     }
   else 
     {
 
-      memcpy(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].receiving + packetId * (28 - 7), rcm->buffer, 28 - 7);
+      memcpy(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].receiving + packetId * (28 - 7), rcmtr->buffer, 28 - 7);
     }
 
 
@@ -6045,7 +6070,7 @@ static inline void RadioCountToLedsC$transferdata(message_t *bufPtr, void *paylo
           temp = temp->next;
         }
       else 
-#line 416
+#line 418
         {
           return;
         }
@@ -6056,13 +6081,13 @@ static inline void RadioCountToLedsC$transferdata(message_t *bufPtr, void *paylo
 
 
   if (RadioCountToLedsC$AMSend$send(PrevNode, &RadioCountToLedsC$packet[sim_node()], sizeof(radio_count_msg_t )) == SUCCESS) {
-      sim_log_debug(169U, "RadioCountToLedsC", "RadioCountToLedsC: packet %d transfered.\n", RadioCountToLedsC$packagesSent[sim_node()]);
+      sim_log_debug(170U, "RadioCountToLedsC", "RadioCountToLedsC: packet %d transfered.\n", RadioCountToLedsC$packagesSent[sim_node()]);
       printf("RadioCountToLedsC (node %d): packet %d transfered.\n", PrevNode, RadioCountToLedsC$packagesSent[sim_node()]);
     }
   else 
-#line 428
+#line 430
     {
-      sim_log_debug(170U, "WSN_Project", "Package transferring (result send != SUCCESS) for package %d \n", RadioCountToLedsC$packagesSent[sim_node()]);
+      sim_log_debug(171U, "WSN_Project", "Package transferring (result send != SUCCESS) for package %d \n", RadioCountToLedsC$packagesSent[sim_node()]);
       printf("WSN_Project (node %d): Package sending (result send != SUCCESS) for package %d \n", TOS_NODE_ID, RadioCountToLedsC$packagesSent[sim_node()]);
       RadioCountToLedsC$cleanUp();
     }
@@ -6074,7 +6099,7 @@ static inline void RadioCountToLedsC$transferdata(message_t *bufPtr, void *paylo
 
 
 static inline message_t *RadioCountToLedsC$Receive$receive(message_t *bufPtr, void *payload, uint8_t len)
-#line 440
+#line 442
 {
 
   if (TOS_NODE_ID != 1) 
@@ -6082,24 +6107,13 @@ static inline message_t *RadioCountToLedsC$Receive$receive(message_t *bufPtr, vo
       printf("RadioCountToLedsC (node %d): Node %d received a package with payloadaddress %d. Transfer process...\n", TOS_NODE_ID, TOS_NODE_ID, payload);
       if (bufPtr != (void *)0 && payload != (void *)0) 
         {
-          switch (((uint8_t *)payload)[0]) 
-            {
-              case 7: 
-                {
-                  RadioCountToLedsC$transferdata(bufPtr, payload, len);
-                  printf("RadioCountToLedsC (node %d):  Transfer done, TOS_NODE_ID");
-                  break;
-                }
-              default: 
-                {
-                  printf("RadioCountToLedsC (node %d): Received packet of length %hhu from node %d. But it has an unknown type\n", TOS_NODE_ID, len, RadioCountToLedsC$AMPacket$source(bufPtr));
-                  sim_log_debug(171U, "WSN_Project", "Unknown package received\n");
-
-                  return bufPtr;
-                }
-            }
+          RadioCountToLedsC$transferdata(bufPtr, payload, len);
+          printf("RadioCountToLedsC (node %d):  Transfer done, TOS_NODE_ID");
+          return bufPtr;
         }
     }
+
+
 
 
 
@@ -6124,7 +6138,7 @@ static inline message_t *RadioCountToLedsC$Receive$receive(message_t *bufPtr, vo
         }
     }
   else 
-#line 487
+#line 478
     {
       sim_log_debug(174U, "WSN_Project", "Received buffer or receveid payload is empty.\n");
       printf("WSN_Project: Received buffer or receveid payload is empty.\n");
@@ -6141,13 +6155,13 @@ static inline message_t *TossimActiveMessageC$Receive$default$receive(am_id_t id
 }
 
 # 78 "/home/tinyos/tinyos-main/tos/interfaces/Receive.nc"
-inline static message_t * TossimActiveMessageC$Receive$receive(am_id_t arg_0x2b87453de340, message_t * msg, void * payload, uint8_t len){
+inline static message_t * TossimActiveMessageC$Receive$receive(am_id_t arg_0x2b5fb6384340, message_t * msg, void * payload, uint8_t len){
 #line 78
   nx_struct message_t *__nesc_result;
 #line 78
 
 #line 78
-  switch (arg_0x2b87453de340) {
+  switch (arg_0x2b5fb6384340) {
 #line 78
     case 6:
 #line 78
@@ -6157,7 +6171,7 @@ inline static message_t * TossimActiveMessageC$Receive$receive(am_id_t arg_0x2b8
 #line 78
     default:
 #line 78
-      __nesc_result = TossimActiveMessageC$Receive$default$receive(arg_0x2b87453de340, msg, payload, len);
+      __nesc_result = TossimActiveMessageC$Receive$default$receive(arg_0x2b5fb6384340, msg, payload, len);
 #line 78
       break;
 #line 78
@@ -6211,13 +6225,13 @@ inline static void /*RadioCountToLedsAppC.AMSenderC.SenderC.AMQueueEntryP*/AMQue
 }
 #line 162
 # 80 "/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc"
-inline static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$AMSend$send(am_id_t arg_0x2b874572c960, am_addr_t addr, message_t * msg, uint8_t len){
+inline static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$AMSend$send(am_id_t arg_0x2b5fb66ca960, am_addr_t addr, message_t * msg, uint8_t len){
 #line 80
   unsigned char __nesc_result;
 #line 80
 
 #line 80
-  __nesc_result = TossimActiveMessageC$AMSend$send(arg_0x2b874572c960, addr, msg, len);
+  __nesc_result = TossimActiveMessageC$AMSend$send(arg_0x2b5fb66ca960, addr, msg, len);
 #line 80
 
 #line 80
@@ -6324,9 +6338,9 @@ inline static error_t /*RadioCountToLedsAppC.AMSenderC.SenderC.AMQueueEntryP*/AM
 }
 #line 75
 # 110 "/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc"
-inline static void TossimActiveMessageC$AMSend$sendDone(am_id_t arg_0x2b87453e0220, message_t * msg, error_t error){
+inline static void TossimActiveMessageC$AMSend$sendDone(am_id_t arg_0x2b5fb6386220, message_t * msg, error_t error){
 #line 110
-  /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$AMSend$sendDone(arg_0x2b87453e0220, msg, error);
+  /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$AMSend$sendDone(arg_0x2b5fb6386220, msg, error);
 #line 110
 }
 #line 110
@@ -7171,13 +7185,13 @@ static inline message_t *TossimActiveMessageC$Snoop$default$receive(am_id_t id, 
 }
 
 # 78 "/home/tinyos/tinyos-main/tos/interfaces/Receive.nc"
-inline static message_t * TossimActiveMessageC$Snoop$receive(am_id_t arg_0x2b874540c020, message_t * msg, void * payload, uint8_t len){
+inline static message_t * TossimActiveMessageC$Snoop$receive(am_id_t arg_0x2b5fb63b2020, message_t * msg, void * payload, uint8_t len){
 #line 78
   nx_struct message_t *__nesc_result;
 #line 78
 
 #line 78
-    __nesc_result = TossimActiveMessageC$Snoop$default$receive(arg_0x2b874540c020, msg, payload, len);
+    __nesc_result = TossimActiveMessageC$Snoop$default$receive(arg_0x2b5fb63b2020, msg, payload, len);
 #line 78
 
 #line 78
@@ -7543,15 +7557,15 @@ inline static void * RadioCountToLedsC$Packet$getPayload(message_t * msg, uint8_
 #line 126
 }
 #line 126
-# 182 "RadioCountToLedsC.nc"
+# 184 "RadioCountToLedsC.nc"
 static inline void RadioCountToLedsC$initializeSending$runTask(void )
-#line 182
+#line 184
 {
   int i = 0;
   uint16_t nodePrev;
   radio_start_msg_t *rsm = (radio_start_msg_t *)RadioCountToLedsC$Packet$getPayload(&RadioCountToLedsC$startPacket[sim_node()], sizeof(radio_start_msg_t ));
 
-#line 186
+#line 188
   if (rsm == (void *)0) {
 
       return;
@@ -7580,7 +7594,7 @@ static inline void RadioCountToLedsC$initializeSending$runTask(void )
       printf("WSN_Project (node %d): Start package sent from node %d to node %d.\n", TOS_NODE_ID, TOS_NODE_ID, nodePrev);
     }
   else 
-#line 212
+#line 214
     {
       sim_log_debug(161U, "WSN_Project", "Start Package sending (result send != SUCCESS)\n");
       RadioCountToLedsC$cleanUp();
@@ -7608,9 +7622,9 @@ static inline void /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$Send$default$sendDone
 }
 
 # 100 "/home/tinyos/tinyos-main/tos/interfaces/Send.nc"
-inline static void /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$Send$sendDone(uint8_t arg_0x2b874572d788, message_t * msg, error_t error){
+inline static void /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$Send$sendDone(uint8_t arg_0x2b5fb66cb788, message_t * msg, error_t error){
 #line 100
-  switch (arg_0x2b874572d788) {
+  switch (arg_0x2b5fb66cb788) {
 #line 100
     case 0U:
 #line 100
@@ -7620,7 +7634,7 @@ inline static void /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$Send$sendDone(uint8_t
 #line 100
     default:
 #line 100
-      /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$Send$default$sendDone(arg_0x2b874572d788, msg, error);
+      /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$Send$default$sendDone(arg_0x2b5fb66cb788, msg, error);
 #line 100
       break;
 #line 100
@@ -7851,9 +7865,9 @@ static inline void SimSchedulerBasicP$TaskBasic$default$runTask(uint8_t id)
 }
 
 # 75 "/home/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc"
-inline static void SimSchedulerBasicP$TaskBasic$runTask(uint8_t arg_0x2b87450f6108){
+inline static void SimSchedulerBasicP$TaskBasic$runTask(uint8_t arg_0x2b5fb609c108){
 #line 75
-  switch (arg_0x2b87450f6108) {
+  switch (arg_0x2b5fb609c108) {
 #line 75
     case TossimPacketModelC$startDoneTask:
 #line 75
@@ -7905,7 +7919,7 @@ inline static void SimSchedulerBasicP$TaskBasic$runTask(uint8_t arg_0x2b87450f61
 #line 75
     default:
 #line 75
-      SimSchedulerBasicP$TaskBasic$default$runTask(arg_0x2b87450f6108);
+      SimSchedulerBasicP$TaskBasic$default$runTask(arg_0x2b5fb609c108);
 #line 75
       break;
 #line 75
@@ -7966,9 +7980,9 @@ inline static error_t RadioCountToLedsC$initializeSending$postTask(void ){
 #line 67
 }
 #line 67
-# 218 "RadioCountToLedsC.nc"
+# 220 "RadioCountToLedsC.nc"
 static inline void RadioCountToLedsC$simulatedSensorInterrupt(uint16_t size, void *sensorBuffer)
-#line 218
+#line 220
 {
   printf("Sensor itnerrupted\n");
   if (RadioCountToLedsC$locked[sim_node()]) {
@@ -7976,7 +7990,7 @@ static inline void RadioCountToLedsC$simulatedSensorInterrupt(uint16_t size, voi
       return;
     }
   else 
-#line 223
+#line 225
     {
       RadioCountToLedsC$locked[sim_node()] = TRUE;
     }
@@ -7996,13 +8010,13 @@ static inline void RadioCountToLedsC$simulatedSensorInterrupt(uint16_t size, voi
 }
 
 static inline void RadioCountToLedsC$SensorTimer$fired(void )
-#line 241
+#line 243
 {
 
   nx_uint8_t *sensorBuffer = (nx_uint8_t *)malloc(RadioCountToLedsC$packageSize[sim_node()] * sizeof(nx_uint8_t ));
   uint32_t i;
 
-#line 245
+#line 247
   for (i = 0; i < RadioCountToLedsC$packageSize[sim_node()]; i++) {
       __nesc_hton_uint8(sensorBuffer[i].nxdata, (i + 1) * TOS_NODE_ID);
     }
@@ -8016,9 +8030,9 @@ static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$d
 }
 
 # 83 "/home/tinyos/tinyos-main/tos/lib/timer/Timer.nc"
-inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$fired(uint8_t arg_0x2b87459abc28){
+inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$fired(uint8_t arg_0x2b5fb6949c28){
 #line 83
-  switch (arg_0x2b87459abc28) {
+  switch (arg_0x2b5fb6949c28) {
 #line 83
     case 0U:
 #line 83
@@ -8028,7 +8042,7 @@ inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$f
 #line 83
     default:
 #line 83
-      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$default$fired(arg_0x2b87459abc28);
+      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$default$fired(arg_0x2b5fb6949c28);
 #line 83
       break;
 #line 83
@@ -10309,6 +10323,20 @@ static am_id_t TossimActiveMessageC$AMPacket$type(message_t *amsg)
   return __nesc_ntoh_uint8(header->type.nxdata);
 }
 
+# 254 "RadioCountToLedsC.nc"
+static void RadioCountToLedsC$finish_packet_rcv(__nesc_nxbase_nx_uint16_t nodeId)
+#line 254
+{
+  uint32_t i;
+
+#line 256
+  sim_log_debug(165U, "WSN_Project", "All packages received from node %d. Could forward it to the gateway now.... Content: amount = %d, total_buffer_size = %d. buffer will come \n", nodeId, __nesc_ntoh_uint16(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].amount.nxdata), __nesc_ntoh_uint32(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].total_payload_size.nxdata));
+  printf("WSN_Project: All packages received from node %d. Could forward it to the gateway now.... Content: amount = %d, total_buffer_size = %d. buffer will come \n", nodeId, __nesc_ntoh_uint16(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].amount.nxdata), __nesc_ntoh_uint32(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].total_payload_size.nxdata));
+
+  for (i = 0; i < __nesc_ntoh_uint32(RadioCountToLedsC$rcv_buffers[sim_node()][nodeId].total_payload_size.nxdata); i++) {
+    }
+}
+
 # 53 "/home/tinyos/tinyos-main/tos/system/AMQueueEntryP.nc"
 static error_t /*RadioCountToLedsAppC.AMSenderC.SenderC.AMQueueEntryP*/AMQueueEntryP$0$AMSend$send(am_addr_t dest, 
 message_t *msg, 
@@ -10454,9 +10482,9 @@ static void SimSchedulerBasicP$sim_scheduler_submit_event(void )
     }
 }
 
-# 523 "RadioCountToLedsC.nc"
+# 514 "RadioCountToLedsC.nc"
 static void RadioCountToLedsC$AMSend$sendDone(message_t *bufPtr, error_t error)
-#line 523
+#line 514
 {
   if (&RadioCountToLedsC$packet[sim_node()] == bufPtr) {
       if (RadioCountToLedsC$useacks[sim_node()] == FALSE || RadioCountToLedsC$PacketAcknowledgements$wasAcked(bufPtr)) {
@@ -10469,7 +10497,7 @@ static void RadioCountToLedsC$AMSend$sendDone(message_t *bufPtr, error_t error)
               RadioCountToLedsC$sendNext();
             }
           else 
-#line 533
+#line 524
             {
               sim_log_debug(176U, "WSN_Project", "Succesfully sent all %d packages.  \n", RadioCountToLedsC$packagesSent[sim_node()]);
               printf("WSN_Project (Node %d): Succesfully sent all %d packages. \n", TOS_NODE_ID, RadioCountToLedsC$packagesSent[sim_node()]);
@@ -10477,7 +10505,7 @@ static void RadioCountToLedsC$AMSend$sendDone(message_t *bufPtr, error_t error)
             }
         }
       else 
-#line 538
+#line 529
         {
 
           if (RadioCountToLedsC$attempts[sim_node()] < RadioCountToLedsC$maxAttempts[sim_node()]) {
@@ -10487,7 +10515,7 @@ static void RadioCountToLedsC$AMSend$sendDone(message_t *bufPtr, error_t error)
               RadioCountToLedsC$sendNext();
             }
           else 
-#line 545
+#line 536
             {
               sim_log_debug(178U, "WSN_Project", "Sending aborted, no ack received for package %d after %d tries.\n", RadioCountToLedsC$packagesSent[sim_node()], RadioCountToLedsC$maxAttempts[sim_node()]);
               printf("WSN_Project: Sending aborted, no ack received for package %d after %d tries.\n", RadioCountToLedsC$packagesSent[sim_node()], RadioCountToLedsC$maxAttempts[sim_node()]);
@@ -10496,7 +10524,7 @@ static void RadioCountToLedsC$AMSend$sendDone(message_t *bufPtr, error_t error)
         }
     }
   else 
-#line 551
+#line 542
     {
       if (&RadioCountToLedsC$startPacket[sim_node()] == bufPtr) {
           if (RadioCountToLedsC$useacks[sim_node()] == FALSE || RadioCountToLedsC$PacketAcknowledgements$wasAcked(bufPtr)) {
@@ -10505,7 +10533,7 @@ static void RadioCountToLedsC$AMSend$sendDone(message_t *bufPtr, error_t error)
                   printf("WSN_Project: Ack received for initialization packages.\n");
                 }
               else 
-#line 557
+#line 548
                 {
                   printf("WSN_Project: Finished sending of initialization package without acknowledgement.\n");
                 }
@@ -10514,7 +10542,7 @@ static void RadioCountToLedsC$AMSend$sendDone(message_t *bufPtr, error_t error)
               RadioCountToLedsC$sendNext();
             }
           else 
-#line 563
+#line 554
             {
               if (RadioCountToLedsC$attempts[sim_node()] < RadioCountToLedsC$maxAttempts[sim_node()]) {
                   sim_log_debug(180U, "WSN_Project", "No ack received for initialization package after %d/%d tries. Try to resend it...\n", RadioCountToLedsC$attempts[sim_node()], RadioCountToLedsC$maxAttempts[sim_node()]);
@@ -10523,7 +10551,7 @@ static void RadioCountToLedsC$AMSend$sendDone(message_t *bufPtr, error_t error)
                   RadioCountToLedsC$initializeSending$postTask();
                 }
               else 
-#line 569
+#line 560
                 {
                   sim_log_debug(181U, "WSN_Project", "Sending aborted, no ack received for initialation package after %d tries.\n", RadioCountToLedsC$maxAttempts[sim_node()]);
                   printf("WSN_Project: Sending aborted, no ack received for initialation package after %d tries.\n", RadioCountToLedsC$maxAttempts[sim_node()]);
@@ -10532,7 +10560,7 @@ static void RadioCountToLedsC$AMSend$sendDone(message_t *bufPtr, error_t error)
             }
         }
       else 
-#line 575
+#line 566
         {
           RadioCountToLedsC$cleanUp();
           sim_log_debug(182U, "WSN_Project", "Received a send done event for a package that was not sent from this node %d\n", TOS_NODE_ID);
