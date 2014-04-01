@@ -136,6 +136,8 @@ implementation {
   }
   
   void sendNext() {
+  
+    uint16_t nodePrev;
     radio_count_msg_t* rcm = (radio_count_msg_t*)call Packet.getPayload(&packet, sizeof(radio_count_msg_t));
     if (rcm == NULL) {
         // no memory available?
@@ -146,6 +148,8 @@ implementation {
     //printf("WSN_Project: Medium free, sent package number %d, BufferSize: %d and buffer %d\n", packagesSent, bufferSize, *(bufferPointer+packagesSent*MAX_BUFFER_SIZE));
     rcm->messageType = PIECEMESSAGE_TYPE;
     rcm->nodeId = TOS_NODE_ID;
+    nodePrev = rcm->nodeId-1;
+
     if ((packagesSent+1)*MAX_BUFFER_SIZE >= bufferSize) {
       //last package, copy just left bytes to the payload
       int leftToCopy = bufferSize - (packagesSent * MAX_BUFFER_SIZE);
@@ -165,9 +169,9 @@ implementation {
       call PacketAcknowledgements.requestAck(&packet);
     }
 
-    if (call AMSend.send(receiverAddress, &packet, sizeof(radio_count_msg_t)) == SUCCESS) {
+    if (call AMSend.send(nodePrev, &packet, sizeof(radio_count_msg_t)) == SUCCESS) {
       dbg("RadioCountToLedsC", "RadioCountToLedsC: packet %d sent.\n", packagesSent);
-      printf("RadioCountToLedsC (node %d): packet %d sent.\n", TOS_NODE_ID,packagesSent);
+      printf("RadioCountToLedsC (node %d): packet %d sent to %d.\n", TOS_NODE_ID,packagesSent,nodePrev);
     } else {
       dbg("WSN_Project", "Package sending (result send != SUCCESS) for package %d \n", packagesSent);
       printf("WSN_Project (node %d): Package sending (result send != SUCCESS) for package %d \n", TOS_NODE_ID, packagesSent);
@@ -177,6 +181,7 @@ implementation {
   
   task void initializeSending() {
     int i=0;
+    uint16_t nodePrev;
     radio_start_msg_t* rsm = (radio_start_msg_t*)call Packet.getPayload(&startPacket, sizeof(radio_start_msg_t));
     if (rsm == NULL) {
       // no memory available?
@@ -184,6 +189,7 @@ implementation {
     }
     rsm->messageType = STARTMESSAGE_TYPE;
     rsm->nodeId = TOS_NODE_ID;
+    nodePrev=TOS_NODE_ID-1;
     //calculate amount of packages to send
     while(i*MAX_BUFFER_SIZE < bufferSize) {
       i++;
@@ -200,9 +206,9 @@ implementation {
     if (useacks==TRUE) {
       call PacketAcknowledgements.requestAck(&startPacket);
     }
-    if (call AMSend.send(receiverAddress, &startPacket, sizeof(radio_start_msg_t)) == SUCCESS) {
-	  dbg("WSN_Project", "Start package sent from node %d to node %d.\n", TOS_NODE_ID, receiverAddress);
-          printf("WSN_Project (node %d): Start package sent from node %d to node %d.\n", TOS_NODE_ID, TOS_NODE_ID, receiverAddress);
+    if (call AMSend.send(nodePrev, &startPacket, sizeof(radio_start_msg_t)) == SUCCESS) {
+	  dbg("WSN_Project", "Start package sent from node %d to node %d.\n", TOS_NODE_ID, nodePrev);
+          printf("WSN_Project (node %d): Start package sent from node %d to node %d.\n", TOS_NODE_ID, TOS_NODE_ID, nodePrev);
     } else {
       dbg("WSN_Project", "Start Package sending (result send != SUCCESS)\n");
       cleanUp();
@@ -266,8 +272,12 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
     //nodeId = call AMPacket.source(bufPtr);
     nodeId = rcm->nodeId;
     spy = rcv_buffers[nodeId].received;
+    
+    printf("RadioCountToLedsC : Test");
 
-    for (i=0; i<packetId; i++) {
+
+/*  for (i=0; i<packetId; i++) 
+	{
       spy=spy->next;
     }
     //set the data received flag to true
@@ -296,6 +306,7 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
       }
     }
     finish_packet_rcv(nodeId); 
+*/
 
   }
   
@@ -349,15 +360,111 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
     //counter[0] = rcm->counter;
     //counter[0]++;
   }
+  
+  
+ void transferdata(message_t* bufPtr, void* payload, uint8_t len)
+ {
+    uint16_t nodeId;
+    uint16_t packetId;
+    uint16_t PrevNode;
+    struct rcv_msg* temp;
+    int i=0;
+    uint16_t amount;
+    radio_count_msg_t* rcm = (radio_count_msg_t*)payload;
+    dbg("WSN_Project", "rcm->counter: '%d'\n", rcm->counter);
+    packetId=rcm->counter;
+    rcm->messageType = PIECEMESSAGE_TYPE;
+    //nodeId = call AMPacket.source(bufPtr);
+    nodeId = rcm->nodeId;
+    PrevNode = nodeId-1;
+    temp = rcv_buffers[nodeId].received;
+    
+    
+    // Récupérer données du message, 
+    // Stocker dans un buffer intermédiaire
+    
+    printf("RadioCountToLedsC (node %d): Transfert en cours, TOS_NODE_ID");
+
+    for (i=0; i<packetId; i++) 
+    {
+    temp=temp->next;
+    }
+    //set the data received flag to true
+    temp->packet_got=TRUE;
+    
+    // copy the buffer from the package to the receving buffer (merging)
+    if ((packetId+1)*MAX_BUFFER_SIZE >= rcv_buffers[nodeId].total_payload_size) 
+    {
+      //last package, copy just left bytes to own buffer
+      uint16_t leftToCopy = ((rcv_buffers[nodeId].total_payload_size)-(packetId*MAX_BUFFER_SIZE));
+      // assert leftToCopy <=MAX_BUFFER_SIZE;
+      dbg("WSN_Project", "Last package received. Left to copy = %d, rcv_buffers[nodeId].total_payload_size=%d, pacetId = %d, packedId*MAX_BUFFER_SIZE = %d\n", leftToCopy,rcv_buffers[nodeId].total_payload_size, packetId, packetId*MAX_BUFFER_SIZE);
+      memcpy(rcv_buffers[nodeId].receiving + (packetId*MAX_BUFFER_SIZE), rcm->buffer, leftToCopy);
+    } 
+    else 
+    {
+      // not the last package. Copy the whole buffer to the rcver
+      memcpy(rcv_buffers[nodeId].receiving + (packetId*MAX_BUFFER_SIZE), rcm->buffer, MAX_BUFFER_SIZE);
+    }
+    
+    //check if all packages are arived. If not return, else proceed the received package
+    temp = rcv_buffers[nodeId].received;
+    amount = rcv_buffers[nodeId].amount;
+    for (i=0; i<amount; i++) {
+      if ((temp->packet_got) == TRUE) {
+        temp=temp->next;
+      } else {
+        return;
+      }
+    }
+    finish_packet_rcv(nodeId); 
+
+    // Envoyer au noeud suivant 
+    
+    
+    if (call AMSend.send(PrevNode, &packet, sizeof(radio_count_msg_t)) == SUCCESS) {
+      dbg("RadioCountToLedsC", "RadioCountToLedsC: packet %d transfered.\n", packagesSent);
+      printf("RadioCountToLedsC (node %d): packet %d transfered.\n", PrevNode,packagesSent);
+    } else {
+      dbg("WSN_Project", "Package transferring (result send != SUCCESS) for package %d \n", packagesSent);
+      printf("WSN_Project (node %d): Package sending (result send != SUCCESS) for package %d \n", TOS_NODE_ID, packagesSent);
+      cleanUp();
+    }
+  
+    
+
+    
+  }   
+    
 
   event message_t* Receive.receive(message_t* bufPtr, void* payload, uint8_t len) {
     
+    if (TOS_NODE_ID != ID_OF_GATEWAY) 
+    {
+      printf("RadioCountToLedsC (node %d): Node %d received a package with payloadaddress %d. Transfer process...\n", TOS_NODE_ID, TOS_NODE_ID, payload);
+		if (bufPtr != NULL && payload != NULL) 
+			{
+			switch (((uint8_t *)payload)[0]) 
+				{ 
+				case PIECEMESSAGE_TYPE: 
+					{
+					transferdata(bufPtr,payload,len);
+					printf("RadioCountToLedsC (node %d):  Transfer done, TOS_NODE_ID");
+					break;
+					}
+				default: 
+					{
+					printf("RadioCountToLedsC (node %d): Received packet of length %hhu from node %d. But it has an unknown type\n", TOS_NODE_ID, len, (call AMPacket.source(bufPtr)));
+					dbg("WSN_Project", "Unknown package received\n");
+      // TO DO 
+					return bufPtr;
+					}   
+				}
+			}	
+	}
+
     
-    if (TOS_NODE_ID != ID_OF_GATEWAY) {
-      dbg("RadioCountToLedsC", "Node %d received a package %d . Why? Drop it...\n", TOS_NODE_ID, bufPtr);
-      printf("RadioCountToLedsC (node %d): Node %d received a package with payloadaddress %d. Why? Drop it...\n", TOS_NODE_ID, TOS_NODE_ID, payload);
-      return bufPtr;
-    }   
+    // GATEWAY
 
     dbg("RadioCountToLedsC", "Received packet of length %hhu from node %d.\n", len, (call AMPacket.source(bufPtr)));
     printf("RadioCountToLedsC (node %d): Received packet with payload %d of length %hhu from node %d.\n", TOS_NODE_ID, payload, len, (call AMPacket.source(bufPtr)));
@@ -408,6 +515,10 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
     }*/
     
   }
+  
+ 
+  
+  
 
   event void AMSend.sendDone(message_t* bufPtr, error_t error) {
     if (&packet == bufPtr) {
