@@ -1,0 +1,100 @@
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class visuel_fil_d_attente extends PApplet {
+  public void setup() {
+size (600,400); //taille de la fenetre d'affichage
+strokeWeight(0); 
+
+boolean[] tableau = {true,true,false,false};  //creation du tableau
+
+//compteurs
+int i=0;
+int z=0;
+int w=0;
+
+//couleurs
+int full = color(245,23,23); //si place full:rouge
+int empty = color(23,203,53); //si place empty:vert
+
+float x=350;
+float y=150;
+float largeur=20;
+float longueur=40;
+
+//dessin de la route
+rect(0,140,600,90);
+rect(250,0,90,600);
+
+//coordonnees route
+int xa=0;
+int ya=185;
+int xb=10;
+int yb=185;
+int xc=295;
+int yc=0;
+int xd=295;
+int yd=10;
+
+
+//pointilles route horizontale
+while(z<100) {  
+strokeWeight(1); 
+line(xa,ya,xb,yb);
+xa=xb+10;
+xb=xa+10;
+z++;
+}
+
+
+//pointilles route verticale
+while(w<100) {  
+  strokeWeight(1); 
+  line(xc,yc,xd,yd);
+  yc=yd+10;
+  yd=yc+10;
+  w++;
+}
+
+
+//dessin file d'attente
+while(i<4) {  
+
+    if(tableau[i]==false) {
+      fill(empty);
+      strokeWeight(1); 
+      rect(x,y,longueur,largeur);
+      i++;
+      x=x+longueur;}
+    else {
+      fill(full);
+      strokeWeight(1); 
+      rect(x,y,longueur,largeur);
+      i++;
+      x=x+longueur;
+    }
+}
+
+    noLoop();
+  }
+
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "visuel_fil_d_attente" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
+}
