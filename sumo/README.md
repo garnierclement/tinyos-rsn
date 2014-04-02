@@ -17,8 +17,9 @@ Install SUMO on Ubuntu 13.10
 
 # Informations
 
-* Networks file : `.edg.xml`, .`nod.xml`, 
-* Route file : `.rou.xml` (cars and car distribution), linked in [.sumocfg]
+* Networks file : `.edg.xml`, .`nod.xml`
+* Route file : `.rou.xml` (cars and car distribution), linked in `.sumocfg`
+* Traffic light configuration : `tls.add.xml`
 
 # Usage
 
@@ -28,5 +29,5 @@ Generate `.net.xml`
 
 Launch simulationn
 
-	$ sumo-gui -c [.sumocfg] -a 
+	$ sumo-gui -c [.sumocfg] -a tls.add.xml
 
