@@ -332,12 +332,18 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
 	{
       if ((spy->packet_got) == TRUE) 
 		{
+		if (TOS_NODE_ID!= ID_OF_GATEWAY) 
+      			{
+			sendNextHop(rcv_buffers[nodeId]);
+      			}
         	spy=spy->next;
-      		} 
+      		}
       else {
          return;
        	   }
     	}
+
+    
     finish_packet_rcv(nodeId); 
 
 
@@ -401,13 +407,6 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
 
   event message_t* Receive.receive(message_t* bufPtr, void* payload, uint8_t len) {
 
-
-      if (TOS_NODE_ID!= ID_OF_GATEWAY) 
-      {
-	 sendNextHop(bufPtr,payload,len);
-      }	
-	
-
     dbg("RadioCountToLedsC", "Received packet of length %hhu from node %d.\n", len, (call AMPacket.source(bufPtr)));
     printf("RadioCountToLedsC (node %d): Received packet with payload %d of length %hhu from node %d.\n", TOS_NODE_ID, payload, len, (call AMPacket.source(bufPtr)));
     
@@ -463,22 +462,46 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
 
  	void sendNextHop(message_t* bufPtr, void* payload, uint8_t len) 
 {
-	    radio_count_msg_t* fwpkt = (radio_count_msg_t*)payload;
-	    fwpkt = (radio_count_msg_t*)(call Packet.getPayload(&packet, sizeof(radio_count_msg_t)));
-	    nodePrev= (TOS_NODE_ID)-1;	 
+	radio_count_msg_t* fwpkt = (radio_count_msg_t*)payload;
+    	nodePrev= (TOS_NODE_ID)-1;
+	if (fwpkt == NULL) {
+        // no memory available?
+        	printf("WSN_Project: try to set payload, but received no memory. only NULL\n");
+		return;	
+    	}  
+    //dbg("WSN_Project", "Medium free, sent package number %d, BufferSize: %d and buffer %d\n", packagesSent, bufferSize, *(bufferPointer+packagesSent*MAX_BUFFER_SIZE));
+    //printf("WSN_Project: Medium free, sent package number %d, BufferSize: %d and buffer %d\n", packagesSent, bufferSize, *(bufferPointer+packagesSent*MAX_BUFFER_SIZE));
+    	fwpkt->messageType = PIECEMESSAGE_TYPE; //Remplissage payload, type de message
+    	fwpkt->nodeId = TOS_NODE_ID;// Remplissage payload, numéro du noeud
+    	fwpkt->payloadsize = len;
+    	fwpkt->
 
 
-       		if (call AMSend.send(nodePrev, &packet, sizeof(radio_start_msg_t)) == SUCCESS) 
-		{ //Envoi au noeud précédant
-	  	dbg("WSN_Project", "Start package sent from node %d to node %d.\n", TOS_NODE_ID, nodePrev);
-          	printf("WSN_Project (node %d): Start package sent from node %d to node %d.\n", TOS_NODE_ID, TOS_NODE_ID, nodePrev);
-    		} else 
-		{
-      		dbg("WSN_Project", "Start Package sending (result send != SUCCESS)\n");
-      		cleanUp();
+    	if ((packagesSent+1)*MAX_BUFFER_SIZE >= bufferSize) {  //On vérifie que le prochain paquet tient dans le buffer (Trop grand)
+      		int leftToCopy = bufferSize - (packagesSent * MAX_BUFFER_SIZE); //On définit ce qu'il reste à copier
+      		dbg("WSN_Project", "Last package. Left to copy = %d\n", leftToCopy);
+      		memcpy(fwpkt->buffer, bufferPointer+(packagesSent*MAX_BUFFER_SIZE), leftToCopy); 
+    	} else {
+      		memcpy(fwpkt->buffer,bufferPointer+(packagesSent*MAX_BUFFER_SIZE),MAX_BUFFER_SIZE); //Sinon on copie entièrement 
     		}
+    		rcm->counter = packagesSent;   
+    		dbg("WSN_Project", "rcm->buffer before sending: %d\n", *(rcm->buffer));
+    
 
- }
+    if (useacks==TRUE) {
+      call PacketAcknowledgements.requestAck(&packet);
+    }
+
+    	if (call AMSend.send(nodePrev, &packet, sizeof(radio_count_msg_t)) == SUCCESS) { 
+      		dbg("WSN_Project", "Forward start message sent from node %d to node %d.\n", TOS_NODE_ID, nodePrev);
+          	printf("WSN_Project (node %d): Forward start message package sent from node %d to node %d.\n", TOS_NODE_ID, TOS_NODE_ID, nodePrev);
+    	} else {
+      		dbg("WSN_Project", "Forwarding packet didn't work properly (result send != SUCCESS)\n");
+      		cleanUp();
+    	}
+  }
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
   
 
