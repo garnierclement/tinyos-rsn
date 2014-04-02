@@ -10,8 +10,8 @@ enum {
 	WAITACK_PERIOD_MILLI = 1000,
 	WAITFORRADIO_PERIOD_MILLI = 1000,
 	/* Message type */
-	IS_AUTOCONFIGACK = 1,
-	NOT_AUTOCONFIGACK = 0,
+	AUTOCONFIGACK = 1,
+	AUTOCONFIGMSG = 0,
 	/* Rank id forbase station */
 	IS_BASESTATION = 0,
 	/* Distance between nodes */
@@ -31,6 +31,7 @@ typedef nx_struct AutoConfigMsg {
  	nx_uint8_t dstRank;
  	nx_uint8_t txPower;
  	nx_uint8_t ack;
+ 	nx_uint8_t rssi;
 } AutoConfigMsg;
 
 #endif

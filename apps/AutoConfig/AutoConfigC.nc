@@ -111,7 +111,7 @@ implementation {
 	/* Forge an AntoConfigMsg */
 	void createAutoConfigMsg(uint8_t pwr) {
 		AutoConfigMsg* acpkt = (AutoConfigMsg*)(call Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
-		acpkt->ack = NOT_AUTOCONFIGACK;
+		acpkt->ack = AUTOCONFIGMSG;
 		acpkt->srcRank = myRank;
 		acpkt->txPower = pwr;
 		acpkt->dstRank = (pwr == ONE_HOP_POWER) ? (myRank + ONE_HOP) : (myRank + TWO_HOP);
@@ -147,7 +147,7 @@ implementation {
 	/* Forge Ack message */
 	void createAutoConfigAck(AutoConfigMsg* srcpkt) {
 		AutoConfigMsg* ackpkt = (AutoConfigMsg*)(call Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
-		ackpkt->ack = IS_AUTOCONFIGACK;
+		ackpkt->ack = AUTOCONFIGACK;
 		ackpkt->srcRank = myRank;
 		ackpkt->dstRank = srcpkt->srcRank;
 		ackpkt->txPower = srcpkt->txPower;
@@ -162,7 +162,7 @@ implementation {
 			radioBusy = FALSE;
 			if (err == SUCCESS)
 			{
-				if (acpkt->ack == NOT_AUTOCONFIGACK)
+				if (acpkt->ack == AUTOCONFIGMSG)
 				{
 					call WaitAck.startPeriodic(WAITACK_PERIOD_MILLI);
 					sentAutoConfig = TRUE;
