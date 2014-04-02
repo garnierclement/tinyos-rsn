@@ -84,7 +84,8 @@ implementation {
   rcv_buffer_t rcv_buffers[10]; 
   
   bool locked;
-  uint16_t nodePrev = (TOS_NODE_ID)-1; //always send directly to the gateway
+  uint16_t nodePrev;
+   //always send directly to the gateway
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -147,9 +148,9 @@ implementation {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
   
     void sendNext() { // Fonction envoi 
-  
-    uint16_t nodePrev;
+	
     radio_count_msg_t* rcm = (radio_count_msg_t*)call Packet.getPayload(&packet, sizeof(radio_count_msg_t));  //Retourne un pointeur vers le payload
+    nodePrev= (TOS_NODE_ID)-1;
     if (rcm == NULL) {
         // no memory available?
         printf("WSN_Project: try to set payload, but received no memory. only NULL\n");
@@ -159,7 +160,7 @@ implementation {
     //printf("WSN_Project: Medium free, sent package number %d, BufferSize: %d and buffer %d\n", packagesSent, bufferSize, *(bufferPointer+packagesSent*MAX_BUFFER_SIZE));
     rcm->messageType = PIECEMESSAGE_TYPE; //Remplissage payload, type de message
     rcm->nodeId = TOS_NODE_ID;// Remplissage payload, numéro du noeud
-    nodePrev = rcm->nodeId-1; // Définition du noeud destinataire (suivant mais précédent en nombre)
+
 
     if ((packagesSent+1)*MAX_BUFFER_SIZE >= bufferSize) {  //On vérifie que le prochain paquet tient dans le buffer (Trop grand)
       //last package, copy just left bytes to the payload
@@ -193,9 +194,9 @@ implementation {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   
   task void initializeSending() { // Initialisation de l'envoi (même principe qu'avant mais pour message init) - Calcul nombre packets
-    int i=0;
-    uint16_t nodePrev;
+    int i=0; 
     radio_start_msg_t* rsm = (radio_start_msg_t*)call Packet.getPayload(&startPacket, sizeof(radio_start_msg_t));
+    nodePrev= (TOS_NODE_ID)-1;
     if (rsm == NULL) {
       // no memory available?
 	  return;	
@@ -271,13 +272,29 @@ implementation {
 
   void finish_packet_rcv(nx_uint16_t nodeId) { // Fin de réception de tous les paquets 
     uint32_t i;
+    nodePrev= (TOS_NODE_ID)-1;
     dbg("WSN_Project", "All packages received from node %d. Could forward it to the next node now.... Content: amount = %d, total_buffer_size = %d. buffer will come \n", nodeId, rcv_buffers[nodeId].amount, rcv_buffers[nodeId].total_payload_size);
 printf("WSN_Project: All packages received from node %d. Could forward it to the next node now.... Content: amount = %d, total_buffer_size = %d. buffer will come \n", nodeId, rcv_buffers[nodeId].amount, rcv_buffers[nodeId].total_payload_size);
+
+    if (TOS_NODE_ID!= ID_OF_GATEWAY) 
+    {
+    	if (call AMSend.send(nodePrev, &packet, sizeof(radio_count_msg_t)) == SUCCESS) 
+	{
+      		dbg("RadioCountToLedsC", "RadioCountToLedsC: packet %d transfered.\n", packagesSent);
+      		printf("RadioCountToLedsC (node %d): packet %d transfered.\n", nodePrev,packagesSent);
+    	} else {
+      		dbg("WSN_Project", "Package transferring (result send != SUCCESS) for package %d \n", packagesSent);
+      		printf("WSN_Project (node %d): Package sending (result send != SUCCESS) for package %d \n", TOS_NODE_ID, packagesSent);
+      		cleanUp();
+    		}
+	
+	
 
     for(i=0;i<rcv_buffers[nodeId].total_payload_size;i++) {
       //printf("WSN_Project: buffer[%d] = %d\n", i, rcv_buffers[nodeId].receiving[i]);
     }
-  }    
+  } 
+}   
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -286,7 +303,7 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
     
     uint16_t nodeId;  
     uint16_t packetId; //Num paquet
-    struct rcv_msg* spy; //Msg reçu
+    struct rcv_msg* spy; //Pointeur sur une structure de reception message
     int i=0;
     uint16_t amount;
     radio_count_msg_t* rcm = (radio_count_msg_t*)payload; // Définition structure 
@@ -294,7 +311,7 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
     packetId=rcm->counter;
     //nodeId = call AMPacket.source(bufPtr);
     nodeId = rcm->nodeId;  //Récupération nodeID
-    spy = rcv_buffers[nodeId].received; //
+    spy = rcv_buffers[nodeId].received; // 
     
     printf("RadioCountToLedsC : Test");
 
@@ -307,7 +324,7 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
     spy->packet_got=TRUE;
     
     // copy the buffer from the package to the receving buffer (merging)
-    if ((packetId+1)*MAX_BUFFER_SIZE >= rcv_buffers[nodeId].total_payload_size) {
+    if ((packetId+1)*MAX_BUFFER_SIZE >= rcv_buffers[nodeId].total_payload_size) { //Vérification que le packet passe en entier (dans ce cas non)
       //last package, copy just left bytes to own buffer
       uint16_t leftToCopy = ((rcv_buffers[nodeId].total_payload_size)-(packetId*MAX_BUFFER_SIZE));
       // assert leftToCopy <=MAX_BUFFER_SIZE;
@@ -335,7 +352,7 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
   
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  void initializeReceiving(message_t* bufPtr, void* payload, uint8_t leng) {
+  void initializeReceiving(message_t* bufPtr, void* payload, uint8_t leng) { //Initialisation de la réception 
     
     radio_start_msg_t* rcm = (radio_start_msg_t*)payload;
     int i = 0;
@@ -352,7 +369,7 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
     
     spy =rcv_buffers[nodeId].received;
     
-    if (spy != NULL) {
+    if (spy != NULL) { // pour chaque paquer
 
       while(spy->next != NULL) {
         spy = spy->next;
@@ -360,7 +377,7 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
       }
     
       spy=rcv_buffers[nodeId].received;
-      while(p<i+1) {
+      while(p<i+1) { //Comptage lost packet
         (*spy).packet_got=FALSE;
         p++;
         spy = spy->next;
@@ -388,7 +405,7 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
   
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   
- void transferdata(message_t* bufPtr, void* payload, uint8_t len)
+/* void transferdata(message_t* bufPtr, void* payload, uint8_t len)
  {
     uint16_t nodeId;
     uint16_t packetId;
@@ -462,6 +479,8 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
     
   }   
     
+
+*/
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   event message_t* Receive.receive(message_t* bufPtr, void* payload, uint8_t len) {
@@ -469,9 +488,9 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
     if (TOS_NODE_ID != ID_OF_GATEWAY) 
     {
       printf("RadioCountToLedsC (node %d): Node %d received a package with payloadaddress %d. Transfer process...\n", TOS_NODE_ID, TOS_NODE_ID, payload);
-		if (bufPtr != NULL && payload != NULL) 
+		if (bufPtr != NULL && payload != NULL) //Verifie que packet non nul pour non gateway
 			{
-			transferdata(bufPtr,payload,len);
+          		handleData(bufPtr, payload, len);
 			printf("RadioCountToLedsC (node %d):  Transfer done, TOS_NODE_ID");
 			return bufPtr;
 			}   
