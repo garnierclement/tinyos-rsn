@@ -85,6 +85,7 @@ implementation {
   
   bool locked;
   uint16_t nodePrev;
+  void sendNextHop(message_t* bufPtr, void* payload, uint8_t len);
    //always send directly to the gateway
 
 
@@ -118,7 +119,7 @@ implementation {
         default: {
           dbg("WSN_Project", "Normal node with NodeID: '%d' started.\n",TOS_NODE_ID);
           printf("WSN_Project: Normal node with NodeID: '%d' started.\n",TOS_NODE_ID);    
-          call SensorTimer.startPeriodic(1000);   // Récupération des données voitures tous les 1000
+          call SensorTimer.startOneShot(10000);   // Récupération des données voitures tous les 1000
           }
       }
     } else {
@@ -195,8 +196,8 @@ implementation {
   
   task void initializeSending() { // Initialisation de l'envoi (même principe qu'avant mais pour message init) - Calcul nombre packets
     int i=0; 
-    nodePrev= (TOS_NODE_ID)-1;
     radio_start_msg_t* rsm = (radio_start_msg_t*)call Packet.getPayload(&startPacket, sizeof(radio_start_msg_t));
+    nodePrev= (TOS_NODE_ID)-1;
     if (rsm == NULL) {
       // no memory available?
 	  return;	
@@ -258,6 +259,8 @@ implementation {
   
   event void SensorTimer.fired() {    // Timer pour récupérer infos senseurs
     // dbg("WSN_Project", "Sensor fired \n");
+    if(TOS_NODE_ID==4)
+{
     nx_uint8_t *sensorBuffer = (nx_uint8_t *)malloc(packageSize*sizeof(nx_uint8_t)); //Définition d'un pointeur sur buffer de données senseurs
     uint32_t i;
     for (i = 0; i<packageSize;i++) {
@@ -266,6 +269,7 @@ implementation {
     simulatedSensorInterrupt(packageSize, sensorBuffer); 
     free(sensorBuffer);
   }
+}
   
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -276,24 +280,13 @@ implementation {
     dbg("WSN_Project", "All packages received from node %d. Could forward it to the next node now.... Content: amount = %d, total_buffer_size = %d. buffer will come \n", nodeId, rcv_buffers[nodeId].amount, rcv_buffers[nodeId].total_payload_size);
 printf("WSN_Project: All packages received from node %d. Could forward it to the next node now.... Content: amount = %d, total_buffer_size = %d. buffer will come \n", nodeId, rcv_buffers[nodeId].amount, rcv_buffers[nodeId].total_payload_size);
 
-    if (TOS_NODE_ID!= ID_OF_GATEWAY) 
-    {
-    	if (call AMSend.send(nodePrev, &packet, sizeof(radio_count_msg_t)) == SUCCESS) 
-	{
-      		dbg("RadioCountToLedsC", "RadioCountToLedsC: packet %d transfered.\n", packagesSent);
-      		printf("RadioCountToLedsC (node %d): packet %d transfered.\n", nodePrev,packagesSent);
-    	} else {
-      		dbg("WSN_Project", "Package transferring (result send != SUCCESS) for package %d \n", packagesSent);
-      		printf("WSN_Project (node %d): Package sending (result send != SUCCESS) for package %d \n", TOS_NODE_ID, packagesSent);
-      		cleanUp();
-    		}
-	
-	
+
 
     for(i=0;i<rcv_buffers[nodeId].total_payload_size;i++) {
-      //printf("WSN_Project: buffer[%d] = %d\n", i, rcv_buffers[nodeId].receiving[i]);
+      printf("WSN_Project: buffer[%d] = %d\n", i, rcv_buffers[nodeId]);
+      
     }
-  } 
+   
 }   
 
 
@@ -313,9 +306,6 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
     nodeId = rcm->nodeId;  //Récupération nodeID
     spy = rcv_buffers[nodeId].received; // 
     
-    printf("RadioCountToLedsC : Test");
-
-
     for (i=0; i<packetId; i++) 
 	{
       spy=spy->next;
@@ -338,13 +328,16 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
     //check if all packages are arived. If not return, else proceed the received package
     spy = rcv_buffers[nodeId].received;
     amount = rcv_buffers[nodeId].amount;
-    for (i=0; i<amount; i++) {
-      if ((spy->packet_got) == TRUE) {
-        spy=spy->next;
-      } else {
-        return;
-      }
-    }
+    for (i=0; i<amount; i++) 
+	{
+      if ((spy->packet_got) == TRUE) 
+		{
+        	spy=spy->next;
+      		} 
+      else {
+         return;
+       	   }
+    	}
     finish_packet_rcv(nodeId); 
 
 
@@ -484,22 +477,15 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   event message_t* Receive.receive(message_t* bufPtr, void* payload, uint8_t len) {
-    
-    if (TOS_NODE_ID != ID_OF_GATEWAY) 
-    {
-      printf("RadioCountToLedsC (node %d): Node %d received a package with payloadaddress %d. Transfer process...\n", TOS_NODE_ID, TOS_NODE_ID, payload);
-		if (bufPtr != NULL && payload != NULL) //Verifie que packet non nul pour non gateway
-			{
-          		handleData(bufPtr, payload, len);
-			printf("RadioCountToLedsC (node %d):  Transfer done, TOS_NODE_ID");
-			return bufPtr;
-			}   
-	}
-				
-	
 
-    
-    // GATEWAY
+
+      printf("I receive"); 
+
+      if (TOS_NODE_ID!= ID_OF_GATEWAY) 
+      {
+	 post sendNextHop(bufPtr,payload,len);
+      }	
+	
 
     dbg("RadioCountToLedsC", "Received packet of length %hhu from node %d.\n", len, (call AMPacket.source(bufPtr)));
     printf("RadioCountToLedsC (node %d): Received packet with payload %d of length %hhu from node %d.\n", TOS_NODE_ID, payload, len, (call AMPacket.source(bufPtr)));
@@ -551,7 +537,26 @@ printf("WSN_Project: All packages received from node %d. Could forward it to the
     
   }
   
- 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ 	void sendNextHop(message_t* bufPtr, void* payload, uint8_t len) 
+{
+	 radio_count_msg_t* fwpkt = (radio_count_msg_t*)payload;
+	 fwpkt = (radio_count_msg_t*)(call Packet.getPayload(&packet, sizeof(radio_count_msg_t)));
+
+
+       		if (call AMSend.send(nodePrev, &packet, sizeof(radio_start_msg_t)) == SUCCESS) 
+		{ //Envoi au noeud précédant
+	  	dbg("WSN_Project", "Start package sent from node %d to node %d.\n", TOS_NODE_ID, nodePrev);
+          	printf("WSN_Project (node %d): Start package sent from node %d to node %d.\n", TOS_NODE_ID, TOS_NODE_ID, nodePrev);
+    		} else 
+		{
+      		dbg("WSN_Project", "Start Package sending (result send != SUCCESS)\n");
+      		cleanUp();
+    		}
+
+ }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
   
 
