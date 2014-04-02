@@ -14,112 +14,98 @@
     </vTypeDistribution>
 
     <routeDistribution id="routedist1">
-        <route id="normal1"  edges="4to3 3to2 2to1" probability="1"/> 
-       <!-- <route id="linechange1.1"  edges="4to7 7to6 6to5" probability="0.04"/>
-        <route id="linechange1.2"  edges="4to3 3to6 6to5" probability="0.04"/>
-        <route id="linechange1.3"  edges="4to3 3to2 2to5" probability="0.04"/>
-        <route id="zigzag1"  edges="4to7 7to2 2to5" probability="0.01"/>
-        <route id="sway1"  edges="4to3 3to6 6to1" probability="0.04"/>
-        <route id="semizigzag1"  edges="4to7 7to2 2to1" probability="0.015"/>
-        <route id="semizigzag2"  edges="4to7 7to6 6to1" probability="0.015"/>
-      -->
-    </routeDistribution> x
+        <route id="route1"  edges="5to4 4to3 3to2 2to1 1to0 0to-1" probability="1"/> 
 
-	<routeDistribution id="routedist2">
-		<route id="normal2"  edges="8to7 7to6 6to5" probability="1"/>
-	<!--	<route id="linechange2.1"  edges="8to3 3to2 2to1" probability="0.04"/>
-        <route id="linechange2.2"  edges="8to7 7to2 2to1" probability="0.04"/>
-        <route id="linechange2.3"  edges="8to7 7to6 6to1" probability="0.04"/>
-        <route id="zigzag2"  edges="8to3 3to6 6to1" probability="0.01"/>
-        <route id="sway2"  edges="8to3 3to2 2to5" probability="0.04"/>
-        <route id="semizigzag3"  edges="8to3 3to6 6to5" probability="0.015"/>
-        <route id="semizigzag4"  edges="8to7 7to2 2to5" probability="0.015"/>
-        -->
-	</routeDistribution>
+
+
+       
+
+    </routeDistribution> 
+
 
 
     <vehicle id="0" type="typedist1" route="routedist1" depart="0"/>
-    <vehicle id="1" type="typedist1" route="routedist2" depart="0"/>
-    <vehicle id="2" type="typedist1" route="routedist1" depart="1"/>
-    <vehicle id="3" type="typedist1" route="routedist2" depart="1"/>
-    <vehicle id="4" type="typedist1" route="routedist1" depart="2"/>
-    <vehicle id="5" type="typedist1" route="routedist2" depart="2"/>
-    <vehicle id="6" type="typedist1" route="routedist1" depart="3"/>
-    <vehicle id="7" type="typedist1" route="routedist2" depart="3"/>
-    <vehicle id="8" type="typedist1" route="routedist1" depart="4"/>
-    <vehicle id="9" type="typedist1" route="routedist2" depart="4"/>
-    <vehicle id="10" type="typedist1" route="routedist1" depart="5"/>
-    <vehicle id="11" type="typedist1" route="routedist2" depart="5"/>
-    <vehicle id="12" type="typedist1" route="routedist1" depart="6"/>
-    <vehicle id="13" type="typedist1" route="routedist2" depart="6"/>
-    <vehicle id="14" type="typedist1" route="routedist1" depart="7"/>
-    <vehicle id="15" type="typedist1" route="routedist2" depart="7"/>   
-    <vehicle id="16" type="typedist1" route="routedist1" depart="8"/>
-    <vehicle id="17" type="typedist1" route="routedist2" depart="8"/>
-    <vehicle id="18" type="typedist1" route="routedist1" depart="9"/>
-    <vehicle id="19" type="typedist1" route="routedist2" depart="9"/>
-    <vehicle id="20" type="typedist1" route="routedist1" depart="10"/>
-    <vehicle id="21" type="typedist1" route="routedist2" depart="10"/>
-    <vehicle id="22" type="typedist1" route="routedist1" depart="11"/>
-    <vehicle id="23" type="typedist1" route="routedist2" depart="11"/>
-    <vehicle id="24" type="typedist1" route="routedist1" depart="12"/>
-    <vehicle id="25" type="typedist1" route="routedist2" depart="12"/>
-    <vehicle id="26" type="typedist1" route="routedist1" depart="13"/>
-    <vehicle id="27" type="typedist1" route="routedist2" depart="14"/>
-    <vehicle id="28" type="typedist1" route="routedist1" depart="14"/>
-    <vehicle id="29" type="typedist1" route="routedist2" depart="15"/>
-    <vehicle id="30" type="typedist1" route="routedist1" depart="15"/>
-    <vehicle id="31" type="typedist1" route="routedist2" depart="16"/>
+    <vehicle id="1" type="typedist1" route="routedist1" depart="1"/>
+    <vehicle id="2" type="typedist1" route="routedist1" depart="2"/>
+    <vehicle id="3" type="typedist1" route="routedist1" depart="3"/>
+    <vehicle id="4" type="typedist1" route="routedist1" depart="4"/>
+    <vehicle id="5" type="typedist1" route="routedist1" depart="5"/>
+    <vehicle id="6" type="typedist1" route="routedist1" depart="6"/>
+    <vehicle id="7" type="typedist1" route="routedist1" depart="7"/>
+    <vehicle id="8" type="typedist1" route="routedist1" depart="8"/>
+    <vehicle id="9" type="typedist1" route="routedist1" depart="9"/>
+    <vehicle id="10" type="typedist1" route="routedist1" depart="10"/>
+    <vehicle id="11" type="typedist1" route="routedist1" depart="11"/>
+    <vehicle id="12" type="typedist1" route="routedist1" depart="12"/>
+    <vehicle id="13" type="typedist1" route="routedist1" depart="13"/>
+    <vehicle id="14" type="typedist1" route="routedist1" depart="15"/>
+    <vehicle id="15" type="typedist1" route="routedist1" depart="16"/>   
+    <vehicle id="16" type="typedist1" route="routedist1" depart="17"/>
+    <vehicle id="17" type="typedist1" route="routedist1" depart="18"/>
+    <vehicle id="18" type="typedist1" route="routedist1" depart="19"/>
+    <vehicle id="19" type="typedist1" route="routedist1" depart="20"/>
+    <vehicle id="20" type="typedist1" route="routedist1" depart="21"/>
+    <vehicle id="21" type="typedist1" route="routedist1" depart="22"/>
+    <vehicle id="22" type="typedist1" route="routedist1" depart="23"/>
+    <vehicle id="23" type="typedist1" route="routedist1" depart="24"/>
+    <vehicle id="24" type="typedist1" route="routedist1" depart="25"/>
+    <vehicle id="25" type="typedist1" route="routedist1" depart="26"/>
+    <vehicle id="26" type="typedist1" route="routedist1" depart="27"/>
+    <vehicle id="27" type="typedist1" route="routedist1" depart="28"/>
+    <vehicle id="28" type="typedist1" route="routedist1" depart="29"/>
+    <vehicle id="29" type="typedist1" route="routedist1" depart="30"/>
+   <!--  <vehicle id="30" type="typedist1" route="routedist1" depart="15"/>
+    <vehicle id="31" type="typedist1" route="routedist1" depart="16"/>
     <vehicle id="32" type="typedist1" route="routedist1" depart="16"/>
-    <vehicle id="33" type="typedist1" route="routedist2" depart="17"/>
+    <vehicle id="33" type="typedist1" route="routedist1" depart="17"/>
     <vehicle id="34" type="typedist1" route="routedist1" depart="18"/>
-    <vehicle id="35" type="typedist1" route="routedist2" depart="18"/>
+    <vehicle id="35" type="typedist1" route="routedist1" depart="18"/>
     <vehicle id="36" type="typedist1" route="routedist1" depart="19"/>
-    <vehicle id="37" type="typedist1" route="routedist2" depart="19"/>
+    <vehicle id="37" type="typedist1" route="routedist1" depart="19"/>
     <vehicle id="38" type="typedist1" route="routedist1" depart="20"/>
-    <vehicle id="39" type="typedist1" route="routedist2" depart="20"/>
+    <vehicle id="39" type="typedist1" route="routedist1" depart="20"/>
     <vehicle id="40" type="typedist1" route="routedist1" depart="21"/>
-    <vehicle id="41" type="typedist1" route="routedist2" depart="21"/>
+    <vehicle id="41" type="typedist1" route="routedist1" depart="21"/>
     <vehicle id="42" type="typedist1" route="routedist1" depart="22"/>
-    <vehicle id="43" type="typedist1" route="routedist2" depart="22"/>
+    <vehicle id="43" type="typedist1" route="routedist1" depart="22"/>
     <vehicle id="44" type="typedist1" route="routedist1" depart="23"/>
-    <vehicle id="45" type="typedist1" route="routedist2" depart="23"/>
+    <vehicle id="45" type="typedist1" route="routedist1" depart="23"/>
     <vehicle id="46" type="typedist1" route="routedist1" depart="24"/>
-    <vehicle id="47" type="typedist1" route="routedist2" depart="24"/>
+    <vehicle id="47" type="typedist1" route="routedist1" depart="24"/>
     <vehicle id="48" type="typedist1" route="routedist1" depart="25"/>
-    <vehicle id="49" type="typedist1" route="routedist2" depart="25"/>
+    <vehicle id="49" type="typedist1" route="routedist1" depart="25"/>
     <vehicle id="50" type="typedist1" route="routedist1" depart="26"/>
-    <vehicle id="51" type="typedist1" route="routedist2" depart="26"/>
+    <vehicle id="51" type="typedist1" route="routedist1" depart="26"/>
     <vehicle id="52" type="typedist1" route="routedist1" depart="27"/>
-    <vehicle id="53" type="typedist1" route="routedist2" depart="27"/>
+    <vehicle id="53" type="typedist1" route="routedist1" depart="27"/>
     <vehicle id="54" type="typedist1" route="routedist1" depart="28"/>
-    <vehicle id="55" type="typedist1" route="routedist2" depart="29"/>
+    <vehicle id="55" type="typedist1" route="routedist1" depart="29"/>
     <vehicle id="56" type="typedist1" route="routedist1" depart="30"/>
-    <vehicle id="57" type="typedist1" route="routedist2" depart="30"/>
+    <vehicle id="57" type="typedist1" route="routedist1" depart="30"/>
     <vehicle id="58" type="typedist1" route="routedist1" depart="31"/>
-    <vehicle id="59" type="typedist1" route="routedist2" depart="31"/>
+    <vehicle id="59" type="typedist1" route="routedist1" depart="31"/>
     <vehicle id="60" type="typedist1" route="routedist1" depart="32"/>
-    <vehicle id="61" type="typedist1" route="routedist2" depart="32"/>
+    <vehicle id="61" type="typedist1" route="routedist1" depart="32"/>
     <vehicle id="62" type="typedist1" route="routedist1" depart="33"/>
-    <vehicle id="63" type="typedist1" route="routedist2" depart="33"/>
+    <vehicle id="63" type="typedist1" route="routedist1" depart="33"/>
     <vehicle id="64" type="typedist1" route="routedist1" depart="34"/>
-    <vehicle id="65" type="typedist1" route="routedist2" depart="34"/>
+    <vehicle id="65" type="typedist1" route="routedist1" depart="34"/>
     <vehicle id="66" type="typedist1" route="routedist1" depart="35"/>
-    <vehicle id="67" type="typedist1" route="routedist2" depart="35"/>
+    <vehicle id="67" type="typedist1" route="routedist1" depart="35"/>
     <vehicle id="68" type="typedist1" route="routedist1" depart="36"/>
-    <vehicle id="69" type="typedist1" route="routedist2" depart="36"/>
+    <vehicle id="69" type="typedist1" route="routedist1" depart="36"/>
     <vehicle id="70" type="typedist1" route="routedist1" depart="37"/>
-    <vehicle id="71" type="typedist1" route="routedist2" depart="37"/>
+    <vehicle id="71" type="typedist1" route="routedist1" depart="37"/>
     <vehicle id="72" type="typedist1" route="routedist1" depart="38"/>
-    <vehicle id="73" type="typedist1" route="routedist2" depart="38"/>
+    <vehicle id="73" type="typedist1" route="routedist1" depart="38"/>
     <vehicle id="74" type="typedist1" route="routedist1" depart="39"/>
-    <vehicle id="75" type="typedist1" route="routedist2" depart="39"/>
+    <vehicle id="75" type="typedist1" route="routedist1" depart="39"/>
     <vehicle id="76" type="typedist1" route="routedist1" depart="40"/>
-    <vehicle id="77" type="typedist1" route="routedist2" depart="40"/>
+    <vehicle id="77" type="typedist1" route="routedist1" depart="40"/>
     <vehicle id="78" type="typedist1" route="routedist1" depart="41"/>
-    <vehicle id="79" type="typedist1" route="routedist2" depart="41"/>
+    <vehicle id="79" type="typedist1" route="routedist1" depart="41"/>
     <vehicle id="80" type="typedist1" route="routedist1" depart="42"/>
-   -->
+   --> 
 
 
 
