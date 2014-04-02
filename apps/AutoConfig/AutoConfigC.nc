@@ -84,9 +84,8 @@ implementation {
       				break;
       			case AUTOCONFIGWIN : handleWin();
       				break;
-      			case AUTOCONFIGACK : handleAck();			// WARNING TODO
+      			case AUTOCONFIGACK : handleAck();
       				break;
-
       		}
 	    }
     	return msg;
@@ -108,35 +107,6 @@ implementation {
 		}
 	}
 
-	/* Upon receiving an Ack for a previous sent AutoConfigMsg */
-	void handleAck() {
-		if (myRank != NOT_DEFINED){
-      		if (sentAutoConfig) 
-      		{
-      			receivedAck+=1;
-      			neighborsRank[receivedAck-1] = acpkt->srcRank;
-      			neighborsRssi[receivedAck-1] = acpkt->rssi;
-      			// neighborsRank[1] = ackpkt->srcRank; // When we have elected the next hop
-      			call Leds.led1Off();
-      		}
-      	}
-      	// ELSE if the node rank not defined, we can overhear broadcasted Ack
-      	// No processing from this function is necessary
-	}
-
-	/* When a node has be designated */
-	void handleWin() {
-		if (acpkt->dstRank == tempRank)
-		{
-			// I won, bitches
-			// I define myRank according to the txPower and to the sender's rank
-			myRank = (acpkt->txPower == ONE_HOP_POWER) ? (acpkt->srcRank + 1) : (acpkt->srcRank + 2);
-			neighborsRank[0] = acpkt->srcRank;	
-			sendAutoConfigMsg(ONE_HOP_POWER);
-		}
-		// ELSE I lost
-	}
-
 	/* It's time to send Ack */
 	event void BackoffForAck.fired() {
 		sendAck();
@@ -156,43 +126,6 @@ implementation {
 		}
 	}
 
-	/* Forge an AntoConfigMsg */
-	void createAutoConfigMsg(uint8_t pwr) {
-		AutoConfigMsg* new_acpkt = (AutoConfigMsg*)(call Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
-		new_acpkt->type = AUTOCONFIGMSG;
-		new_acpkt->srcRank = myRank;
-		new_acpkt->txPower = pwr;
-		new_acpkt->dstRank = (pwr == ONE_HOP_POWER) ? (myRank + ONE_HOP) : (myRank + TWO_HOP);
-		new_acpkt->rssi = 0xFFFF; // undefined
-	}
-
-	/* Retrieve payload from AutoCOonfigMsg */
-	AutoConfigMsg* getAutoConfigPayload(message_t* msg) {
-		return (AutoConfigMsg*)(call Packet.getPayload(msg, sizeof(AutoConfigMsg)));
-	}
-
-	/* Send AutoConfigMsg */
-	void sendAutoConfigMsg(uint8_t pwr) {
-
-		if (!radioBusy)
-		{
-			createAutoConfigMsg(pwr);
-			call  PacketTransmitPower.set(&pkt,pwr);
-			if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
-			{
-				radioBusy = TRUE;
-			}
-		}else{
-			call WaitForRadio.startPeriodic(WAITFORRADIO_PERIOD_MILLI);
-			//sendAutoConfigMsg(pwr);
-		}
-	}
-
-	/* Retransmission if the radio was busy */
-	event void WaitForRadio.fired(){
-		sendAutoConfigMsg(ONE_HOP_POWER);
-	}
-
 	/* Forge Ack message */
 	void createAutoConfigAck() {
 		AutoConfigMsg* ackpkt = (AutoConfigMsg*)(call Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
@@ -201,7 +134,63 @@ implementation {
 		ackpkt->srcRank = tempRank;
 		ackpkt->dstRank = acpkt->srcRank;	// Warning ackpkt (Ack) vs acpkt (AutoConfig)
 		ackpkt->txPower = acpkt->txPower;	// Warning ackpkt (Ack) vs acpkt (AutoConfig)
-		ackpkt->rssi = rssi;
+		ackpkt->rssi = rssi;				// Global variable set in Receive.receive
+	}
+
+	/* Get random rank */
+    uint16_t getRandomRank() {
+    	return call Random.rand16() | rssi;
+    }
+
+   	/* Get RSSI */
+	int16_t getRssi(message_t *msg){
+    	if(call PacketRSSI.isSet(msg))
+      		return (int16_t) call PacketRSSI.get(msg);
+    	else
+      		return 0xFFFF;
+    }
+
+	/* When a node has be designated */
+	void handleWin() {
+		if (acpkt->dstRank == tempRank)
+		{
+			// I won, bitches
+			// I define myRank according to the txPower and to the sender's rank
+			myRank = (acpkt->txPower == ONE_HOP_POWER) ? (acpkt->srcRank + 1) : (acpkt->srcRank + 2);
+			neighborsRank[0] = acpkt->srcRank;	
+			sendAutoConfigMsg(ONE_HOP_POWER);
+		}
+		// ELSE I lost
+	}
+
+	/* Send AutoConfigMsg */
+	void sendAutoConfigMsg(uint8_t pwr) {
+		if (!radioBusy)
+		{
+			createAutoConfigMsg(pwr);
+			call  PacketTransmitPower.set(&pkt,pwr);
+			if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
+			{
+				radioBusy = TRUE;
+			}
+		} else {
+			call WaitForRadio.startPeriodic(WAITFORRADIO_PERIOD_MILLI);
+		}
+	}
+
+	/* Retransmission if the radio was busy */
+	event void WaitForRadio.fired(){
+		sendAutoConfigMsg(ONE_HOP_POWER);
+	}
+
+	/* Forge an AntoConfigMsg */
+	void createAutoConfigMsg(uint8_t pwr) {
+		AutoConfigMsg* new_acpkt = (AutoConfigMsg*)(call Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
+		new_acpkt->type = AUTOCONFIGMSG;
+		new_acpkt->srcRank = myRank;
+		new_acpkt->txPower = pwr;
+		new_acpkt->dstRank = (pwr == ONE_HOP_POWER) ? (myRank + ONE_HOP) : (myRank + TWO_HOP);
+		new_acpkt->rssi = 0xFFFF; // undefined
 	}
 
 	/* When a message was sent*/
@@ -217,8 +206,7 @@ implementation {
 				{
 					call WaitAck.startPeriodic(WAITACK_PERIOD_MILLI);
 					sentAutoConfig = TRUE;
-				}
-				
+				}	
 			}
 		}
 
@@ -229,6 +217,26 @@ implementation {
 				radioBusy = TRUE;
 			}
 		}
+	}
+
+	/* Retrieve payload from AutoCOonfigMsg */
+	AutoConfigMsg* getAutoConfigPayload(message_t* msg) {
+		return (AutoConfigMsg*)(call Packet.getPayload(msg, sizeof(AutoConfigMsg)));
+	}
+
+	/* Upon receiving an Ack for a previous sent AutoConfigMsg */
+	void handleAck() {
+		if (myRank != NOT_DEFINED){
+      		if (sentAutoConfig) 
+      		{
+      			receivedAck+=1;
+      			neighborsRank[receivedAck-1] = acpkt->srcRank;
+      			neighborsRssi[receivedAck-1] = acpkt->rssi;
+      			call Leds.led1Off();
+      		}
+      	}
+      	// ELSE if the node rank not defined, we can overhear broadcasted Ack
+      	// No processing from this function is necessary
 	}
 
 	/* Retransmission if Ack not received */
@@ -254,21 +262,7 @@ implementation {
 			call WaitAck.stop();
 			neighborsRank[1] = NOT_DEFINED;
 		}
-
 	}
-
-	/* Get RSSI */
-	int16_t getRssi(message_t *msg){
-    	if(call PacketRSSI.isSet(msg))
-      		return (int16_t) call PacketRSSI.get(msg);
-    	else
-      		return 0xFFFF;
-    }
-
-    /* Get random rank */
-    uint16_t getRandomRank() {
-    	return call Random.rand16() | rssi;
-    }
 
     /* Elect winner and returns its rank */
     uint16_t electWinner() {
@@ -286,6 +280,7 @@ implementation {
     	return neighborsTemp[maxIndex];
     }
 
+    /* Notify the winner */
     void sendAutoConfigWin(uint16_t winner){
     	neighborsRank[1] = winner;
     	createAutoConfigWin(winner);
@@ -296,7 +291,7 @@ implementation {
 		}
     }
 
-    /* Forge Ack message */
+    /* Forge Win message */
 	void createAutoConfigWin(uint16_t winner) {
 		AutoConfigMsg* winpkt = (AutoConfigMsg*)(call Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
 		winpkt->type = AUTOCONFIGWIN;
