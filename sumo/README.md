@@ -27,7 +27,7 @@ Generate `.net.xml`
 
 	$ netconvert --node-files=[.nod.xml] --edge-files=[.edg.xml] --output-files=[.net.xml]
 
-Launch simulationn
+Launch simulation
 
 	$ sumo-gui -c [.sumocfg] -a tls.add.xml
 

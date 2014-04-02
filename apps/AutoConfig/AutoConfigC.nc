@@ -78,10 +78,19 @@ implementation {
     		// Store RSSI
     		rssi = getRssi(msg);
     		// Extract payload
-      		if (acpkt != NULL) {
+    		if (acpkt != NULL) {
       			free(acpkt);
       			acpkt = NULL;
       		}
+    		/*
+    		 * WARNING SEGFAULT MAY HAPPEN / NEED TO BE TESTED
+    		 * SEE IF IT NEEDS MEMCOPY 
+    		 * USING GLOBAL VARIABLE FOR void* payload
+    		 */
+
+    		// acpkt = (AutoConfigMsg*)malloc(sizeof(AutoConfigMsg));
+    		// memcpy(acpkt,payload,sizeof(AutoConfigMsg));
+
       		acpkt = (AutoConfigMsg*)payload;
       		// Handle messages
       		switch(acpkt->type){
@@ -317,7 +326,10 @@ implementation {
 		}
 		receivedAck = 0;
 		attempt = 0;
-		acpkt = NULL;
+		if (acpkt != NULL) {
+      		free(acpkt);
+      		acpkt = NULL;
+      	}
 	}
 
 	/* Shutdown the radio if inactivity*/
