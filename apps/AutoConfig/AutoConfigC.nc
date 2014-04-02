@@ -50,6 +50,7 @@ implementation {
 	uint16_t electWinner();
 	void sendAutoConfigWin(uint16_t winner);
 	void createAutoConfigWin(uint16_t winner);
+	void reInit();
 
 
 	/* At boot time, wake up the radio */
@@ -77,6 +78,10 @@ implementation {
     		// Store RSSI
     		rssi = getRssi(msg);
     		// Extract payload
+      		if (acpkt != NULL) {
+      			free(acpkt);
+      			acpkt = NULL;
+      		}
       		acpkt = (AutoConfigMsg*)payload;
       		// Handle messages
       		switch(acpkt->type){
@@ -246,6 +251,7 @@ implementation {
 		{
 			call WaitAck.stop();
 			sendAutoConfigWin(electWinner());
+			reInit();
 			// Here is finished
 		}
 		else if (attempt <= MAX_ATTEMPT) {
@@ -299,6 +305,19 @@ implementation {
 		winpkt->dstRank = winner;	
 		winpkt->txPower = acpkt->txPower;
 		winpkt->rssi = 0xFFFF;	// Undefined
+	}
+
+	/* Reinit values */
+	void reInit() {
+		uint8_t i = 0;
+		for (i = 0; i < receivedAck; ++i)
+		{
+			neighborsRssi[i] = 0;
+			neighborsTemp[i] = 0;
+		}
+		receivedAck = 0;
+		attempt = 0;
+		acpkt = NULL;
 	}
 
 	/* Shutdown the radio if inactivity*/
