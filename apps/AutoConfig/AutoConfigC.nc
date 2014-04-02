@@ -94,6 +94,7 @@ implementation {
 		}
 	}
 
+	/* Send an Ack */
 	void sendAck(AutoConfigMsg* srcpkt) {
 		if (!radioBusy)
 		{
@@ -107,6 +108,7 @@ implementation {
 		}
 	}
 
+	/* Forge an AntoConfigMsg */
 	void createAutoConfigMsg(uint8_t pwr) {
 		AutoConfigMsg* acpkt = (AutoConfigMsg*)(call Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
 		acpkt->ack = NOT_AUTOCONFIGACK;
@@ -115,10 +117,12 @@ implementation {
 		acpkt->dstRank = (pwr == ONE_HOP_POWER) ? (myRank + ONE_HOP) : (myRank + TWO_HOP);
 	}
 
+	/* Retrieve payload from AutoCOonfigMsg */
 	AutoConfigMsg* getAutoConfigPayload(message_t* msg) {
 		return (AutoConfigMsg*)(call Packet.getPayload(msg, sizeof(AutoConfigMsg)));
 	}
 
+	/* Send AutoConfigMsg */
 	void sendAutoConfigMsg(uint8_t pwr) {
 
 		if (!radioBusy)
@@ -135,20 +139,21 @@ implementation {
 		}
 	}
 
+	/* Retransmission if the radio was busy */
 	event void WaitForRadio.fired(){
 		sendAutoConfigMsg(ONE_HOP_POWER);
 	}
 
+	/* Forge Ack message */
 	void createAutoConfigAck(AutoConfigMsg* srcpkt) {
 		AutoConfigMsg* ackpkt = (AutoConfigMsg*)(call Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
 		ackpkt->ack = IS_AUTOCONFIGACK;
 		ackpkt->srcRank = myRank;
 		ackpkt->dstRank = srcpkt->srcRank;
 		ackpkt->txPower = srcpkt->txPower;
-
-
 	}
 
+	/* When a message was sent*/
 	event void AMSend.sendDone(message_t* msg, error_t err) {
 		AutoConfigMsg* acpkt = getAutoConfigPayload(msg);
 
@@ -157,7 +162,6 @@ implementation {
 			radioBusy = FALSE;
 			if (err == SUCCESS)
 			{
-				
 				if (acpkt->ack == NOT_AUTOCONFIGACK)
 				{
 					call WaitAck.startPeriodic(WAITACK_PERIOD_MILLI);
@@ -167,7 +171,7 @@ implementation {
 			}
 		}
 
-		/* Retransmission if radioBusy */
+		/* Retransmission if send failed  */
 		if (err == FAIL || err == ECANCEL) {
 			if (call AMSend.send(AM_BROADCAST_ADDR, msg, sizeof(AutoConfigMsg)) == SUCCESS)
 			{
@@ -176,6 +180,7 @@ implementation {
 		}
 	}
 
+	/* Retransmission if Ack not received */
 	event void WaitAck.fired() {
 		attempt +=1;
 		if (receivedAck)
@@ -200,10 +205,12 @@ implementation {
 
 	}
 
+	/* Shutdown the radio if inactivity*/
 	event void Timeout.fired() {
 		call AMControl.stop();
 	}
 
+	/* When the radio has shutdown */
 	event void AMControl.stopDone(error_t err) {
 
 	}	
