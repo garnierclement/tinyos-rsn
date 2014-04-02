@@ -1,16 +1,16 @@
 <routes>
  
     <vTypeDistribution id="typedist1">
-        <vType id="type1" accel="0.8" decel="4.5" length="4" maxSpeed="50" probability="0.1"/>
-        <vType id="type2" accel="1.8" decel="3.5" length="5" maxSpeed="50" probability="0.1"/>
-        <vType id="type3" accel="3.8" decel="4.5" length="4" maxSpeed="50" probability="0.1"/>
-        <vType id="type4" accel="1.8" decel="6.5" length="4" maxSpeed="50" probability="0.1"/>
-        <vType id="type5" accel="0.4" decel="2.0" length="4" maxSpeed="50" probability="0.1"/>
-        <vType id="type6" accel="1.0" decel="3.0" length="4" maxSpeed="50" probability="0.1"/>
-        <vType id="type7" accel="1.2" decel="1.5" length="4" maxSpeed="50" probability="0.1"/>
-        <vType id="type8" accel="2.5" decel="2.6" length="4" maxSpeed="50" probability="0.1"/>
-        <vType id="type9" accel="3.2" decel="2.0" length="4" maxSpeed="50" probability="0.1"/>
-        <vType id="type0" accel="3.4" decel="4.2" length="4" maxSpeed="50" probability="0.1"/>
+        <vType id="type1" accel="0.8" decel="4.5" length="4" maxSpeed="50" minGap="1.9" probability="0.1"/>
+        <vType id="type2" accel="1.8" decel="3.5" length="5" maxSpeed="50" minGap="1.2" probability="0.1"/>
+        <vType id="type3" accel="3.8" decel="4.5" length="4" maxSpeed="50" minGap="1.5" probability="0.1"/>
+       <!--  <vType id="type4" accel="1.8" decel="6.5" length="4" maxSpeed="50" minGap="1.0" probability="0.1"/>
+        <vType id="type5" accel="0.4" decel="2.0" length="4" maxSpeed="50" minGap="0.9" probability="0.1"/>
+        <vType id="type6" accel="1.0" decel="3.0" length="4" maxSpeed="50" minGap="0.7" probability="0.1"/>
+        <vType id="type7" accel="1.2" decel="1.5" length="4" maxSpeed="50" minGap="3.0" probability="0.1"/>
+        <vType id="type8" accel="2.5" decel="2.6" length="4" maxSpeed="50" minGap="2.0" probability="0.1"/>
+        <vType id="type9" accel="3.2" decel="2.0" length="4" maxSpeed="50" minGap="1.0" probability="0.1"/> -->
+        <vType id="type0" accel="2.4" decel="0.2" length="4" maxSpeed="50" minGap="0.2" probability="0.7"/>
     </vTypeDistribution>
 
     <routeDistribution id="routedist1">
