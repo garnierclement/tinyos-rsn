@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Wed Apr  2 18:33:27 2014 by SUMO netconvert Version 0.17.1
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.sf.net/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <node-files value="test.nod.xml"/>
+        <edge-files value="test.edg.xml"/>
+    </input>
+
+    <output>
+        <output-file value="test.net.xml"/>
+    </output>
+
+</configuration>
+-->
+
+<net version="0.13" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.sf.net/xsd/net_file.xsd">
+
+    <location netOffset="0.00,3.00" convBoundary="0.00,0.00,12.00,3.00" origBoundary="0.00,-3.00,12.00,0.00" projParameter="!"/>
+
+    <edge id=":2_0" function="internal">
+        <lane id=":2_0_0" index="0" speed="13.90" length="0.10" shape="4.00,4.65 4.00,4.65"/>
+    </edge>
+    <edge id=":3_0" function="internal">
+        <lane id=":3_0_0" index="0" speed="13.90" length="0.10" shape="8.00,4.65 8.00,4.65"/>
+    </edge>
+    <edge id=":6_0" function="internal">
+        <lane id=":6_0_0" index="0" speed="13.90" length="0.10" shape="4.00,1.65 4.00,1.65"/>
+    </edge>
+    <edge id=":7_0" function="internal">
+        <lane id=":7_0_0" index="0" speed="13.90" length="0.10" shape="8.00,1.65 8.00,1.65"/>
+    </edge>
+
+    <edge id="2to1" from="2" to="1" priority="-1">
+        <lane id="2to1_0" index="0" speed="13.90" length="4.00" shape="4.00,4.65 0.00,4.65"/>
+    </edge>
+    <edge id="3to2" from="3" to="2" priority="-1">
+        <lane id="3to2_0" index="0" speed="13.90" length="4.00" shape="8.00,4.65 4.00,4.65"/>
+    </edge>
+    <edge id="4to3" from="4" to="3" priority="-1">
+        <lane id="4to3_0" index="0" speed="13.90" length="4.00" shape="12.00,4.65 8.00,4.65"/>
+    </edge>
+    <edge id="6to5" from="6" to="5" priority="-1">
+        <lane id="6to5_0" index="0" speed="13.90" length="4.00" shape="4.00,1.65 0.00,1.65"/>
+    </edge>
+    <edge id="7to6" from="7" to="6" priority="-1">
+        <lane id="7to6_0" index="0" speed="13.90" length="4.00" shape="8.00,1.65 4.00,1.65"/>
+    </edge>
+    <edge id="8to7" from="8" to="7" priority="-1">
+        <lane id="8to7_0" index="0" speed="13.90" length="4.00" shape="12.00,1.65 8.00,1.65"/>
+    </edge>
+
+    <junction id="1" type="unregulated" x="0.00" y="3.00" incLanes="2to1_0" intLanes="" shape="0.00,6.25 0.00,3.05"/>
+    <junction id="2" type="priority" x="4.00" y="3.00" incLanes="3to2_0" intLanes=":2_0_0" shape="4.00,6.25 4.00,3.05 4.00,6.25">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="3" type="priority" x="8.00" y="3.00" incLanes="4to3_0" intLanes=":3_0_0" shape="8.00,6.25 8.00,3.05 8.00,6.25">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="4" type="unregulated" x="12.00" y="3.00" incLanes="" intLanes="" shape="12.00,3.05 12.00,6.25"/>
+    <junction id="5" type="unregulated" x="0.00" y="0.00" incLanes="6to5_0" intLanes="" shape="0.00,3.25 0.00,0.05"/>
+    <junction id="6" type="priority" x="4.00" y="0.00" incLanes="7to6_0" intLanes=":6_0_0" shape="4.00,3.25 4.00,0.05 4.00,3.25">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="7" type="priority" x="8.00" y="0.00" incLanes="8to7_0" intLanes=":7_0_0" shape="8.00,3.25 8.00,0.05 8.00,3.25">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="8" type="unregulated" x="12.00" y="0.00" incLanes="" intLanes="" shape="12.00,0.05 12.00,3.25"/>
+
+    <connection from="3to2" to="2to1" fromLane="0" toLane="0" via=":2_0_0" dir="s" state="M"/>
+    <connection from="4to3" to="3to2" fromLane="0" toLane="0" via=":3_0_0" dir="s" state="M"/>
+    <connection from="7to6" to="6to5" fromLane="0" toLane="0" via=":6_0_0" dir="s" state="M"/>
+    <connection from="8to7" to="7to6" fromLane="0" toLane="0" via=":7_0_0" dir="s" state="M"/>
+
+    <connection from=":2_0" to="2to1" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":3_0" to="3to2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":6_0" to="6to5" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":7_0" to="7to6" fromLane="0" toLane="0" dir="s" state="M"/>
+
+</net>
