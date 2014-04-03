@@ -3,7 +3,7 @@
 
  
 enum {
-	/* AM type for AutoCOnfi algorithm */
+	/* AM type for AutoConfig algorithm */
 	AM_AUTOCONFIGMSG = 1,
 	/* Timers */
 	TIMEOUT_PERIOD_MILLI = 120000,
