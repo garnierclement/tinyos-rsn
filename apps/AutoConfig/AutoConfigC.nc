@@ -32,16 +32,17 @@ implementation {
   	uint16_t neighborsRank[2]; 				// 0 left (closer to the sink)  1 right
   	uint8_t attempt = 0;					// AutoConfigMsg retransmission attempts
   	uint16_t rssi = 0x0;
-  	AutoConfigMsg* acpkt = NULL;			// Reference to received AutoConfig packet
+  	AutoConfigMsg* acpkt = NULL;			// Reference to the last received AutoConfig packet
   	uint16_t neighborsTemp[MAX_NEIGHBORS];
   	uint16_t neighborsRssi[MAX_NEIGHBORS];
+  	bool isConfigurated = FALSE;
 
   	/* Functions */
   	void createAutoConfigMsg(uint8_t pwr);
   	void createAutoConfigAck();
   	void handleAck();
 	void handleAutoConfig(); 
-	void handleWin();	
+	void handleWin(AutoConfigMsg* winpkt);	
 	void sendAck();
 	void sendAutoConfigMsg(uint8_t pwr);
 	AutoConfigMsg* getAutoConfigPayload(message_t* msg);
@@ -59,6 +60,8 @@ implementation {
 	void ledWaitAck();
 	void ledMaxPower();
 	void ledDone();
+	void ledDebug();
+
 
 
 	/* At boot time, wake up the radio */
@@ -99,7 +102,7 @@ implementation {
       		switch(acpkt->type){
       			case AUTOCONFIGMSG : handleAutoConfig();
       				break;
-      			case AUTOCONFIGWIN : handleWin();
+      			case AUTOCONFIGWIN : handleWin((AutoConfigMsg*)payload);
       				break;
       			case AUTOCONFIGACK : handleAck();
       				break;
@@ -167,18 +170,23 @@ implementation {
     }
 
 	/* When a node has be designated */
-	void handleWin() {
-		if (acpkt->dstRank == tempRank)
-		{
-			ledIsWinner();
-			// I won, bitches
-			// I define myRank according to the txPower and to the sender's rank
-			myRank = (acpkt->txPower == ONE_HOP_POWER) ? (acpkt->srcRank + 1) : (acpkt->srcRank + 2);
-			neighborsRank[0] = acpkt->srcRank;	
-			sendAutoConfigMsg(ONE_HOP_POWER);
+	void handleWin(AutoConfigMsg* winpkt) {
+		if(!isConfigurated){
+			if (winpkt->dstRank == tempRank)
+			{
+				ledIsWinner();
+				// I won, bitches
+				// I define myRank according to the txPower and to the sender's rank
+				myRank = (winpkt->txPower == ONE_HOP_POWER) ? (winpkt->srcRank + 1) : (winpkt->srcRank + 2);
+				neighborsRank[0] = winpkt->srcRank;	
+				sendAutoConfigMsg(ONE_HOP_POWER);
+			}else{
+				// ELSE I lost
+				ledIsLoser();
+			}
 		}
-		// ELSE I lost
-		ledIsLoser();
+		
+		
 	}
 
 	/* Send AutoConfigMsg */
@@ -250,7 +258,7 @@ implementation {
       		if (sentAutoConfig) 
       		{
       			receivedAck+=1;
-      			neighborsRank[receivedAck-1] = acpkt->srcRank;
+      			neighborsTemp[receivedAck-1] = acpkt->srcRank;
       			neighborsRssi[receivedAck-1] = acpkt->rssi;
       		}
       	}
@@ -267,6 +275,7 @@ implementation {
 			sendAutoConfigWin(electWinner());
 			reInit();
 			ledDone();
+			isConfigurated = TRUE;
 			// Here is finished
 		}
 		else if (attempt <= MAX_ATTEMPT) {
@@ -281,6 +290,9 @@ implementation {
 		else {
 			call WaitAck.stop();
 			neighborsRank[1] = NOT_DEFINED;
+			ledDone();
+			isConfigurated = TRUE;
+
 		}
 	}
 
@@ -289,7 +301,7 @@ implementation {
     	uint8_t index;
     	uint8_t maxIndex = 0;
     	uint8_t max = 0;
-    	for (index = 0; index < receivedAck; ++index)
+    	for (index = 0; index < receivedAck; index++)
     	{
     		if (neighborsRssi[index] > max)
     		{
@@ -349,11 +361,14 @@ implementation {
 
 	void ledRadioOn(){ call Leds.set(4); }
 	void ledSendAck(){ call Leds.set(6); }
-	void ledIsWinner(){ call Leds.set(3); }
+	void ledIsWinner(){ call Leds.set(0); } // former value = 3
 	void ledIsLoser(){ call Leds.set(5); }
 	void ledWaitAck(){ call Leds.set(1); }
 	void ledMaxPower(){ call Leds.set(7); }
 	void ledDone(){ call Leds.set(2); }
+	void ledDebug(){ call Leds.set(0); }
+
+	void ledSet(uint8_t value){ call Leds.set(value);}
 
 
 }
