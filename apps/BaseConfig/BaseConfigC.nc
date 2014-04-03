@@ -33,6 +33,7 @@ implementation {
   	AutoConfigMsg* acpkt = NULL;			// Reference to received AutoConfig packet
   	uint16_t neighborsTemp[MAX_NEIGHBORS];
   	uint16_t neighborsRssi[MAX_NEIGHBORS];
+  	bool isConfigurated = FALSE;
 
   	/* Functions */
   	void sendAutoConfigMsg(uint8_t pwr);
@@ -156,7 +157,7 @@ implementation {
       		if (sentAutoConfig) 
       		{
       			receivedAck+=1;
-      			neighborsRank[receivedAck-1] = acpkt->srcRank;
+      			neighborsTemp[receivedAck-1] = acpkt->srcRank;
       			neighborsRssi[receivedAck-1] = acpkt->rssi;
       		}
       	}
@@ -173,6 +174,8 @@ implementation {
 			sendAutoConfigWin(electWinner());
 			reInit();
 			ledDone();
+			isConfigurated = TRUE;
+
 			// Here is finished
 		}
 		else if (attempt <= MAX_ATTEMPT) {
@@ -187,6 +190,9 @@ implementation {
 		else {
 			call WaitAck.stop();
 			neighborsRank[1] = NOT_DEFINED;
+			ledDone();
+			isConfigurated = TRUE;
+
 		}
 	}
 
@@ -195,7 +201,7 @@ implementation {
     	uint8_t index;
     	uint8_t maxIndex = 0;
     	uint8_t max = 0;
-    	for (index = 0; index < receivedAck; ++index)
+    	for (index = 0; index < receivedAck; index++)
     	{
     		if (neighborsRssi[index] > max)
     		{
