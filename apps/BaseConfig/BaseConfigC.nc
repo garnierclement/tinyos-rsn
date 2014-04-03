@@ -44,16 +44,20 @@ implementation {
 	void createAutoConfigWin(uint16_t winner);
 	void reInit();
 
+	void ledRadioOn();
+	void ledWaitAck();
+	void ledMaxPower();
+	void ledDone();
 
 	/* At boot time, wake up the radio */
 	event void Boot.booted() {
 		call AMControl.start();	
-		call Leds.led0On();
 	}
 
 	/* When the radio has started */
 	event void AMControl.startDone(error_t err) {
 		if (err == SUCCESS){
+			ledRadioOn();
 			sendAutoConfigMsg(ONE_HOP_POWER);		
 			call Timeout.startPeriodic(TIMEOUT_PERIOD_MILLI);
 		}
@@ -105,6 +109,7 @@ implementation {
 				if (sentpkt->type == AUTOCONFIGMSG)
 				{
 					call WaitAck.startPeriodic(WAITACK_PERIOD_MILLI);
+					ledWaitAck();
 					sentAutoConfig = TRUE;
 				}	
 			}
@@ -133,7 +138,9 @@ implementation {
       			free(acpkt);
       			acpkt = NULL;
       		}
-      		acpkt = (AutoConfigMsg*)payload;
+    		acpkt = (AutoConfigMsg*)malloc(sizeof(AutoConfigMsg));
+    		memcpy(acpkt,payload,sizeof(AutoConfigMsg));
+
       		// Handle messages
       		switch(acpkt->type){
       			case AUTOCONFIGACK : handleAck();
@@ -151,7 +158,6 @@ implementation {
       			receivedAck+=1;
       			neighborsRank[receivedAck-1] = acpkt->srcRank;
       			neighborsRssi[receivedAck-1] = acpkt->rssi;
-      			call Leds.led1Off();
       		}
       	}
       	// ELSE if the node rank not defined, we can overhear broadcasted Ack
@@ -166,16 +172,16 @@ implementation {
 			call WaitAck.stop();
 			sendAutoConfigWin(electWinner());
 			reInit();
+			ledDone();
 			// Here is finished
 		}
 		else if (attempt <= MAX_ATTEMPT) {
 			sendAutoConfigMsg(ONE_HOP_POWER);
-			call Leds.led2Toggle();
 		}
 		else if (attempt > MAX_ATTEMPT && attempt <= 2*MAX_ATTEMPT)
 		{
 			sendAutoConfigMsg(TWO_HOP_POWER);
-			call Leds.led0Toggle();
+			ledMaxPower();
 
 		}
 		else {
@@ -243,4 +249,10 @@ implementation {
 	event void AMControl.stopDone(error_t err) {
 
 	}
+
+	void ledRadioOn(){ call Leds.set(4); }
+	void ledWaitAck(){ call Leds.set(1); }
+	void ledMaxPower(){ call Leds.set(7); }
+	void ledDone(){ call Leds.set(2); }
+
 }

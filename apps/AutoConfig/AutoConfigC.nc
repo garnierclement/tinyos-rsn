@@ -52,18 +52,26 @@ implementation {
 	void createAutoConfigWin(uint16_t winner);
 	void reInit();
 
+	void ledRadioOn();
+	void ledSendAck();
+	void ledIsWinner();
+	void ledIsLoser();
+	void ledWaitAck();
+	void ledMaxPower();
+	void ledDone();
+
 
 	/* At boot time, wake up the radio */
 	event void Boot.booted() {
 		call AMControl.start();	
-		call Leds.led0On();
 	}
 
 	/* When the radio has started */
 	event void AMControl.startDone(error_t err) {
 		if (err == SUCCESS){
 			// Wait for AutoConfigMsg
-			call Timeout.startPeriodic(TIMEOUT_PERIOD_MILLI);		
+			call Timeout.startPeriodic(TIMEOUT_PERIOD_MILLI);
+			ledRadioOn();		
 		}
 		else {
 			// Restart the radio if it doesn't work
@@ -82,16 +90,11 @@ implementation {
       			free(acpkt);
       			acpkt = NULL;
       		}
-    		/*
-    		 * WARNING SEGFAULT MAY HAPPEN / NEED TO BE TESTED
-    		 * SEE IF IT NEEDS MEMCOPY 
-    		 * USING GLOBAL VARIABLE FOR void* payload
-    		 */
+    		
+    		acpkt = (AutoConfigMsg*)malloc(sizeof(AutoConfigMsg));
+    		memcpy(acpkt,payload,sizeof(AutoConfigMsg));
 
-    		// acpkt = (AutoConfigMsg*)malloc(sizeof(AutoConfigMsg));
-    		// memcpy(acpkt,payload,sizeof(AutoConfigMsg));
-
-      		acpkt = (AutoConfigMsg*)payload;
+      		//acpkt = (AutoConfigMsg*)payload;
       		// Handle messages
       		switch(acpkt->type){
       			case AUTOCONFIGMSG : handleAutoConfig();
@@ -109,7 +112,6 @@ implementation {
 	void handleAutoConfig() {
 		if (myRank == NOT_DEFINED)
 		{
-			call Leds.led1On();
 			
 			/* RSSI values are in range of (0,28) 
 			 * 0 means < -91 dBm
@@ -124,6 +126,7 @@ implementation {
 	/* It's time to send Ack */
 	event void BackoffForAck.fired() {
 		sendAck();
+		ledSendAck();
 	}
 
 	/* Send an Ack */
@@ -135,7 +138,6 @@ implementation {
 			if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
 			{
 				radioBusy = TRUE;
-				call Leds.led0Off();
 			}
 		}
 	}
@@ -168,6 +170,7 @@ implementation {
 	void handleWin() {
 		if (acpkt->dstRank == tempRank)
 		{
+			ledIsWinner();
 			// I won, bitches
 			// I define myRank according to the txPower and to the sender's rank
 			myRank = (acpkt->txPower == ONE_HOP_POWER) ? (acpkt->srcRank + 1) : (acpkt->srcRank + 2);
@@ -175,6 +178,7 @@ implementation {
 			sendAutoConfigMsg(ONE_HOP_POWER);
 		}
 		// ELSE I lost
+		ledIsLoser();
 	}
 
 	/* Send AutoConfigMsg */
@@ -186,6 +190,7 @@ implementation {
 			if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
 			{
 				radioBusy = TRUE;
+
 			}
 		} else {
 			call WaitForRadio.startPeriodic(WAITFORRADIO_PERIOD_MILLI);
@@ -219,6 +224,7 @@ implementation {
 				if (sentpkt->type == AUTOCONFIGMSG)
 				{
 					call WaitAck.startPeriodic(WAITACK_PERIOD_MILLI);
+					ledWaitAck();
 					sentAutoConfig = TRUE;
 				}	
 			}
@@ -246,7 +252,6 @@ implementation {
       			receivedAck+=1;
       			neighborsRank[receivedAck-1] = acpkt->srcRank;
       			neighborsRssi[receivedAck-1] = acpkt->rssi;
-      			call Leds.led1Off();
       		}
       	}
       	// ELSE if the node rank not defined, we can overhear broadcasted Ack
@@ -261,16 +266,16 @@ implementation {
 			call WaitAck.stop();
 			sendAutoConfigWin(electWinner());
 			reInit();
+			ledDone();
 			// Here is finished
 		}
 		else if (attempt <= MAX_ATTEMPT) {
 			sendAutoConfigMsg(ONE_HOP_POWER);
-			call Leds.led2Toggle();
 		}
 		else if (attempt > MAX_ATTEMPT && attempt <= 2*MAX_ATTEMPT)
 		{
 			sendAutoConfigMsg(TWO_HOP_POWER);
-			call Leds.led0Toggle();
+			ledMaxPower();
 
 		}
 		else {
@@ -341,4 +346,14 @@ implementation {
 	event void AMControl.stopDone(error_t err) {
 
 	}
+
+	void ledRadioOn(){ call Leds.set(4); }
+	void ledSendAck(){ call Leds.set(6); }
+	void ledIsWinner(){ call Leds.set(3); }
+	void ledIsLoser(){ call Leds.set(5); }
+	void ledWaitAck(){ call Leds.set(1); }
+	void ledMaxPower(){ call Leds.set(7); }
+	void ledDone(){ call Leds.set(2); }
+
+
 }
