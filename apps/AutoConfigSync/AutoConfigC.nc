@@ -1,5 +1,6 @@
 #include <Timer.h>
 #include "AutoConfig.h"
+#include "Sync.h"
 
 module AutoConfigC {
 	uses interface Boot;
@@ -40,6 +41,7 @@ implementation {
   	uint16_t neighborsTemp[MAX_NEIGHBORS];
   	uint16_t neighborsRssi[MAX_NEIGHBORS];
   	bool isConfigurated = FALSE;
+  	bool lastNode = FALSE;
 
   	/* Functions */
   	void createAutoConfigMsg(uint8_t pwr);
@@ -151,7 +153,7 @@ implementation {
 
 	/* Forge Ack message */
 	void createAutoConfigAck() {
-		AutoConfigMsg* ackpkt = (AutoConfigMsg*)(call Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
+		AutoConfigMsg* ackpkt = (AutoConfigMsg*)(call AC_Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
 		ackpkt->type = AUTOCONFIGACK;
 		tempRank = getRandomRank();			// Store the temporary rank
 		ackpkt->srcRank = tempRank;
@@ -216,7 +218,7 @@ implementation {
 
 	/* Forge an AntoConfigMsg */
 	void createAutoConfigMsg(uint8_t pwr) {
-		AutoConfigMsg* new_acpkt = (AutoConfigMsg*)(call Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
+		AutoConfigMsg* new_acpkt = (AutoConfigMsg*)(call AC_Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
 		new_acpkt->type = AUTOCONFIGMSG;
 		new_acpkt->srcRank = myRank;
 		new_acpkt->txPower = pwr;
@@ -253,7 +255,7 @@ implementation {
 
 	/* Retrieve payload from AutoCOonfigMsg */
 	AutoConfigMsg* getAutoConfigPayload(message_t* msg) {
-		return (AutoConfigMsg*)(call Packet.getPayload(msg, sizeof(AutoConfigMsg)));
+		return (AutoConfigMsg*)(call AC_Packet.getPayload(msg, sizeof(AutoConfigMsg)));
 	}
 
 	/* Upon receiving an Ack for a previous sent AutoConfigMsg */
@@ -292,11 +294,12 @@ implementation {
 
 		}
 		else {
+			// Last node
 			call WaitAck.stop();
 			neighborsRank[1] = NOT_DEFINED;
 			ledDone();
 			isConfigurated = TRUE;
-
+			lastNode = TRUE;
 		}
 	}
 
@@ -329,7 +332,7 @@ implementation {
 
     /* Forge Win message */
 	void createAutoConfigWin(uint16_t winner) {
-		AutoConfigMsg* winpkt = (AutoConfigMsg*)(call Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
+		AutoConfigMsg* winpkt = (AutoConfigMsg*)(call AC_Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
 		winpkt->type = AUTOCONFIGWIN;
 		winpkt->srcRank = myRank;
 		winpkt->dstRank = winner;	
@@ -375,5 +378,13 @@ implementation {
 
 /*************************************************************************************************************************************/
 
+	/* Upon receiving a SyncMsg */
+	event message_t* SYNC_Receive.receive(message_t* msg, void* payload, uint8_t len) {
+		return msg;
+	}
+
+	event void SYNC_AMSend.sendDone(message_t* msg, error_t err) {
+
+	}
 
 }
