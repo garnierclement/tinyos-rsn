@@ -3,8 +3,13 @@
 #include "Sync.h"
 
 module AutoConfigC {
+
+	/* General interfaces */
 	uses interface Boot;
 	uses interface Leds;
+	uses interface SplitControl as AMControl;
+
+	/* AutoConfig interfaces*/
 	uses interface Timer<TMilli> as Timeout;
 	uses interface Timer<TMilli> as WaitAck;
 	uses interface Timer<TMilli> as WaitForRadio;
@@ -13,16 +18,16 @@ module AutoConfigC {
 	uses interface AMPacket as AC_AMPacket;
 	uses interface AMSend as AC_AMSend;
 	uses interface Receive as AC_Receive;
+	uses interface Random;
+	uses interface PacketField<uint8_t> as PacketRSSI;
+	uses interface PacketField<uint8_t> as PacketTransmitPower;
+
+	/* SYNC interfaces */
 	uses interface Packet as SYNC_Packet;
 	uses interface AMPacket as SYNC_AMPacket;
 	uses interface AMSend as SYNC_AMSend;
 	uses interface Receive as SYNC_Receive;	
-	uses interface SplitControl as AMControl;
-	uses interface Random;
-
-
-	uses interface PacketField<uint8_t> as PacketRSSI;
-	uses interface PacketField<uint8_t> as PacketTransmitPower;
+	uses interface LocalTime<TMilli> as Clock;
 
 }
 implementation {
@@ -378,13 +383,82 @@ implementation {
 
 /*************************************************************************************************************************************/
 
+	// A sync message is sent to the node through the network in order to notify the base station that the AutoConfig algorithm has ended
+	// As a consequence, the base station sends back an sync to launch the sync procedure
+
+
+	/* Variables */
+	uint32_t syncTime;
+
+	/* Functions */
+	void intiateSyncMsg();
+	void createSyncMsg(uint16_t originalSender, uint16_t dst);
+	void handleSyncMsg(SyncMsg* syncpkt);
+
+
+
+	/* Initiate a synchronization message */
+	void intiateSyncMsg(){
+		if (!radioBusy) 
+		{
+			if (lastNode)
+			{
+				createSyncMsg(myRank, neighborsRank[0]);
+			} else if (myRank == IS_BASESTATION){
+				createSyncMsg(myRank, neighborsRank[1]);
+			}
+			if (call SYNC_AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(SyncMsg)) == SUCCESS)
+			{
+				radioBusy = TRUE;
+			}
+		}
+	}
+
+	/* Forge synchronization message */
+	void createSyncMsg(uint16_t originalSender, uint16_t dst) {
+		SyncMsg* syncpkt = (SyncMsg*)(call AC_Packet.getPayload(&pkt, sizeof(SyncMsg)));
+		syncpkt->srcRank = myRank;
+		syncpkt->dstRank = dst;
+		syncpkt->sender = originalSender;
+	}
+
 	/* Upon receiving a SyncMsg */
 	event message_t* SYNC_Receive.receive(message_t* msg, void* payload, uint8_t len) {
+		if (len == sizeof(AutoConfigMsg))
+		{
+			handleSyncMsg((SyncMsg*)payload);
+		}
 		return msg;
 	}
 
-	event void SYNC_AMSend.sendDone(message_t* msg, error_t err) {
+	/* Forward the SyncMsg in the right direction */
+	void handleSyncMsg(SyncMsg* syncpkt) {
+		if (!radioBusy && syncpkt->srcRank != myRank) {
+			if (syncpkt->srcRank > myRank)
+			{
+				// Sync coming from the last node, forwarding
+				createSyncMsg(syncpkt->sender,neighborsRank[0]);
+			}
+			else {
+				// Sync coming from the base station
+				// record SyncTime
+				syncTime = call Clock.get();
+				// forward packet
+				createSyncMsg(syncpkt->sender,neighborsRank[1]);
+			}
+			if (call SYNC_AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(SyncMsg)) == SUCCESS)
+			{
+				radioBusy = TRUE;
+			}
+		}
+	}
 
+	/* When Sync message has been sent */
+	event void SYNC_AMSend.sendDone(message_t* msg, error_t err) {
+		if (&pkt == msg)
+		{
+			radioBusy = FALSE;
+		}
 	}
 
 }

@@ -24,6 +24,7 @@ implementation {
 	// AM Componenents for synchronisation 
 	components new AMSenderC(AM_SYNC) as SYNC_AMSenderC;
 	components new AMReceiverC(AM_SYNC) as SYNC_AMReceiverC;
+	components LocalTimeMilliC;
 
 	components RF230ActiveMessageC as RF230ActiveMessageCRSSI;
 	components RF230ActiveMessageC as RF230ActiveMessageCPower;
@@ -50,6 +51,7 @@ implementation {
 	App.SYNC_AMPacket -> SYNC_AMSenderC.AMPacket;
 	App.SYNC_AMSend -> SYNC_AMSenderC.AMSend;
 	App.SYNC_Receive -> SYNC_AMReceiverC.Receive;
+	App.Clock -> LocalTimeMilliC;
 
 	
 	App.AMControl -> ActiveMessageC;
