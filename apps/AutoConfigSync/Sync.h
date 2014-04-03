@@ -3,8 +3,8 @@
 
 
 enum{
-
-	AM_SYNC = 1,
+	/* AM type for synchronization algorithm */
+	AM_SYNC = 2,
 
 };
 
