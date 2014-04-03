@@ -8,10 +8,14 @@ module AutoConfigC {
 	uses interface Timer<TMilli> as WaitAck;
 	uses interface Timer<TMilli> as WaitForRadio;
 	uses interface Timer<TMilli> as BackoffForAck;
-	uses interface Packet;
-	uses interface AMPacket;
-	uses interface AMSend;
-	uses interface Receive;
+	uses interface Packet as AC_Packet;
+	uses interface AMPacket as AC_AMPacket;
+	uses interface AMSend as AC_AMSend;
+	uses interface Receive as AC_Receive;
+	uses interface Packet as SYNC_Packet;
+	uses interface AMPacket as SYNC_AMPacket;
+	uses interface AMSend as SYNC_AMSend;
+	uses interface Receive as SYNC_Receive;	
 	uses interface SplitControl as AMControl;
 	uses interface Random;
 
@@ -83,7 +87,7 @@ implementation {
 	}
 
 	/* Upon receiving a message */
-	event message_t* Receive.receive(message_t* msg, void* payload, uint8_t len) {
+	event message_t* AC_Receive.receive(message_t* msg, void* payload, uint8_t len) {
 		if (len == sizeof(AutoConfigMsg))
     	{
     		// Store RSSI
@@ -138,7 +142,7 @@ implementation {
 		{
 			createAutoConfigAck();
 			call  PacketTransmitPower.set(&pkt,acpkt->txPower);
-			if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
+			if (call AC_AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
 			{
 				radioBusy = TRUE;
 			}
@@ -195,7 +199,7 @@ implementation {
 		{
 			createAutoConfigMsg(pwr);
 			call  PacketTransmitPower.set(&pkt,pwr);
-			if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
+			if (call AC_AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
 			{
 				radioBusy = TRUE;
 
@@ -221,7 +225,7 @@ implementation {
 	}
 
 	/* When a message was sent*/
-	event void AMSend.sendDone(message_t* msg, error_t err) {
+	event void AC_AMSend.sendDone(message_t* msg, error_t err) {
 		AutoConfigMsg* sentpkt = getAutoConfigPayload(msg);
 
 		if (&pkt == msg)
@@ -240,7 +244,7 @@ implementation {
 
 		/* Retransmission if send failed  */
 		if (err == FAIL || err == ECANCEL) {
-			if (call AMSend.send(AM_BROADCAST_ADDR, msg, sizeof(AutoConfigMsg)) == SUCCESS)
+			if (call AC_AMSend.send(AM_BROADCAST_ADDR, msg, sizeof(AutoConfigMsg)) == SUCCESS)
 			{
 				radioBusy = TRUE;
 			}
@@ -317,7 +321,7 @@ implementation {
     	neighborsRank[1] = winner;
     	createAutoConfigWin(winner);
     	call  PacketTransmitPower.set(&pkt,acpkt->txPower);
-		if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
+		if (call AC_AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
 		{
 			radioBusy = TRUE;
 		}
