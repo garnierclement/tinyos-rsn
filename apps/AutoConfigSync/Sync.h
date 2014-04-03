@@ -9,7 +9,9 @@ enum{
 };
 
 typedef nx_struct SyncMsg{
-
+ 	nx_uint16_t srcRank;
+ 	nx_uint16_t dstRank;
+ 	nx_uint16_t data;
 } SyncMsg;
 
 #endif
