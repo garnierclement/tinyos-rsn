@@ -1,8 +1,11 @@
+int line=0;
+
 void setup() {
   size (600,400); //taille de la fenêtre d'affichage
   strokeWeight(0);  
   dessinerRoute();
   draw();
+
 }
 
 
@@ -42,37 +45,55 @@ void dessinerRoute() {
     }
 }
  
+ 
+ void drawLine(int line){
   
-void draw() {
-  frameRate(2); //fréquence du draw
-  float[] tableau = {round(random(1)),round(random(1)),round(random(1)),round(random(1))};  //creation du tableau avec aléatoirement 1 ou 0
-
-  //compteur + coordonnées des voitures
+  //couleurs
+  color full = color(245,23,23); //si place full:rouge
+  color empty = color(23,203,53); //si place empty:vert
+  
+  
+  
+  String[] infos;
+  String [] tableau = new String[4];
+  infos=loadStrings("test2.txt");
   int i=0;
   float x=350;
   float y=150;
   float largeur=20;
   float longueur=40;
   
-  //couleurs
-  color full = color(245,23,23); //si place full:rouge
-  color empty = color(23,203,53); //si place empty:vert
-  
-  //dessin + remplissage couleur
+    i = 0;
+    x = 350;
+    tableau = split(infos[line]," ");
+    println("line: " + line); 
+    //dessin + remplissage couleur
   while(i<4) {  
-    if(tableau[i]==0) {
+    println("   " +tableau[i]);
+    if(tableau[i].equals("0")) {
       fill(empty);
       strokeWeight(1); 
       rect(x,y,longueur,largeur);
       i++;
       x=x+longueur;
       }
-    else if(tableau[i]==1) {
+    else if(tableau[i].equals("1")) {
       fill(full);
       strokeWeight(1); 
       rect(x,y,longueur,largeur);
       i++;
       x=x+longueur;
-      }
+    }
+    else {
+      i++;
+    }
   }
+ }
+
+void draw() {
+    frameRate(1); //fréquence du draw
+    drawLine(line);
+    line = (line+1)%493;
+  //compteur + coordonnées des voitures
+  
 }
