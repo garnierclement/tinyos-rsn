@@ -1,4 +1,4 @@
-# Application AutiConfig 
+# AutoConfig Application
 
 Auto configuration algorithm for wireless motes.
 
