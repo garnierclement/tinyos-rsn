@@ -93,10 +93,12 @@ implementation {
 		}
 	}
 
+	/*  Used to initiate data before starting the algorithm */
 	command void SetNodeInfo.set(NodeInfo data) {
 		info = data;
 	}
 
+	/* Used to provide the modified data */
 	command NodeInfo GetNodeInfo.get() {
 		info.localTime = syncTime;
 		return info;
@@ -113,7 +115,5 @@ implementation {
 	command error_t Sync.stop(){
 		signal Sync.stopDone(SUCCESS);
 	}
-
-
 
 }
