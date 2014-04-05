@@ -221,7 +221,7 @@ implementation {
 
     /* Notify the winner */
     void sendAutoConfigWin(uint16_t winner){
-    	neighborsRank[1] = (acpkt->txPower > ONE_HOP_POWER ? myRank+2 : myRank+1);
+    	neighborsRank[1] = (acpkt->txPower == ONE_HOP_POWER)? myRank+1 : myRank+2;
     	createAutoConfigWin(winner);
     	call  PacketTransmitPower.set(&pkt,acpkt->txPower);
 		if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
@@ -261,7 +261,7 @@ implementation {
 		if (!lastNode && donepkt->dstRank == myRank)
 		{
 			nodeCount = donepkt->data + 1;
-			ledSet(donepkt->srcRank);
+			ledSet(neighborsRank[1]);
 			signal AutoConfig.startDone(SUCCESS);
 		}
 	}
