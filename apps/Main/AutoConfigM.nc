@@ -58,7 +58,7 @@ implementation {
 	void createAutoConfigWin(uint16_t winner);
 	void reInit();
 	void sendAutoConfigDone();
-	uint8_t createAutoConfigDone(uint16_t dst, uint16_t counter);
+	uint8_t createAutoConfigDone(uint16_t counter);
 	void handleDone(AutoConfigMsg* donepkt);
 	void forwardDone(AutoConfigMsg* donepkt);
 
@@ -357,7 +357,7 @@ implementation {
 
 	/* Notify the base station that everyone has a rank */
     void sendAutoConfigDone(){
-    	createAutoConfigDone(neighborsRank[0], 1); // First send, initializa counter to 1
+    	createAutoConfigDone(1); // First send, initializa counter to 1
     	call  PacketTransmitPower.set(&pkt,acpkt->txPower);
 		if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
 		{
@@ -366,11 +366,11 @@ implementation {
     }
 
     /* Forge Done message */
-	uint8_t createAutoConfigDone(uint16_t dst, uint16_t counter) {
+	uint8_t createAutoConfigDone(uint16_t counter) {
 		AutoConfigMsg* donepkt = (AutoConfigMsg*)(call Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
 		donepkt->type = AUTOCONFIGDONE;
 		donepkt->srcRank = myRank;
-		donepkt->dstRank = dst;	
+		donepkt->dstRank = neighborsRank [0];	
 		donepkt->txPower = ( (myRank - neighborsRank [0]) > 1) ? TWO_HOP_POWER : ONE_HOP_POWER;
 		donepkt->data = counter;
 
@@ -391,7 +391,7 @@ implementation {
 	void forwardDone(AutoConfigMsg* donepkt) {
 		if (!radioBusy)
 		{
-			uint8_t txPower = createAutoConfigDone(neighborsRank[0], donepkt->data + 1);
+			uint8_t txPower = createAutoConfigDone(donepkt->data + 1);
 			call Leds.set(donepkt->data + 1);
 			call  PacketTransmitPower.set(&pkt, txPower);
 			if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
