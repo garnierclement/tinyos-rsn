@@ -1,4 +1,6 @@
-COMPONENT=AutoConfigAppC
+COMPONENT=RsnC
+
+
 # BUILD_EXTRA_DEPS=AutoConfigMsg.class
 
 # AutoConfigMsg.class: AutoConfigMsg.java

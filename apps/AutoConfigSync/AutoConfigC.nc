@@ -404,13 +404,12 @@ implementation {
 			if (lastNode)
 			{
 				createSyncMsg(myRank, neighborsRank[0]);
-			} else if (myRank == IS_BASESTATION){
-				createSyncMsg(myRank, neighborsRank[1]);
-			}
-			if (call SYNC_AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(SyncMsg)) == SUCCESS)
-			{
-				radioBusy = TRUE;
-			}
+				if (call SYNC_AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(SyncMsg)) == SUCCESS)
+				{
+					radioBusy = TRUE;
+				}
+			} 
+			
 		}
 	}
 
@@ -424,7 +423,7 @@ implementation {
 
 	/* Upon receiving a SyncMsg */
 	event message_t* SYNC_Receive.receive(message_t* msg, void* payload, uint8_t len) {
-		if (len == sizeof(AutoConfigMsg))
+		if (len == sizeof(SyncMsg))
 		{
 			handleSyncMsg((SyncMsg*)payload);
 		}

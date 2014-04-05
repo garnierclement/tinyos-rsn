@@ -6,15 +6,12 @@ enum {
 	/* AM type for AutoConfig algorithm */
 	AM_AUTOCONFIGMSG = 1,
 	/* Timers */
-	TIMEOUT_PERIOD_MILLI = 120000,
 	WAITACK_PERIOD_MILLI = 1000,
 	WAITFORRADIO_PERIOD_MILLI = 1000,
 	/* Message type */
 	AUTOCONFIGMSG = 0,
 	AUTOCONFIGACK = 1,
 	AUTOCONFIGWIN = 2,
-	/* Rank id forbase station */
-	IS_BASESTATION = 0,
 	/* Distance between nodes */
 	ONE_HOP = 1,
 	TWO_HOP = 2,

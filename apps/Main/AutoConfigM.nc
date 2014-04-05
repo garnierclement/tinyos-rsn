@@ -2,33 +2,25 @@
 #include "AutoConfig.h"
 #include "Sync.h"
 
-module AutoConfigC {
-
-	/* General interfaces */
-	uses interface Boot;
-	uses interface Leds;
-	uses interface SplitControl as AMControl;
-
-	/* AutoConfig interfaces*/
-	uses interface Timer<TMilli> as Timeout;
-	uses interface Timer<TMilli> as WaitAck;
-	uses interface Timer<TMilli> as WaitForRadio;
-	uses interface Timer<TMilli> as BackoffForAck;
-	uses interface Packet as AC_Packet;
-	uses interface AMPacket as AC_AMPacket;
-	uses interface AMSend as AC_AMSend;
-	uses interface Receive as AC_Receive;
-	uses interface Random;
-	uses interface PacketField<uint8_t> as PacketRSSI;
-	uses interface PacketField<uint8_t> as PacketTransmitPower;
-
-	/* SYNC interfaces */
-	uses interface Packet as SYNC_Packet;
-	uses interface AMPacket as SYNC_AMPacket;
-	uses interface AMSend as SYNC_AMSend;
-	uses interface Receive as SYNC_Receive;	
-	uses interface LocalTime<TMilli> as Clock;
-
+module AutoConfigM {
+	provides {
+		interface SplitControl as AutoConfig;
+		interface Get<NodeInfo> as GetNodeInfo;
+	}
+	uses {
+		interface Leds;
+		//uses interface SplitControl as AMControl;
+		interface Timer<TMilli> as WaitAck;
+		interface Timer<TMilli> as WaitForRadio;
+		interface Timer<TMilli> as BackoffForAck;
+		interface Packet as Packet;
+		interface AMPacket as AMPacket;
+		interface AMSend as AMSend;
+		interface Receive as Receive;
+		interface Random;
+		interface PacketField<uint8_t> as PacketRSSI;
+		interface PacketField<uint8_t> as PacketTransmitPower;
+	}
 }
 implementation {
 
@@ -74,27 +66,26 @@ implementation {
 	void ledDebug();
 
 
-
-	/* At boot time, wake up the radio */
-	event void Boot.booted() {
-		call AMControl.start();	
-	}
-
 	/* When the radio has started */
-	event void AMControl.startDone(error_t err) {
+/*	event void AMControl.startDone(error_t err) {
 		if (err == SUCCESS){
 			// Wait for AutoConfigMsg
-			call Timeout.startPeriodic(TIMEOUT_PERIOD_MILLI);
 			ledRadioOn();		
 		}
 		else {
 			// Restart the radio if it doesn't work
 			call AMControl.start();										
 		}
+	}*/
+
+	command error_t AutoConfig.start() {
+		// Wait for AutoConfigMsg
+		ledRadioOn();
+		return SUCCESS;
 	}
 
 	/* Upon receiving a message */
-	event message_t* AC_Receive.receive(message_t* msg, void* payload, uint8_t len) {
+	event message_t* Receive.receive(message_t* msg, void* payload, uint8_t len) {
 		if (len == sizeof(AutoConfigMsg))
     	{
     		// Store RSSI
@@ -149,7 +140,7 @@ implementation {
 		{
 			createAutoConfigAck();
 			call  PacketTransmitPower.set(&pkt,acpkt->txPower);
-			if (call AC_AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
+			if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
 			{
 				radioBusy = TRUE;
 			}
@@ -158,7 +149,7 @@ implementation {
 
 	/* Forge Ack message */
 	void createAutoConfigAck() {
-		AutoConfigMsg* ackpkt = (AutoConfigMsg*)(call AC_Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
+		AutoConfigMsg* ackpkt = (AutoConfigMsg*)(call Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
 		ackpkt->type = AUTOCONFIGACK;
 		tempRank = getRandomRank();			// Store the temporary rank
 		ackpkt->srcRank = tempRank;
@@ -206,7 +197,7 @@ implementation {
 		{
 			createAutoConfigMsg(pwr);
 			call  PacketTransmitPower.set(&pkt,pwr);
-			if (call AC_AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
+			if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
 			{
 				radioBusy = TRUE;
 
@@ -223,7 +214,7 @@ implementation {
 
 	/* Forge an AntoConfigMsg */
 	void createAutoConfigMsg(uint8_t pwr) {
-		AutoConfigMsg* new_acpkt = (AutoConfigMsg*)(call AC_Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
+		AutoConfigMsg* new_acpkt = (AutoConfigMsg*)(call Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
 		new_acpkt->type = AUTOCONFIGMSG;
 		new_acpkt->srcRank = myRank;
 		new_acpkt->txPower = pwr;
@@ -232,7 +223,7 @@ implementation {
 	}
 
 	/* When a message was sent*/
-	event void AC_AMSend.sendDone(message_t* msg, error_t err) {
+	event void AMSend.sendDone(message_t* msg, error_t err) {
 		AutoConfigMsg* sentpkt = getAutoConfigPayload(msg);
 
 		if (&pkt == msg)
@@ -251,7 +242,7 @@ implementation {
 
 		/* Retransmission if send failed  */
 		if (err == FAIL || err == ECANCEL) {
-			if (call AC_AMSend.send(AM_BROADCAST_ADDR, msg, sizeof(AutoConfigMsg)) == SUCCESS)
+			if (call AMSend.send(AM_BROADCAST_ADDR, msg, sizeof(AutoConfigMsg)) == SUCCESS)
 			{
 				radioBusy = TRUE;
 			}
@@ -260,7 +251,7 @@ implementation {
 
 	/* Retrieve payload from AutoCOonfigMsg */
 	AutoConfigMsg* getAutoConfigPayload(message_t* msg) {
-		return (AutoConfigMsg*)(call AC_Packet.getPayload(msg, sizeof(AutoConfigMsg)));
+		return (AutoConfigMsg*)(call Packet.getPayload(msg, sizeof(AutoConfigMsg)));
 	}
 
 	/* Upon receiving an Ack for a previous sent AutoConfigMsg */
@@ -287,6 +278,7 @@ implementation {
 			reInit();
 			ledDone();
 			isConfigurated = TRUE;
+			signal AutoConfig.startDone(SUCCESS);
 			// Here is finished
 		}
 		else if (attempt <= MAX_ATTEMPT) {
@@ -305,6 +297,8 @@ implementation {
 			ledDone();
 			isConfigurated = TRUE;
 			lastNode = TRUE;
+			signal AutoConfig.startDone(SUCCESS);
+
 		}
 	}
 
@@ -329,7 +323,7 @@ implementation {
     	neighborsRank[1] = winner;
     	createAutoConfigWin(winner);
     	call  PacketTransmitPower.set(&pkt,acpkt->txPower);
-		if (call AC_AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
+		if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
 		{
 			radioBusy = TRUE;
 		}
@@ -337,7 +331,7 @@ implementation {
 
     /* Forge Win message */
 	void createAutoConfigWin(uint16_t winner) {
-		AutoConfigMsg* winpkt = (AutoConfigMsg*)(call AC_Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
+		AutoConfigMsg* winpkt = (AutoConfigMsg*)(call Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
 		winpkt->type = AUTOCONFIGWIN;
 		winpkt->srcRank = myRank;
 		winpkt->dstRank = winner;	
@@ -361,15 +355,10 @@ implementation {
       	}
 	}
 
-	/* Shutdown the radio if inactivity*/
-	event void Timeout.fired() {
-		call AMControl.stop();
-	}
-
 	/* When the radio has shutdown */
-	event void AMControl.stopDone(error_t err) {
+	/*event void AMControl.stopDone(error_t err) {
 
-	}
+	}*/
 
 	void ledRadioOn(){ call Leds.set(4); }
 	void ledSendAck(){ call Leds.set(6); }
@@ -381,84 +370,19 @@ implementation {
 	void ledDebug(){ call Leds.set(0); }
 	void ledSet(uint8_t value){ call Leds.set(value);}
 
-/*************************************************************************************************************************************/
 
-	// A sync message is sent to the node through the network in order to notify the base station that the AutoConfig algorithm has ended
-	// As a consequence, the base station sends back an sync to launch the sync procedure
-
-
-	/* Variables */
-	uint32_t syncTime;
-
-	/* Functions */
-	void intiateSyncMsg();
-	void createSyncMsg(uint16_t originalSender, uint16_t dst);
-	void handleSyncMsg(SyncMsg* syncpkt);
-
-
-
-	/* Initiate a synchronization message */
-	void intiateSyncMsg(){
-		if (!radioBusy) 
-		{
-			if (lastNode)
-			{
-				createSyncMsg(myRank, neighborsRank[0]);
-			} else if (myRank == IS_BASESTATION){
-				createSyncMsg(myRank, neighborsRank[1]);
-			}
-			if (call SYNC_AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(SyncMsg)) == SUCCESS)
-			{
-				radioBusy = TRUE;
-			}
-		}
+	command NodeInfo GetNodeInfo.get() {
+		NodeInfo info;
+		info.myRank = myRank;
+		info.neighborsRank[0] = neighborsRank[0];
+		info.neighborsRank[1] = neighborsRank[1];
+		info.lastNode = lastNode;
+		return info;
 	}
 
-	/* Forge synchronization message */
-	void createSyncMsg(uint16_t originalSender, uint16_t dst) {
-		SyncMsg* syncpkt = (SyncMsg*)(call AC_Packet.getPayload(&pkt, sizeof(SyncMsg)));
-		syncpkt->srcRank = myRank;
-		syncpkt->dstRank = dst;
-		syncpkt->sender = originalSender;
-	}
-
-	/* Upon receiving a SyncMsg */
-	event message_t* SYNC_Receive.receive(message_t* msg, void* payload, uint8_t len) {
-		if (len == sizeof(AutoConfigMsg))
-		{
-			handleSyncMsg((SyncMsg*)payload);
-		}
-		return msg;
-	}
-
-	/* Forward the SyncMsg in the right direction */
-	void handleSyncMsg(SyncMsg* syncpkt) {
-		if (!radioBusy && syncpkt->srcRank != myRank) {
-			if (syncpkt->srcRank > myRank)
-			{
-				// Sync coming from the last node, forwarding
-				createSyncMsg(syncpkt->sender,neighborsRank[0]);
-			}
-			else {
-				// Sync coming from the base station
-				// record SyncTime
-				syncTime = call Clock.get();
-				// forward packet
-				createSyncMsg(syncpkt->sender,neighborsRank[1]);
-			}
-			if (call SYNC_AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(SyncMsg)) == SUCCESS)
-			{
-				radioBusy = TRUE;
-			}
-		}
-	}
-
-	/* When Sync message has been sent */
-	event void SYNC_AMSend.sendDone(message_t* msg, error_t err) {
-		if (&pkt == msg)
-		{
-			radioBusy = FALSE;
-		}
+	command error_t AutoConfig.stop(){
+		signal AutoConfig.stopDone(SUCCESS);
+		return SUCCESS;
 	}
 
 }
