@@ -11,7 +11,7 @@ enum{
 typedef nx_struct SyncMsg{
  	nx_uint16_t srcRank;
  	nx_uint16_t dstRank;
- 	nx_uint16_t sender;		// can be the base station (0) or the last node of the linear network
+ 	nx_uint16_t data;
 } SyncMsg;
 
 #endif

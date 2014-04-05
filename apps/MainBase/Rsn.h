@@ -5,7 +5,7 @@ enum {
 	/* Maximum payload size in bytes */
 	TOSH_DATA_LENGTH = 128,
 	/* Rank id forbase station */
-	IS_BASESTATION = 1
+	IS_BASESTATION = 0
 };
 
 typedef struct NodeInfo{

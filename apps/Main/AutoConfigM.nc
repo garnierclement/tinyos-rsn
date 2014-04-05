@@ -20,6 +20,8 @@ module AutoConfigM {
 		interface Random;
 		interface PacketField<uint8_t> as PacketRSSI;
 		interface PacketField<uint8_t> as PacketTransmitPower;
+		interface LocalTime<TMilli> as LocalTime;
+		interface BusyWait<TMicro,uint16_t> as Wait;
 	}
 }
 implementation {
@@ -55,6 +57,10 @@ implementation {
 	void sendAutoConfigWin(uint16_t winner);
 	void createAutoConfigWin(uint16_t winner);
 	void reInit();
+	void sendAutoConfigDone();
+	uint8_t createAutoConfigDone(uint16_t dst, uint16_t counter);
+	void handleDone(AutoConfigMsg* donepkt);
+	void forwardDone(AutoConfigMsg* donepkt);
 
 	void ledRadioOn();
 	void ledSendAck();
@@ -63,20 +69,8 @@ implementation {
 	void ledWaitAck();
 	void ledMaxPower();
 	void ledDone();
-	void ledDebug();
+	void ledAutoConfigDone();
 
-
-	/* When the radio has started */
-/*	event void AMControl.startDone(error_t err) {
-		if (err == SUCCESS){
-			// Wait for AutoConfigMsg
-			ledRadioOn();		
-		}
-		else {
-			// Restart the radio if it doesn't work
-			call AMControl.start();										
-		}
-	}*/
 
 	command error_t AutoConfig.start() {
 		// Wait for AutoConfigMsg
@@ -107,6 +101,8 @@ implementation {
       			case AUTOCONFIGWIN : handleWin((AutoConfigMsg*)payload);
       				break;
       			case AUTOCONFIGACK : handleAck();
+      				break;
+      			case AUTOCONFIGDONE : handleDone((AutoConfigMsg*)payload);
       				break;
       		}
 	    }
@@ -155,12 +151,15 @@ implementation {
 		ackpkt->srcRank = tempRank;
 		ackpkt->dstRank = acpkt->srcRank;	// Warning ackpkt (Ack) vs acpkt (AutoConfig)
 		ackpkt->txPower = acpkt->txPower;	// Warning ackpkt (Ack) vs acpkt (AutoConfig)
-		ackpkt->rssi = rssi;				// Global variable set in Receive.receive
+		ackpkt->data = rssi;				// Global variable set in Receive.receive
 	}
 
 	/* Get random rank */
     uint16_t getRandomRank() {
-    	return call Random.rand16() | rssi;
+    	//return call Random.rand16() | rssi;
+    	uint16_t split = (uint16_t)( (call LocalTime.get()) );
+    	//return (call Random.rand16() | split);
+    	return (call Random.rand16() | split);
     }
 
    	/* Get RSSI */
@@ -219,7 +218,7 @@ implementation {
 		new_acpkt->srcRank = myRank;
 		new_acpkt->txPower = pwr;
 		new_acpkt->dstRank = (pwr == ONE_HOP_POWER) ? (myRank + ONE_HOP) : (myRank + TWO_HOP);
-		new_acpkt->rssi = 0xFFFF; // undefined
+		new_acpkt->data = 0xFFFF; // undefined
 	}
 
 	/* When a message was sent*/
@@ -259,9 +258,9 @@ implementation {
 		if (myRank != NOT_DEFINED){
       		if (sentAutoConfig) 
       		{
-      			receivedAck+=1;
+      			receivedAck += 1;
       			neighborsTemp[receivedAck-1] = acpkt->srcRank;
-      			neighborsRssi[receivedAck-1] = acpkt->rssi;
+      			neighborsRssi[receivedAck-1] = acpkt->data;
       		}
       	}
       	// ELSE if the node rank not defined, we can overhear broadcasted Ack
@@ -278,7 +277,6 @@ implementation {
 			reInit();
 			ledDone();
 			isConfigurated = TRUE;
-			signal AutoConfig.startDone(SUCCESS);
 			// Here is finished
 		}
 		else if (attempt <= MAX_ATTEMPT) {
@@ -297,6 +295,8 @@ implementation {
 			ledDone();
 			isConfigurated = TRUE;
 			lastNode = TRUE;
+			sendAutoConfigDone();
+			ledAutoConfigDone();
 			signal AutoConfig.startDone(SUCCESS);
 
 		}
@@ -320,7 +320,7 @@ implementation {
 
     /* Notify the winner */
     void sendAutoConfigWin(uint16_t winner){
-    	neighborsRank[1] = winner;
+    	neighborsRank[1] = (acpkt->txPower > ONE_HOP_POWER ? myRank+2 : myRank+1);
     	createAutoConfigWin(winner);
     	call  PacketTransmitPower.set(&pkt,acpkt->txPower);
 		if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
@@ -336,7 +336,7 @@ implementation {
 		winpkt->srcRank = myRank;
 		winpkt->dstRank = winner;	
 		winpkt->txPower = acpkt->txPower;
-		winpkt->rssi = 0xFFFF;	// Undefined
+		winpkt->data = 0xFFFF;	// Undefined
 	}
 
 	/* Reinit values */
@@ -355,10 +355,52 @@ implementation {
       	}
 	}
 
-	/* When the radio has shutdown */
-	/*event void AMControl.stopDone(error_t err) {
+	/* Notify the base station that everyone has a rank */
+    void sendAutoConfigDone(){
+    	createAutoConfigDone(neighborsRank[0], 1); // First send, initializa counter to 1
+    	call  PacketTransmitPower.set(&pkt,acpkt->txPower);
+		if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
+		{
+			radioBusy = TRUE;
+		}
+    }
 
-	}*/
+    /* Forge Done message */
+	uint8_t createAutoConfigDone(uint16_t dst, uint16_t counter) {
+		AutoConfigMsg* donepkt = (AutoConfigMsg*)(call Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
+		donepkt->type = AUTOCONFIGDONE;
+		donepkt->srcRank = myRank;
+		donepkt->dstRank = dst;	
+		donepkt->txPower = ( (myRank - neighborsRank [0]) > 1) ? TWO_HOP_POWER : ONE_HOP_POWER;
+		donepkt->data = counter;
+
+		return donepkt->txPower;
+	}
+
+	/* Handle Done message */
+	void handleDone(AutoConfigMsg* donepkt) {
+		if (!lastNode && donepkt->dstRank == myRank)
+		{
+			call Wait.wait(0xFF);			// Delay forwarding Done message
+			forwardDone(donepkt);
+			signal AutoConfig.startDone(SUCCESS);
+		}
+	}
+
+	/* Forward Done message */
+	void forwardDone(AutoConfigMsg* donepkt) {
+		if (!radioBusy)
+		{
+			uint8_t txPower = createAutoConfigDone(neighborsRank[0], donepkt->data + 1);
+			call Leds.set(donepkt->data + 1);
+			call  PacketTransmitPower.set(&pkt, txPower);
+			if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
+			{
+				radioBusy = TRUE;
+				//ledAutoConfigDone();
+			}
+		}
+	}
 
 	void ledRadioOn(){ call Leds.set(4); }
 	void ledSendAck(){ call Leds.set(6); }
@@ -367,7 +409,7 @@ implementation {
 	void ledWaitAck(){ call Leds.set(1); }
 	void ledMaxPower(){ call Leds.set(7); }
 	void ledDone(){ call Leds.set(2); }
-	void ledDebug(){ call Leds.set(0); }
+	void ledAutoConfigDone(){ call Leds.set(0); }
 	void ledSet(uint8_t value){ call Leds.set(value);}
 
 

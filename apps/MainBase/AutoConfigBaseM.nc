@@ -36,6 +36,7 @@ implementation {
   	uint16_t neighborsRssi[MAX_NEIGHBORS];
   	bool isConfigurated = FALSE;
   	bool lastNode = FALSE;
+  	uint16_t nodeCount = 0;					// Numeber of nodes in the network (including BS)
 
   	/* Functions */
   	void createAutoConfigMsg(uint8_t pwr);
@@ -46,6 +47,7 @@ implementation {
 	void sendAutoConfigWin(uint16_t winner);
 	void createAutoConfigWin(uint16_t winner);
 	void reInit();
+	void handleDone(AutoConfigMsg* donepkt);
 
 	void ledRadioOn();
 	void ledSendAck();
@@ -54,7 +56,8 @@ implementation {
 	void ledWaitAck();
 	void ledMaxPower();
 	void ledDone();
-	void ledDebug();
+	void ledAutoConfigDone();
+	void ledSet(uint8_t value);
 
 
 
@@ -93,7 +96,7 @@ implementation {
 		new_acpkt->srcRank = myRank;
 		new_acpkt->txPower = pwr;
 		new_acpkt->dstRank = (pwr == ONE_HOP_POWER) ? (myRank + ONE_HOP) : (myRank + TWO_HOP);
-		new_acpkt->rssi = 0xFFFF; // undefined
+		new_acpkt->data = 0xFFFF; // undefined
 	}
 
 	/* When a message was sent*/
@@ -146,6 +149,8 @@ implementation {
       		switch(acpkt->type){
       			case AUTOCONFIGACK : handleAck();
       				break;
+      			case AUTOCONFIGDONE : handleDone((AutoConfigMsg*)payload);
+      				break;
       		}
 	    }
     	return msg;
@@ -158,7 +163,7 @@ implementation {
       		{
       			receivedAck+=1;
       			neighborsTemp[receivedAck-1] = acpkt->srcRank;
-      			neighborsRssi[receivedAck-1] = acpkt->rssi;
+      			neighborsRssi[receivedAck-1] = acpkt->data;
       		}
       	}
       	// ELSE if the node rank not defined, we can overhear broadcasted Ack
@@ -175,7 +180,6 @@ implementation {
 			reInit();
 			ledDone();
 			isConfigurated = TRUE;
-			signal AutoConfig.startDone(SUCCESS);
 			// Here is finished
 		}
 		else if (attempt <= MAX_ATTEMPT) {
@@ -188,7 +192,7 @@ implementation {
 
 		}
 		else {
-			// Last node
+			// Base station is alone
 			call WaitAck.stop();
 			neighborsRank[1] = NOT_DEFINED;
 			ledDone();
@@ -217,7 +221,7 @@ implementation {
 
     /* Notify the winner */
     void sendAutoConfigWin(uint16_t winner){
-    	neighborsRank[1] = winner;
+    	neighborsRank[1] = (acpkt->txPower > ONE_HOP_POWER ? myRank+2 : myRank+1);
     	createAutoConfigWin(winner);
     	call  PacketTransmitPower.set(&pkt,acpkt->txPower);
 		if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
@@ -233,7 +237,7 @@ implementation {
 		winpkt->srcRank = myRank;
 		winpkt->dstRank = winner;	
 		winpkt->txPower = acpkt->txPower;
-		winpkt->rssi = 0xFFFF;	// Undefined
+		winpkt->data = 0xFFFF;	// Undefined
 	}
 
 	/* Reinit values */
@@ -252,10 +256,15 @@ implementation {
       	}
 	}
 
-	/* When the radio has shutdown */
-	/*event void AMControl.stopDone(error_t err) {
-
-	}*/
+	/* Handle Done message */
+	void handleDone(AutoConfigMsg* donepkt) {
+		if (!lastNode && donepkt->dstRank == myRank)
+		{
+			nodeCount = donepkt->data + 1;
+			ledSet(donepkt->srcRank);
+			signal AutoConfig.startDone(SUCCESS);
+		}
+	}
 
 	void ledRadioOn(){ call Leds.set(4); }
 	void ledSendAck(){ call Leds.set(6); }
@@ -264,7 +273,7 @@ implementation {
 	void ledWaitAck(){ call Leds.set(1); }
 	void ledMaxPower(){ call Leds.set(7); }
 	void ledDone(){ call Leds.set(2); }
-	void ledDebug(){ call Leds.set(0); }
+	void ledAutoConfigDone(){ call Leds.set(0); }
 	void ledSet(uint8_t value){ call Leds.set(value);}
 
 

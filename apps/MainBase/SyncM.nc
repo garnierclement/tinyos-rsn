@@ -15,6 +15,7 @@ module SyncM {
 		interface AMSend as AMSend;
 		interface Receive as Receive;	
 		interface LocalTime<TMilli> as LocalTime;
+		interface PacketField<uint8_t> as PacketTransmitPower;
 	}
 }
 implementation {
@@ -27,8 +28,11 @@ implementation {
 
 	/* Functions */
 	void intiateSyncMsg();
-	void createSyncMsg(uint16_t originalSender, uint16_t dst);
+	void createSyncMsg();
 	void handleSyncMsg(SyncMsg* syncpkt);
+	uint8_t getPowerNextHop();
+	void ledUpLink();
+	void ledDownLink();
 
 	/* Starting synchronization algorithm */
 	command error_t Sync.start() {
@@ -40,25 +44,22 @@ implementation {
 	void intiateSyncMsg(){
 		if (!radioBusy) 
 		{
-			if (info.lastNode)
-			{
-				createSyncMsg(info.myRank, info.neighborsRank[0]);
-			} else if (info.myRank == IS_BASESTATION){
-				createSyncMsg(info.myRank, info.neighborsRank[1]);
-			}
+			createSyncMsg();
+			call  PacketTransmitPower.set(&pkt,getPowerNextHop());
 			if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(SyncMsg)) == SUCCESS)
 			{
 				radioBusy = TRUE;
+				ledDownLink();
 			}
 		}
 	}
 
 	/* Forge synchronization message */
-	void createSyncMsg(uint16_t originalSender, uint16_t dst) {
+	void createSyncMsg() {
 		SyncMsg* syncpkt = (SyncMsg*)(call Packet.getPayload(&pkt, sizeof(SyncMsg)));
 		syncpkt->srcRank = info.myRank;
-		syncpkt->dstRank = dst;
-		syncpkt->sender = originalSender;
+		syncpkt->dstRank = info.neighborsRank[1];
+		syncpkt->data = info.myRank;  // Original sender 
 	}
 
 	/* Upon receiving a SyncMsg */
@@ -72,40 +73,18 @@ implementation {
 
 	/* Forward the SyncMsg in the right direction */
 	void handleSyncMsg(SyncMsg* syncpkt) {
-		if (!radioBusy && syncpkt->srcRank != info.myRank) {
-			if (syncpkt->srcRank > info.myRank)
-			{
-				// Sync coming from the last node, forwarding
-				createSyncMsg(syncpkt->sender, info.neighborsRank[0]);
-			}
-			else {
-				// Sync coming from the base station
-				// record SyncTime
-				syncTime = call LocalTime.get();
-				// forward packet
-				createSyncMsg(syncpkt->sender, info.neighborsRank[1]);
-			}
-			if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(SyncMsg)) == SUCCESS)
-			{
-				radioBusy = TRUE;
-			}
+		if (syncpkt->dstRank == info.myRank) {
+			// Sync OK 
+			ledUpLink();
 			signal Sync.startDone(SUCCESS);
 		}
-	}
-
-	command void SetNodeInfo.set(NodeInfo data) {
-		info = data;
-	}
-
-	command NodeInfo GetNodeInfo.get() {
-		info.localTime = syncTime;
-		return info;
 	}
 
 	/* When Sync message has been sent */
 	event void AMSend.sendDone(message_t* msg, error_t err) {
 		if (&pkt == msg)
-		{
+		{				
+			syncTime = call LocalTime.get();
 			radioBusy = FALSE;
 		}
 	}
@@ -114,6 +93,22 @@ implementation {
 		signal Sync.stopDone(SUCCESS);
 	}
 
+	uint8_t getPowerNextHop() {
+		return  ((info.neighborsRank[1] - info.myRank) > 1) ? TWO_HOP_POWER : ONE_HOP_POWER;
+	}
 
+
+	/* Providing interfaces Set and Get */
+	command void SetNodeInfo.set(NodeInfo data) {
+		info = data;
+	}
+
+	void ledUpLink(){ call Leds.set(3); }
+	void ledDownLink(){ call Leds.set(1); }
+
+	command NodeInfo GetNodeInfo.get() {
+		info.localTime = syncTime;
+		return info;
+	}
 
 }

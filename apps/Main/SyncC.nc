@@ -16,6 +16,8 @@ implementation {
 	components new AMSenderC(AM_SYNC) as AMSenderC;
 	components new AMReceiverC(AM_SYNC) as AMReceiverC;
 	components LocalTimeMilliC;
+	components RF230ActiveMessageC as RF230ActiveMessageCPower;
+
 
 	/* Wiring components */
 	Module.Leds -> LedsC;
@@ -24,6 +26,8 @@ implementation {
 	Module.AMSend -> AMSenderC.AMSend;
 	Module.Receive -> AMReceiverC.Receive;
 	Module.LocalTime -> LocalTimeMilliC;
+	Module.PacketTransmitPower -> RF230ActiveMessageCPower.PacketTransmitPower;
+
 
 	Module = Sync;
 	Module = SetNodeInfo;

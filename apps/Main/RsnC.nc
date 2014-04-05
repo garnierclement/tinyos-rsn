@@ -10,6 +10,7 @@ implementation {
 	components AutoConfigC;
 	components SyncC;
 	components ActiveMessageC;
+	components new TimerMilliC() as LedTimer;
 
 	/* Wiring components */
 	App.Boot -> MainC;
@@ -19,4 +20,5 @@ implementation {
 	App.SetSyncInfo -> SyncC.SetNodeInfo;
 	App.Sync -> SyncC.Sync;
 	App.AMControl -> ActiveMessageC;
+	App.LedTimer -> LedTimer;
 }

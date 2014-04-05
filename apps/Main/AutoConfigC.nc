@@ -19,6 +19,9 @@ implementation {
 	components RandomC;
 	components new AMSenderC(AM_AUTOCONFIGMSG) as AMSenderC;
 	components new AMReceiverC(AM_AUTOCONFIGMSG) as AMReceiverC;
+	components LocalTimeMilliC;
+	components BusyWaitMicroC;
+
 
 	components RF230ActiveMessageC as RF230ActiveMessageCRSSI;
 	components RF230ActiveMessageC as RF230ActiveMessageCPower;
@@ -36,6 +39,8 @@ implementation {
 	Module.AMSend -> AMSenderC.AMSend;
 	Module.Receive -> AMReceiverC.Receive;
 	Module.Random -> RandomC;
+	Module.LocalTime -> LocalTimeMilliC;
+	Module.Wait -> BusyWaitMicroC;
 
 	Module = AutoConfig;
 	Module = GetNodeInfo;

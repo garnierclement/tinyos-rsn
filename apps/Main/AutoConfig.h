@@ -12,6 +12,7 @@ enum {
 	AUTOCONFIGMSG = 0,
 	AUTOCONFIGACK = 1,
 	AUTOCONFIGWIN = 2,
+	AUTOCONFIGDONE = 3,
 	/* Distance between nodes */
 	ONE_HOP = 1,
 	TWO_HOP = 2,
@@ -21,7 +22,7 @@ enum {
 	/* Rank for unranked nodes */
 	NOT_DEFINED = 255,
 	/* Maximum attempts of retransmission at a specific TX power */
-	MAX_ATTEMPT = 10,
+	MAX_ATTEMPT = 3,
 	/* Backoff multiplicator for Ack answer */
 	BACKOFF_COEFF = 10,
 	/* Maximum number of neighbors in one hop communication range */
@@ -33,7 +34,7 @@ typedef nx_struct AutoConfigMsg {
  	nx_uint16_t dstRank;
  	nx_uint8_t txPower;
  	nx_uint8_t type;
- 	nx_uint16_t rssi;
+ 	nx_uint16_t data;
 } AutoConfigMsg;
 
 #endif

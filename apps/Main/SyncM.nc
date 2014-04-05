@@ -15,6 +15,7 @@ module SyncM {
 		interface AMSend as AMSend;
 		interface Receive as Receive;	
 		interface LocalTime<TMilli> as LocalTime;
+		interface PacketField<uint8_t> as PacketTransmitPower;
 	}
 }
 implementation {
@@ -26,31 +27,19 @@ implementation {
 	NodeInfo info;
 
 	/* Functions */
-	void intiateSyncMsg();
-	void createSyncMsg(uint16_t originalSender, uint16_t dst);
+	void createSyncMsg(uint16_t dst, uint16_t originalSender);
 	void handleSyncMsg(SyncMsg* syncpkt);
+	void forwardSyncMsg(uint8_t txPower);
+	uint8_t getPowerNextHop();
+	uint8_t getPowerPreviousHop();
+	void ledUpLink();
+	void ledDownLink();
+
 
 	/* Starting synchronization algorithm */
 	command error_t Sync.start() {
-		intiateSyncMsg();
+	//	call Leds.set(info.neighborsRank[0]);
 		return SUCCESS;
-	}
-
-	/* Initiate a synchronization message */
-	void intiateSyncMsg(){
-		if (!radioBusy) 
-		{
-			if (info.lastNode)
-			{
-				createSyncMsg(info.myRank, info.neighborsRank[0]);
-			} else if (info.myRank == IS_BASESTATION){
-				createSyncMsg(info.myRank, info.neighborsRank[1]);
-			}
-			if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(SyncMsg)) == SUCCESS)
-			{
-				radioBusy = TRUE;
-			}
-		}
 	}
 
 	/* Forge synchronization message */
@@ -58,7 +47,7 @@ implementation {
 		SyncMsg* syncpkt = (SyncMsg*)(call Packet.getPayload(&pkt, sizeof(SyncMsg)));
 		syncpkt->srcRank = info.myRank;
 		syncpkt->dstRank = dst;
-		syncpkt->sender = originalSender;
+		syncpkt->data = originalSender;
 	}
 
 	/* Upon receiving a SyncMsg */
@@ -72,25 +61,57 @@ implementation {
 
 	/* Forward the SyncMsg in the right direction */
 	void handleSyncMsg(SyncMsg* syncpkt) {
-		if (!radioBusy && syncpkt->srcRank != info.myRank) {
-			if (syncpkt->srcRank > info.myRank)
+		if (syncpkt->dstRank == info.myRank) {
+			if (syncpkt->srcRank < info.myRank)
 			{
-				// Sync coming from the last node, forwarding
-				createSyncMsg(syncpkt->sender, info.neighborsRank[0]);
+				syncTime = call LocalTime.get();
+				if (!info.lastNode)
+				{
+					ledDownLink();
+					createSyncMsg(info.neighborsRank[1],syncpkt->data);
+					forwardSyncMsg(getPowerNextHop());
+				}
+				else {
+					ledUpLink();
+					createSyncMsg(info.neighborsRank[0],info.myRank);
+					forwardSyncMsg(getPowerPreviousHop());
+				}
+				
 			}
 			else {
-				// Sync coming from the base station
-				// record SyncTime
-				syncTime = call LocalTime.get();
-				// forward packet
-				createSyncMsg(syncpkt->sender, info.neighborsRank[1]);
-			}
-			if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(SyncMsg)) == SUCCESS)
-			{
-				radioBusy = TRUE;
-			}
+				ledUpLink();
+				createSyncMsg(info.neighborsRank[0],syncpkt->data);
+				forwardSyncMsg(getPowerPreviousHop());
+
+			}	
 			signal Sync.startDone(SUCCESS);
 		}
+	}
+
+	/* Forward */
+	void forwardSyncMsg(uint8_t txPower) {
+		call  PacketTransmitPower.set(&pkt,txPower);
+		if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(SyncMsg)) == SUCCESS)
+		{
+			radioBusy = TRUE;
+		}
+	}
+
+
+	/* When Sync message has been sent */
+	event void AMSend.sendDone(message_t* msg, error_t err) {
+		if (&pkt == msg)
+		{
+			radioBusy = FALSE;
+		}
+	}
+
+	uint8_t getPowerNextHop() {
+		return  ((info.neighborsRank[1] - info.myRank) > 1) ? TWO_HOP_POWER : ONE_HOP_POWER;
+	}
+
+	uint8_t getPowerPreviousHop() {
+		return  ((info.myRank - info.neighborsRank[0]) > 1) ? TWO_HOP_POWER : ONE_HOP_POWER;
 	}
 
 	/*  Used to initiate data before starting the algorithm */
@@ -104,13 +125,8 @@ implementation {
 		return info;
 	}
 
-	/* When Sync message has been sent */
-	event void AMSend.sendDone(message_t* msg, error_t err) {
-		if (&pkt == msg)
-		{
-			radioBusy = FALSE;
-		}
-	}
+	void ledUpLink(){ call Leds.set(3); }
+	void ledDownLink(){ call Leds.set(1); }
 
 	command error_t Sync.stop(){
 		signal Sync.stopDone(SUCCESS);

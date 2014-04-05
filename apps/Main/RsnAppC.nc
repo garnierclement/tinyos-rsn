@@ -14,7 +14,7 @@ module RsnAppC {
 	uses interface Get<NodeInfo> as GetSyncInfo;
 	uses interface Set<NodeInfo> as SetSyncInfo;
 	uses interface SplitControl as AMControl;
-
+	uses interface Timer<TMilli> as LedTimer;
 }
 implementation {
 
@@ -50,7 +50,7 @@ implementation {
 		}
 	}
 
-	/* When the synchronization algorithm has ENDEDN*/
+	/* When the synchronization algorithm has ENDED */
 	event void Sync.startDone(error_t err) {
 		if (err == SUCCESS)
 		{
@@ -73,6 +73,11 @@ implementation {
 	/* When the radio has shutdown */
 	event void AMControl.stopDone(error_t err) {
 
+	}
+
+	/* Timer leds*/
+	event void LedTimer.fired() {
+		
 	}
 
 }
