@@ -2,7 +2,7 @@
 
 Road Sensor Networks project with Tiny OS
 
-## Developement environnment
+## Development environment
 
 * Tiny OS 2.1.2
 * Ubuntu 13.10
