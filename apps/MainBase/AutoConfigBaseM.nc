@@ -261,15 +261,11 @@ implementation {
 	/* Handle Done message */
 	void handleDone(AutoConfigMsg* donepkt) {
 		//ledSet(doneCount);
-		if (donepkt->dstRank == 0)
-		{
-			ledSet(7);
-		}
 
 		if (!lastNode && donepkt->dstRank == myRank && donepkt->srcRank == neighborsRank[1])
 		{
 			nodeCount = donepkt->data + 1;
-			ledSet(4);
+			ledSet(nodeCount);
 			signal AutoConfig.startDone(SUCCESS);
 		}
 	}

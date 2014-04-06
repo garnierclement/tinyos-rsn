@@ -13,6 +13,7 @@ typedef struct NodeInfo{
 	uint16_t neighborsRank[2];
 	bool lastNode;
 	uint32_t localTime;
+	uint8_t nodeCount;
 } NodeInfo;
 
 #endif RSN_H

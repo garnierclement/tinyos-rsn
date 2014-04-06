@@ -384,7 +384,7 @@ implementation {
 		{
 			//call Wait.wait(0xFF);			
 			// Delay forwarding Done message
-			call BackoffForDone.startPeriodic(WAITDONE_PERIOD_MILLI);
+			call BackoffForDone.startOneShot(WAITDONE_PERIOD_MILLI);
 			
 		}
 	}
