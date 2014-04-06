@@ -1,0 +1,194 @@
+<?xml version="1.0" ?><component loc="5:AutoConfigBaseM.nc" nicename="AutoConfigBaseM" qname="AutoConfigBaseM">
+      <module/>
+    <specification><interface loc="20:AutoConfigBaseM.nc" name="PacketRSSI" provided="0" ref="0x2b3f420ae230">
+      <component-ref nicename="AutoConfigBaseM" qname="AutoConfigBaseM"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="PacketRSSI" ref="0x2b3f420ae230" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.PacketField" qname="PacketField"/>
+        <arguments>
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b3f420bd7f8" scoped=""/>
+        <function-ref name="get" ref="0x2b3f420bd2e8" scoped=""/>
+        <function-ref name="isSet" ref="0x2b3f420aedb0" scoped=""/>
+        <function-ref name="set" ref="0x2b3f420bdd08" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="13:AutoConfigBaseM.nc" name="WaitAck" provided="0" ref="0x2b3f420147a0">
+      <component-ref nicename="AutoConfigBaseM" qname="AutoConfigBaseM"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="WaitAck" ref="0x2b3f420147a0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.timer.Timer" qname="Timer"/>
+        <arguments>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d4f020"/>
+            <typename><typedef-ref name="TMilli" ref="0x2b3f41d4f378"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="getNow" ref="0x2b3f42011a18" scoped=""/>
+        <function-ref name="fired" ref="0x2b3f42012158" scoped=""/>
+        <function-ref name="startPeriodicAt" ref="0x2b3f42012e48" scoped=""/>
+        <function-ref name="isOneShot" ref="0x2b3f420129f8" scoped=""/>
+        <function-ref name="getdt" ref="0x2b3f420262e8" scoped=""/>
+        <function-ref name="gett0" ref="0x2b3f42011e68" scoped=""/>
+        <function-ref name="isRunning" ref="0x2b3f420125a8" scoped=""/>
+        <function-ref name="startPeriodic" ref="0x2b3f42013370" scoped=""/>
+        <function-ref name="startOneShotAt" ref="0x2b3f42011448" scoped=""/>
+        <function-ref name="startOneShot" ref="0x2b3f42013810" scoped=""/>
+        <function-ref name="stop" ref="0x2b3f42013cb0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="15:AutoConfigBaseM.nc" name="Packet" provided="0" ref="0x2b3f42095a20">
+      <component-ref nicename="AutoConfigBaseM" qname="AutoConfigBaseM"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Packet" ref="0x2b3f42095a20" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Packet" qname="Packet"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b3f42095d70" scoped=""/>
+        <function-ref name="payloadLength" ref="0x2b3f42020020" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b3f420201a8" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b3f42020330" scoped=""/>
+        <function-ref name="setPayloadLength" ref="0x2b3f420204b8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="8:AutoConfigBaseM.nc" name="GetNodeInfo" provided="1" ref="0x2b3f42016020">
+      <component-ref nicename="AutoConfigBaseM" qname="AutoConfigBaseM"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="GetNodeInfo" ref="0x2b3f42016020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Get" qname="Get"/>
+        <arguments>
+          <type-tag alignment="I:1" size="I:11"><struct-ref name="NodeInfo" ref="0x2b3f41dda330"/>
+            <typename><typedef-ref name="NodeInfo" ref="0x2b3f41dd9228"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="get" ref="0x2b3f42016b68" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="17:AutoConfigBaseM.nc" name="AMSend" provided="0" ref="0x2b3f420ad218">
+      <component-ref nicename="AutoConfigBaseM" qname="AutoConfigBaseM"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="AMSend" ref="0x2b3f420ad218" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.AMSend" qname="AMSend"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b3f420ad568" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b3f420ad6f0" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b3f420ad878" scoped=""/>
+        <function-ref name="cancel" ref="0x2b3f420ada00" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b3f420adb88" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="14:AutoConfigBaseM.nc" name="WaitForRadio" provided="0" ref="0x2b3f42026900">
+      <component-ref nicename="AutoConfigBaseM" qname="AutoConfigBaseM"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="WaitForRadio" ref="0x2b3f42026900" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.timer.Timer" qname="Timer"/>
+        <arguments>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d4f020"/>
+            <typename><typedef-ref name="TMilli" ref="0x2b3f41d4f378"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="getNow" ref="0x2b3f42022bc0" scoped=""/>
+        <function-ref name="fired" ref="0x2b3f42024278" scoped=""/>
+        <function-ref name="startPeriodicAt" ref="0x2b3f42022020" scoped=""/>
+        <function-ref name="isOneShot" ref="0x2b3f42024b18" scoped=""/>
+        <function-ref name="getdt" ref="0x2b3f420214d8" scoped=""/>
+        <function-ref name="gett0" ref="0x2b3f42021088" scoped=""/>
+        <function-ref name="isRunning" ref="0x2b3f420246c8" scoped=""/>
+        <function-ref name="startPeriodic" ref="0x2b3f42025490" scoped=""/>
+        <function-ref name="startOneShotAt" ref="0x2b3f420225f0" scoped=""/>
+        <function-ref name="startOneShot" ref="0x2b3f42025930" scoped=""/>
+        <function-ref name="stop" ref="0x2b3f42025dd0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="19:AutoConfigBaseM.nc" name="Random" provided="0" ref="0x2b3f420c2350">
+      <component-ref nicename="AutoConfigBaseM" qname="AutoConfigBaseM"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Random" ref="0x2b3f420c2350" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Random" qname="Random"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="rand16" ref="0x2b3f420c26a0" scoped=""/>
+        <function-ref name="rand32" ref="0x2b3f420c2828" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="18:AutoConfigBaseM.nc" name="Receive" provided="0" ref="0x2b3f420a9878">
+      <component-ref nicename="AutoConfigBaseM" qname="AutoConfigBaseM"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Receive" ref="0x2b3f420a9878" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Receive" qname="Receive"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="receive" ref="0x2b3f420a9bc8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="21:AutoConfigBaseM.nc" name="PacketTransmitPower" provided="0" ref="0x2b3f420bc5a0">
+      <component-ref nicename="AutoConfigBaseM" qname="AutoConfigBaseM"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="PacketTransmitPower" ref="0x2b3f420bc5a0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.PacketField" qname="PacketField"/>
+        <arguments>
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b3f420bbb70" scoped=""/>
+        <function-ref name="get" ref="0x2b3f420bb660" scoped=""/>
+        <function-ref name="isSet" ref="0x2b3f420bb150" scoped=""/>
+        <function-ref name="set" ref="0x2b3f420b90c0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="11:AutoConfigBaseM.nc" name="Leds" provided="0" ref="0x2b3f42015020">
+      <component-ref nicename="AutoConfigBaseM" qname="AutoConfigBaseM"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Leds" ref="0x2b3f42015020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Leds" qname="Leds"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="led0Off" ref="0x2b3f42015370" scoped=""/>
+        <function-ref name="led0Toggle" ref="0x2b3f420154f8" scoped=""/>
+        <function-ref name="led1On" ref="0x2b3f42015680" scoped=""/>
+        <function-ref name="led1Toggle" ref="0x2b3f42015808" scoped=""/>
+        <function-ref name="led2Toggle" ref="0x2b3f42015990" scoped=""/>
+        <function-ref name="get" ref="0x2b3f42015b18" scoped=""/>
+        <function-ref name="led1Off" ref="0x2b3f42015ca0" scoped=""/>
+        <function-ref name="led2Off" ref="0x2b3f42014330" scoped=""/>
+        <function-ref name="set" ref="0x2b3f42015e28" scoped=""/>
+        <function-ref name="led0On" ref="0x2b3f42014020" scoped=""/>
+        <function-ref name="led2On" ref="0x2b3f420141a8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="16:AutoConfigBaseM.nc" name="AMPacket" provided="0" ref="0x2b3f4209e248">
+      <component-ref nicename="AutoConfigBaseM" qname="AutoConfigBaseM"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="AMPacket" ref="0x2b3f4209e248" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.AMPacket" qname="AMPacket"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="group" ref="0x2b3f4209e598" scoped=""/>
+        <function-ref name="source" ref="0x2b3f4209e720" scoped=""/>
+        <function-ref name="address" ref="0x2b3f4209e8a8" scoped=""/>
+        <function-ref name="destination" ref="0x2b3f4209ea30" scoped=""/>
+        <function-ref name="setSource" ref="0x2b3f4209ebb8" scoped=""/>
+        <function-ref name="setDestination" ref="0x2b3f4209ed40" scoped=""/>
+        <function-ref name="type" ref="0x2b3f4201f020" scoped=""/>
+        <function-ref name="setType" ref="0x2b3f4201f1a8" scoped=""/>
+        <function-ref name="isForMe" ref="0x2b3f4201f330" scoped=""/>
+        <function-ref name="setGroup" ref="0x2b3f4201f4b8" scoped=""/>
+        <function-ref name="localGroup" ref="0x2b3f4201f640" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="7:AutoConfigBaseM.nc" name="AutoConfig" provided="1" ref="0x2b3f42017360">
+      <component-ref nicename="AutoConfigBaseM" qname="AutoConfigBaseM"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="AutoConfig" ref="0x2b3f42017360" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.SplitControl" qname="SplitControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="startDone" ref="0x2b3f420176b0" scoped=""/>
+        <function-ref name="stopDone" ref="0x2b3f42017838" scoped=""/>
+        <function-ref name="start" ref="0x2b3f420179c0" scoped=""/>
+        <function-ref name="stop" ref="0x2b3f42017b48" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

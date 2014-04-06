@@ -8,7 +8,7 @@
  evicts old entries from the table when necessary.
 </long>
       </documentation>
-      <function command="" loc="57:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc" name="getAge" provided="0" ref="0x2b9d555da020">
+      <function command="" loc="57:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc" name="getAge" provided="0" ref="0x2b3f42745020">
         <documentation loc="51:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc">
           <short>
  Returns the age of the given entry.</short>
@@ -22,23 +22,23 @@
         <interfacedef-ref nicename="tos.lib.rfxlink.util.Neighborhood" qname="Neighborhood"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
           </type-int>
           <function-parameters>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="57:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc" name="idx" ref="0x2b9d555dbd80">
+          <variable loc="57:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc" name="idx" ref="0x2b3f42746d80">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="71:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc" name="insertNode" provided="0" ref="0x2b9d555d94a8">
+      <function command="" loc="71:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc" name="insertNode" provided="0" ref="0x2b3f427444a8">
         <documentation loc="64:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc">
           <short>
  Adds a new node into the neighborhood table.</short>
@@ -53,23 +53,23 @@
         <interfacedef-ref nicename="tos.lib.rfxlink.util.Neighborhood" qname="Neighborhood"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
           </type-int>
           <function-parameters>
             <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-              <typename><typedef-ref name="am_addr_t" ref="0x2b9d54fd3020"/></typename>
+              <typename><typedef-ref name="am_addr_t" ref="0x2b3f4206d520"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="71:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc" name="id" ref="0x2b9d555d9238">
+          <variable loc="71:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc" name="id" ref="0x2b3f42744238">
             <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-              <typename><typedef-ref name="am_addr_t" ref="0x2b9d54fd3020"/></typename>
+              <typename><typedef-ref name="am_addr_t" ref="0x2b3f4206d520"/></typename>
             </type-int>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="62:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc" name="getNode" provided="0" ref="0x2b9d555daab0">
+      <function command="" loc="62:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc" name="getNode" provided="0" ref="0x2b3f42745ab0">
         <documentation loc="59:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc">
           <short>
  Returns the node address for the given entry.</short>
@@ -77,23 +77,23 @@
         <interfacedef-ref nicename="tos.lib.rfxlink.util.Neighborhood" qname="Neighborhood"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-            <typename><typedef-ref name="am_addr_t" ref="0x2b9d54fd3020"/></typename>
+            <typename><typedef-ref name="am_addr_t" ref="0x2b3f4206d520"/></typename>
           </type-int>
           <function-parameters>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="62:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc" name="idx" ref="0x2b9d555da840">
+          <variable loc="62:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc" name="idx" ref="0x2b3f42745840">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </variable>
         </parameters>
       </function>
-      <function event="" loc="80:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc" name="evicted" provided="0" ref="0x2b9d555d7020">
+      <function event="" loc="80:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc" name="evicted" provided="0" ref="0x2b3f42743020">
         <documentation loc="73:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc">
           <short>
  This event is fired when the oldest entry is replaced with a new
@@ -111,19 +111,19 @@
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="80:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc" name="idx" ref="0x2b9d555d9cb0">
+          <variable loc="80:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc" name="idx" ref="0x2b3f42744cb0">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="49:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc" name="getIndex" provided="0" ref="0x2b9d555db5b0">
+      <function command="" loc="49:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc" name="getIndex" provided="0" ref="0x2b3f427465b0">
         <documentation loc="44:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc">
           <short>
  Returns the index of the neighbor in the table.</short>
@@ -136,18 +136,18 @@
         <interfacedef-ref nicename="tos.lib.rfxlink.util.Neighborhood" qname="Neighborhood"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
           </type-int>
           <function-parameters>
             <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-              <typename><typedef-ref name="am_addr_t" ref="0x2b9d54fd3020"/></typename>
+              <typename><typedef-ref name="am_addr_t" ref="0x2b3f4206d520"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="49:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc" name="id" ref="0x2b9d555db340">
+          <variable loc="49:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/Neighborhood.nc" name="id" ref="0x2b3f42746340">
             <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-              <typename><typedef-ref name="am_addr_t" ref="0x2b9d54fd3020"/></typename>
+              <typename><typedef-ref name="am_addr_t" ref="0x2b3f4206d520"/></typename>
             </type-int>
           </variable>
         </parameters>

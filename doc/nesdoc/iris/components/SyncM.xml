@@ -1,0 +1,147 @@
+<?xml version="1.0" ?><component loc="4:SyncM.nc" nicename="SyncM" qname="SyncM">
+      <module/>
+    <specification><interface loc="6:SyncM.nc" name="Sync" provided="1" ref="0x2b3f42d40520">
+      <component-ref nicename="SyncM" qname="SyncM"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Sync" ref="0x2b3f42d40520" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.SplitControl" qname="SplitControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="startDone" ref="0x2b3f42d40870" scoped=""/>
+        <function-ref name="stopDone" ref="0x2b3f42d409f8" scoped=""/>
+        <function-ref name="start" ref="0x2b3f42d40b80" scoped=""/>
+        <function-ref name="stop" ref="0x2b3f42d40d08" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="13:SyncM.nc" name="Packet" provided="0" ref="0x2b3f42d39ad0">
+      <component-ref nicename="SyncM" qname="SyncM"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Packet" ref="0x2b3f42d39ad0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Packet" qname="Packet"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b3f42d39e20" scoped=""/>
+        <function-ref name="payloadLength" ref="0x2b3f42d38020" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b3f42d381a8" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b3f42d38330" scoped=""/>
+        <function-ref name="setPayloadLength" ref="0x2b3f42d384b8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="8:SyncM.nc" name="GetNodeInfo" provided="1" ref="0x2b3f42d3c3b8">
+      <component-ref nicename="SyncM" qname="SyncM"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="GetNodeInfo" ref="0x2b3f42d3c3b8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Get" qname="Get"/>
+        <arguments>
+          <type-tag alignment="I:1" size="I:11"><struct-ref name="NodeInfo" ref="0x2b3f41dda330"/>
+            <typename><typedef-ref name="NodeInfo" ref="0x2b3f41dd9228"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="get" ref="0x2b3f42d3a020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="15:SyncM.nc" name="AMSend" provided="0" ref="0x2b3f42d37de0">
+      <component-ref nicename="SyncM" qname="SyncM"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="AMSend" ref="0x2b3f42d37de0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.AMSend" qname="AMSend"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b3f42d36170" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b3f42d362f8" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b3f42d36480" scoped=""/>
+        <function-ref name="cancel" ref="0x2b3f42d36608" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b3f42d36790" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="17:SyncM.nc" name="LocalTime" provided="0" ref="0x2b3f42d352a8">
+      <component-ref nicename="SyncM" qname="SyncM"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="LocalTime" ref="0x2b3f42d352a8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.timer.LocalTime" qname="LocalTime"/>
+        <arguments>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d4f020"/>
+            <typename><typedef-ref name="TMilli" ref="0x2b3f41d4f378"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="get" ref="0x2b3f42d35e28" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="18:SyncM.nc" name="PacketTransmitPower" provided="0" ref="0x2b3f42d34520">
+      <component-ref nicename="SyncM" qname="SyncM"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="PacketTransmitPower" ref="0x2b3f42d34520" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.PacketField" qname="PacketField"/>
+        <arguments>
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b3f42d7fb18" scoped=""/>
+        <function-ref name="get" ref="0x2b3f42d7f608" scoped=""/>
+        <function-ref name="isSet" ref="0x2b3f42d7f0f8" scoped=""/>
+        <function-ref name="set" ref="0x2b3f42d7d088" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="16:SyncM.nc" name="Receive" provided="0" ref="0x2b3f42d36aa8">
+      <component-ref nicename="SyncM" qname="SyncM"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Receive" ref="0x2b3f42d36aa8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Receive" qname="Receive"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="receive" ref="0x2b3f42d36df8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="12:SyncM.nc" name="Leds" provided="0" ref="0x2b3f42d3a4a8">
+      <component-ref nicename="SyncM" qname="SyncM"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Leds" ref="0x2b3f42d3a4a8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Leds" qname="Leds"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="led0Off" ref="0x2b3f42d3a7f8" scoped=""/>
+        <function-ref name="led0Toggle" ref="0x2b3f42d3a980" scoped=""/>
+        <function-ref name="led1On" ref="0x2b3f42d3ab08" scoped=""/>
+        <function-ref name="led1Toggle" ref="0x2b3f42d3ac90" scoped=""/>
+        <function-ref name="led2Toggle" ref="0x2b3f42d3ae18" scoped=""/>
+        <function-ref name="get" ref="0x2b3f42d39020" scoped=""/>
+        <function-ref name="led1Off" ref="0x2b3f42d391a8" scoped=""/>
+        <function-ref name="led2Off" ref="0x2b3f42d397c8" scoped=""/>
+        <function-ref name="set" ref="0x2b3f42d39330" scoped=""/>
+        <function-ref name="led0On" ref="0x2b3f42d394b8" scoped=""/>
+        <function-ref name="led2On" ref="0x2b3f42d39640" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="14:SyncM.nc" name="AMPacket" provided="0" ref="0x2b3f42d387f0">
+      <component-ref nicename="SyncM" qname="SyncM"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="AMPacket" ref="0x2b3f42d387f0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.AMPacket" qname="AMPacket"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="group" ref="0x2b3f42d38b40" scoped=""/>
+        <function-ref name="source" ref="0x2b3f42d38cc8" scoped=""/>
+        <function-ref name="address" ref="0x2b3f42d38e50" scoped=""/>
+        <function-ref name="destination" ref="0x2b3f42d37020" scoped=""/>
+        <function-ref name="setSource" ref="0x2b3f42d371a8" scoped=""/>
+        <function-ref name="setDestination" ref="0x2b3f42d37330" scoped=""/>
+        <function-ref name="type" ref="0x2b3f42d374b8" scoped=""/>
+        <function-ref name="setType" ref="0x2b3f42d37640" scoped=""/>
+        <function-ref name="isForMe" ref="0x2b3f42d377c8" scoped=""/>
+        <function-ref name="setGroup" ref="0x2b3f42d37950" scoped=""/>
+        <function-ref name="localGroup" ref="0x2b3f42d37ad8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="7:SyncM.nc" name="SetNodeInfo" provided="1" ref="0x2b3f42d3d1b8">
+      <component-ref nicename="SyncM" qname="SyncM"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SetNodeInfo" ref="0x2b3f42d3d1b8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Set" qname="Set"/>
+        <arguments>
+          <type-tag alignment="I:1" size="I:11"><struct-ref name="NodeInfo" ref="0x2b3f41dda330"/>
+            <typename><typedef-ref name="NodeInfo" ref="0x2b3f41dd9228"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="set" ref="0x2b3f42d3dd00" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

@@ -2,125 +2,125 @@
       <configuration/>
       <wiring>
         <wire loc="48:/home/tinyos/tinyos-main/tos/platforms/iris/LocalTimeMicroC.nc">
-          <from><interface-ref name="LocalTime" ref="0x2b9d55b48400" scoped=""/></from>
-          <to><interface-ref name="LocalTime" ref="0x2b9d55b8fc38" scoped=""/></to>
+          <from><interface-ref name="LocalTime" ref="0x2b3f42c90400" scoped=""/></from>
+          <to><interface-ref name="LocalTime" ref="0x2b3f42cdfc38" scoped=""/></to>
         </wire>
         <wire loc="49:/home/tinyos/tinyos-main/tos/platforms/iris/LocalTimeMicroC.nc">
-          <from><interface-ref name="Counter" ref="0x2b9d55b8ee48" scoped=""/></from>
-          <to><interface-ref name="Counter" ref="0x2b9d55b69270" scoped=""/></to>
+          <from><interface-ref name="Counter" ref="0x2b3f42cdde48" scoped=""/></from>
+          <to><interface-ref name="Counter" ref="0x2b3f42cb4270" scoped=""/></to>
         </wire>
         <wire loc="50:/home/tinyos/tinyos-main/tos/platforms/iris/LocalTimeMicroC.nc">
-          <from><interface-ref name="CounterFrom" ref="0x2b9d55b93450" scoped=""/></from>
-          <to><interface-ref name="Counter" ref="0x2b9d55b43150" scoped=""/></to>
+          <from><interface-ref name="CounterFrom" ref="0x2b3f42ce2450" scoped=""/></from>
+          <to><interface-ref name="Counter" ref="0x2b3f42c8c150" scoped=""/></to>
         </wire>
       </wiring>
-    <specification><interface loc="39:/home/tinyos/tinyos-main/tos/platforms/iris/LocalTimeMicroC.nc" name="LocalTime" provided="1" ref="0x2b9d55b48400">
+    <specification><interface loc="39:/home/tinyos/tinyos-main/tos/platforms/iris/LocalTimeMicroC.nc" name="LocalTime" provided="1" ref="0x2b3f42c90400">
       <component-ref nicename="tos.platforms.iris.LocalTimeMicroC" qname="LocalTimeMicroC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="LocalTime" ref="0x2b9d55b48400" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="LocalTime" ref="0x2b3f42c90400" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.lib.timer.LocalTime" qname="LocalTime"/>
         <arguments>
-          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54cf1430"/>
-            <typename><typedef-ref name="TMicro" ref="0x2b9d54cf1788"/></typename>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d59430"/>
+            <typename><typedef-ref name="TMicro" ref="0x2b3f41d59788"/></typename>
           </type-tag>
         </arguments>
       </instance>
       <interface-functions>
-        <function-ref name="get" ref="0x2b9d55b47020" scoped=""/>
+        <function-ref name="get" ref="0x2b3f42c8f020" scoped=""/>
       </interface-functions>
-    </interface></specification><referenced><interface loc="24:/home/tinyos/tinyos-main/tos/platforms/mica/CounterOne16C.nc" name="Counter" provided="1" ref="0x2b9d55b43150">
+    </interface></specification><referenced><interface loc="62:/home/tinyos/tinyos-main/tos/lib/timer/TransformCounterC.nc" name="Counter" provided="1" ref="0x2b3f42cb4270">
+      <component-ref nicename="tos.lib.timer.TransformCounterC" qname="LocalTimeMicroC.TransformCounterC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Counter" ref="0x2b3f42cb4270" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.timer.Counter" qname="Counter"/>
+        <arguments>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d59430"/>
+            <typename><typedef-ref name="TMicro" ref="0x2b3f41d59788"/></typename>
+          </type-tag>
+          <type-int alignment="I:1" cname="unsigned long" size="I:4" unsigned="">
+            <typename><typedef-ref name="uint32_t" ref="0x2b3f416e8608"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="get" ref="0x2b3f42c9a020" scoped=""/>
+        <function-ref name="clearOverflow" ref="0x2b3f42c9a930" scoped=""/>
+        <function-ref name="isOverflowPending" ref="0x2b3f42c9a4a8" scoped=""/>
+        <function-ref name="overflow" ref="0x2b3f42c9adb8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="49:/home/tinyos/tinyos-main/tos/lib/timer/CounterToLocalTimeC.nc" name="Counter" provided="0" ref="0x2b3f42cdde48">
+      <component-ref nicename="tos.lib.timer.CounterToLocalTimeC" qname="LocalTimeMicroC.CounterToLocalTimeC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Counter" ref="0x2b3f42cdde48" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.timer.Counter" qname="Counter"/>
+        <arguments>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d59430"/>
+            <typename><typedef-ref name="TMicro" ref="0x2b3f41d59788"/></typename>
+          </type-tag>
+          <type-int alignment="I:1" cname="unsigned long" size="I:4" unsigned="">
+            <typename><typedef-ref name="uint32_t" ref="0x2b3f416e8608"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="get" ref="0x2b3f42cdcbe8" scoped=""/>
+        <function-ref name="clearOverflow" ref="0x2b3f42cdb548" scoped=""/>
+        <function-ref name="isOverflowPending" ref="0x2b3f42cdb0c0" scoped=""/>
+        <function-ref name="overflow" ref="0x2b3f42cdb9d0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="48:/home/tinyos/tinyos-main/tos/lib/timer/CounterToLocalTimeC.nc" name="LocalTime" provided="1" ref="0x2b3f42cdfc38">
+      <component-ref nicename="tos.lib.timer.CounterToLocalTimeC" qname="LocalTimeMicroC.CounterToLocalTimeC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="LocalTime" ref="0x2b3f42cdfc38" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.timer.LocalTime" qname="LocalTime"/>
+        <arguments>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d59430"/>
+            <typename><typedef-ref name="TMicro" ref="0x2b3f41d59788"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="get" ref="0x2b3f42cdd820" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="63:/home/tinyos/tinyos-main/tos/lib/timer/TransformCounterC.nc" name="CounterFrom" provided="0" ref="0x2b3f42ce2450">
+      <component-ref nicename="tos.lib.timer.TransformCounterC" qname="LocalTimeMicroC.TransformCounterC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="CounterFrom" ref="0x2b3f42ce2450" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.timer.Counter" qname="Counter"/>
+        <arguments>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d59430"/>
+            <typename><typedef-ref name="TMicro" ref="0x2b3f41d59788"/></typename>
+          </type-tag>
+          <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b3f416e7b98"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="get" ref="0x2b3f42ce11d0" scoped=""/>
+        <function-ref name="clearOverflow" ref="0x2b3f42ce1ae0" scoped=""/>
+        <function-ref name="isOverflowPending" ref="0x2b3f42ce1658" scoped=""/>
+        <function-ref name="overflow" ref="0x2b3f42ce0020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="24:/home/tinyos/tinyos-main/tos/platforms/mica/CounterOne16C.nc" name="Counter" provided="1" ref="0x2b3f42c8c150">
       <component-ref nicename="tos.platforms.mica.CounterOne16C" qname="CounterOne16C"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Counter" ref="0x2b9d55b43150" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Counter" ref="0x2b3f42c8c150" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.lib.timer.Counter" qname="Counter"/>
         <arguments>
-          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54cf1430"/>
-            <typename><typedef-ref name="TOne" ref="0x2b9d54d299f0"/></typename>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d59430"/>
+            <typename><typedef-ref name="TOne" ref="0x2b3f41d919f0"/></typename>
           </type-tag>
           <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+            <typename><typedef-ref name="uint16_t" ref="0x2b3f416e7b98"/></typename>
           </type-int>
         </arguments>
       </instance>
       <interface-functions>
-        <function-ref name="get" ref="0x2b9d55b42020" scoped=""/>
-        <function-ref name="clearOverflow" ref="0x2b9d55b42930" scoped=""/>
-        <function-ref name="isOverflowPending" ref="0x2b9d55b424a8" scoped=""/>
-        <function-ref name="overflow" ref="0x2b9d55b42db8" scoped=""/>
-      </interface-functions>
-    </interface><interface loc="62:/home/tinyos/tinyos-main/tos/lib/timer/TransformCounterC.nc" name="Counter" provided="1" ref="0x2b9d55b69270">
-      <component-ref nicename="tos.lib.timer.TransformCounterC" qname="LocalTimeMicroC.TransformCounterC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Counter" ref="0x2b9d55b69270" scoped=""/></type-interface>
-      <instance>
-        <interfacedef-ref nicename="tos.lib.timer.Counter" qname="Counter"/>
-        <arguments>
-          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54cf1430"/>
-            <typename><typedef-ref name="TMicro" ref="0x2b9d54cf1788"/></typename>
-          </type-tag>
-          <type-int alignment="I:1" cname="unsigned long" size="I:4" unsigned="">
-            <typename><typedef-ref name="uint32_t" ref="0x2b9d54680608"/></typename>
-          </type-int>
-        </arguments>
-      </instance>
-      <interface-functions>
-        <function-ref name="get" ref="0x2b9d55b94020" scoped=""/>
-        <function-ref name="clearOverflow" ref="0x2b9d55b94930" scoped=""/>
-        <function-ref name="isOverflowPending" ref="0x2b9d55b944a8" scoped=""/>
-        <function-ref name="overflow" ref="0x2b9d55b94db8" scoped=""/>
-      </interface-functions>
-    </interface><interface loc="63:/home/tinyos/tinyos-main/tos/lib/timer/TransformCounterC.nc" name="CounterFrom" provided="0" ref="0x2b9d55b93450">
-      <component-ref nicename="tos.lib.timer.TransformCounterC" qname="LocalTimeMicroC.TransformCounterC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="CounterFrom" ref="0x2b9d55b93450" scoped=""/></type-interface>
-      <instance>
-        <interfacedef-ref nicename="tos.lib.timer.Counter" qname="Counter"/>
-        <arguments>
-          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54cf1430"/>
-            <typename><typedef-ref name="TMicro" ref="0x2b9d54cf1788"/></typename>
-          </type-tag>
-          <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
-          </type-int>
-        </arguments>
-      </instance>
-      <interface-functions>
-        <function-ref name="get" ref="0x2b9d55b911d0" scoped=""/>
-        <function-ref name="clearOverflow" ref="0x2b9d55b91ae0" scoped=""/>
-        <function-ref name="isOverflowPending" ref="0x2b9d55b91658" scoped=""/>
-        <function-ref name="overflow" ref="0x2b9d55b90020" scoped=""/>
-      </interface-functions>
-    </interface><interface loc="49:/home/tinyos/tinyos-main/tos/lib/timer/CounterToLocalTimeC.nc" name="Counter" provided="0" ref="0x2b9d55b8ee48">
-      <component-ref nicename="tos.lib.timer.CounterToLocalTimeC" qname="LocalTimeMicroC.CounterToLocalTimeC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Counter" ref="0x2b9d55b8ee48" scoped=""/></type-interface>
-      <instance>
-        <interfacedef-ref nicename="tos.lib.timer.Counter" qname="Counter"/>
-        <arguments>
-          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54cf1430"/>
-            <typename><typedef-ref name="TMicro" ref="0x2b9d54cf1788"/></typename>
-          </type-tag>
-          <type-int alignment="I:1" cname="unsigned long" size="I:4" unsigned="">
-            <typename><typedef-ref name="uint32_t" ref="0x2b9d54680608"/></typename>
-          </type-int>
-        </arguments>
-      </instance>
-      <interface-functions>
-        <function-ref name="get" ref="0x2b9d55b8cbe8" scoped=""/>
-        <function-ref name="clearOverflow" ref="0x2b9d55b8b548" scoped=""/>
-        <function-ref name="isOverflowPending" ref="0x2b9d55b8b0c0" scoped=""/>
-        <function-ref name="overflow" ref="0x2b9d55b8b9d0" scoped=""/>
-      </interface-functions>
-    </interface><interface loc="48:/home/tinyos/tinyos-main/tos/lib/timer/CounterToLocalTimeC.nc" name="LocalTime" provided="1" ref="0x2b9d55b8fc38">
-      <component-ref nicename="tos.lib.timer.CounterToLocalTimeC" qname="LocalTimeMicroC.CounterToLocalTimeC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="LocalTime" ref="0x2b9d55b8fc38" scoped=""/></type-interface>
-      <instance>
-        <interfacedef-ref nicename="tos.lib.timer.LocalTime" qname="LocalTime"/>
-        <arguments>
-          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54cf1430"/>
-            <typename><typedef-ref name="TMicro" ref="0x2b9d54cf1788"/></typename>
-          </type-tag>
-        </arguments>
-      </instance>
-      <interface-functions>
-        <function-ref name="get" ref="0x2b9d55b8e820" scoped=""/>
+        <function-ref name="get" ref="0x2b3f42c8b020" scoped=""/>
+        <function-ref name="clearOverflow" ref="0x2b3f42c8b930" scoped=""/>
+        <function-ref name="isOverflowPending" ref="0x2b3f42c8b4a8" scoped=""/>
+        <function-ref name="overflow" ref="0x2b3f42c8bdb8" scoped=""/>
       </interface-functions>
     </interface><component loc="54(LocalTimeMicroC.TransformCounterC):/home/tinyos/tinyos-main/tos/lib/timer/TransformCounterC.nc" nicename="tos.lib.timer.TransformCounterC" qname="LocalTimeMicroC.TransformCounterC">
       <documentation loc="34:/home/tinyos/tinyos-main/tos/lib/timer/TransformCounterC.nc">
@@ -149,23 +149,23 @@
       <instance number="0">
         <component-ref nicename="tos.lib.timer.TransformCounterC" qname="TransformCounterC"/>
         <arguments>
-          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54cf1430"/>
-            <typename><typedef-ref name="TMicro" ref="0x2b9d54cf1788"/></typename>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d59430"/>
+            <typename><typedef-ref name="TMicro" ref="0x2b3f41d59788"/></typename>
           </type-tag>
           <type-int alignment="I:1" cname="unsigned long" size="I:4" unsigned="">
-            <typename><typedef-ref name="uint32_t" ref="0x2b9d54680608"/></typename>
+            <typename><typedef-ref name="uint32_t" ref="0x2b3f416e8608"/></typename>
           </type-int>
-          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54cf1430"/>
-            <typename><typedef-ref name="TMicro" ref="0x2b9d54cf1788"/></typename>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d59430"/>
+            <typename><typedef-ref name="TMicro" ref="0x2b3f41d59788"/></typename>
           </type-tag>
           <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+            <typename><typedef-ref name="uint16_t" ref="0x2b3f416e7b98"/></typename>
           </type-int>
           <value cst="I:0">
             <type-int alignment="I:1" cname="int" size="I:2"/>
           </value>
           <type-int alignment="I:1" cname="unsigned long" size="I:4" unsigned="">
-            <typename><typedef-ref name="uint32_t" ref="0x2b9d54680608"/></typename>
+            <typename><typedef-ref name="uint32_t" ref="0x2b3f416e8608"/></typename>
           </type-int>
         </arguments>
       </instance>
@@ -187,8 +187,8 @@
       <instance number="1">
         <component-ref nicename="tos.lib.timer.CounterToLocalTimeC" qname="CounterToLocalTimeC"/>
         <arguments>
-          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54cf1430"/>
-            <typename><typedef-ref name="TMicro" ref="0x2b9d54cf1788"/></typename>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d59430"/>
+            <typename><typedef-ref name="TMicro" ref="0x2b3f41d59788"/></typename>
           </type-tag>
         </arguments>
       </instance>
@@ -209,12 +209,12 @@
       <configuration/>
       <wiring>
         <wire loc="31:/home/tinyos/tinyos-main/tos/platforms/mica/CounterOne16C.nc">
-          <from><interface-ref name="Counter" ref="0x2b9d55b43150" scoped=""/></from>
-          <to><interface-ref name="Counter" ref="0x2b9d55b3ee08" scoped=""/></to>
+          <from><interface-ref name="Counter" ref="0x2b3f42c8c150" scoped=""/></from>
+          <to><interface-ref name="Counter" ref="0x2b3f42c87e08" scoped=""/></to>
         </wire>
         <wire loc="32:/home/tinyos/tinyos-main/tos/platforms/mica/CounterOne16C.nc">
-          <from><interface-ref name="Timer" ref="0x2b9d55b71020" scoped=""/></from>
-          <to><interface-ref name="Timer" ref="0x2b9d55a316e8" scoped=""/></to>
+          <from><interface-ref name="Timer" ref="0x2b3f42cbd020" scoped=""/></from>
+          <to><interface-ref name="Timer" ref="0x2b3f42b5d6e8" scoped=""/></to>
         </wire>
       </wiring>
     </component></referenced></component>

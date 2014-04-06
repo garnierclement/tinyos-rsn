@@ -1,11 +1,11 @@
 digraph "tos.system.TinySchedulerC" {
-  n0x2b9d54c87b18 [shape=ellipse, style=filled, label="TaskBasic", fontsize=12];
+  n0x2b3f41cc71c8 [shape=ellipse, style=filled, label="TaskBasic", fontsize=12];
   "SchedulerBasicP" [fontsize=12, shape=box, URL="../chtml/tos.system.SchedulerBasicP.html"];
-  n0x2b9d54c5f080 [shape=ellipse, style=filled, label="Scheduler", fontsize=12];
+  n0x2b3f41ce4600 [shape=ellipse, style=filled, label="Scheduler", fontsize=12];
   "SchedulerBasicP" [fontsize=12, shape=box, URL="../chtml/tos.system.SchedulerBasicP.html"];
   "SchedulerBasicP" [fontsize=12, shape=box, URL="../chtml/tos.system.SchedulerBasicP.html"];
   "McuSleepC" [fontsize=12, shape=box, URL="../chtml/tos.chips.atm1281.McuSleepC.html"];
-  "n0x2b9d54c87b18" -> "SchedulerBasicP" [label="TaskBasic[uint8_t]", style=bold, URL="../ihtml/tos.interfaces.TaskBasic.html", fontsize=10];
-  "n0x2b9d54c5f080" -> "SchedulerBasicP" [label="Scheduler", URL="../ihtml/tos.interfaces.Scheduler.html", fontsize=10];
+  "n0x2b3f41cc71c8" -> "SchedulerBasicP" [label="TaskBasic[uint8_t]", style=bold, URL="../ihtml/tos.interfaces.TaskBasic.html", fontsize=10];
+  "n0x2b3f41ce4600" -> "SchedulerBasicP" [label="Scheduler", URL="../ihtml/tos.interfaces.Scheduler.html", fontsize=10];
   "SchedulerBasicP" -> "McuSleepC" [label="McuSleep", URL="../ihtml/tos.interfaces.McuSleep.html", fontsize=10];
 }

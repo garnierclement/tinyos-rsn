@@ -1,11 +1,11 @@
 digraph "tos.lib.rfxlink.util.RadioAlarmC" {
-  n0x2b9d55361570 [shape=ellipse, style=filled, label="RadioAlarm", fontsize=12];
+  n0x2b3f424b0570 [shape=ellipse, style=filled, label="RadioAlarm", fontsize=12];
   "RadioAlarmC.RadioAlarmP" [fontsize=12, shape=box, style=dashed, label="RadioAlarmP", URL="../chtml/tos.lib.rfxlink.util.RadioAlarmP.html"];
   "RadioAlarmC.RadioAlarmP" [fontsize=12, shape=box, style=dashed, label="RadioAlarmP", URL="../chtml/tos.lib.rfxlink.util.RadioAlarmP.html"];
-  n0x2b9d55360a30 [shape=ellipse, style=filled, label="Alarm", fontsize=12];
+  n0x2b3f424afa30 [shape=ellipse, style=filled, label="Alarm", fontsize=12];
   "RadioAlarmC.RadioAlarmP" [fontsize=12, shape=box, style=dashed, label="RadioAlarmP", URL="../chtml/tos.lib.rfxlink.util.RadioAlarmP.html"];
   "TaskletC" [fontsize=12, shape=box, URL="../chtml/tos.lib.rfxlink.util.TaskletC.html"];
-  "n0x2b9d55361570" -> "RadioAlarmC.RadioAlarmP" [label="RadioAlarm[uint8_t]", style=bold, URL="../ihtml/tos.lib.rfxlink.util.RadioAlarm.html", fontsize=10];
-  "RadioAlarmC.RadioAlarmP" -> "n0x2b9d55360a30" [label="Alarm<TRadio, tradio_size>", URL="../ihtml/tos.lib.timer.Alarm.html", fontsize=10];
+  "n0x2b3f424b0570" -> "RadioAlarmC.RadioAlarmP" [label="RadioAlarm[uint8_t]", style=bold, URL="../ihtml/tos.lib.rfxlink.util.RadioAlarm.html", fontsize=10];
+  "RadioAlarmC.RadioAlarmP" -> "n0x2b3f424afa30" [label="Alarm<TRadio, tradio_size>", URL="../ihtml/tos.lib.timer.Alarm.html", fontsize=10];
   "RadioAlarmC.RadioAlarmP" -> "TaskletC" [label="Tasklet", URL="../ihtml/tos.lib.rfxlink.util.Tasklet.html", fontsize=10];
 }

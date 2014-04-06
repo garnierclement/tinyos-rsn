@@ -2,16 +2,16 @@
       <parameters>
       </parameters>
       <module/>
-    <specification><interface loc="37:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/LowPowerListeningDummyP.nc" name="LowPowerListening" provided="1" ref="0x2b9d556554a0">
+    <specification><interface loc="37:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/LowPowerListeningDummyP.nc" name="LowPowerListening" provided="1" ref="0x2b3f4279f4a0">
       <component-ref nicename="tos.lib.rfxlink.layers.LowPowerListeningDummyP" qname="LowPowerListeningDummyP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="LowPowerListening" ref="0x2b9d556554a0" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="LowPowerListening" ref="0x2b3f4279f4a0" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.LowPowerListening" qname="LowPowerListening"/>
       </instance>
       <interface-functions>
-        <function-ref name="setRemoteWakeupInterval" ref="0x2b9d556557f0" scoped=""/>
-        <function-ref name="getRemoteWakeupInterval" ref="0x2b9d55655978" scoped=""/>
-        <function-ref name="getLocalWakeupInterval" ref="0x2b9d55655b00" scoped=""/>
-        <function-ref name="setLocalWakeupInterval" ref="0x2b9d55655c88" scoped=""/>
+        <function-ref name="setRemoteWakeupInterval" ref="0x2b3f4279f7f0" scoped=""/>
+        <function-ref name="getRemoteWakeupInterval" ref="0x2b3f4279f978" scoped=""/>
+        <function-ref name="getLocalWakeupInterval" ref="0x2b3f4279fb00" scoped=""/>
+        <function-ref name="setLocalWakeupInterval" ref="0x2b3f4279fc88" scoped=""/>
       </interface-functions>
     </interface></specification><referenced/></component>

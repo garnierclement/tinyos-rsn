@@ -14,101 +14,101 @@
       <configuration/>
       <wiring>
         <wire loc="31:/home/tinyos/tinyos-main/tos/platforms/mica/CounterOne16C.nc">
-          <from><interface-ref name="Counter" ref="0x2b9d55b43150" scoped=""/></from>
-          <to><interface-ref name="Counter" ref="0x2b9d55b3ee08" scoped=""/></to>
+          <from><interface-ref name="Counter" ref="0x2b3f42c8c150" scoped=""/></from>
+          <to><interface-ref name="Counter" ref="0x2b3f42c87e08" scoped=""/></to>
         </wire>
         <wire loc="32:/home/tinyos/tinyos-main/tos/platforms/mica/CounterOne16C.nc">
-          <from><interface-ref name="Timer" ref="0x2b9d55b71020" scoped=""/></from>
-          <to><interface-ref name="Timer" ref="0x2b9d55a316e8" scoped=""/></to>
+          <from><interface-ref name="Timer" ref="0x2b3f42cbd020" scoped=""/></from>
+          <to><interface-ref name="Timer" ref="0x2b3f42b5d6e8" scoped=""/></to>
         </wire>
       </wiring>
-    <specification><interface loc="24:/home/tinyos/tinyos-main/tos/platforms/mica/CounterOne16C.nc" name="Counter" provided="1" ref="0x2b9d55b43150">
+    <specification><interface loc="24:/home/tinyos/tinyos-main/tos/platforms/mica/CounterOne16C.nc" name="Counter" provided="1" ref="0x2b3f42c8c150">
       <component-ref nicename="tos.platforms.mica.CounterOne16C" qname="CounterOne16C"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Counter" ref="0x2b9d55b43150" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Counter" ref="0x2b3f42c8c150" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.lib.timer.Counter" qname="Counter"/>
         <arguments>
-          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54cf1430"/>
-            <typename><typedef-ref name="TOne" ref="0x2b9d54d299f0"/></typename>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d59430"/>
+            <typename><typedef-ref name="TOne" ref="0x2b3f41d919f0"/></typename>
           </type-tag>
           <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+            <typename><typedef-ref name="uint16_t" ref="0x2b3f416e7b98"/></typename>
           </type-int>
         </arguments>
       </instance>
       <interface-functions>
-        <function-ref name="get" ref="0x2b9d55b42020" scoped=""/>
-        <function-ref name="clearOverflow" ref="0x2b9d55b42930" scoped=""/>
-        <function-ref name="isOverflowPending" ref="0x2b9d55b424a8" scoped=""/>
-        <function-ref name="overflow" ref="0x2b9d55b42db8" scoped=""/>
+        <function-ref name="get" ref="0x2b3f42c8b020" scoped=""/>
+        <function-ref name="clearOverflow" ref="0x2b3f42c8b930" scoped=""/>
+        <function-ref name="isOverflowPending" ref="0x2b3f42c8b4a8" scoped=""/>
+        <function-ref name="overflow" ref="0x2b3f42c8bdb8" scoped=""/>
       </interface-functions>
-    </interface></specification><referenced><interface loc="46:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128CounterC.nc" name="Timer" provided="0" ref="0x2b9d55b71020">
-      <component-ref nicename="tos.chips.atm128.timer.Atm128CounterC" qname="CounterOne16C.NCounter"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Timer" ref="0x2b9d55b71020" scoped=""/></type-interface>
-      <instance>
-        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Timer" qname="HplAtm128Timer"/>
-        <arguments>
-          <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
-          </type-int>
-        </arguments>
-      </instance>
-      <interface-functions>
-        <function-ref name="off" ref="0x2b9d55b6d0f8" scoped=""/>
-        <function-ref name="test" ref="0x2b9d55b6e7a8" scoped=""/>
-        <function-ref name="get" ref="0x2b9d55b71ba0" scoped=""/>
-        <function-ref name="setScale" ref="0x2b9d55b6d580" scoped=""/>
-        <function-ref name="getScale" ref="0x2b9d55b6da58" scoped=""/>
-        <function-ref name="reset" ref="0x2b9d55b709e8" scoped=""/>
-        <function-ref name="overflow" ref="0x2b9d55b70560" scoped=""/>
-        <function-ref name="isOn" ref="0x2b9d55b6ec30" scoped=""/>
-        <function-ref name="set" ref="0x2b9d55b70088" scoped=""/>
-        <function-ref name="start" ref="0x2b9d55b70e70" scoped=""/>
-        <function-ref name="stop" ref="0x2b9d55b6e320" scoped=""/>
-      </interface-functions>
-    </interface><interface loc="45:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128CounterC.nc" name="Counter" provided="1" ref="0x2b9d55b3ee08">
-      <component-ref nicename="tos.chips.atm128.timer.Atm128CounterC" qname="CounterOne16C.NCounter"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Counter" ref="0x2b9d55b3ee08" scoped=""/></type-interface>
-      <instance>
-        <interfacedef-ref nicename="tos.lib.timer.Counter" qname="Counter"/>
-        <arguments>
-          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54cf1430"/>
-            <typename><typedef-ref name="TOne" ref="0x2b9d54d299f0"/></typename>
-          </type-tag>
-          <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
-          </type-int>
-        </arguments>
-      </instance>
-      <interface-functions>
-        <function-ref name="get" ref="0x2b9d55b3dbe8" scoped=""/>
-        <function-ref name="clearOverflow" ref="0x2b9d55b2c548" scoped=""/>
-        <function-ref name="isOverflowPending" ref="0x2b9d55b2c0c0" scoped=""/>
-        <function-ref name="overflow" ref="0x2b9d55b2c9d0" scoped=""/>
-      </interface-functions>
-    </interface><interface loc="79:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128Timer1C.nc" name="Timer" provided="1" ref="0x2b9d55a316e8">
+    </interface></specification><referenced><interface loc="79:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128Timer1C.nc" name="Timer" provided="1" ref="0x2b3f42b5d6e8">
       <component-ref nicename="tos.chips.atm1281.timer.HplAtm128Timer1C" qname="HplAtm128Timer1C"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Timer" ref="0x2b9d55a316e8" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Timer" ref="0x2b3f42b5d6e8" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Timer" qname="HplAtm128Timer"/>
         <arguments>
           <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+            <typename><typedef-ref name="uint16_t" ref="0x2b3f416e7b98"/></typename>
           </type-int>
         </arguments>
       </instance>
       <interface-functions>
-        <function-ref name="off" ref="0x2b9d55a2b930" scoped=""/>
-        <function-ref name="test" ref="0x2b9d55a2b020" scoped=""/>
-        <function-ref name="get" ref="0x2b9d55a2e3a8" scoped=""/>
-        <function-ref name="setScale" ref="0x2b9d55a2bdb8" scoped=""/>
-        <function-ref name="getScale" ref="0x2b9d55a2a2f0" scoped=""/>
-        <function-ref name="reset" ref="0x2b9d55a2c1f8" scoped=""/>
-        <function-ref name="overflow" ref="0x2b9d55a2ed08" scoped=""/>
-        <function-ref name="isOn" ref="0x2b9d55a2b4a8" scoped=""/>
-        <function-ref name="set" ref="0x2b9d55a2e830" scoped=""/>
-        <function-ref name="start" ref="0x2b9d55a2c680" scoped=""/>
-        <function-ref name="stop" ref="0x2b9d55a2cb08" scoped=""/>
+        <function-ref name="off" ref="0x2b3f42b9c930" scoped=""/>
+        <function-ref name="test" ref="0x2b3f42b9c020" scoped=""/>
+        <function-ref name="get" ref="0x2b3f42b9e3a8" scoped=""/>
+        <function-ref name="setScale" ref="0x2b3f42b9cdb8" scoped=""/>
+        <function-ref name="getScale" ref="0x2b3f42b9a2f0" scoped=""/>
+        <function-ref name="reset" ref="0x2b3f42b9d1f8" scoped=""/>
+        <function-ref name="overflow" ref="0x2b3f42b9ed08" scoped=""/>
+        <function-ref name="isOn" ref="0x2b3f42b9c4a8" scoped=""/>
+        <function-ref name="set" ref="0x2b3f42b9e830" scoped=""/>
+        <function-ref name="start" ref="0x2b3f42b9d680" scoped=""/>
+        <function-ref name="stop" ref="0x2b3f42b9db08" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="46:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128CounterC.nc" name="Timer" provided="0" ref="0x2b3f42cbd020">
+      <component-ref nicename="tos.chips.atm128.timer.Atm128CounterC" qname="CounterOne16C.NCounter"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Timer" ref="0x2b3f42cbd020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Timer" qname="HplAtm128Timer"/>
+        <arguments>
+          <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b3f416e7b98"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="off" ref="0x2b3f42cb90f8" scoped=""/>
+        <function-ref name="test" ref="0x2b3f42cba7a8" scoped=""/>
+        <function-ref name="get" ref="0x2b3f42cbdba0" scoped=""/>
+        <function-ref name="setScale" ref="0x2b3f42cb9580" scoped=""/>
+        <function-ref name="getScale" ref="0x2b3f42cb9a58" scoped=""/>
+        <function-ref name="reset" ref="0x2b3f42cbb9e8" scoped=""/>
+        <function-ref name="overflow" ref="0x2b3f42cbb560" scoped=""/>
+        <function-ref name="isOn" ref="0x2b3f42cbac30" scoped=""/>
+        <function-ref name="set" ref="0x2b3f42cbb088" scoped=""/>
+        <function-ref name="start" ref="0x2b3f42cbbe70" scoped=""/>
+        <function-ref name="stop" ref="0x2b3f42cba320" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="45:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128CounterC.nc" name="Counter" provided="1" ref="0x2b3f42c87e08">
+      <component-ref nicename="tos.chips.atm128.timer.Atm128CounterC" qname="CounterOne16C.NCounter"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Counter" ref="0x2b3f42c87e08" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.timer.Counter" qname="Counter"/>
+        <arguments>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d59430"/>
+            <typename><typedef-ref name="TOne" ref="0x2b3f41d919f0"/></typename>
+          </type-tag>
+          <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b3f416e7b98"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="get" ref="0x2b3f42c76be8" scoped=""/>
+        <function-ref name="clearOverflow" ref="0x2b3f42c75548" scoped=""/>
+        <function-ref name="isOverflowPending" ref="0x2b3f42c750c0" scoped=""/>
+        <function-ref name="overflow" ref="0x2b3f42c759d0" scoped=""/>
       </interface-functions>
     </interface><component loc="42(CounterOne16C.NCounter):/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128CounterC.nc" nicename="tos.chips.atm128.timer.Atm128CounterC" qname="CounterOne16C.NCounter">
       <documentation loc="34:/home/tinyos/tinyos-main/tos/chips/atm128/timer/Atm128CounterC.nc">
@@ -125,11 +125,11 @@
       <instance number="0">
         <component-ref nicename="tos.chips.atm128.timer.Atm128CounterC" qname="Atm128CounterC"/>
         <arguments>
-          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54cf1430"/>
-            <typename><typedef-ref name="TOne" ref="0x2b9d54d299f0"/></typename>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d59430"/>
+            <typename><typedef-ref name="TOne" ref="0x2b3f41d919f0"/></typename>
           </type-tag>
           <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+            <typename><typedef-ref name="uint16_t" ref="0x2b3f416e7b98"/></typename>
           </type-int>
         </arguments>
       </instance>
@@ -149,46 +149,46 @@
       <configuration/>
       <wiring>
         <wire loc="90:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128Timer1C.nc">
-          <from><interface-ref name="TimerCtrl" ref="0x2b9d55a615e8" scoped=""/></from>
-          <to><interface-ref name="TimerCtrl" ref="0x2b9d55a51c90" scoped=""/></to>
+          <from><interface-ref name="TimerCtrl" ref="0x2b3f42b915e8" scoped=""/></from>
+          <to><interface-ref name="TimerCtrl" ref="0x2b3f42b80c90" scoped=""/></to>
         </wire>
         <wire loc="91:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128Timer1C.nc">
-          <from><interface-ref name="Capture" ref="0x2b9d55a29ca0" scoped=""/></from>
-          <to><interface-ref name="Capture" ref="0x2b9d55a4e350" scoped=""/></to>
+          <from><interface-ref name="Capture" ref="0x2b3f42b99ca0" scoped=""/></from>
+          <to><interface-ref name="Capture" ref="0x2b3f42bc3350" scoped=""/></to>
         </wire>
         <wire loc="89:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128Timer1C.nc">
-          <from><interface-ref name="Timer" ref="0x2b9d55a316e8" scoped=""/></from>
-          <to><interface-ref name="Timer" ref="0x2b9d55a58be8" scoped=""/></to>
+          <from><interface-ref name="Timer" ref="0x2b3f42b5d6e8" scoped=""/></from>
+          <to><interface-ref name="Timer" ref="0x2b3f42b87be8" scoped=""/></to>
         </wire>
         <wire loc="93:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128Timer1C.nc">
-          <from><interface-ref name="Compare" ref="0x2b9d55a5da20" scoped=""/>
+          <from><interface-ref name="Compare" ref="0x2b3f42b8da20" scoped=""/>
           <arguments>
             <value cst="I:0">
               <type-int alignment="I:1" cname="int" size="I:2"/>
             </value>
           </arguments>
           </from>
-          <to><interface-ref name="CompareA" ref="0x2b9d55a4bc48" scoped=""/></to>
+          <to><interface-ref name="CompareA" ref="0x2b3f42bbfc48" scoped=""/></to>
         </wire>
         <wire loc="94:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128Timer1C.nc">
-          <from><interface-ref name="Compare" ref="0x2b9d55a5da20" scoped=""/>
+          <from><interface-ref name="Compare" ref="0x2b3f42b8da20" scoped=""/>
           <arguments>
             <value cst="I:1">
               <type-int alignment="I:1" cname="int" size="I:2"/>
             </value>
           </arguments>
           </from>
-          <to><interface-ref name="CompareB" ref="0x2b9d55a45020" scoped=""/></to>
+          <to><interface-ref name="CompareB" ref="0x2b3f42bba020" scoped=""/></to>
         </wire>
         <wire loc="95:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/HplAtm128Timer1C.nc">
-          <from><interface-ref name="Compare" ref="0x2b9d55a5da20" scoped=""/>
+          <from><interface-ref name="Compare" ref="0x2b3f42b8da20" scoped=""/>
           <arguments>
             <value cst="I:2">
               <type-int alignment="I:1" cname="int" size="I:2"/>
             </value>
           </arguments>
           </from>
-          <to><interface-ref name="CompareC" ref="0x2b9d55a42360" scoped=""/></to>
+          <to><interface-ref name="CompareC" ref="0x2b3f42bb6360" scoped=""/></to>
         </wire>
       </wiring>
     </component></referenced></component>

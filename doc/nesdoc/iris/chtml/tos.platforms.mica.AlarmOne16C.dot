@@ -1,11 +1,11 @@
 digraph "tos.platforms.mica.AlarmOne16C" {
-  n0x2b9d55ad5a68 [shape=ellipse, style=filled, label="Alarm", fontsize=12];
+  n0x2b3f42c13a68 [shape=ellipse, style=filled, label="Alarm", fontsize=12];
   "AlarmOne16C.NAlarm" [fontsize=12, shape=box, style=dashed, label="Atm128AlarmC\n(NAlarm)", URL="../chtml/tos.chips.atm128.timer.Atm128AlarmC.html"];
   "AlarmOne16C.NAlarm" [fontsize=12, shape=box, style=dashed, label="Atm128AlarmC\n(NAlarm)", URL="../chtml/tos.chips.atm128.timer.Atm128AlarmC.html"];
   "HplAtm128Timer1C" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.chips.atm1281.timer.HplAtm128Timer1C.html"];
   "AlarmOne16C.NAlarm" [fontsize=12, shape=box, style=dashed, label="Atm128AlarmC\n(NAlarm)", URL="../chtml/tos.chips.atm128.timer.Atm128AlarmC.html"];
   "HplAtm128Timer1C" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.chips.atm1281.timer.HplAtm128Timer1C.html"];
-  "n0x2b9d55ad5a68" -> "AlarmOne16C.NAlarm" [label="Alarm<TOne, uint16_t>", URL="../ihtml/tos.lib.timer.Alarm.html", fontsize=10];
+  "n0x2b3f42c13a68" -> "AlarmOne16C.NAlarm" [label="Alarm<TOne, uint16_t>", URL="../ihtml/tos.lib.timer.Alarm.html", fontsize=10];
   "AlarmOne16C.NAlarm" -> "HplAtm128Timer1C" [label="HplAtm128Timer<uint16_t>", URL="../ihtml/tos.chips.atm128.timer.HplAtm128Timer.html", fontsize=10];
   "AlarmOne16C.NAlarm" -> "HplAtm128Timer1C" [label="HplAtm128Compare<uint16_t>", URL="../ihtml/tos.chips.atm128.timer.HplAtm128Compare.html", fontsize=10];
 }

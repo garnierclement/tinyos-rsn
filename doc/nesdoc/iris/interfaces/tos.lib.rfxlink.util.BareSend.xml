@@ -1,5 +1,5 @@
 <?xml version="1.0" ?><interfacedef loc="35:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/BareSend.nc" nicename="tos.lib.rfxlink.util.BareSend" qname="BareSend">
-      <function command="" loc="46:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/BareSend.nc" name="send" provided="0" ref="0x2b9d5538d8d0">
+      <function command="" loc="46:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/BareSend.nc" name="send" provided="0" ref="0x2b3f425118d0">
         <documentation loc="37:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/BareSend.nc">
           <short>
  Starts the transmission of the given message.</short>
@@ -16,27 +16,27 @@
         <interfacedef-ref nicename="tos.lib.rfxlink.util.BareSend" qname="BareSend"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+            <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
           </type-int>
           <function-parameters>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="46:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/BareSend.nc" name="msg" ref="0x2b9d5538d660">
+          <variable loc="46:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/BareSend.nc" name="msg" ref="0x2b3f42511660">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="64:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/BareSend.nc" name="cancel" provided="0" ref="0x2b9d553ae290">
+      <function command="" loc="64:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/BareSend.nc" name="cancel" provided="0" ref="0x2b3f4250d290">
         <documentation loc="56:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/BareSend.nc">
           <short>
  Cancel a requested transmission.</short>
@@ -52,27 +52,27 @@
         <interfacedef-ref nicename="tos.lib.rfxlink.util.BareSend" qname="BareSend"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+            <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
           </type-int>
           <function-parameters>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="64:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/BareSend.nc" name="msg" ref="0x2b9d553ae020">
+          <variable loc="64:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/BareSend.nc" name="msg" ref="0x2b3f4250d020">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>
         </parameters>
       </function>
-      <function event="" loc="54:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/BareSend.nc" name="sendDone" provided="0" ref="0x2b9d553b07a0">
+      <function event="" loc="54:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/BareSend.nc" name="sendDone" provided="0" ref="0x2b3f4250e7a0">
         <documentation loc="48:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/BareSend.nc">
           <short>
  Signals the completion of the send command, exactly once for each 
@@ -89,26 +89,26 @@
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+              <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="54:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/BareSend.nc" name="msg" ref="0x2b9d553b01f8">
+          <variable loc="54:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/BareSend.nc" name="msg" ref="0x2b3f4250e1f8">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>
-          <variable loc="54:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/BareSend.nc" name="error" ref="0x2b9d553b0520">
+          <variable loc="54:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/BareSend.nc" name="error" ref="0x2b3f4250e520">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+              <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
             </type-int>
           </variable>
         </parameters>

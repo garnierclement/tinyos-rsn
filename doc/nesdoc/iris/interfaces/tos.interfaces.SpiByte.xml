@@ -7,7 +7,7 @@
  @author Joe Polastre
 </long>
       </documentation>
-      <function command="" loc="45:/home/tinyos/tinyos-main/tos/interfaces/SpiByte.nc" name="write" provided="0" ref="0x2b9d5594e020">
+      <function command="" loc="45:/home/tinyos/tinyos-main/tos/interfaces/SpiByte.nc" name="write" provided="0" ref="0x2b3f42aa4020">
         <documentation loc="40:/home/tinyos/tinyos-main/tos/interfaces/SpiByte.nc">
           <short>
  Synchronous transmit and receive (can be in interrupt context)
@@ -21,18 +21,18 @@
         <interfacedef-ref nicename="tos.interfaces.SpiByte" qname="SpiByte"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
           </type-int>
           <function-parameters>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="45:/home/tinyos/tinyos-main/tos/interfaces/SpiByte.nc" name="tx" ref="0x2b9d55951c20">
+          <variable loc="45:/home/tinyos/tinyos-main/tos/interfaces/SpiByte.nc" name="tx" ref="0x2b3f42aa7c20">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </variable>
         </parameters>

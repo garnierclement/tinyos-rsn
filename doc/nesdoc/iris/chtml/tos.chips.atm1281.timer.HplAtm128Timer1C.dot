@@ -1,18 +1,18 @@
 digraph "tos.chips.atm1281.timer.HplAtm128Timer1C" {
-  n0x2b9d55a615e8 [shape=ellipse, style=filled, label="TimerCtrl", fontsize=12];
+  n0x2b3f42b915e8 [shape=ellipse, style=filled, label="TimerCtrl", fontsize=12];
   "HplAtm1281Timer1P" [fontsize=12, shape=box, URL="../chtml/tos.chips.atm1281.timer.HplAtm1281Timer1P.html"];
-  n0x2b9d55a29ca0 [shape=ellipse, style=filled, label="Capture", fontsize=12];
+  n0x2b3f42b99ca0 [shape=ellipse, style=filled, label="Capture", fontsize=12];
   "HplAtm1281Timer1P" [fontsize=12, shape=box, URL="../chtml/tos.chips.atm1281.timer.HplAtm1281Timer1P.html"];
-  n0x2b9d55a316e8 [shape=ellipse, style=filled, label="Timer", fontsize=12];
+  n0x2b3f42b5d6e8 [shape=ellipse, style=filled, label="Timer", fontsize=12];
   "HplAtm1281Timer1P" [fontsize=12, shape=box, URL="../chtml/tos.chips.atm1281.timer.HplAtm1281Timer1P.html"];
-  n0x2b9d55a5da20 [shape=ellipse, style=filled, label="Compare", fontsize=12];
+  n0x2b3f42b8da20 [shape=ellipse, style=filled, label="Compare", fontsize=12];
   "HplAtm1281Timer1P" [fontsize=12, shape=box, URL="../chtml/tos.chips.atm1281.timer.HplAtm1281Timer1P.html"];
   "HplAtm1281Timer1P" [fontsize=12, shape=box, URL="../chtml/tos.chips.atm1281.timer.HplAtm1281Timer1P.html"];
   "HplAtm1281Timer1P" [fontsize=12, shape=box, URL="../chtml/tos.chips.atm1281.timer.HplAtm1281Timer1P.html"];
-  "n0x2b9d55a615e8" -> "HplAtm1281Timer1P" [label="HplAtm128TimerCtrl16", URL="../ihtml/tos.chips.atm1281.timer.HplAtm128TimerCtrl16.html", fontsize=10];
-  "n0x2b9d55a29ca0" -> "HplAtm1281Timer1P" [label="HplAtm128Capture<uint16_t>", URL="../ihtml/tos.chips.atm128.timer.HplAtm128Capture.html", fontsize=10];
-  "n0x2b9d55a316e8" -> "HplAtm1281Timer1P" [label="HplAtm128Timer<uint16_t>", URL="../ihtml/tos.chips.atm128.timer.HplAtm128Timer.html", fontsize=10];
-  "n0x2b9d55a5da20" -> "HplAtm1281Timer1P" [label="HplAtm128Compare<uint16_t>[uint8_t]", style=bold, URL="../ihtml/tos.chips.atm128.timer.HplAtm128Compare.html", fontsize=10];
-  "n0x2b9d55a5da20" -> "HplAtm1281Timer1P" [label="HplAtm128Compare<uint16_t>[uint8_t]", style=bold, URL="../ihtml/tos.chips.atm128.timer.HplAtm128Compare.html", fontsize=10];
-  "n0x2b9d55a5da20" -> "HplAtm1281Timer1P" [label="HplAtm128Compare<uint16_t>[uint8_t]", style=bold, URL="../ihtml/tos.chips.atm128.timer.HplAtm128Compare.html", fontsize=10];
+  "n0x2b3f42b915e8" -> "HplAtm1281Timer1P" [label="HplAtm128TimerCtrl16", URL="../ihtml/tos.chips.atm1281.timer.HplAtm128TimerCtrl16.html", fontsize=10];
+  "n0x2b3f42b99ca0" -> "HplAtm1281Timer1P" [label="HplAtm128Capture<uint16_t>", URL="../ihtml/tos.chips.atm128.timer.HplAtm128Capture.html", fontsize=10];
+  "n0x2b3f42b5d6e8" -> "HplAtm1281Timer1P" [label="HplAtm128Timer<uint16_t>", URL="../ihtml/tos.chips.atm128.timer.HplAtm128Timer.html", fontsize=10];
+  "n0x2b3f42b8da20" -> "HplAtm1281Timer1P" [label="HplAtm128Compare<uint16_t>[uint8_t]", style=bold, URL="../ihtml/tos.chips.atm128.timer.HplAtm128Compare.html", fontsize=10];
+  "n0x2b3f42b8da20" -> "HplAtm1281Timer1P" [label="HplAtm128Compare<uint16_t>[uint8_t]", style=bold, URL="../ihtml/tos.chips.atm128.timer.HplAtm128Compare.html", fontsize=10];
+  "n0x2b3f42b8da20" -> "HplAtm1281Timer1P" [label="HplAtm128Compare<uint16_t>[uint8_t]", style=bold, URL="../ihtml/tos.chips.atm128.timer.HplAtm128Compare.html", fontsize=10];
 }

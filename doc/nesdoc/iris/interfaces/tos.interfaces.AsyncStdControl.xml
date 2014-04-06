@@ -19,7 +19,7 @@
  @author Kevin Klues (klueska@cs.wustl.edu)
 </long>
       </documentation>
-      <function command="" loc="95:/home/tinyos/tinyos-main/tos/interfaces/AsyncStdControl.nc" name="start" provided="0" ref="0x2b9d559c6748">
+      <function command="" loc="95:/home/tinyos/tinyos-main/tos/interfaces/AsyncStdControl.nc" name="start" provided="0" ref="0x2b3f42b2b748">
         <documentation loc="88:/home/tinyos/tinyos-main/tos/interfaces/AsyncStdControl.nc">
           <short>
  Start this component and all of its subcomponents.</short>
@@ -34,7 +34,7 @@
         <interfacedef-ref nicename="tos.interfaces.AsyncStdControl" qname="AsyncStdControl"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+            <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>
@@ -42,7 +42,7 @@
         <parameters>
         </parameters>
       </function>
-      <function command="" loc="105:/home/tinyos/tinyos-main/tos/interfaces/AsyncStdControl.nc" name="stop" provided="0" ref="0x2b9d559c5020">
+      <function command="" loc="105:/home/tinyos/tinyos-main/tos/interfaces/AsyncStdControl.nc" name="stop" provided="0" ref="0x2b3f42b2a020">
         <documentation loc="97:/home/tinyos/tinyos-main/tos/interfaces/AsyncStdControl.nc">
           <short>
  Stop the component and any pertinent subcomponents (not all
@@ -59,7 +59,7 @@
         <interfacedef-ref nicename="tos.interfaces.AsyncStdControl" qname="AsyncStdControl"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+            <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>

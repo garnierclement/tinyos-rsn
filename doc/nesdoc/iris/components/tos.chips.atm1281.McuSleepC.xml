@@ -19,31 +19,31 @@
 </long>
       </documentation>
       <module/>
-    <specification><interface loc="88:/home/tinyos/tinyos-main/tos/chips/atm1281/McuSleepC.nc" name="McuPowerOverride" provided="0" ref="0x2b9d54d54988">
+    <specification><interface loc="88:/home/tinyos/tinyos-main/tos/chips/atm1281/McuSleepC.nc" name="McuPowerOverride" provided="0" ref="0x2b3f41dbc988">
       <component-ref nicename="tos.chips.atm1281.McuSleepC" qname="McuSleepC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="McuPowerOverride" ref="0x2b9d54d54988" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="McuPowerOverride" ref="0x2b3f41dbc988" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.McuPowerOverride" qname="McuPowerOverride"/>
       </instance>
       <interface-functions>
-        <function-ref name="lowestState" ref="0x2b9d54d54cd8" scoped=""/>
+        <function-ref name="lowestState" ref="0x2b3f41dbccd8" scoped=""/>
       </interface-functions>
-    </interface><interface loc="84:/home/tinyos/tinyos-main/tos/chips/atm1281/McuSleepC.nc" name="McuSleep" provided="1" ref="0x2b9d54c7ce28">
+    </interface><interface loc="84:/home/tinyos/tinyos-main/tos/chips/atm1281/McuSleepC.nc" name="McuSleep" provided="1" ref="0x2b3f41cede28">
       <component-ref nicename="tos.chips.atm1281.McuSleepC" qname="McuSleepC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="McuSleep" ref="0x2b9d54c7ce28" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="McuSleep" ref="0x2b3f41cede28" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.McuSleep" qname="McuSleep"/>
       </instance>
       <interface-functions>
-        <function-ref name="sleep" ref="0x2b9d54d4b1a8" scoped=""/>
+        <function-ref name="sleep" ref="0x2b3f41db31a8" scoped=""/>
       </interface-functions>
-    </interface><interface loc="85:/home/tinyos/tinyos-main/tos/chips/atm1281/McuSleepC.nc" name="McuPowerState" provided="1" ref="0x2b9d54d563c8">
+    </interface><interface loc="85:/home/tinyos/tinyos-main/tos/chips/atm1281/McuSleepC.nc" name="McuPowerState" provided="1" ref="0x2b3f41dbe3c8">
       <component-ref nicename="tos.chips.atm1281.McuSleepC" qname="McuSleepC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="McuPowerState" ref="0x2b9d54d563c8" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="McuPowerState" ref="0x2b3f41dbe3c8" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.McuPowerState" qname="McuPowerState"/>
       </instance>
       <interface-functions>
-        <function-ref name="update" ref="0x2b9d54d56718" scoped=""/>
+        <function-ref name="update" ref="0x2b3f41dbe718" scoped=""/>
       </interface-functions>
     </interface></specification><referenced/></component>

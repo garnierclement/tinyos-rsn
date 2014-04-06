@@ -2,57 +2,57 @@
       <configuration/>
       <wiring>
         <wire loc="44:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodC.nc">
-          <from><interface-ref name="Neighborhood" ref="0x2b9d555ecd60" scoped=""/></from>
-          <to><interface-ref name="Neighborhood" ref="0x2b9d555e5850" scoped=""/></to>
+          <from><interface-ref name="Neighborhood" ref="0x2b3f4275bd60" scoped=""/></from>
+          <to><interface-ref name="Neighborhood" ref="0x2b3f42755850" scoped=""/></to>
         </wire>
         <wire loc="45:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodC.nc">
-          <from><interface-ref name="SoftwareInit" ref="0x2b9d54d76210" scoped=""/></from>
-          <to><interface-ref name="Init" ref="0x2b9d555e5238" scoped=""/></to>
+          <from><interface-ref name="SoftwareInit" ref="0x2b3f41dd6e40" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x2b3f42755238" scoped=""/></to>
         </wire>
       </wiring>
-    <specification><interface loc="37:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodC.nc" name="Neighborhood" provided="1" ref="0x2b9d555ecd60">
+    <specification><interface loc="37:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodC.nc" name="Neighborhood" provided="1" ref="0x2b3f4275bd60">
       <component-ref nicename="tos.lib.rfxlink.util.NeighborhoodC" qname="NeighborhoodC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Neighborhood" ref="0x2b9d555ecd60" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Neighborhood" ref="0x2b3f4275bd60" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.lib.rfxlink.util.Neighborhood" qname="Neighborhood"/>
       </instance>
       <interface-functions>
-        <function-ref name="getAge" ref="0x2b9d555e80d8" scoped=""/>
-        <function-ref name="insertNode" ref="0x2b9d555e8260" scoped=""/>
-        <function-ref name="getNode" ref="0x2b9d555e83e8" scoped=""/>
-        <function-ref name="evicted" ref="0x2b9d555e8570" scoped=""/>
-        <function-ref name="getIndex" ref="0x2b9d555e86f8" scoped=""/>
+        <function-ref name="getAge" ref="0x2b3f427580d8" scoped=""/>
+        <function-ref name="insertNode" ref="0x2b3f42758260" scoped=""/>
+        <function-ref name="getNode" ref="0x2b3f427583e8" scoped=""/>
+        <function-ref name="evicted" ref="0x2b3f42758570" scoped=""/>
+        <function-ref name="getIndex" ref="0x2b3f427586f8" scoped=""/>
       </interface-functions>
-    </interface></specification><referenced><interface loc="42:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodP.nc" name="Neighborhood" provided="1" ref="0x2b9d555e5850">
+    </interface></specification><referenced><interface loc="41:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodP.nc" name="Init" provided="1" ref="0x2b3f42755238">
       <component-ref nicename="tos.lib.rfxlink.util.NeighborhoodP" qname="NeighborhoodP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Neighborhood" ref="0x2b9d555e5850" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b3f42755238" scoped=""/></type-interface>
       <instance>
-        <interfacedef-ref nicename="tos.lib.rfxlink.util.Neighborhood" qname="Neighborhood"/>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
       </instance>
       <interface-functions>
-        <function-ref name="getAge" ref="0x2b9d555e5ba0" scoped=""/>
-        <function-ref name="insertNode" ref="0x2b9d555e5d28" scoped=""/>
-        <function-ref name="getNode" ref="0x2b9d555e4020" scoped=""/>
-        <function-ref name="evicted" ref="0x2b9d555e41a8" scoped=""/>
-        <function-ref name="getIndex" ref="0x2b9d555e4330" scoped=""/>
+        <function-ref name="init" ref="0x2b3f42755588" scoped=""/>
       </interface-functions>
-    </interface><interface loc="58:/home/tinyos/tinyos-main/tos/system/MainC.nc" name="SoftwareInit" provided="0" ref="0x2b9d54d76210">
+    </interface><interface loc="58:/home/tinyos/tinyos-main/tos/system/MainC.nc" name="SoftwareInit" provided="0" ref="0x2b3f41dd6e40">
       <component-ref nicename="tos.system.MainC" qname="MainC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="SoftwareInit" ref="0x2b9d54d76210" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SoftwareInit" ref="0x2b3f41dd6e40" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
       </instance>
       <interface-functions>
-        <function-ref name="init" ref="0x2b9d54d76560" scoped=""/>
+        <function-ref name="init" ref="0x2b3f41de51c0" scoped=""/>
       </interface-functions>
-    </interface><interface loc="41:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodP.nc" name="Init" provided="1" ref="0x2b9d555e5238">
+    </interface><interface loc="42:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodP.nc" name="Neighborhood" provided="1" ref="0x2b3f42755850">
       <component-ref nicename="tos.lib.rfxlink.util.NeighborhoodP" qname="NeighborhoodP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b9d555e5238" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Neighborhood" ref="0x2b3f42755850" scoped=""/></type-interface>
       <instance>
-        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+        <interfacedef-ref nicename="tos.lib.rfxlink.util.Neighborhood" qname="Neighborhood"/>
       </instance>
       <interface-functions>
-        <function-ref name="init" ref="0x2b9d555e5588" scoped=""/>
+        <function-ref name="getAge" ref="0x2b3f42755ba0" scoped=""/>
+        <function-ref name="insertNode" ref="0x2b3f42755d28" scoped=""/>
+        <function-ref name="getNode" ref="0x2b3f42754020" scoped=""/>
+        <function-ref name="evicted" ref="0x2b3f427541a8" scoped=""/>
+        <function-ref name="getIndex" ref="0x2b3f42754330" scoped=""/>
       </interface-functions>
     </interface><component loc="56:/home/tinyos/tinyos-main/tos/system/MainC.nc" nicename="tos.system.MainC" qname="MainC">
       <documentation loc="1:/home/tinyos/tinyos-main/tos/platforms/micaz/hardware.h">
@@ -107,20 +107,20 @@
       <configuration/>
       <wiring>
         <wire loc="72:/home/tinyos/tinyos-main/tos/system/MainC.nc">
-          <from><interface-ref name="Boot" ref="0x2b9d54d7add8" scoped=""/></from>
-          <to><interface-ref name="Boot" ref="0x2b9d54d77c40" scoped=""/></to>
+          <from><interface-ref name="Boot" ref="0x2b3f41de4a50" scoped=""/></from>
+          <to><interface-ref name="Boot" ref="0x2b3f41de2c40" scoped=""/></to>
         </wire>
         <wire loc="67:/home/tinyos/tinyos-main/tos/system/MainC.nc">
-          <from><interface-ref name="Scheduler" ref="0x2b9d54f25308" scoped=""/></from>
-          <to><interface-ref name="Scheduler" ref="0x2b9d54c5f080" scoped=""/></to>
+          <from><interface-ref name="Scheduler" ref="0x2b3f41f92308" scoped=""/></from>
+          <to><interface-ref name="Scheduler" ref="0x2b3f41ce4600" scoped=""/></to>
         </wire>
         <wire loc="68:/home/tinyos/tinyos-main/tos/system/MainC.nc">
-          <from><interface-ref name="PlatformInit" ref="0x2b9d54f25ce0" scoped=""/></from>
-          <to><interface-ref name="Init" ref="0x2b9d54d75a70" scoped=""/></to>
+          <from><interface-ref name="PlatformInit" ref="0x2b3f41f92ce0" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x2b3f41de5db8" scoped=""/></to>
         </wire>
         <wire loc="71:/home/tinyos/tinyos-main/tos/system/MainC.nc">
-          <from><interface-ref name="SoftwareInit" ref="0x2b9d54f24418" scoped=""/></from>
-          <to><interface-ref name="SoftwareInit" ref="0x2b9d54d76210" scoped=""/></to>
+          <from><interface-ref name="SoftwareInit" ref="0x2b3f41f91418" scoped=""/></from>
+          <to><interface-ref name="SoftwareInit" ref="0x2b3f41dd6e40" scoped=""/></to>
         </wire>
       </wiring>
     </component><component loc="37:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodP.nc" nicename="tos.lib.rfxlink.util.NeighborhoodP" qname="NeighborhoodP">

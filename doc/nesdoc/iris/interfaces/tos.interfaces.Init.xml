@@ -10,7 +10,7 @@
  Defines global error codes for error_t in TinyOS.
 </long>
       </documentation>
-      <function command="" loc="62:/home/tinyos/tinyos-main/tos/interfaces/Init.nc" name="init" provided="0" ref="0x2b9d54d79d40">
+      <function command="" loc="62:/home/tinyos/tinyos-main/tos/interfaces/Init.nc" name="init" provided="0" ref="0x2b3f41dd6998">
         <documentation loc="53:/home/tinyos/tinyos-main/tos/interfaces/Init.nc">
           <short>
  Initialize this component.</short>
@@ -27,7 +27,7 @@
         <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+            <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>

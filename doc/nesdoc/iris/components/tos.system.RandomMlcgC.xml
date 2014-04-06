@@ -16,37 +16,37 @@
 </long>
       </documentation>
       <module/>
-    <specification><interface loc="48:/home/tinyos/tinyos-main/tos/system/RandomMlcgC.nc" name="Random" provided="1" ref="0x2b9d55729568">
+    <specification><interface loc="48:/home/tinyos/tinyos-main/tos/system/RandomMlcgC.nc" name="Random" provided="1" ref="0x2b3f422e9ac8">
       <component-ref nicename="tos.system.RandomMlcgC" qname="RandomMlcgC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Random" ref="0x2b9d55729568" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Random" ref="0x2b3f422e9ac8" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.Random" qname="Random"/>
       </instance>
       <interface-functions>
-        <function-ref name="rand16" ref="0x2b9d557298b8" scoped=""/>
-        <function-ref name="rand32" ref="0x2b9d55729a40" scoped=""/>
+        <function-ref name="rand16" ref="0x2b3f422e9e18" scoped=""/>
+        <function-ref name="rand32" ref="0x2b3f4230a020" scoped=""/>
       </interface-functions>
-    </interface><interface loc="47:/home/tinyos/tinyos-main/tos/system/RandomMlcgC.nc" name="SeedInit" provided="1" ref="0x2b9d556f7528">
+    </interface><interface loc="47:/home/tinyos/tinyos-main/tos/system/RandomMlcgC.nc" name="SeedInit" provided="1" ref="0x2b3f422eaa50">
       <component-ref nicename="tos.system.RandomMlcgC" qname="RandomMlcgC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="SeedInit" ref="0x2b9d556f7528" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SeedInit" ref="0x2b3f422eaa50" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.ParameterInit" qname="ParameterInit"/>
         <arguments>
           <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+            <typename><typedef-ref name="uint16_t" ref="0x2b3f416e7b98"/></typename>
           </type-int>
         </arguments>
       </instance>
       <interface-functions>
-        <function-ref name="init" ref="0x2b9d557290c0" scoped=""/>
+        <function-ref name="init" ref="0x2b3f422e9620" scoped=""/>
       </interface-functions>
-    </interface><interface loc="46:/home/tinyos/tinyos-main/tos/system/RandomMlcgC.nc" name="Init" provided="1" ref="0x2b9d556fbb38">
+    </interface><interface loc="46:/home/tinyos/tinyos-main/tos/system/RandomMlcgC.nc" name="Init" provided="1" ref="0x2b3f422ea1f8">
       <component-ref nicename="tos.system.RandomMlcgC" qname="RandomMlcgC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b9d556fbb38" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b3f422ea1f8" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
       </instance>
       <interface-functions>
-        <function-ref name="init" ref="0x2b9d556f7020" scoped=""/>
+        <function-ref name="init" ref="0x2b3f422ea548" scoped=""/>
       </interface-functions>
     </interface></specification><referenced/></component>

@@ -51,129 +51,129 @@
       <configuration/>
       <wiring>
         <wire loc="58:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformC.nc">
-          <from><interface-ref name="Init" ref="0x2b9d54d75a70" scoped=""/></from>
-          <to><interface-ref name="Init" ref="0x2b9d54d89298" scoped=""/></to>
+          <from><interface-ref name="Init" ref="0x2b3f41de5db8" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x2b3f41de64f0" scoped=""/></to>
         </wire>
         <wire loc="59:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformC.nc">
-          <from><interface-ref name="Atm128Calibrate" ref="0x2b9d54d7e970" scoped=""/></from>
-          <to><interface-ref name="Atm128Calibrate" ref="0x2b9d54f08ae0" scoped=""/></to>
+          <from><interface-ref name="Atm128Calibrate" ref="0x2b3f41de9c88" scoped=""/></from>
+          <to><interface-ref name="Atm128Calibrate" ref="0x2b3f41f75ae0" scoped=""/></to>
         </wire>
         <wire loc="61:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformC.nc">
-          <from><interface-ref name="MeasureClock" ref="0x2b9d54d88060" scoped=""/></from>
-          <to><interface-ref name="Init" ref="0x2b9d54f084b0" scoped=""/></to>
+          <from><interface-ref name="MeasureClock" ref="0x2b3f41df3398" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x2b3f41f754b0" scoped=""/></to>
         </wire>
         <wire loc="62:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformC.nc">
-          <from><interface-ref name="MoteInit" ref="0x2b9d54d89938" scoped=""/></from>
-          <to><interface-ref name="PlatformInit" ref="0x2b9d54d8b720" scoped=""/></to>
+          <from><interface-ref name="MoteInit" ref="0x2b3f41de6b90" scoped=""/></from>
+          <to><interface-ref name="PlatformInit" ref="0x2b3f41de8a10" scoped=""/></to>
         </wire>
         <wire loc="63:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformC.nc">
-          <from><interface-ref name="SubInit" ref="0x2b9d54d8bdb0" scoped=""/></from>
-          <to><interface-ref name="SubInit" ref="0x2b9d54d83690" scoped=""/></to>
+          <from><interface-ref name="SubInit" ref="0x2b3f41dee108" scoped=""/></from>
+          <to><interface-ref name="SubInit" ref="0x2b3f41de09a0" scoped=""/></to>
         </wire>
       </wiring>
-    <specification><interface loc="52:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformC.nc" name="SubInit" provided="0" ref="0x2b9d54d83690">
+    <specification><interface loc="52:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformC.nc" name="SubInit" provided="0" ref="0x2b3f41de09a0">
       <component-ref nicename="tos.platforms.mica.PlatformC" qname="PlatformC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="SubInit" ref="0x2b9d54d83690" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SubInit" ref="0x2b3f41de09a0" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
       </instance>
       <interface-functions>
-        <function-ref name="init" ref="0x2b9d54d839e0" scoped=""/>
+        <function-ref name="init" ref="0x2b3f41de0cf0" scoped=""/>
       </interface-functions>
-    </interface><interface loc="46:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformC.nc" name="Init" provided="1" ref="0x2b9d54d75a70">
+    </interface><interface loc="46:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformC.nc" name="Init" provided="1" ref="0x2b3f41de5db8">
       <component-ref nicename="tos.platforms.mica.PlatformC" qname="PlatformC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b9d54d75a70" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b3f41de5db8" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
       </instance>
       <interface-functions>
-        <function-ref name="init" ref="0x2b9d54d75dc0" scoped=""/>
+        <function-ref name="init" ref="0x2b3f41de1170" scoped=""/>
       </interface-functions>
-    </interface><interface loc="50:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformC.nc" name="Atm128Calibrate" provided="1" ref="0x2b9d54d7e970">
+    </interface><interface loc="50:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformC.nc" name="Atm128Calibrate" provided="1" ref="0x2b3f41de9c88">
       <component-ref nicename="tos.platforms.mica.PlatformC" qname="PlatformC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Atm128Calibrate" ref="0x2b9d54d7e970" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Atm128Calibrate" ref="0x2b3f41de9c88" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.chips.atm128.timer.Atm128Calibrate" qname="Atm128Calibrate"/>
       </instance>
       <interface-functions>
-        <function-ref name="baudrateRegister" ref="0x2b9d54d7ecc0" scoped=""/>
-        <function-ref name="cyclesPerJiffy" ref="0x2b9d54d7ee48" scoped=""/>
-        <function-ref name="calibrateMicro" ref="0x2b9d54d83020" scoped=""/>
-        <function-ref name="actualMicro" ref="0x2b9d54d831a8" scoped=""/>
-        <function-ref name="adcPrescaler" ref="0x2b9d54d83330" scoped=""/>
+        <function-ref name="baudrateRegister" ref="0x2b3f41de0020" scoped=""/>
+        <function-ref name="cyclesPerJiffy" ref="0x2b3f41de01a8" scoped=""/>
+        <function-ref name="calibrateMicro" ref="0x2b3f41de0330" scoped=""/>
+        <function-ref name="actualMicro" ref="0x2b3f41de04b8" scoped=""/>
+        <function-ref name="adcPrescaler" ref="0x2b3f41de0640" scoped=""/>
       </interface-functions>
-    </interface></specification><referenced><interface loc="40:/home/tinyos/tinyos-main/tos/platforms/micaz/MotePlatformC.nc" name="PlatformInit" provided="1" ref="0x2b9d54d8b720">
-      <component-ref nicename="tos.platforms.micaz.MotePlatformC" qname="MotePlatformC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="PlatformInit" ref="0x2b9d54d8b720" scoped=""/></type-interface>
-      <instance>
-        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
-      </instance>
-      <interface-functions>
-        <function-ref name="init" ref="0x2b9d54d8ba70" scoped=""/>
-      </interface-functions>
-    </interface><interface loc="62:/home/tinyos/tinyos-main/tos/platforms/iris/MeasureClockC.nc" name="Atm128Calibrate" provided="1" ref="0x2b9d54f08ae0">
+    </interface></specification><referenced><interface loc="61:/home/tinyos/tinyos-main/tos/platforms/iris/MeasureClockC.nc" name="Init" provided="1" ref="0x2b3f41f754b0">
       <component-ref nicename="tos.platforms.iris.MeasureClockC" qname="MeasureClockC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Atm128Calibrate" ref="0x2b9d54f08ae0" scoped=""/></type-interface>
-      <instance>
-        <interfacedef-ref nicename="tos.chips.atm128.timer.Atm128Calibrate" qname="Atm128Calibrate"/>
-      </instance>
-      <interface-functions>
-        <function-ref name="baudrateRegister" ref="0x2b9d54f08e30" scoped=""/>
-        <function-ref name="cyclesPerJiffy" ref="0x2b9d54f07020" scoped=""/>
-        <function-ref name="calibrateMicro" ref="0x2b9d54f071a8" scoped=""/>
-        <function-ref name="actualMicro" ref="0x2b9d54f07330" scoped=""/>
-        <function-ref name="adcPrescaler" ref="0x2b9d54f074b8" scoped=""/>
-      </interface-functions>
-    </interface><interface loc="45:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformP.nc" name="MoteInit" provided="0" ref="0x2b9d54d89938">
-      <component-ref nicename="tos.platforms.mica.PlatformP" qname="PlatformP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="MoteInit" ref="0x2b9d54d89938" scoped=""/></type-interface>
-      <instance>
-        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
-      </instance>
-      <interface-functions>
-        <function-ref name="init" ref="0x2b9d54d89c88" scoped=""/>
-      </interface-functions>
-    </interface><interface loc="61:/home/tinyos/tinyos-main/tos/platforms/iris/MeasureClockC.nc" name="Init" provided="1" ref="0x2b9d54f084b0">
-      <component-ref nicename="tos.platforms.iris.MeasureClockC" qname="MeasureClockC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b9d54f084b0" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b3f41f754b0" scoped=""/></type-interface>
       <attribute-value>
-        <attribute-ref name="exactlyonce" ref="0x2b9d54c64128"/>
+        <attribute-ref name="exactlyonce" ref="0x2b3f41ccc6f0"/>
         <value-structured>
-          <type-tag alignment="I:1" size="I:0"><attribute-ref name="exactlyonce" ref="0x2b9d54c64128"/></type-tag>
+          <type-tag alignment="I:1" size="I:0"><attribute-ref name="exactlyonce" ref="0x2b3f41ccc6f0"/></type-tag>
         </value-structured>
       </attribute-value>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
       </instance>
       <interface-functions>
-        <function-ref name="init" ref="0x2b9d54f08800" scoped=""/>
+        <function-ref name="init" ref="0x2b3f41f75800" scoped=""/>
       </interface-functions>
-    </interface><interface loc="41:/home/tinyos/tinyos-main/tos/platforms/micaz/MotePlatformC.nc" name="SubInit" provided="0" ref="0x2b9d54d8bdb0">
+    </interface><interface loc="45:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformP.nc" name="MoteInit" provided="0" ref="0x2b3f41de6b90">
+      <component-ref nicename="tos.platforms.mica.PlatformP" qname="PlatformP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="MoteInit" ref="0x2b3f41de6b90" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b3f41df3020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="40:/home/tinyos/tinyos-main/tos/platforms/micaz/MotePlatformC.nc" name="PlatformInit" provided="1" ref="0x2b3f41de8a10">
       <component-ref nicename="tos.platforms.micaz.MotePlatformC" qname="MotePlatformC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="SubInit" ref="0x2b9d54d8bdb0" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="PlatformInit" ref="0x2b3f41de8a10" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
       </instance>
       <interface-functions>
-        <function-ref name="init" ref="0x2b9d54d91170" scoped=""/>
+        <function-ref name="init" ref="0x2b3f41de8d60" scoped=""/>
       </interface-functions>
-    </interface><interface loc="46:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformP.nc" name="MeasureClock" provided="0" ref="0x2b9d54d88060">
-      <component-ref nicename="tos.platforms.mica.PlatformP" qname="PlatformP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="MeasureClock" ref="0x2b9d54d88060" scoped=""/></type-interface>
+    </interface><interface loc="62:/home/tinyos/tinyos-main/tos/platforms/iris/MeasureClockC.nc" name="Atm128Calibrate" provided="1" ref="0x2b3f41f75ae0">
+      <component-ref nicename="tos.platforms.iris.MeasureClockC" qname="MeasureClockC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Atm128Calibrate" ref="0x2b3f41f75ae0" scoped=""/></type-interface>
       <instance>
-        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+        <interfacedef-ref nicename="tos.chips.atm128.timer.Atm128Calibrate" qname="Atm128Calibrate"/>
       </instance>
       <interface-functions>
-        <function-ref name="init" ref="0x2b9d54d883b0" scoped=""/>
+        <function-ref name="baudrateRegister" ref="0x2b3f41f75e30" scoped=""/>
+        <function-ref name="cyclesPerJiffy" ref="0x2b3f41f74020" scoped=""/>
+        <function-ref name="calibrateMicro" ref="0x2b3f41f741a8" scoped=""/>
+        <function-ref name="actualMicro" ref="0x2b3f41f74330" scoped=""/>
+        <function-ref name="adcPrescaler" ref="0x2b3f41f744b8" scoped=""/>
       </interface-functions>
-    </interface><interface loc="44:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformP.nc" name="Init" provided="1" ref="0x2b9d54d89298">
+    </interface><interface loc="46:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformP.nc" name="MeasureClock" provided="0" ref="0x2b3f41df3398">
       <component-ref nicename="tos.platforms.mica.PlatformP" qname="PlatformP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b9d54d89298" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="MeasureClock" ref="0x2b3f41df3398" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
       </instance>
       <interface-functions>
-        <function-ref name="init" ref="0x2b9d54d895e8" scoped=""/>
+        <function-ref name="init" ref="0x2b3f41df36e8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="44:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformP.nc" name="Init" provided="1" ref="0x2b3f41de64f0">
+      <component-ref nicename="tos.platforms.mica.PlatformP" qname="PlatformP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b3f41de64f0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b3f41de6840" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="41:/home/tinyos/tinyos-main/tos/platforms/micaz/MotePlatformC.nc" name="SubInit" provided="0" ref="0x2b3f41dee108">
+      <component-ref nicename="tos.platforms.micaz.MotePlatformC" qname="MotePlatformC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SubInit" ref="0x2b3f41dee108" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b3f41dee458" scoped=""/>
       </interface-functions>
     </interface><component loc="56:/home/tinyos/tinyos-main/tos/platforms/iris/MeasureClockC.nc" nicename="tos.platforms.iris.MeasureClockC" qname="MeasureClockC">
       <documentation loc="47:/home/tinyos/tinyos-main/tos/platforms/iris/MeasureClockC.nc">
@@ -253,16 +253,16 @@
       <configuration/>
       <wiring>
         <wire loc="46:/home/tinyos/tinyos-main/tos/platforms/micaz/MotePlatformC.nc">
-          <from><interface-ref name="PlatformInit" ref="0x2b9d54d8b720" scoped=""/></from>
-          <to><interface-ref name="PlatformInit" ref="0x2b9d54d8e180" scoped=""/></to>
+          <from><interface-ref name="PlatformInit" ref="0x2b3f41de8a10" scoped=""/></from>
+          <to><interface-ref name="PlatformInit" ref="0x2b3f41df9460" scoped=""/></to>
         </wire>
         <wire loc="48:/home/tinyos/tinyos-main/tos/platforms/micaz/MotePlatformC.nc">
-          <from><interface-ref name="SerialIdPin" ref="0x2b9d54d95388" scoped=""/></from>
-          <to><interface-ref name="PortA4" ref="0x2b9d54da7e00" scoped=""/></to>
+          <from><interface-ref name="SerialIdPin" ref="0x2b3f41e005f8" scoped=""/></from>
+          <to><interface-ref name="PortA4" ref="0x2b3f41e031a0" scoped=""/></to>
         </wire>
         <wire loc="49:/home/tinyos/tinyos-main/tos/platforms/micaz/MotePlatformC.nc">
-          <from><interface-ref name="SubInit" ref="0x2b9d54d8d4f8" scoped=""/></from>
-          <to><interface-ref name="SubInit" ref="0x2b9d54d8bdb0" scoped=""/></to>
+          <from><interface-ref name="SubInit" ref="0x2b3f41df87f8" scoped=""/></from>
+          <to><interface-ref name="SubInit" ref="0x2b3f41dee108" scoped=""/></to>
         </wire>
       </wiring>
     </component></referenced></component>

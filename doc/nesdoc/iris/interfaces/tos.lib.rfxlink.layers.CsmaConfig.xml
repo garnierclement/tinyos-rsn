@@ -1,5 +1,5 @@
 <?xml version="1.0" ?><interfacedef loc="35:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/CsmaConfig.nc" nicename="tos.lib.rfxlink.layers.CsmaConfig" qname="CsmaConfig">
-      <function command="" loc="41:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/CsmaConfig.nc" name="requiresSoftwareCCA" provided="0" ref="0x2b9d552d2338">
+      <function command="" loc="41:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/CsmaConfig.nc" name="requiresSoftwareCCA" provided="0" ref="0x2b3f4242b338">
         <documentation loc="37:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/CsmaConfig.nc">
           <short>
  This command is called when the message is transmitted to
@@ -8,21 +8,21 @@
         <interfacedef-ref nicename="tos.lib.rfxlink.layers.CsmaConfig" qname="CsmaConfig"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="bool" ref="0x2b9d54c5c4c8"/></typename>
+            <typename><typedef-ref name="bool" ref="0x2b3f41cc59b8"/></typename>
           </type-int>
           <function-parameters>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="41:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/CsmaConfig.nc" name="msg" ref="0x2b9d552d20c8">
+          <variable loc="41:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/CsmaConfig.nc" name="msg" ref="0x2b3f4242b0c8">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>

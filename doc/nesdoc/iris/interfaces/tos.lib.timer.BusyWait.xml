@@ -27,16 +27,16 @@
 </long>
       </documentation>
       <parameters>
-        <typedef loc="59:/home/tinyos/tinyos-main/tos/lib/timer/BusyWait.nc" name="precision_tag" ref="0x2b9d55841910">
+        <typedef loc="59:/home/tinyos/tinyos-main/tos/lib/timer/BusyWait.nc" name="precision_tag" ref="0x2b3f429b2910">
           <interfacedef-ref nicename="tos.lib.timer.BusyWait" qname="BusyWait"/>
-          <type-var alignment="U:" size="U:"><typedef-ref name="precision_tag" ref="0x2b9d55841910" scoped=""/></type-var>
+          <type-var alignment="U:" size="U:"><typedef-ref name="precision_tag" ref="0x2b3f429b2910" scoped=""/></type-var>
         </typedef>
-        <typedef loc="59:/home/tinyos/tinyos-main/tos/lib/timer/BusyWait.nc" name="size_type" ref="0x2b9d55841b40">
+        <typedef loc="59:/home/tinyos/tinyos-main/tos/lib/timer/BusyWait.nc" name="size_type" ref="0x2b3f429b2b40">
           <interfacedef-ref nicename="tos.lib.timer.BusyWait" qname="BusyWait"/>
-          <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b9d55841b40" scoped=""/></type-var>
+          <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b3f429b2b40" scoped=""/></type-var>
         </typedef>
       </parameters>
-      <function command="" loc="66:/home/tinyos/tinyos-main/tos/lib/timer/BusyWait.nc" name="wait" provided="0" ref="0x2b9d55875630">
+      <function command="" loc="66:/home/tinyos/tinyos-main/tos/lib/timer/BusyWait.nc" name="wait" provided="0" ref="0x2b3f429ac630">
         <documentation loc="61:/home/tinyos/tinyos-main/tos/lib/timer/BusyWait.nc">
           <short>
  Busy wait for (at least) dt time units.</short>
@@ -50,12 +50,12 @@
         <type-function alignment="I:1" size="I:1">
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
-            <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b9d55841b40" scoped=""/></type-var>
+            <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b3f429b2b40" scoped=""/></type-var>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="66:/home/tinyos/tinyos-main/tos/lib/timer/BusyWait.nc" name="dt" ref="0x2b9d558753c0">
-            <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b9d55841b40" scoped=""/></type-var>
+          <variable loc="66:/home/tinyos/tinyos-main/tos/lib/timer/BusyWait.nc" name="dt" ref="0x2b3f429ac3c0">
+            <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b3f429b2b40" scoped=""/></type-var>
           </variable>
         </parameters>
       </function>

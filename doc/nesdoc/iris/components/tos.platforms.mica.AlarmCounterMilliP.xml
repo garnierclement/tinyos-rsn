@@ -17,127 +17,127 @@
       <configuration/>
       <wiring>
         <wire loc="37:/home/tinyos/tinyos-main/tos/platforms/mica/AlarmCounterMilliP.nc">
-          <from><interface-ref name="CounterMilli32" ref="0x2b9d55088e40" scoped=""/></from>
-          <to><interface-ref name="Counter" ref="0x2b9d5518aa90" scoped=""/></to>
+          <from><interface-ref name="CounterMilli32" ref="0x2b3f4214d150" scoped=""/></from>
+          <to><interface-ref name="Counter" ref="0x2b3f4224aa90" scoped=""/></to>
         </wire>
         <wire loc="35:/home/tinyos/tinyos-main/tos/platforms/mica/AlarmCounterMilliP.nc">
-          <from><interface-ref name="Init" ref="0x2b9d55067bd0" scoped=""/></from>
-          <to><interface-ref name="Init" ref="0x2b9d55170020" scoped=""/></to>
+          <from><interface-ref name="Init" ref="0x2b3f4213f730" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x2b3f4224d020" scoped=""/></to>
         </wire>
         <wire loc="36:/home/tinyos/tinyos-main/tos/platforms/mica/AlarmCounterMilliP.nc">
-          <from><interface-ref name="AlarmMilli32" ref="0x2b9d55075748" scoped=""/></from>
-          <to><interface-ref name="Alarm" ref="0x2b9d551707c8" scoped=""/></to>
+          <from><interface-ref name="AlarmMilli32" ref="0x2b3f4213b020" scoped=""/></from>
+          <to><interface-ref name="Alarm" ref="0x2b3f4224d7c8" scoped=""/></to>
         </wire>
       </wiring>
-    <specification><interface loc="29:/home/tinyos/tinyos-main/tos/platforms/mica/AlarmCounterMilliP.nc" name="CounterMilli32" provided="1" ref="0x2b9d55088e40">
+    <specification><interface loc="29:/home/tinyos/tinyos-main/tos/platforms/mica/AlarmCounterMilliP.nc" name="CounterMilli32" provided="1" ref="0x2b3f4214d150">
       <component-ref nicename="tos.platforms.mica.AlarmCounterMilliP" qname="AlarmCounterMilliP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="CounterMilli32" ref="0x2b9d55088e40" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="CounterMilli32" ref="0x2b3f4214d150" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.lib.timer.Counter" qname="Counter"/>
         <arguments>
-          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54ce7020"/>
-            <typename><typedef-ref name="TMilli" ref="0x2b9d54ce7378"/></typename>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d4f020"/>
+            <typename><typedef-ref name="TMilli" ref="0x2b3f41d4f378"/></typename>
           </type-tag>
           <type-int alignment="I:1" cname="unsigned long" size="I:4" unsigned="">
-            <typename><typedef-ref name="uint32_t" ref="0x2b9d54680608"/></typename>
+            <typename><typedef-ref name="uint32_t" ref="0x2b3f416e8608"/></typename>
           </type-int>
         </arguments>
       </instance>
       <interface-functions>
-        <function-ref name="get" ref="0x2b9d5508cbe8" scoped=""/>
-        <function-ref name="clearOverflow" ref="0x2b9d5508b548" scoped=""/>
-        <function-ref name="isOverflowPending" ref="0x2b9d5508b0c0" scoped=""/>
-        <function-ref name="overflow" ref="0x2b9d5508b9d0" scoped=""/>
+        <function-ref name="get" ref="0x2b3f4214c020" scoped=""/>
+        <function-ref name="clearOverflow" ref="0x2b3f4214c930" scoped=""/>
+        <function-ref name="isOverflowPending" ref="0x2b3f4214c4a8" scoped=""/>
+        <function-ref name="overflow" ref="0x2b3f4214cdb8" scoped=""/>
       </interface-functions>
-    </interface><interface loc="27:/home/tinyos/tinyos-main/tos/platforms/mica/AlarmCounterMilliP.nc" name="Init" provided="1" ref="0x2b9d55067bd0">
+    </interface><interface loc="27:/home/tinyos/tinyos-main/tos/platforms/mica/AlarmCounterMilliP.nc" name="Init" provided="1" ref="0x2b3f4213f730">
       <component-ref nicename="tos.platforms.mica.AlarmCounterMilliP" qname="AlarmCounterMilliP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b9d55067bd0" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b3f4213f730" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
       </instance>
       <interface-functions>
-        <function-ref name="init" ref="0x2b9d5507d020" scoped=""/>
+        <function-ref name="init" ref="0x2b3f4213fa80" scoped=""/>
       </interface-functions>
-    </interface><interface loc="28:/home/tinyos/tinyos-main/tos/platforms/mica/AlarmCounterMilliP.nc" name="AlarmMilli32" provided="1" ref="0x2b9d55075748">
+    </interface><interface loc="28:/home/tinyos/tinyos-main/tos/platforms/mica/AlarmCounterMilliP.nc" name="AlarmMilli32" provided="1" ref="0x2b3f4213b020">
       <component-ref nicename="tos.platforms.mica.AlarmCounterMilliP" qname="AlarmCounterMilliP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="AlarmMilli32" ref="0x2b9d55075748" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="AlarmMilli32" ref="0x2b3f4213b020" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.lib.timer.Alarm" qname="Alarm"/>
         <arguments>
-          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54ce7020"/>
-            <typename><typedef-ref name="TMilli" ref="0x2b9d54ce7378"/></typename>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d4f020"/>
+            <typename><typedef-ref name="TMilli" ref="0x2b3f41d4f378"/></typename>
           </type-tag>
           <type-int alignment="I:1" cname="unsigned long" size="I:4" unsigned="">
-            <typename><typedef-ref name="uint32_t" ref="0x2b9d54680608"/></typename>
+            <typename><typedef-ref name="uint32_t" ref="0x2b3f416e8608"/></typename>
           </type-int>
         </arguments>
       </instance>
       <interface-functions>
-        <function-ref name="getNow" ref="0x2b9d55073020" scoped=""/>
-        <function-ref name="fired" ref="0x2b9d5507b020" scoped=""/>
-        <function-ref name="startAt" ref="0x2b9d5507b930" scoped=""/>
-        <function-ref name="isRunning" ref="0x2b9d5507b4a8" scoped=""/>
-        <function-ref name="getAlarm" ref="0x2b9d550734a8" scoped=""/>
-        <function-ref name="start" ref="0x2b9d5507c578" scoped=""/>
-        <function-ref name="stop" ref="0x2b9d5507ca50" scoped=""/>
+        <function-ref name="getNow" ref="0x2b3f4214f690" scoped=""/>
+        <function-ref name="fired" ref="0x2b3f421506f8" scoped=""/>
+        <function-ref name="startAt" ref="0x2b3f4214f088" scoped=""/>
+        <function-ref name="isRunning" ref="0x2b3f42150b80" scoped=""/>
+        <function-ref name="getAlarm" ref="0x2b3f4214fb18" scoped=""/>
+        <function-ref name="start" ref="0x2b3f4213bd70" scoped=""/>
+        <function-ref name="stop" ref="0x2b3f42150270" scoped=""/>
       </interface-functions>
-    </interface></specification><referenced><interface loc="61:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/Atm128AlarmAsyncC.nc" name="Alarm" provided="1" ref="0x2b9d551707c8">
+    </interface></specification><referenced><interface loc="62:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/Atm128AlarmAsyncC.nc" name="Counter" provided="1" ref="0x2b3f4224aa90">
       <component-ref nicename="tos.chips.atm1281.timer.Atm128AlarmAsyncC" qname="AlarmCounterMilliP.Atm128AlarmAsyncC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Alarm" ref="0x2b9d551707c8" scoped=""/></type-interface>
-      <instance>
-        <interfacedef-ref nicename="tos.lib.timer.Alarm" qname="Alarm"/>
-        <arguments>
-          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54ce7020"/>
-            <typename><typedef-ref name="TMilli" ref="0x2b9d54ce7378"/></typename>
-          </type-tag>
-          <type-int alignment="I:1" cname="unsigned long" size="I:4" unsigned="">
-            <typename><typedef-ref name="uint32_t" ref="0x2b9d54680608"/></typename>
-          </type-int>
-        </arguments>
-      </instance>
-      <interface-functions>
-        <function-ref name="getNow" ref="0x2b9d5518a020" scoped=""/>
-        <function-ref name="fired" ref="0x2b9d5518b020" scoped=""/>
-        <function-ref name="startAt" ref="0x2b9d5518b930" scoped=""/>
-        <function-ref name="isRunning" ref="0x2b9d5518b4a8" scoped=""/>
-        <function-ref name="getAlarm" ref="0x2b9d5518a4a8" scoped=""/>
-        <function-ref name="start" ref="0x2b9d5516f578" scoped=""/>
-        <function-ref name="stop" ref="0x2b9d5516fa50" scoped=""/>
-      </interface-functions>
-    </interface><interface loc="62:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/Atm128AlarmAsyncC.nc" name="Counter" provided="1" ref="0x2b9d5518aa90">
-      <component-ref nicename="tos.chips.atm1281.timer.Atm128AlarmAsyncC" qname="AlarmCounterMilliP.Atm128AlarmAsyncC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Counter" ref="0x2b9d5518aa90" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Counter" ref="0x2b3f4224aa90" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.lib.timer.Counter" qname="Counter"/>
         <arguments>
-          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54ce7020"/>
-            <typename><typedef-ref name="TMilli" ref="0x2b9d54ce7378"/></typename>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d4f020"/>
+            <typename><typedef-ref name="TMilli" ref="0x2b3f41d4f378"/></typename>
           </type-tag>
           <type-int alignment="I:1" cname="unsigned long" size="I:4" unsigned="">
-            <typename><typedef-ref name="uint32_t" ref="0x2b9d54680608"/></typename>
+            <typename><typedef-ref name="uint32_t" ref="0x2b3f416e8608"/></typename>
           </type-int>
         </arguments>
       </instance>
       <interface-functions>
-        <function-ref name="get" ref="0x2b9d55189828" scoped=""/>
-        <function-ref name="clearOverflow" ref="0x2b9d55188190" scoped=""/>
-        <function-ref name="isOverflowPending" ref="0x2b9d55189cb0" scoped=""/>
-        <function-ref name="overflow" ref="0x2b9d55188618" scoped=""/>
+        <function-ref name="get" ref="0x2b3f42248828" scoped=""/>
+        <function-ref name="clearOverflow" ref="0x2b3f42247190" scoped=""/>
+        <function-ref name="isOverflowPending" ref="0x2b3f42248cb0" scoped=""/>
+        <function-ref name="overflow" ref="0x2b3f42247618" scoped=""/>
       </interface-functions>
-    </interface><interface loc="60:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/Atm128AlarmAsyncC.nc" name="Init" provided="1" ref="0x2b9d55170020">
+    </interface><interface loc="60:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/Atm128AlarmAsyncC.nc" name="Init" provided="1" ref="0x2b3f4224d020">
       <component-ref nicename="tos.chips.atm1281.timer.Atm128AlarmAsyncC" qname="AlarmCounterMilliP.Atm128AlarmAsyncC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b9d55170020" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b3f4224d020" scoped=""/></type-interface>
       <attribute-value>
-        <attribute-ref name="atleastonce" ref="0x2b9d54c65d88"/>
+        <attribute-ref name="atleastonce" ref="0x2b3f41ccc388"/>
         <value-structured>
-          <type-tag alignment="I:1" size="I:0"><attribute-ref name="atleastonce" ref="0x2b9d54c65d88"/></type-tag>
+          <type-tag alignment="I:1" size="I:0"><attribute-ref name="atleastonce" ref="0x2b3f41ccc388"/></type-tag>
         </value-structured>
       </attribute-value>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
       </instance>
       <interface-functions>
-        <function-ref name="init" ref="0x2b9d55170370" scoped=""/>
+        <function-ref name="init" ref="0x2b3f4224d370" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="61:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/Atm128AlarmAsyncC.nc" name="Alarm" provided="1" ref="0x2b3f4224d7c8">
+      <component-ref nicename="tos.chips.atm1281.timer.Atm128AlarmAsyncC" qname="AlarmCounterMilliP.Atm128AlarmAsyncC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Alarm" ref="0x2b3f4224d7c8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.timer.Alarm" qname="Alarm"/>
+        <arguments>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d4f020"/>
+            <typename><typedef-ref name="TMilli" ref="0x2b3f41d4f378"/></typename>
+          </type-tag>
+          <type-int alignment="I:1" cname="unsigned long" size="I:4" unsigned="">
+            <typename><typedef-ref name="uint32_t" ref="0x2b3f416e8608"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="getNow" ref="0x2b3f4224a020" scoped=""/>
+        <function-ref name="fired" ref="0x2b3f4224b020" scoped=""/>
+        <function-ref name="startAt" ref="0x2b3f4224b930" scoped=""/>
+        <function-ref name="isRunning" ref="0x2b3f4224b4a8" scoped=""/>
+        <function-ref name="getAlarm" ref="0x2b3f4224a4a8" scoped=""/>
+        <function-ref name="start" ref="0x2b3f4224c578" scoped=""/>
+        <function-ref name="stop" ref="0x2b3f4224ca50" scoped=""/>
       </interface-functions>
     </interface><component loc="58(AlarmCounterMilliP.Atm128AlarmAsyncC):/home/tinyos/tinyos-main/tos/chips/atm1281/timer/Atm128AlarmAsyncC.nc" nicename="tos.chips.atm1281.timer.Atm128AlarmAsyncC" qname="AlarmCounterMilliP.Atm128AlarmAsyncC">
       <documentation loc="45:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/Atm128AlarmAsyncC.nc">
@@ -161,8 +161,8 @@
       <instance number="0">
         <component-ref nicename="tos.chips.atm1281.timer.Atm128AlarmAsyncC" qname="Atm128AlarmAsyncC"/>
         <arguments>
-          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54ce7020"/>
-            <typename><typedef-ref name="TMilli" ref="0x2b9d54ce7378"/></typename>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d4f020"/>
+            <typename><typedef-ref name="TMilli" ref="0x2b3f41d4f378"/></typename>
           </type-tag>
           <value cst="I:3">
             <type-int alignment="I:1" cname="int" size="I:2"/>
@@ -172,32 +172,32 @@
       <configuration/>
       <wiring>
         <wire loc="71:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/Atm128AlarmAsyncC.nc">
-          <from><interface-ref name="Alarm" ref="0x2b9d551707c8" scoped=""/></from>
-          <to><interface-ref name="Alarm" ref="0x2b9d55f7e160" scoped=""/></to>
+          <from><interface-ref name="Alarm" ref="0x2b3f4224d7c8" scoped=""/></from>
+          <to><interface-ref name="Alarm" ref="0x2b3f430af888" scoped=""/></to>
         </wire>
         <wire loc="70:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/Atm128AlarmAsyncC.nc">
-          <from><interface-ref name="Init" ref="0x2b9d55170020" scoped=""/></from>
-          <to><interface-ref name="Init" ref="0x2b9d55f7f980" scoped=""/></to>
+          <from><interface-ref name="Init" ref="0x2b3f4224d020" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x2b3f430af0e0" scoped=""/></to>
         </wire>
         <wire loc="72:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/Atm128AlarmAsyncC.nc">
-          <from><interface-ref name="Counter" ref="0x2b9d5518aa90" scoped=""/></from>
-          <to><interface-ref name="Counter" ref="0x2b9d55f7a3d0" scoped=""/></to>
+          <from><interface-ref name="Counter" ref="0x2b3f4224aa90" scoped=""/></from>
+          <to><interface-ref name="Counter" ref="0x2b3f430aba90" scoped=""/></to>
         </wire>
         <wire loc="74:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/Atm128AlarmAsyncC.nc">
-          <from><interface-ref name="Timer" ref="0x2b9d55f785a0" scoped=""/></from>
-          <to><interface-ref name="Timer" ref="0x2b9d550fa288" scoped=""/></to>
+          <from><interface-ref name="Timer" ref="0x2b3f430a8b98" scoped=""/></from>
+          <to><interface-ref name="Timer" ref="0x2b3f421ca288" scoped=""/></to>
         </wire>
         <wire loc="75:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/Atm128AlarmAsyncC.nc">
-          <from><interface-ref name="TimerCtrl" ref="0x2b9d55fd24a0" scoped=""/></from>
-          <to><interface-ref name="TimerCtrl" ref="0x2b9d551113c0" scoped=""/></to>
+          <from><interface-ref name="TimerCtrl" ref="0x2b3f430a3b60" scoped=""/></from>
+          <to><interface-ref name="TimerCtrl" ref="0x2b3f421e33c0" scoped=""/></to>
         </wire>
         <wire loc="76:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/Atm128AlarmAsyncC.nc">
-          <from><interface-ref name="Compare" ref="0x2b9d55fd16c0" scoped=""/></from>
-          <to><interface-ref name="Compare" ref="0x2b9d551107f8" scoped=""/></to>
+          <from><interface-ref name="Compare" ref="0x2b3f430a2e68" scoped=""/></from>
+          <to><interface-ref name="Compare" ref="0x2b3f421e27f8" scoped=""/></to>
         </wire>
         <wire loc="77:/home/tinyos/tinyos-main/tos/chips/atm1281/timer/Atm128AlarmAsyncC.nc">
-          <from><interface-ref name="TimerAsync" ref="0x2b9d55fcd8c0" scoped=""/></from>
-          <to><interface-ref name="TimerAsync" ref="0x2b9d5510d9e8" scoped=""/></to>
+          <from><interface-ref name="TimerAsync" ref="0x2b3f4309d060" scoped=""/></from>
+          <to><interface-ref name="TimerAsync" ref="0x2b3f421de9e8" scoped=""/></to>
         </wire>
       </wiring>
     </component></referenced></component>

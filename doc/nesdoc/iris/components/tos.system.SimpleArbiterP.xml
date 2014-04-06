@@ -29,84 +29,84 @@
       <parameters>
       </parameters>
       <module/>
-    <specification><interface loc="52:/home/tinyos/tinyos-main/tos/system/SimpleArbiterP.nc" name="ResourceRequested" provided="1" ref="0x2b9d5548aca0">
+    <specification><interface loc="52:/home/tinyos/tinyos-main/tos/system/SimpleArbiterP.nc" name="ResourceRequested" provided="1" ref="0x2b3f425e8348">
       <component-ref nicename="tos.system.SimpleArbiterP" qname="SimpleArbiterP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="ResourceRequested" ref="0x2b9d5548aca0" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="ResourceRequested" ref="0x2b3f425e8348" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.ResourceRequested" qname="ResourceRequested"/>
       </instance>
       <interface-parameters>
         <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-          <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+          <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
         </type-int>
       </interface-parameters>
       <interface-functions>
-        <function-ref name="requested" ref="0x2b9d55488020" scoped=""/>
-        <function-ref name="immediateRequested" ref="0x2b9d554881a8" scoped=""/>
+        <function-ref name="requested" ref="0x2b3f425e8698" scoped=""/>
+        <function-ref name="immediateRequested" ref="0x2b3f425e8820" scoped=""/>
       </interface-functions>
-    </interface><interface loc="56:/home/tinyos/tinyos-main/tos/system/SimpleArbiterP.nc" name="ResourceConfigure" provided="0" ref="0x2b9d554871c8">
+    </interface><interface loc="56:/home/tinyos/tinyos-main/tos/system/SimpleArbiterP.nc" name="ResourceConfigure" provided="0" ref="0x2b3f425e6888">
       <component-ref nicename="tos.system.SimpleArbiterP" qname="SimpleArbiterP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="ResourceConfigure" ref="0x2b9d554871c8" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="ResourceConfigure" ref="0x2b3f425e6888" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.ResourceConfigure" qname="ResourceConfigure"/>
       </instance>
       <interface-parameters>
         <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-          <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+          <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
         </type-int>
       </interface-parameters>
       <interface-functions>
-        <function-ref name="unconfigure" ref="0x2b9d55487518" scoped=""/>
-        <function-ref name="configure" ref="0x2b9d554876a0" scoped=""/>
+        <function-ref name="unconfigure" ref="0x2b3f425e6bd8" scoped=""/>
+        <function-ref name="configure" ref="0x2b3f425e6d60" scoped=""/>
       </interface-functions>
-    </interface><interface loc="57:/home/tinyos/tinyos-main/tos/system/SimpleArbiterP.nc" name="Queue" provided="0" ref="0x2b9d554879e8">
+    </interface><interface loc="57:/home/tinyos/tinyos-main/tos/system/SimpleArbiterP.nc" name="Queue" provided="0" ref="0x2b3f425e50f8">
       <component-ref nicename="tos.system.SimpleArbiterP" qname="SimpleArbiterP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Queue" ref="0x2b9d554879e8" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Queue" ref="0x2b3f425e50f8" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.ResourceQueue" qname="ResourceQueue"/>
       </instance>
       <interface-functions>
-        <function-ref name="enqueue" ref="0x2b9d55487d38" scoped=""/>
-        <function-ref name="isEmpty" ref="0x2b9d55486020" scoped=""/>
-        <function-ref name="isEnqueued" ref="0x2b9d554861a8" scoped=""/>
-        <function-ref name="dequeue" ref="0x2b9d55486330" scoped=""/>
+        <function-ref name="enqueue" ref="0x2b3f425e5448" scoped=""/>
+        <function-ref name="isEmpty" ref="0x2b3f425e55d0" scoped=""/>
+        <function-ref name="isEnqueued" ref="0x2b3f425e5758" scoped=""/>
+        <function-ref name="dequeue" ref="0x2b3f425e58e0" scoped=""/>
       </interface-functions>
-    </interface><interface loc="51:/home/tinyos/tinyos-main/tos/system/SimpleArbiterP.nc" name="Resource" provided="1" ref="0x2b9d5548bac0">
+    </interface><interface loc="51:/home/tinyos/tinyos-main/tos/system/SimpleArbiterP.nc" name="Resource" provided="1" ref="0x2b3f425e91c8">
       <component-ref nicename="tos.system.SimpleArbiterP" qname="SimpleArbiterP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Resource" ref="0x2b9d5548bac0" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Resource" ref="0x2b3f425e91c8" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.Resource" qname="Resource"/>
       </instance>
       <interface-parameters>
         <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-          <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+          <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
         </type-int>
       </interface-parameters>
       <interface-functions>
-        <function-ref name="release" ref="0x2b9d5548be10" scoped=""/>
-        <function-ref name="immediateRequest" ref="0x2b9d5548a020" scoped=""/>
-        <function-ref name="request" ref="0x2b9d5548a1a8" scoped=""/>
-        <function-ref name="granted" ref="0x2b9d5548a330" scoped=""/>
-        <function-ref name="isOwner" ref="0x2b9d5548a4b8" scoped=""/>
+        <function-ref name="release" ref="0x2b3f425e9518" scoped=""/>
+        <function-ref name="immediateRequest" ref="0x2b3f425e96a0" scoped=""/>
+        <function-ref name="request" ref="0x2b3f425e9828" scoped=""/>
+        <function-ref name="granted" ref="0x2b3f425e99b0" scoped=""/>
+        <function-ref name="isOwner" ref="0x2b3f425e9b38" scoped=""/>
       </interface-functions>
-    </interface><interface loc="53:/home/tinyos/tinyos-main/tos/system/SimpleArbiterP.nc" name="ArbiterInfo" provided="1" ref="0x2b9d55488460">
+    </interface><interface loc="53:/home/tinyos/tinyos-main/tos/system/SimpleArbiterP.nc" name="ArbiterInfo" provided="1" ref="0x2b3f425e8ad8">
       <component-ref nicename="tos.system.SimpleArbiterP" qname="SimpleArbiterP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="ArbiterInfo" ref="0x2b9d55488460" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="ArbiterInfo" ref="0x2b3f425e8ad8" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.ArbiterInfo" qname="ArbiterInfo"/>
       </instance>
       <interface-functions>
-        <function-ref name="inUse" ref="0x2b9d554887b0" scoped=""/>
-        <function-ref name="userId" ref="0x2b9d55488938" scoped=""/>
+        <function-ref name="inUse" ref="0x2b3f425e8e28" scoped=""/>
+        <function-ref name="userId" ref="0x2b3f425e6020" scoped=""/>
       </interface-functions>
-    </interface><interface loc="69:/home/tinyos/tinyos-main/tos/system/SimpleArbiterP.nc" name="grantedTask" provided="0" ref="0x2b9d55484c30">
+    </interface><interface loc="69:/home/tinyos/tinyos-main/tos/system/SimpleArbiterP.nc" name="grantedTask" provided="0" ref="0x2b3f425e2350">
       <component-ref nicename="tos.system.SimpleArbiterP" qname="SimpleArbiterP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="grantedTask" ref="0x2b9d55484c30" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="grantedTask" ref="0x2b3f425e2350" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.TaskBasic" qname="TaskBasic"/>
       </instance>
       <interface-functions>
-        <function-ref name="postTask" ref="0x2b9d55483020" scoped=""/>
-        <function-ref name="runTask" ref="0x2b9d554831a8" scoped=""/>
+        <function-ref name="postTask" ref="0x2b3f425e26a0" scoped=""/>
+        <function-ref name="runTask" ref="0x2b3f425e2828" scoped=""/>
       </interface-functions>
     </interface></specification><referenced/></component>

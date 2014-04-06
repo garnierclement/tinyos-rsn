@@ -10,12 +10,12 @@
 </long>
       </documentation>
       <parameters>
-        <typedef loc="40:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="size_type" ref="0x2b9d5592f4d8">
+        <typedef loc="40:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="size_type" ref="0x2b3f42a814d8">
           <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Capture" qname="HplAtm128Capture"/>
-          <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b9d5592f4d8" scoped=""/></type-var>
+          <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b3f42a814d8" scoped=""/></type-var>
         </typedef>
       </parameters>
-      <function command="" loc="88:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="setEdge" provided="0" ref="0x2b9d55964020">
+      <function command="" loc="88:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="setEdge" provided="0" ref="0x2b3f42a79020">
         <documentation loc="84:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc">
           <short> 
  Sets the capture edge.</short>
@@ -29,19 +29,19 @@
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="bool" ref="0x2b9d54c5c4c8"/></typename>
+              <typename><typedef-ref name="bool" ref="0x2b3f41cc59b8"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="88:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="up" ref="0x2b9d55928c98">
+          <variable loc="88:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="up" ref="0x2b3f42a7ac98">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="bool" ref="0x2b9d54c5c4c8"/></typename>
+              <typename><typedef-ref name="bool" ref="0x2b3f41cc59b8"/></typename>
             </type-int>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="76:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="test" provided="0" ref="0x2b9d5592ae18">
+      <function command="" loc="76:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="test" provided="0" ref="0x2b3f42a7be18">
         <documentation loc="72:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc">
           <short> 
  Did a capture interrupt occur?
@@ -54,7 +54,7 @@
         <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Capture" qname="HplAtm128Capture"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="bool" ref="0x2b9d54c5c4c8"/></typename>
+            <typename><typedef-ref name="bool" ref="0x2b3f41cc59b8"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>
@@ -62,7 +62,7 @@
         <parameters>
         </parameters>
       </function>
-      <function command="" loc="47:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="get" provided="0" ref="0x2b9d5592fd90">
+      <function command="" loc="47:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="get" provided="0" ref="0x2b3f42a81d90">
         <documentation loc="43:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc">
           <short> 
  Get the time to be captured.</short>
@@ -73,14 +73,14 @@
         </documentation>
         <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Capture" qname="HplAtm128Capture"/>
         <type-function alignment="I:1" size="I:1">
-          <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b9d5592f4d8" scoped=""/></type-var>
+          <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b3f42a814d8" scoped=""/></type-var>
           <function-parameters>
           </function-parameters>
         </type-function>
         <parameters>
         </parameters>
       </function>
-      <function event="" loc="60:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="captured" provided="0" ref="0x2b9d5592b108">
+      <function event="" loc="60:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="captured" provided="0" ref="0x2b3f42a7d108">
         <documentation loc="56:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc">
           <short> 
  Signalled on capture interrupt.</short>
@@ -93,16 +93,16 @@
         <type-function alignment="I:1" size="I:1">
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
-            <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b9d5592f4d8" scoped=""/></type-var>
+            <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b3f42a814d8" scoped=""/></type-var>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="60:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="t" ref="0x2b9d5592ce28">
-            <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b9d5592f4d8" scoped=""/></type-var>
+          <variable loc="60:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="t" ref="0x2b3f42a7ee28">
+            <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b3f42a814d8" scoped=""/></type-var>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="64:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="reset" provided="0" ref="0x2b9d5592b848">
+      <function command="" loc="64:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="reset" provided="0" ref="0x2b3f42a7d848">
         <documentation loc="63:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc">
           <short> Clear the capture interrupt flag.</short>
           <long> Clear the capture interrupt flag. *</long>
@@ -116,7 +116,7 @@
         <parameters>
         </parameters>
       </function>
-      <function command="" loc="82:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="isOn" provided="0" ref="0x2b9d559285c0">
+      <function command="" loc="82:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="isOn" provided="0" ref="0x2b3f42a7a5c0">
         <documentation loc="78:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc">
           <short> 
  Is capture interrupt on? 
@@ -129,7 +129,7 @@
         <interfacedef-ref nicename="tos.chips.atm128.timer.HplAtm128Capture" qname="HplAtm128Capture"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="bool" ref="0x2b9d54c5c4c8"/></typename>
+            <typename><typedef-ref name="bool" ref="0x2b3f41cc59b8"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>
@@ -137,7 +137,7 @@
         <parameters>
         </parameters>
       </function>
-      <function command="" loc="53:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="set" provided="0" ref="0x2b9d5592c6f0">
+      <function command="" loc="53:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="set" provided="0" ref="0x2b3f42a7e6f0">
         <documentation loc="49:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc">
           <short> 
  Set the time to be captured.</short>
@@ -150,16 +150,16 @@
         <type-function alignment="I:1" size="I:1">
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
-            <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b9d5592f4d8" scoped=""/></type-var>
+            <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b3f42a814d8" scoped=""/></type-var>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="53:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="t" ref="0x2b9d5592c480">
-            <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b9d5592f4d8" scoped=""/></type-var>
+          <variable loc="53:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="t" ref="0x2b3f42a7e480">
+            <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b3f42a814d8" scoped=""/></type-var>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="67:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="start" provided="0" ref="0x2b9d5592a020">
+      <function command="" loc="67:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="start" provided="0" ref="0x2b3f42a7b020">
         <documentation loc="66:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc">
           <short> Enable the capture interrupt.</short>
           <long> Enable the capture interrupt. *</long>
@@ -173,7 +173,7 @@
         <parameters>
         </parameters>
       </function>
-      <function command="" loc="70:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="stop" provided="0" ref="0x2b9d5592a708">
+      <function command="" loc="70:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc" name="stop" provided="0" ref="0x2b3f42a7b708">
         <documentation loc="69:/home/tinyos/tinyos-main/tos/chips/atm128/timer/HplAtm128Capture.nc">
           <short> Turn off capture interrupts.</short>
           <long> Turn off capture interrupts. *</long>

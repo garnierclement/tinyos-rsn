@@ -10,7 +10,7 @@
  Defines global error codes for error_t in TinyOS.
 </long>
       </documentation>
-      <function command="" loc="80:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="send" provided="0" ref="0x2b9d550186e0">
+      <function command="" loc="80:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="send" provided="0" ref="0x2b3f4209cb50">
         <documentation loc="60:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc">
           <short> 
  Send a packet with a data payload of &lt;tt&gt;len&lt;/tt&gt; to address
@@ -39,43 +39,43 @@
         <interfacedef-ref nicename="tos.interfaces.AMSend" qname="AMSend"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+            <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
           </type-int>
           <function-parameters>
             <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-              <typename><typedef-ref name="am_addr_t" ref="0x2b9d54fd3020"/></typename>
+              <typename><typedef-ref name="am_addr_t" ref="0x2b3f4206d520"/></typename>
             </type-int>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="80:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="addr" ref="0x2b9d54ffcd98">
+          <variable loc="80:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="addr" ref="0x2b3f4209c250">
             <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-              <typename><typedef-ref name="am_addr_t" ref="0x2b9d54fd3020"/></typename>
+              <typename><typedef-ref name="am_addr_t" ref="0x2b3f4206d520"/></typename>
             </type-int>
           </variable>
-          <variable loc="80:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="msg" ref="0x2b9d55018140">
+          <variable loc="80:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="msg" ref="0x2b3f4209c5b0">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>
-          <variable loc="80:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="len" ref="0x2b9d55018450">
+          <variable loc="80:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="len" ref="0x2b3f4209c8c0">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="135:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="getPayload" provided="0" ref="0x2b9d55013a68">
+      <function command="" loc="135:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="getPayload" provided="0" ref="0x2b3f420af2d8">
         <documentation loc="126:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc">
           <short>
  Return a pointer to a protocol's payload region in a packet.</short>
@@ -96,31 +96,31 @@
           </type-pointer>
           <function-parameters>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="135:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="msg" ref="0x2b9d550134a0">
+          <variable loc="135:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="msg" ref="0x2b3f420b1be8">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>
-          <variable loc="135:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="len" ref="0x2b9d550137b0">
+          <variable loc="135:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="len" ref="0x2b3f420af020">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="123:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="maxPayloadLength" provided="0" ref="0x2b9d55015c58">
+      <function command="" loc="123:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="maxPayloadLength" provided="0" ref="0x2b3f420b13e0">
         <documentation loc="113:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc">
           <short>
  Return the maximum payload length that this communication layer
@@ -137,7 +137,7 @@
         <interfacedef-ref nicename="tos.interfaces.AMSend" qname="AMSend"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>
@@ -145,7 +145,7 @@
         <parameters>
         </parameters>
       </function>
-      <function command="" loc="96:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="cancel" provided="0" ref="0x2b9d550169f0">
+      <function command="" loc="96:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="cancel" provided="0" ref="0x2b3f420b3108">
         <documentation loc="82:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc">
           <short>
  Cancel a requested transmission.</short>
@@ -167,27 +167,27 @@
         <interfacedef-ref nicename="tos.interfaces.AMSend" qname="AMSend"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+            <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
           </type-int>
           <function-parameters>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="96:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="msg" ref="0x2b9d55016780">
+          <variable loc="96:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="msg" ref="0x2b3f420b5e50">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>
         </parameters>
       </function>
-      <function event="" loc="110:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="sendDone" provided="0" ref="0x2b9d55014e28">
+      <function event="" loc="110:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="sendDone" provided="0" ref="0x2b3f420b25c8">
         <documentation loc="98:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc">
           <short> 
  Signaled in response to an accepted send request.</short>
@@ -208,26 +208,26 @@
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+              <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="110:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="msg" ref="0x2b9d55014880">
+          <variable loc="110:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="msg" ref="0x2b3f420b2020">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>
-          <variable loc="110:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="error" ref="0x2b9d55014ba8">
+          <variable loc="110:/home/tinyos/tinyos-main/tos/interfaces/AMSend.nc" name="error" ref="0x2b3f420b2348">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+              <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
             </type-int>
           </variable>
         </parameters>

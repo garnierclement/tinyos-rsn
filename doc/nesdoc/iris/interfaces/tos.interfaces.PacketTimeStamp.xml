@@ -1,15 +1,15 @@
 <?xml version="1.0" ?><interfacedef loc="35:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" nicename="tos.interfaces.PacketTimeStamp" qname="PacketTimeStamp">
       <parameters>
-        <typedef loc="35:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" name="precision_tag" ref="0x2b9d55229310">
+        <typedef loc="35:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" name="precision_tag" ref="0x2b3f423885c8">
           <interfacedef-ref nicename="tos.interfaces.PacketTimeStamp" qname="PacketTimeStamp"/>
-          <type-var alignment="U:" size="U:"><typedef-ref name="precision_tag" ref="0x2b9d55229310" scoped=""/></type-var>
+          <type-var alignment="U:" size="U:"><typedef-ref name="precision_tag" ref="0x2b3f423885c8" scoped=""/></type-var>
         </typedef>
-        <typedef loc="35:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" name="size_type" ref="0x2b9d55229540">
+        <typedef loc="35:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" name="size_type" ref="0x2b3f423887f8">
           <interfacedef-ref nicename="tos.interfaces.PacketTimeStamp" qname="PacketTimeStamp"/>
-          <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b9d55229540" scoped=""/></type-var>
+          <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b3f423887f8" scoped=""/></type-var>
         </typedef>
       </parameters>
-      <function command="" loc="63:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" name="timestamp" provided="0" ref="0x2b9d5523d290">
+      <function command="" loc="63:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" name="timestamp" provided="0" ref="0x2b3f4239f4e8">
         <documentation loc="51:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc">
           <short>
  </short>
@@ -28,26 +28,26 @@
         </documentation>
         <interfacedef-ref nicename="tos.interfaces.PacketTimeStamp" qname="PacketTimeStamp"/>
         <type-function alignment="I:1" size="I:1">
-          <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b9d55229540" scoped=""/></type-var>
+          <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b3f423887f8" scoped=""/></type-var>
           <function-parameters>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="63:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" name="msg" ref="0x2b9d5523d020">
+          <variable loc="63:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" name="msg" ref="0x2b3f4239f278">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="70:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" name="clear" provided="0" ref="0x2b9d5523b370">
+      <function command="" loc="70:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" name="clear" provided="0" ref="0x2b3f4239e5b8">
         <documentation loc="65:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc">
           <short>
  </short>
@@ -62,23 +62,23 @@
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="70:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" name="msg" ref="0x2b9d5523b100">
+          <variable loc="70:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" name="msg" ref="0x2b3f4239e348">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="49:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" name="isValid" provided="0" ref="0x2b9d5523e0a8">
+      <function command="" loc="49:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" name="isValid" provided="0" ref="0x2b3f423a0370">
         <documentation loc="37:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc">
           <short>
  </short>
@@ -98,27 +98,27 @@
         <interfacedef-ref nicename="tos.interfaces.PacketTimeStamp" qname="PacketTimeStamp"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="bool" ref="0x2b9d54c5c4c8"/></typename>
+            <typename><typedef-ref name="bool" ref="0x2b3f41cc59b8"/></typename>
           </type-int>
           <function-parameters>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="49:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" name="msg" ref="0x2b9d55229df0">
+          <variable loc="49:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" name="msg" ref="0x2b3f423a0100">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="78:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" name="set" provided="0" ref="0x2b9d5523a5e0">
+      <function command="" loc="78:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" name="set" provided="0" ref="0x2b3f4239c838">
         <documentation loc="72:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc">
           <short>
  </short>
@@ -134,23 +134,23 @@
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
-            <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b9d55229540" scoped=""/></type-var>
+            <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b3f423887f8" scoped=""/></type-var>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="78:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" name="msg" ref="0x2b9d5523a020">
+          <variable loc="78:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" name="msg" ref="0x2b3f4239c278">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>
-          <variable loc="78:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" name="value" ref="0x2b9d5523a360">
-            <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b9d55229540" scoped=""/></type-var>
+          <variable loc="78:/home/tinyos/tinyos-main/tos/interfaces/PacketTimeStamp.nc" name="value" ref="0x2b3f4239c5b8">
+            <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b3f423887f8" scoped=""/></type-var>
           </variable>
         </parameters>
       </function>

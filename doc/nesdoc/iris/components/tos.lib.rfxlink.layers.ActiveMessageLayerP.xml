@@ -2,199 +2,199 @@
       <parameters>
       </parameters>
       <module/>
-    <specification><interface loc="59:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="SubReceive" provided="0" ref="0x2b9d553a09e0">
+    <specification><interface loc="59:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="SubReceive" provided="0" ref="0x2b3f425299e0">
       <component-ref nicename="tos.lib.rfxlink.layers.ActiveMessageLayerP" qname="ActiveMessageLayerP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="SubReceive" ref="0x2b9d553a09e0" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SubReceive" ref="0x2b3f425299e0" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.lib.rfxlink.util.BareReceive" qname="BareReceive"/>
       </instance>
       <interface-functions>
-        <function-ref name="receive" ref="0x2b9d553a0d30" scoped=""/>
+        <function-ref name="receive" ref="0x2b3f42529d30" scoped=""/>
       </interface-functions>
-    </interface><interface loc="58:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="SubSend" provided="0" ref="0x2b9d553a0020">
+    </interface><interface loc="58:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="SubSend" provided="0" ref="0x2b3f42529020">
       <component-ref nicename="tos.lib.rfxlink.layers.ActiveMessageLayerP" qname="ActiveMessageLayerP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="SubSend" ref="0x2b9d553a0020" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SubSend" ref="0x2b3f42529020" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.lib.rfxlink.util.BareSend" qname="BareSend"/>
       </instance>
       <interface-functions>
-        <function-ref name="send" ref="0x2b9d553a0370" scoped=""/>
-        <function-ref name="cancel" ref="0x2b9d553a04f8" scoped=""/>
-        <function-ref name="sendDone" ref="0x2b9d553a0680" scoped=""/>
+        <function-ref name="send" ref="0x2b3f42529370" scoped=""/>
+        <function-ref name="cancel" ref="0x2b3f425294f8" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b3f42529680" scoped=""/>
       </interface-functions>
-    </interface><interface loc="48:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="SendNotifier" provided="1" ref="0x2b9d553a31c8">
+    </interface><interface loc="48:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="SendNotifier" provided="1" ref="0x2b3f425011c8">
       <component-ref nicename="tos.lib.rfxlink.layers.ActiveMessageLayerP" qname="ActiveMessageLayerP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="SendNotifier" ref="0x2b9d553a31c8" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SendNotifier" ref="0x2b3f425011c8" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.SendNotifier" qname="SendNotifier"/>
       </instance>
       <interface-parameters>
         <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-          <typename><typedef-ref name="am_id_t" ref="0x2b9d54fd4848"/></typename>
+          <typename><typedef-ref name="am_id_t" ref="0x2b3f4206ed78"/></typename>
         </type-int>
       </interface-parameters>
       <interface-functions>
-        <function-ref name="aboutToSend" ref="0x2b9d553a3518" scoped=""/>
+        <function-ref name="aboutToSend" ref="0x2b3f42501518" scoped=""/>
       </interface-functions>
-    </interface><interface loc="44:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="Packet" provided="1" ref="0x2b9d553a8740">
+    </interface><interface loc="44:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="Packet" provided="1" ref="0x2b3f42506740">
       <component-ref nicename="tos.lib.rfxlink.layers.ActiveMessageLayerP" qname="ActiveMessageLayerP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Packet" ref="0x2b9d553a8740" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Packet" ref="0x2b3f42506740" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.Packet" qname="Packet"/>
       </instance>
       <interface-functions>
-        <function-ref name="clear" ref="0x2b9d553a8a90" scoped=""/>
-        <function-ref name="payloadLength" ref="0x2b9d553a8c18" scoped=""/>
-        <function-ref name="getPayload" ref="0x2b9d553a8da0" scoped=""/>
-        <function-ref name="maxPayloadLength" ref="0x2b9d553a7020" scoped=""/>
-        <function-ref name="setPayloadLength" ref="0x2b9d553a71a8" scoped=""/>
+        <function-ref name="clear" ref="0x2b3f42506a90" scoped=""/>
+        <function-ref name="payloadLength" ref="0x2b3f42506c18" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b3f42506da0" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b3f42505020" scoped=""/>
+        <function-ref name="setPayloadLength" ref="0x2b3f425051a8" scoped=""/>
       </interface-functions>
-    </interface><interface loc="45:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="AMSend" provided="1" ref="0x2b9d553a7920">
+    </interface><interface loc="45:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="AMSend" provided="1" ref="0x2b3f42505920">
       <component-ref nicename="tos.lib.rfxlink.layers.ActiveMessageLayerP" qname="ActiveMessageLayerP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="AMSend" ref="0x2b9d553a7920" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="AMSend" ref="0x2b3f42505920" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.AMSend" qname="AMSend"/>
       </instance>
       <interface-parameters>
         <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-          <typename><typedef-ref name="am_id_t" ref="0x2b9d54fd4848"/></typename>
+          <typename><typedef-ref name="am_id_t" ref="0x2b3f4206ed78"/></typename>
         </type-int>
       </interface-parameters>
       <interface-functions>
-        <function-ref name="send" ref="0x2b9d553a7c70" scoped=""/>
-        <function-ref name="getPayload" ref="0x2b9d553a7df8" scoped=""/>
-        <function-ref name="maxPayloadLength" ref="0x2b9d553a6020" scoped=""/>
-        <function-ref name="cancel" ref="0x2b9d553a61a8" scoped=""/>
-        <function-ref name="sendDone" ref="0x2b9d553a6330" scoped=""/>
+        <function-ref name="send" ref="0x2b3f42505c70" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b3f42505df8" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b3f42504020" scoped=""/>
+        <function-ref name="cancel" ref="0x2b3f425041a8" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b3f42504330" scoped=""/>
       </interface-functions>
-    </interface><interface loc="47:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="Snoop" provided="1" ref="0x2b9d553a4628">
+    </interface><interface loc="47:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="Snoop" provided="1" ref="0x2b3f42503628">
       <component-ref nicename="tos.lib.rfxlink.layers.ActiveMessageLayerP" qname="ActiveMessageLayerP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Snoop" ref="0x2b9d553a4628" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Snoop" ref="0x2b3f42503628" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.Receive" qname="Receive"/>
       </instance>
       <interface-parameters>
         <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-          <typename><typedef-ref name="am_id_t" ref="0x2b9d54fd4848"/></typename>
+          <typename><typedef-ref name="am_id_t" ref="0x2b3f4206ed78"/></typename>
         </type-int>
       </interface-parameters>
       <interface-functions>
-        <function-ref name="receive" ref="0x2b9d553a4978" scoped=""/>
+        <function-ref name="receive" ref="0x2b3f42503978" scoped=""/>
       </interface-functions>
-    </interface><interface loc="42:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="RadioPacket" provided="1" ref="0x2b9d553aa268">
+    </interface><interface loc="42:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="RadioPacket" provided="1" ref="0x2b3f42508268">
       <component-ref nicename="tos.lib.rfxlink.layers.ActiveMessageLayerP" qname="ActiveMessageLayerP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="RadioPacket" ref="0x2b9d553aa268" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="RadioPacket" ref="0x2b3f42508268" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.lib.rfxlink.util.RadioPacket" qname="RadioPacket"/>
       </instance>
       <interface-functions>
-        <function-ref name="clear" ref="0x2b9d553aa5b8" scoped=""/>
-        <function-ref name="payloadLength" ref="0x2b9d553aa740" scoped=""/>
-        <function-ref name="maxPayloadLength" ref="0x2b9d553aa8c8" scoped=""/>
-        <function-ref name="setPayloadLength" ref="0x2b9d553aaa50" scoped=""/>
-        <function-ref name="headerLength" ref="0x2b9d553aabd8" scoped=""/>
-        <function-ref name="metadataLength" ref="0x2b9d553aad60" scoped=""/>
+        <function-ref name="clear" ref="0x2b3f425085b8" scoped=""/>
+        <function-ref name="payloadLength" ref="0x2b3f42508740" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b3f425088c8" scoped=""/>
+        <function-ref name="setPayloadLength" ref="0x2b3f42508a50" scoped=""/>
+        <function-ref name="headerLength" ref="0x2b3f42508bd8" scoped=""/>
+        <function-ref name="metadataLength" ref="0x2b3f42508d60" scoped=""/>
       </interface-functions>
-    </interface><interface loc="60:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="Config" provided="0" ref="0x2b9d553c6100">
+    </interface><interface loc="60:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="Config" provided="0" ref="0x2b3f42528100">
       <component-ref nicename="tos.lib.rfxlink.layers.ActiveMessageLayerP" qname="ActiveMessageLayerP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Config" ref="0x2b9d553c6100" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Config" ref="0x2b3f42528100" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.lib.rfxlink.layers.ActiveMessageConfig" qname="ActiveMessageConfig"/>
       </instance>
       <interface-functions>
-        <function-ref name="group" ref="0x2b9d553c6550" scoped=""/>
-        <function-ref name="checkFrame" ref="0x2b9d553c66d8" scoped=""/>
-        <function-ref name="source" ref="0x2b9d553c6860" scoped=""/>
-        <function-ref name="destination" ref="0x2b9d553c69e8" scoped=""/>
-        <function-ref name="setSource" ref="0x2b9d553c6b70" scoped=""/>
-        <function-ref name="setDestination" ref="0x2b9d553c6cf8" scoped=""/>
-        <function-ref name="setGroup" ref="0x2b9d553c6e80" scoped=""/>
+        <function-ref name="group" ref="0x2b3f42528550" scoped=""/>
+        <function-ref name="checkFrame" ref="0x2b3f425286d8" scoped=""/>
+        <function-ref name="source" ref="0x2b3f42528860" scoped=""/>
+        <function-ref name="destination" ref="0x2b3f425289e8" scoped=""/>
+        <function-ref name="setSource" ref="0x2b3f42528b70" scoped=""/>
+        <function-ref name="setDestination" ref="0x2b3f42528cf8" scoped=""/>
+        <function-ref name="setGroup" ref="0x2b3f42528e80" scoped=""/>
       </interface-functions>
-    </interface><interface loc="61:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="ActiveMessageAddress" provided="0" ref="0x2b9d553bfae0">
+    </interface><interface loc="61:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="ActiveMessageAddress" provided="0" ref="0x2b3f42523ae0">
       <component-ref nicename="tos.lib.rfxlink.layers.ActiveMessageLayerP" qname="ActiveMessageLayerP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="ActiveMessageAddress" ref="0x2b9d553bfae0" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="ActiveMessageAddress" ref="0x2b3f42523ae0" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.ActiveMessageAddress" qname="ActiveMessageAddress"/>
       </instance>
       <interface-functions>
-        <function-ref name="amAddress" ref="0x2b9d553bfe30" scoped=""/>
-        <function-ref name="changed" ref="0x2b9d553c4020" scoped=""/>
-        <function-ref name="amGroup" ref="0x2b9d553c41a8" scoped=""/>
-        <function-ref name="setAddress" ref="0x2b9d553c4330" scoped=""/>
+        <function-ref name="amAddress" ref="0x2b3f42523e30" scoped=""/>
+        <function-ref name="changed" ref="0x2b3f42526020" scoped=""/>
+        <function-ref name="amGroup" ref="0x2b3f425261a8" scoped=""/>
+        <function-ref name="setAddress" ref="0x2b3f42526330" scoped=""/>
       </interface-functions>
-    </interface><interface loc="57:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="SubPacket" provided="0" ref="0x2b9d553a1120">
+    </interface><interface loc="57:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="SubPacket" provided="0" ref="0x2b3f4252a120">
       <component-ref nicename="tos.lib.rfxlink.layers.ActiveMessageLayerP" qname="ActiveMessageLayerP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="SubPacket" ref="0x2b9d553a1120" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SubPacket" ref="0x2b3f4252a120" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.lib.rfxlink.util.RadioPacket" qname="RadioPacket"/>
       </instance>
       <interface-functions>
-        <function-ref name="clear" ref="0x2b9d553a1470" scoped=""/>
-        <function-ref name="payloadLength" ref="0x2b9d553a15f8" scoped=""/>
-        <function-ref name="maxPayloadLength" ref="0x2b9d553a1780" scoped=""/>
-        <function-ref name="setPayloadLength" ref="0x2b9d553a1908" scoped=""/>
-        <function-ref name="headerLength" ref="0x2b9d553a1a90" scoped=""/>
-        <function-ref name="metadataLength" ref="0x2b9d553a1c18" scoped=""/>
+        <function-ref name="clear" ref="0x2b3f4252a470" scoped=""/>
+        <function-ref name="payloadLength" ref="0x2b3f4252a5f8" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b3f4252a780" scoped=""/>
+        <function-ref name="setPayloadLength" ref="0x2b3f4252a908" scoped=""/>
+        <function-ref name="headerLength" ref="0x2b3f4252aa90" scoped=""/>
+        <function-ref name="metadataLength" ref="0x2b3f4252ac18" scoped=""/>
       </interface-functions>
-    </interface><interface loc="46:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="Receive" provided="1" ref="0x2b9d553a6ab0">
+    </interface><interface loc="46:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="Receive" provided="1" ref="0x2b3f42504ab0">
       <component-ref nicename="tos.lib.rfxlink.layers.ActiveMessageLayerP" qname="ActiveMessageLayerP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Receive" ref="0x2b9d553a6ab0" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Receive" ref="0x2b3f42504ab0" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.Receive" qname="Receive"/>
       </instance>
       <interface-parameters>
         <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-          <typename><typedef-ref name="am_id_t" ref="0x2b9d54fd4848"/></typename>
+          <typename><typedef-ref name="am_id_t" ref="0x2b3f4206ed78"/></typename>
         </type-int>
       </interface-parameters>
       <interface-functions>
-        <function-ref name="receive" ref="0x2b9d553a6e00" scoped=""/>
+        <function-ref name="receive" ref="0x2b3f42504e00" scoped=""/>
       </interface-functions>
-    </interface><interface loc="51:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="ReceiveDefault" provided="1" ref="0x2b9d553a3d88">
+    </interface><interface loc="51:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="ReceiveDefault" provided="1" ref="0x2b3f42501d88">
       <component-ref nicename="tos.lib.rfxlink.layers.ActiveMessageLayerP" qname="ActiveMessageLayerP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="ReceiveDefault" ref="0x2b9d553a3d88" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="ReceiveDefault" ref="0x2b3f42501d88" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.Receive" qname="Receive"/>
       </instance>
       <interface-parameters>
         <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-          <typename><typedef-ref name="am_id_t" ref="0x2b9d54fd4848"/></typename>
+          <typename><typedef-ref name="am_id_t" ref="0x2b3f4206ed78"/></typename>
         </type-int>
       </interface-parameters>
       <interface-functions>
-        <function-ref name="receive" ref="0x2b9d553a2170" scoped=""/>
+        <function-ref name="receive" ref="0x2b3f42500170" scoped=""/>
       </interface-functions>
-    </interface><interface loc="43:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="AMPacket" provided="1" ref="0x2b9d553a9080">
+    </interface><interface loc="43:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="AMPacket" provided="1" ref="0x2b3f42507080">
       <component-ref nicename="tos.lib.rfxlink.layers.ActiveMessageLayerP" qname="ActiveMessageLayerP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="AMPacket" ref="0x2b9d553a9080" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="AMPacket" ref="0x2b3f42507080" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.AMPacket" qname="AMPacket"/>
       </instance>
       <interface-functions>
-        <function-ref name="group" ref="0x2b9d553a93d0" scoped=""/>
-        <function-ref name="source" ref="0x2b9d553a9558" scoped=""/>
-        <function-ref name="address" ref="0x2b9d553a96e0" scoped=""/>
-        <function-ref name="destination" ref="0x2b9d553a9868" scoped=""/>
-        <function-ref name="setSource" ref="0x2b9d553a99f0" scoped=""/>
-        <function-ref name="setDestination" ref="0x2b9d553a9b78" scoped=""/>
-        <function-ref name="type" ref="0x2b9d553a9d00" scoped=""/>
-        <function-ref name="setType" ref="0x2b9d553a8020" scoped=""/>
-        <function-ref name="isForMe" ref="0x2b9d553a81a8" scoped=""/>
-        <function-ref name="setGroup" ref="0x2b9d553a8330" scoped=""/>
-        <function-ref name="localGroup" ref="0x2b9d553a84b8" scoped=""/>
+        <function-ref name="group" ref="0x2b3f425073d0" scoped=""/>
+        <function-ref name="source" ref="0x2b3f42507558" scoped=""/>
+        <function-ref name="address" ref="0x2b3f425076e0" scoped=""/>
+        <function-ref name="destination" ref="0x2b3f42507868" scoped=""/>
+        <function-ref name="setSource" ref="0x2b3f425079f0" scoped=""/>
+        <function-ref name="setDestination" ref="0x2b3f42507b78" scoped=""/>
+        <function-ref name="type" ref="0x2b3f42507d00" scoped=""/>
+        <function-ref name="setType" ref="0x2b3f42506020" scoped=""/>
+        <function-ref name="isForMe" ref="0x2b3f425061a8" scoped=""/>
+        <function-ref name="setGroup" ref="0x2b3f42506330" scoped=""/>
+        <function-ref name="localGroup" ref="0x2b3f425064b8" scoped=""/>
       </interface-functions>
-    </interface><interface loc="52:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="SnoopDefault" provided="1" ref="0x2b9d553a29b0">
+    </interface><interface loc="52:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/ActiveMessageLayerP.nc" name="SnoopDefault" provided="1" ref="0x2b3f425009b0">
       <component-ref nicename="tos.lib.rfxlink.layers.ActiveMessageLayerP" qname="ActiveMessageLayerP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="SnoopDefault" ref="0x2b9d553a29b0" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SnoopDefault" ref="0x2b3f425009b0" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.Receive" qname="Receive"/>
       </instance>
       <interface-parameters>
         <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-          <typename><typedef-ref name="am_id_t" ref="0x2b9d54fd4848"/></typename>
+          <typename><typedef-ref name="am_id_t" ref="0x2b3f4206ed78"/></typename>
         </type-int>
       </interface-parameters>
       <interface-functions>
-        <function-ref name="receive" ref="0x2b9d553a2d00" scoped=""/>
+        <function-ref name="receive" ref="0x2b3f42500d00" scoped=""/>
       </interface-functions>
     </interface></specification><referenced/></component>

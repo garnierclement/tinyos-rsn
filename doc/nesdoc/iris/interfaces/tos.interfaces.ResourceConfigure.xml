@@ -20,7 +20,7 @@
  @author Kevin Klues (klueska@cs.wustl.edu)
 </long>
       </documentation>
-      <function command="" loc="65:/home/tinyos/tinyos-main/tos/interfaces/ResourceConfigure.nc" name="unconfigure" provided="0" ref="0x2b9d55455bf0">
+      <function command="" loc="65:/home/tinyos/tinyos-main/tos/interfaces/ResourceConfigure.nc" name="unconfigure" provided="0" ref="0x2b3f425dabf0">
         <documentation loc="61:/home/tinyos/tinyos-main/tos/interfaces/ResourceConfigure.nc">
           <short>
  Used to unconfigure a resource just before releasing it.</short>
@@ -38,7 +38,7 @@
         <parameters>
         </parameters>
       </function>
-      <function command="" loc="59:/home/tinyos/tinyos-main/tos/interfaces/ResourceConfigure.nc" name="configure" provided="0" ref="0x2b9d55455440">
+      <function command="" loc="59:/home/tinyos/tinyos-main/tos/interfaces/ResourceConfigure.nc" name="configure" provided="0" ref="0x2b3f425da440">
         <documentation loc="55:/home/tinyos/tinyos-main/tos/interfaces/ResourceConfigure.nc">
           <short>
  Used to configure a resource just before being granted access to it.</short>

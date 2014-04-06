@@ -1,17 +1,17 @@
 digraph "tos.platforms.mica.PlatformC" {
-  n0x2b9d54d75a70 [shape=ellipse, style=filled, label="Init", fontsize=12];
+  n0x2b3f41de5db8 [shape=ellipse, style=filled, label="Init", fontsize=12];
   "PlatformP" [fontsize=12, shape=box, URL="../chtml/tos.platforms.mica.PlatformP.html"];
-  n0x2b9d54d7e970 [shape=ellipse, style=filled, label="Atm128Calibrate", fontsize=12];
+  n0x2b3f41de9c88 [shape=ellipse, style=filled, label="Atm128Calibrate", fontsize=12];
   "MeasureClockC" [fontsize=12, shape=box, URL="../chtml/tos.platforms.iris.MeasureClockC.html"];
   "PlatformP" [fontsize=12, shape=box, URL="../chtml/tos.platforms.mica.PlatformP.html"];
   "MeasureClockC" [fontsize=12, shape=box, URL="../chtml/tos.platforms.iris.MeasureClockC.html"];
   "PlatformP" [fontsize=12, shape=box, URL="../chtml/tos.platforms.mica.PlatformP.html"];
   "MotePlatformC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.platforms.micaz.MotePlatformC.html"];
   "MotePlatformC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.platforms.micaz.MotePlatformC.html"];
-  n0x2b9d54d83690 [shape=ellipse, style=filled, label="SubInit", fontsize=12];
-  "n0x2b9d54d75a70" -> "PlatformP" [label="Init", URL="../ihtml/tos.interfaces.Init.html", fontsize=10];
-  "n0x2b9d54d7e970" -> "MeasureClockC" [label="Atm128Calibrate", URL="../ihtml/tos.chips.atm128.timer.Atm128Calibrate.html", fontsize=10];
+  n0x2b3f41de09a0 [shape=ellipse, style=filled, label="SubInit", fontsize=12];
+  "n0x2b3f41de5db8" -> "PlatformP" [label="Init", URL="../ihtml/tos.interfaces.Init.html", fontsize=10];
+  "n0x2b3f41de9c88" -> "MeasureClockC" [label="Atm128Calibrate", URL="../ihtml/tos.chips.atm128.timer.Atm128Calibrate.html", fontsize=10];
   "PlatformP" -> "MeasureClockC" [label="Init", URL="../ihtml/tos.interfaces.Init.html", fontsize=10];
   "PlatformP" -> "MotePlatformC" [label="Init", URL="../ihtml/tos.interfaces.Init.html", fontsize=10];
-  "MotePlatformC" -> "n0x2b9d54d83690" [label="Init", URL="../ihtml/tos.interfaces.Init.html", fontsize=10];
+  "MotePlatformC" -> "n0x2b3f41de09a0" [label="Init", URL="../ihtml/tos.interfaces.Init.html", fontsize=10];
 }

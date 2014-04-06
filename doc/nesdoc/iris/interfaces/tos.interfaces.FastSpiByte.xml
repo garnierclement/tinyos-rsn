@@ -24,7 +24,7 @@
  hardware is sending the byte.
 </long>
       </documentation>
-      <function command="" loc="62:/home/tinyos/tinyos-main/tos/interfaces/FastSpiByte.nc" name="splitWrite" provided="0" ref="0x2b9d55846020">
+      <function command="" loc="62:/home/tinyos/tinyos-main/tos/interfaces/FastSpiByte.nc" name="splitWrite" provided="0" ref="0x2b3f429b6020">
         <documentation loc="57:/home/tinyos/tinyos-main/tos/interfaces/FastSpiByte.nc">
           <short>
  Starts a split-phase SPI data transfer with the given data.</short>
@@ -39,19 +39,19 @@
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="62:/home/tinyos/tinyos-main/tos/interfaces/FastSpiByte.nc" name="data" ref="0x2b9d55849ce8">
+          <variable loc="62:/home/tinyos/tinyos-main/tos/interfaces/FastSpiByte.nc" name="data" ref="0x2b3f4297dce8">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="74:/home/tinyos/tinyos-main/tos/interfaces/FastSpiByte.nc" name="splitReadWrite" provided="0" ref="0x2b9d55845338">
+      <function command="" loc="74:/home/tinyos/tinyos-main/tos/interfaces/FastSpiByte.nc" name="splitReadWrite" provided="0" ref="0x2b3f429b5338">
         <documentation loc="70:/home/tinyos/tinyos-main/tos/interfaces/FastSpiByte.nc">
           <short>
  This command first reads the SPI register and then writes
@@ -60,23 +60,23 @@
         <interfacedef-ref nicename="tos.interfaces.FastSpiByte" qname="FastSpiByte"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
           </type-int>
           <function-parameters>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="74:/home/tinyos/tinyos-main/tos/interfaces/FastSpiByte.nc" name="data" ref="0x2b9d558450c8">
+          <variable loc="74:/home/tinyos/tinyos-main/tos/interfaces/FastSpiByte.nc" name="data" ref="0x2b3f429b50c8">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="68:/home/tinyos/tinyos-main/tos/interfaces/FastSpiByte.nc" name="splitRead" provided="0" ref="0x2b9d55846820">
+      <function command="" loc="68:/home/tinyos/tinyos-main/tos/interfaces/FastSpiByte.nc" name="splitRead" provided="0" ref="0x2b3f429b6820">
         <documentation loc="64:/home/tinyos/tinyos-main/tos/interfaces/FastSpiByte.nc">
           <short>
  Finishes the split-phase SPI data transfer by waiting till 
@@ -89,7 +89,7 @@
         <interfacedef-ref nicename="tos.interfaces.FastSpiByte" qname="FastSpiByte"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>
@@ -97,7 +97,7 @@
         <parameters>
         </parameters>
       </function>
-      <function command="" loc="81:/home/tinyos/tinyos-main/tos/interfaces/FastSpiByte.nc" name="write" provided="0" ref="0x2b9d55845cd8">
+      <function command="" loc="81:/home/tinyos/tinyos-main/tos/interfaces/FastSpiByte.nc" name="write" provided="0" ref="0x2b3f429b5cd8">
         <documentation loc="76:/home/tinyos/tinyos-main/tos/interfaces/FastSpiByte.nc">
           <short>
  This is the standard SpiByte.write command but a little
@@ -111,18 +111,18 @@
         <interfacedef-ref nicename="tos.interfaces.FastSpiByte" qname="FastSpiByte"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
           </type-int>
           <function-parameters>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="81:/home/tinyos/tinyos-main/tos/interfaces/FastSpiByte.nc" name="data" ref="0x2b9d55845a68">
+          <variable loc="81:/home/tinyos/tinyos-main/tos/interfaces/FastSpiByte.nc" name="data" ref="0x2b3f429b5a68">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </variable>
         </parameters>

@@ -7,7 +7,7 @@
  @author David Moss
 </long>
       </documentation>
-      <function command="" loc="50:/home/tinyos/tinyos-main/tos/interfaces/ActiveMessageAddress.nc" name="amAddress" provided="0" ref="0x2b9d553c18f8">
+      <function command="" loc="50:/home/tinyos/tinyos-main/tos/interfaces/ActiveMessageAddress.nc" name="amAddress" provided="0" ref="0x2b3f425248f8">
         <documentation loc="47:/home/tinyos/tinyos-main/tos/interfaces/ActiveMessageAddress.nc">
           <short>
  </short>
@@ -18,7 +18,7 @@
         <interfacedef-ref nicename="tos.interfaces.ActiveMessageAddress" qname="ActiveMessageAddress"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-            <typename><typedef-ref name="am_addr_t" ref="0x2b9d54fd3020"/></typename>
+            <typename><typedef-ref name="am_addr_t" ref="0x2b3f4206d520"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>
@@ -26,7 +26,7 @@
         <parameters>
         </parameters>
       </function>
-      <function event="" loc="60:/home/tinyos/tinyos-main/tos/interfaces/ActiveMessageAddress.nc" name="changed" provided="0" ref="0x2b9d553bf7c8">
+      <function event="" loc="60:/home/tinyos/tinyos-main/tos/interfaces/ActiveMessageAddress.nc" name="changed" provided="0" ref="0x2b3f425237c8">
         <documentation loc="57:/home/tinyos/tinyos-main/tos/interfaces/ActiveMessageAddress.nc">
           <short>
  Notification that the address or group settings changed.</short>
@@ -43,7 +43,7 @@
         <parameters>
         </parameters>
       </function>
-      <function command="" loc="55:/home/tinyos/tinyos-main/tos/interfaces/ActiveMessageAddress.nc" name="amGroup" provided="0" ref="0x2b9d553bf0d8">
+      <function command="" loc="55:/home/tinyos/tinyos-main/tos/interfaces/ActiveMessageAddress.nc" name="amGroup" provided="0" ref="0x2b3f425230d8">
         <documentation loc="52:/home/tinyos/tinyos-main/tos/interfaces/ActiveMessageAddress.nc">
           <short>
  </short>
@@ -54,7 +54,7 @@
         <interfacedef-ref nicename="tos.interfaces.ActiveMessageAddress" qname="ActiveMessageAddress"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="am_group_t" ref="0x2b9d54fd4bf8"/></typename>
+            <typename><typedef-ref name="am_group_t" ref="0x2b3f4206d168"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>
@@ -62,7 +62,7 @@
         <parameters>
         </parameters>
       </function>
-      <function command="" loc="45:/home/tinyos/tinyos-main/tos/interfaces/ActiveMessageAddress.nc" name="setAddress" provided="0" ref="0x2b9d553c1118">
+      <function command="" loc="45:/home/tinyos/tinyos-main/tos/interfaces/ActiveMessageAddress.nc" name="setAddress" provided="0" ref="0x2b3f42524118">
         <documentation loc="40:/home/tinyos/tinyos-main/tos/interfaces/ActiveMessageAddress.nc">
           <short>
  Set the active message address of this node
@@ -78,22 +78,22 @@
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="am_group_t" ref="0x2b9d54fd4bf8"/></typename>
+              <typename><typedef-ref name="am_group_t" ref="0x2b3f4206d168"/></typename>
             </type-int>
             <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-              <typename><typedef-ref name="am_addr_t" ref="0x2b9d54fd3020"/></typename>
+              <typename><typedef-ref name="am_addr_t" ref="0x2b3f4206d520"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="45:/home/tinyos/tinyos-main/tos/interfaces/ActiveMessageAddress.nc" name="group" ref="0x2b9d553c5ae8">
+          <variable loc="45:/home/tinyos/tinyos-main/tos/interfaces/ActiveMessageAddress.nc" name="group" ref="0x2b3f42527ae8">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="am_group_t" ref="0x2b9d54fd4bf8"/></typename>
+              <typename><typedef-ref name="am_group_t" ref="0x2b3f4206d168"/></typename>
             </type-int>
           </variable>
-          <variable loc="45:/home/tinyos/tinyos-main/tos/interfaces/ActiveMessageAddress.nc" name="addr" ref="0x2b9d553c5e20">
+          <variable loc="45:/home/tinyos/tinyos-main/tos/interfaces/ActiveMessageAddress.nc" name="addr" ref="0x2b3f42527e20">
             <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-              <typename><typedef-ref name="am_addr_t" ref="0x2b9d54fd3020"/></typename>
+              <typename><typedef-ref name="am_addr_t" ref="0x2b3f4206d520"/></typename>
             </type-int>
           </variable>
         </parameters>

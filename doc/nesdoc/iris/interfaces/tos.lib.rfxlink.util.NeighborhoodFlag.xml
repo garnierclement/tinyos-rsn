@@ -4,7 +4,7 @@
  This interface provides one bit storage for each neighbor in a very
  fast and conveint way (without using shifts for example).</short>
       </documentation>
-      <function command="" loc="57:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodFlag.nc" name="clear" provided="0" ref="0x2b9d555d4020">
+      <function command="" loc="57:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodFlag.nc" name="clear" provided="0" ref="0x2b3f4273f020">
         <documentation loc="53:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodFlag.nc">
           <short>
  Clears the flag for the given index.</short>
@@ -18,19 +18,19 @@
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="57:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodFlag.nc" name="idx" ref="0x2b9d555d5c58">
+          <variable loc="57:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodFlag.nc" name="idx" ref="0x2b3f42740c58">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="62:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodFlag.nc" name="clearAll" provided="0" ref="0x2b9d555d4790">
+      <function command="" loc="62:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodFlag.nc" name="clearAll" provided="0" ref="0x2b3f4273f790">
         <documentation loc="59:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodFlag.nc">
           <short>
  Clears the flag for all indices
@@ -45,7 +45,7 @@
         <parameters>
         </parameters>
       </function>
-      <function command="" loc="46:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodFlag.nc" name="get" provided="0" ref="0x2b9d555ddc78">
+      <function command="" loc="46:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodFlag.nc" name="get" provided="0" ref="0x2b3f42747c78">
         <documentation loc="43:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodFlag.nc">
           <short>
  Returns the value of the flag for the given index
@@ -54,23 +54,23 @@
         <interfacedef-ref nicename="tos.lib.rfxlink.util.NeighborhoodFlag" qname="NeighborhoodFlag"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="bool" ref="0x2b9d54c5c4c8"/></typename>
+            <typename><typedef-ref name="bool" ref="0x2b3f41cc59b8"/></typename>
           </type-int>
           <function-parameters>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="46:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodFlag.nc" name="idx" ref="0x2b9d555dda08">
+          <variable loc="46:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodFlag.nc" name="idx" ref="0x2b3f42747a08">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="51:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodFlag.nc" name="set" provided="0" ref="0x2b9d555d55b8">
+      <function command="" loc="51:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodFlag.nc" name="set" provided="0" ref="0x2b3f427405b8">
         <documentation loc="48:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodFlag.nc">
           <short>
  Sets the flag for the given index
@@ -81,14 +81,14 @@
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="51:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodFlag.nc" name="idx" ref="0x2b9d555d5348">
+          <variable loc="51:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodFlag.nc" name="idx" ref="0x2b3f42740348">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </variable>
         </parameters>

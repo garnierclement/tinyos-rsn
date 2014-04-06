@@ -20,12 +20,12 @@
 </long>
       </documentation>
       <parameters>
-        <typedef loc="53:/home/tinyos/tinyos-main/tos/lib/timer/LocalTime.nc" name="precision_tag" ref="0x2b9d5506b7d8">
+        <typedef loc="53:/home/tinyos/tinyos-main/tos/lib/timer/LocalTime.nc" name="precision_tag" ref="0x2b3f42140340">
           <interfacedef-ref nicename="tos.lib.timer.LocalTime" qname="LocalTime"/>
-          <type-var alignment="U:" size="U:"><typedef-ref name="precision_tag" ref="0x2b9d5506b7d8" scoped=""/></type-var>
+          <type-var alignment="U:" size="U:"><typedef-ref name="precision_tag" ref="0x2b3f42140340" scoped=""/></type-var>
         </typedef>
       </parameters>
-      <function command="" loc="61:/home/tinyos/tinyos-main/tos/lib/timer/LocalTime.nc" name="get" provided="0" ref="0x2b9d550680d8">
+      <function command="" loc="61:/home/tinyos/tinyos-main/tos/lib/timer/LocalTime.nc" name="get" provided="0" ref="0x2b3f42140bd0">
         <documentation loc="55:/home/tinyos/tinyos-main/tos/lib/timer/LocalTime.nc">
           <short> 
  Return current time.</short>
@@ -39,7 +39,7 @@
         <interfacedef-ref nicename="tos.lib.timer.LocalTime" qname="LocalTime"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned long" size="I:4" unsigned="">
-            <typename><typedef-ref name="uint32_t" ref="0x2b9d54680608"/></typename>
+            <typename><typedef-ref name="uint32_t" ref="0x2b3f416e8608"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>

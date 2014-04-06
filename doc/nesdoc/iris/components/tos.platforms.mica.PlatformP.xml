@@ -49,31 +49,31 @@
 </long>
       </documentation>
       <module/>
-    <specification><interface loc="45:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformP.nc" name="MoteInit" provided="0" ref="0x2b9d54d89938">
+    <specification><interface loc="45:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformP.nc" name="MoteInit" provided="0" ref="0x2b3f41de6b90">
       <component-ref nicename="tos.platforms.mica.PlatformP" qname="PlatformP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="MoteInit" ref="0x2b9d54d89938" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="MoteInit" ref="0x2b3f41de6b90" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
       </instance>
       <interface-functions>
-        <function-ref name="init" ref="0x2b9d54d89c88" scoped=""/>
+        <function-ref name="init" ref="0x2b3f41df3020" scoped=""/>
       </interface-functions>
-    </interface><interface loc="44:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformP.nc" name="Init" provided="1" ref="0x2b9d54d89298">
+    </interface><interface loc="44:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformP.nc" name="Init" provided="1" ref="0x2b3f41de64f0">
       <component-ref nicename="tos.platforms.mica.PlatformP" qname="PlatformP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b9d54d89298" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b3f41de64f0" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
       </instance>
       <interface-functions>
-        <function-ref name="init" ref="0x2b9d54d895e8" scoped=""/>
+        <function-ref name="init" ref="0x2b3f41de6840" scoped=""/>
       </interface-functions>
-    </interface><interface loc="46:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformP.nc" name="MeasureClock" provided="0" ref="0x2b9d54d88060">
+    </interface><interface loc="46:/home/tinyos/tinyos-main/tos/platforms/mica/PlatformP.nc" name="MeasureClock" provided="0" ref="0x2b3f41df3398">
       <component-ref nicename="tos.platforms.mica.PlatformP" qname="PlatformP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="MeasureClock" ref="0x2b9d54d88060" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="MeasureClock" ref="0x2b3f41df3398" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
       </instance>
       <interface-functions>
-        <function-ref name="init" ref="0x2b9d54d883b0" scoped=""/>
+        <function-ref name="init" ref="0x2b3f41df36e8" scoped=""/>
       </interface-functions>
     </interface></specification><referenced/></component>

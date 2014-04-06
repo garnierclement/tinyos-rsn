@@ -1,15 +1,15 @@
 <?xml version="1.0" ?><component loc="38:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/TaskletC.nc" nicename="tos.lib.rfxlink.util.TaskletC" qname="TaskletC">
       <module/>
-    <specification><interface loc="40:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/TaskletC.nc" name="Tasklet" provided="1" ref="0x2b9d55382220">
+    <specification><interface loc="40:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/TaskletC.nc" name="Tasklet" provided="1" ref="0x2b3f424d8220">
       <component-ref nicename="tos.lib.rfxlink.util.TaskletC" qname="TaskletC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Tasklet" ref="0x2b9d55382220" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Tasklet" ref="0x2b3f424d8220" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.lib.rfxlink.util.Tasklet" qname="Tasklet"/>
       </instance>
       <interface-functions>
-        <function-ref name="schedule" ref="0x2b9d55382570" scoped=""/>
-        <function-ref name="suspend" ref="0x2b9d553826f8" scoped=""/>
-        <function-ref name="resume" ref="0x2b9d55382880" scoped=""/>
-        <function-ref name="run" ref="0x2b9d55382a08" scoped=""/>
+        <function-ref name="schedule" ref="0x2b3f424d8570" scoped=""/>
+        <function-ref name="suspend" ref="0x2b3f424d86f8" scoped=""/>
+        <function-ref name="resume" ref="0x2b3f424d8880" scoped=""/>
+        <function-ref name="run" ref="0x2b3f424d8a08" scoped=""/>
       </interface-functions>
     </interface></specification><referenced/></component>

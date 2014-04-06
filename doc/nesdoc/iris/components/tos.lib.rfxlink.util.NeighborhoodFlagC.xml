@@ -4,8 +4,8 @@
       <configuration/>
       <wiring>
         <wire loc="45:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodFlagC.nc">
-          <from><interface-ref name="NeighborhoodFlag" ref="0x2b9d555ebbb8" scoped=""/></from>
-          <to><interface-ref name="NeighborhoodFlag" ref="0x2b9d555e4b18" scoped=""/>
+          <from><interface-ref name="NeighborhoodFlag" ref="0x2b3f42759bb8" scoped=""/></from>
+          <to><interface-ref name="NeighborhoodFlag" ref="0x2b3f42754b18" scoped=""/>
           <arguments>
             <value cst="U:">
               <type-int alignment="I:1" cname="unsigned int" size="I:2" unsigned=""/>
@@ -14,34 +14,34 @@
           </to>
         </wire>
       </wiring>
-    <specification><interface loc="37:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodFlagC.nc" name="NeighborhoodFlag" provided="1" ref="0x2b9d555ebbb8">
+    <specification><interface loc="37:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodFlagC.nc" name="NeighborhoodFlag" provided="1" ref="0x2b3f42759bb8">
       <component-ref nicename="tos.lib.rfxlink.util.NeighborhoodFlagC" qname="NeighborhoodFlagC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="NeighborhoodFlag" ref="0x2b9d555ebbb8" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="NeighborhoodFlag" ref="0x2b3f42759bb8" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.lib.rfxlink.util.NeighborhoodFlag" qname="NeighborhoodFlag"/>
       </instance>
       <interface-functions>
-        <function-ref name="clear" ref="0x2b9d5561c020" scoped=""/>
-        <function-ref name="clearAll" ref="0x2b9d5561c1a8" scoped=""/>
-        <function-ref name="get" ref="0x2b9d5561c330" scoped=""/>
-        <function-ref name="set" ref="0x2b9d5561c4b8" scoped=""/>
+        <function-ref name="clear" ref="0x2b3f42794020" scoped=""/>
+        <function-ref name="clearAll" ref="0x2b3f427941a8" scoped=""/>
+        <function-ref name="get" ref="0x2b3f42794330" scoped=""/>
+        <function-ref name="set" ref="0x2b3f427944b8" scoped=""/>
       </interface-functions>
-    </interface></specification><referenced><interface loc="43:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodP.nc" name="NeighborhoodFlag" provided="1" ref="0x2b9d555e4b18">
+    </interface></specification><referenced><interface loc="43:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodP.nc" name="NeighborhoodFlag" provided="1" ref="0x2b3f42754b18">
       <component-ref nicename="tos.lib.rfxlink.util.NeighborhoodP" qname="NeighborhoodP"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="NeighborhoodFlag" ref="0x2b9d555e4b18" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="NeighborhoodFlag" ref="0x2b3f42754b18" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.lib.rfxlink.util.NeighborhoodFlag" qname="NeighborhoodFlag"/>
       </instance>
       <interface-parameters>
         <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-          <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+          <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
         </type-int>
       </interface-parameters>
       <interface-functions>
-        <function-ref name="clear" ref="0x2b9d555e4e68" scoped=""/>
-        <function-ref name="clearAll" ref="0x2b9d55613020" scoped=""/>
-        <function-ref name="get" ref="0x2b9d556131a8" scoped=""/>
-        <function-ref name="set" ref="0x2b9d55613330" scoped=""/>
+        <function-ref name="clear" ref="0x2b3f42754e68" scoped=""/>
+        <function-ref name="clearAll" ref="0x2b3f42753020" scoped=""/>
+        <function-ref name="get" ref="0x2b3f427531a8" scoped=""/>
+        <function-ref name="set" ref="0x2b3f42753330" scoped=""/>
       </interface-functions>
     </interface><component loc="37:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/NeighborhoodP.nc" nicename="tos.lib.rfxlink.util.NeighborhoodP" qname="NeighborhoodP">
       <module/>

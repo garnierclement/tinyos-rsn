@@ -1,11 +1,11 @@
 <?xml version="1.0" ?><interfacedef loc="35:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc" nicename="tos.lib.rfxlink.util.PacketField" qname="PacketField">
       <parameters>
-        <typedef loc="35:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc" name="value_type" ref="0x2b9d55011720">
+        <typedef loc="35:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc" name="value_type" ref="0x2b3f420c1020">
           <interfacedef-ref nicename="tos.lib.rfxlink.util.PacketField" qname="PacketField"/>
-          <type-var alignment="U:" size="U:"><typedef-ref name="value_type" ref="0x2b9d55011720" scoped=""/></type-var>
+          <type-var alignment="U:" size="U:"><typedef-ref name="value_type" ref="0x2b3f420c1020" scoped=""/></type-var>
         </typedef>
       </parameters>
-      <function command="" loc="51:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc" name="clear" provided="0" ref="0x2b9d5501d670">
+      <function command="" loc="51:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc" name="clear" provided="0" ref="0x2b3f420be020">
         <documentation loc="48:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc">
           <short>
  Clears the isSet flag.</short>
@@ -18,23 +18,23 @@
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="51:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc" name="msg" ref="0x2b9d5501d400">
+          <variable loc="51:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc" name="msg" ref="0x2b3f420bfca8">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="46:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc" name="get" provided="0" ref="0x2b9d5501ec50">
+      <function command="" loc="46:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc" name="get" provided="0" ref="0x2b3f420bf520">
         <documentation loc="42:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc">
           <short>
  Returns the stored value of this field in the message.</short>
@@ -45,26 +45,26 @@
         </documentation>
         <interfacedef-ref nicename="tos.lib.rfxlink.util.PacketField" qname="PacketField"/>
         <type-function alignment="I:1" size="I:1">
-          <type-var alignment="U:" size="U:"><typedef-ref name="value_type" ref="0x2b9d55011720" scoped=""/></type-var>
+          <type-var alignment="U:" size="U:"><typedef-ref name="value_type" ref="0x2b3f420c1020" scoped=""/></type-var>
           <function-parameters>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="46:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc" name="msg" ref="0x2b9d5501e9e0">
+          <variable loc="46:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc" name="msg" ref="0x2b3f420bf2b0">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="40:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc" name="isSet" provided="0" ref="0x2b9d5501e290">
+      <function command="" loc="40:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc" name="isSet" provided="0" ref="0x2b3f420c1b30">
         <documentation loc="37:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc">
           <short>
  Returns TRUE if the value is set for this message.</short>
@@ -72,27 +72,27 @@
         <interfacedef-ref nicename="tos.lib.rfxlink.util.PacketField" qname="PacketField"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="bool" ref="0x2b9d54c5c4c8"/></typename>
+            <typename><typedef-ref name="bool" ref="0x2b3f41cc59b8"/></typename>
           </type-int>
           <function-parameters>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="40:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc" name="msg" ref="0x2b9d5501e020">
+          <variable loc="40:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc" name="msg" ref="0x2b3f420c18c0">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="57:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc" name="set" provided="0" ref="0x2b9d5501c388">
+      <function command="" loc="57:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc" name="set" provided="0" ref="0x2b3f420becd8">
         <documentation loc="53:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc">
           <short>
  Sets the isSet false to TRUE and the time stamp value to the 
@@ -103,23 +103,23 @@
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
-            <type-var alignment="U:" size="U:"><typedef-ref name="value_type" ref="0x2b9d55011720" scoped=""/></type-var>
+            <type-var alignment="U:" size="U:"><typedef-ref name="value_type" ref="0x2b3f420c1020" scoped=""/></type-var>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="57:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc" name="msg" ref="0x2b9d5501dd60">
+          <variable loc="57:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc" name="msg" ref="0x2b3f420be710">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>
-          <variable loc="57:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc" name="value" ref="0x2b9d5501c108">
-            <type-var alignment="U:" size="U:"><typedef-ref name="value_type" ref="0x2b9d55011720" scoped=""/></type-var>
+          <variable loc="57:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/PacketField.nc" name="value" ref="0x2b3f420bea58">
+            <type-var alignment="U:" size="U:"><typedef-ref name="value_type" ref="0x2b3f420c1020" scoped=""/></type-var>
           </variable>
         </parameters>
       </function>

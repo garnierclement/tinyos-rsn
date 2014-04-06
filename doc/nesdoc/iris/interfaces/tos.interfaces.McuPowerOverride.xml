@@ -48,7 +48,7 @@
   $Id: hardware.h,v 1.8 2010-06-29 22:07:54 scipio Exp $
 </long>
       </documentation>
-      <function command="" loc="62:/home/tinyos/tinyos-main/tos/interfaces/McuPowerOverride.nc" name="lowestState" provided="0" ref="0x2b9d54d544f8">
+      <function command="" loc="62:/home/tinyos/tinyos-main/tos/interfaces/McuPowerOverride.nc" name="lowestState" provided="0" ref="0x2b3f41dbc4f8">
         <documentation loc="52:/home/tinyos/tinyos-main/tos/interfaces/McuPowerOverride.nc">
           <short>
  Called when computing the low power state, in order to allow
@@ -67,7 +67,7 @@
         <interfacedef-ref nicename="tos.interfaces.McuPowerOverride" qname="McuPowerOverride"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="mcu_power_t" ref="0x2b9d54cc2940"/></typename>
+            <typename><typedef-ref name="mcu_power_t" ref="0x2b3f41d2a940"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>

@@ -12,32 +12,32 @@
 </long>
       </documentation>
       <module/>
-    <specification><interface loc="61:/home/tinyos/tinyos-main/tos/platforms/iris/MeasureClockC.nc" name="Init" provided="1" ref="0x2b9d54f084b0">
+    <specification><interface loc="61:/home/tinyos/tinyos-main/tos/platforms/iris/MeasureClockC.nc" name="Init" provided="1" ref="0x2b3f41f754b0">
       <component-ref nicename="tos.platforms.iris.MeasureClockC" qname="MeasureClockC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b9d54f084b0" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x2b3f41f754b0" scoped=""/></type-interface>
       <attribute-value>
-        <attribute-ref name="exactlyonce" ref="0x2b9d54c64128"/>
+        <attribute-ref name="exactlyonce" ref="0x2b3f41ccc6f0"/>
         <value-structured>
-          <type-tag alignment="I:1" size="I:0"><attribute-ref name="exactlyonce" ref="0x2b9d54c64128"/></type-tag>
+          <type-tag alignment="I:1" size="I:0"><attribute-ref name="exactlyonce" ref="0x2b3f41ccc6f0"/></type-tag>
         </value-structured>
       </attribute-value>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
       </instance>
       <interface-functions>
-        <function-ref name="init" ref="0x2b9d54f08800" scoped=""/>
+        <function-ref name="init" ref="0x2b3f41f75800" scoped=""/>
       </interface-functions>
-    </interface><interface loc="62:/home/tinyos/tinyos-main/tos/platforms/iris/MeasureClockC.nc" name="Atm128Calibrate" provided="1" ref="0x2b9d54f08ae0">
+    </interface><interface loc="62:/home/tinyos/tinyos-main/tos/platforms/iris/MeasureClockC.nc" name="Atm128Calibrate" provided="1" ref="0x2b3f41f75ae0">
       <component-ref nicename="tos.platforms.iris.MeasureClockC" qname="MeasureClockC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="Atm128Calibrate" ref="0x2b9d54f08ae0" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Atm128Calibrate" ref="0x2b3f41f75ae0" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.chips.atm128.timer.Atm128Calibrate" qname="Atm128Calibrate"/>
       </instance>
       <interface-functions>
-        <function-ref name="baudrateRegister" ref="0x2b9d54f08e30" scoped=""/>
-        <function-ref name="cyclesPerJiffy" ref="0x2b9d54f07020" scoped=""/>
-        <function-ref name="calibrateMicro" ref="0x2b9d54f071a8" scoped=""/>
-        <function-ref name="actualMicro" ref="0x2b9d54f07330" scoped=""/>
-        <function-ref name="adcPrescaler" ref="0x2b9d54f074b8" scoped=""/>
+        <function-ref name="baudrateRegister" ref="0x2b3f41f75e30" scoped=""/>
+        <function-ref name="cyclesPerJiffy" ref="0x2b3f41f74020" scoped=""/>
+        <function-ref name="calibrateMicro" ref="0x2b3f41f741a8" scoped=""/>
+        <function-ref name="actualMicro" ref="0x2b3f41f74330" scoped=""/>
+        <function-ref name="adcPrescaler" ref="0x2b3f41f744b8" scoped=""/>
       </interface-functions>
     </interface></specification><referenced/></component>

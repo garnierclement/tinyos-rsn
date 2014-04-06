@@ -11,12 +11,12 @@
 </long>
       </documentation>
       <parameters>
-        <typedef loc="53:/home/tinyos/tinyos-main/tos/interfaces/ParameterInit.nc" name="parameter" ref="0x2b9d556fd510">
+        <typedef loc="53:/home/tinyos/tinyos-main/tos/interfaces/ParameterInit.nc" name="parameter" ref="0x2b3f422f2bc0">
           <interfacedef-ref nicename="tos.interfaces.ParameterInit" qname="ParameterInit"/>
-          <type-var alignment="U:" size="U:"><typedef-ref name="parameter" ref="0x2b9d556fd510" scoped=""/></type-var>
+          <type-var alignment="U:" size="U:"><typedef-ref name="parameter" ref="0x2b3f422f2bc0" scoped=""/></type-var>
         </typedef>
       </parameters>
-      <function command="" loc="64:/home/tinyos/tinyos-main/tos/interfaces/ParameterInit.nc" name="init" provided="0" ref="0x2b9d556fa020">
+      <function command="" loc="64:/home/tinyos/tinyos-main/tos/interfaces/ParameterInit.nc" name="init" provided="0" ref="0x2b3f422ee6b8">
         <documentation loc="55:/home/tinyos/tinyos-main/tos/interfaces/ParameterInit.nc">
           <short>
  Initialize this component.</short>
@@ -33,15 +33,15 @@
         <interfacedef-ref nicename="tos.interfaces.ParameterInit" qname="ParameterInit"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+            <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
           </type-int>
           <function-parameters>
-            <type-var alignment="U:" size="U:"><typedef-ref name="parameter" ref="0x2b9d556fd510" scoped=""/></type-var>
+            <type-var alignment="U:" size="U:"><typedef-ref name="parameter" ref="0x2b3f422f2bc0" scoped=""/></type-var>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="64:/home/tinyos/tinyos-main/tos/interfaces/ParameterInit.nc" name="param" ref="0x2b9d556fdd48">
-            <type-var alignment="U:" size="U:"><typedef-ref name="parameter" ref="0x2b9d556fd510" scoped=""/></type-var>
+          <variable loc="64:/home/tinyos/tinyos-main/tos/interfaces/ParameterInit.nc" name="param" ref="0x2b3f422ee448">
+            <type-var alignment="U:" size="U:"><typedef-ref name="parameter" ref="0x2b3f422f2bc0" scoped=""/></type-var>
           </variable>
         </parameters>
       </function>

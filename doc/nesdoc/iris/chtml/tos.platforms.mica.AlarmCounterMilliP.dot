@@ -1,11 +1,11 @@
 digraph "tos.platforms.mica.AlarmCounterMilliP" {
-  n0x2b9d55088e40 [shape=ellipse, style=filled, label="CounterMilli32", fontsize=12];
+  n0x2b3f4214d150 [shape=ellipse, style=filled, label="CounterMilli32", fontsize=12];
   "AlarmCounterMilliP.Atm128AlarmAsyncC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="Atm128AlarmAsyncC", URL="../chtml/tos.chips.atm1281.timer.Atm128AlarmAsyncC.html"];
-  n0x2b9d55067bd0 [shape=ellipse, style=filled, label="Init", fontsize=12];
+  n0x2b3f4213f730 [shape=ellipse, style=filled, label="Init", fontsize=12];
   "AlarmCounterMilliP.Atm128AlarmAsyncC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="Atm128AlarmAsyncC", URL="../chtml/tos.chips.atm1281.timer.Atm128AlarmAsyncC.html"];
-  n0x2b9d55075748 [shape=ellipse, style=filled, label="AlarmMilli32", fontsize=12];
+  n0x2b3f4213b020 [shape=ellipse, style=filled, label="AlarmMilli32", fontsize=12];
   "AlarmCounterMilliP.Atm128AlarmAsyncC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="Atm128AlarmAsyncC", URL="../chtml/tos.chips.atm1281.timer.Atm128AlarmAsyncC.html"];
-  "n0x2b9d55088e40" -> "AlarmCounterMilliP.Atm128AlarmAsyncC" [label="Counter<TMilli, uint32_t>", URL="../ihtml/tos.lib.timer.Counter.html", fontsize=10];
-  "n0x2b9d55067bd0" -> "AlarmCounterMilliP.Atm128AlarmAsyncC" [label="Init", URL="../ihtml/tos.interfaces.Init.html", fontsize=10];
-  "n0x2b9d55075748" -> "AlarmCounterMilliP.Atm128AlarmAsyncC" [label="Alarm<TMilli, uint32_t>", URL="../ihtml/tos.lib.timer.Alarm.html", fontsize=10];
+  "n0x2b3f4214d150" -> "AlarmCounterMilliP.Atm128AlarmAsyncC" [label="Counter<TMilli, uint32_t>", URL="../ihtml/tos.lib.timer.Counter.html", fontsize=10];
+  "n0x2b3f4213f730" -> "AlarmCounterMilliP.Atm128AlarmAsyncC" [label="Init", URL="../ihtml/tos.interfaces.Init.html", fontsize=10];
+  "n0x2b3f4213b020" -> "AlarmCounterMilliP.Atm128AlarmAsyncC" [label="Alarm<TMilli, uint32_t>", URL="../ihtml/tos.lib.timer.Alarm.html", fontsize=10];
 }

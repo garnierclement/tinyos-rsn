@@ -18,7 +18,7 @@
  @author David Moss
 </long>
       </documentation>
-      <function event="" loc="59:/home/tinyos/tinyos-main/tos/interfaces/SendNotifier.nc" name="aboutToSend" provided="0" ref="0x2b9d55219418">
+      <function event="" loc="59:/home/tinyos/tinyos-main/tos/interfaces/SendNotifier.nc" name="aboutToSend" provided="0" ref="0x2b3f42393d18">
         <documentation loc="52:/home/tinyos/tinyos-main/tos/interfaces/SendNotifier.nc">
           <short>
  The system is about to send this message.</short>
@@ -35,25 +35,25 @@
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
             <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-              <typename><typedef-ref name="am_addr_t" ref="0x2b9d54fd3020"/></typename>
+              <typename><typedef-ref name="am_addr_t" ref="0x2b3f4206d520"/></typename>
             </type-int>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="59:/home/tinyos/tinyos-main/tos/interfaces/SendNotifier.nc" name="dest" ref="0x2b9d5521de00">
+          <variable loc="59:/home/tinyos/tinyos-main/tos/interfaces/SendNotifier.nc" name="dest" ref="0x2b3f42393738">
             <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-              <typename><typedef-ref name="am_addr_t" ref="0x2b9d54fd3020"/></typename>
+              <typename><typedef-ref name="am_addr_t" ref="0x2b3f4206d520"/></typename>
             </type-int>
           </variable>
-          <variable loc="59:/home/tinyos/tinyos-main/tos/interfaces/SendNotifier.nc" name="msg" ref="0x2b9d55219198">
+          <variable loc="59:/home/tinyos/tinyos-main/tos/interfaces/SendNotifier.nc" name="msg" ref="0x2b3f42393a98">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>

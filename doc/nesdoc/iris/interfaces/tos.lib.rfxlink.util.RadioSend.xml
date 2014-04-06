@@ -1,5 +1,5 @@
 <?xml version="1.0" ?><interfacedef loc="37:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/RadioSend.nc" nicename="tos.lib.rfxlink.util.RadioSend" qname="RadioSend">
-      <function command="" loc="48:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/RadioSend.nc" name="send" provided="0" ref="0x2b9d5566ee00">
+      <function command="" loc="48:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/RadioSend.nc" name="send" provided="0" ref="0x2b3f427bce00">
         <documentation loc="39:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/RadioSend.nc">
           <short>
  Starts the transmission of the given message.</short>
@@ -16,27 +16,27 @@
         <interfacedef-ref nicename="tos.lib.rfxlink.util.RadioSend" qname="RadioSend"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+            <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
           </type-int>
           <function-parameters>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="48:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/RadioSend.nc" name="msg" ref="0x2b9d5566eb90">
+          <variable loc="48:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/RadioSend.nc" name="msg" ref="0x2b3f427bcb90">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>
         </parameters>
       </function>
-      <function event="" loc="63:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/RadioSend.nc" name="ready" provided="0" ref="0x2b9d556661d8">
+      <function event="" loc="63:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/RadioSend.nc" name="ready" provided="0" ref="0x2b3f427e91d8">
         <documentation loc="58:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/RadioSend.nc">
           <short>
  This event is fired when the component is most likely able to accept 
@@ -56,7 +56,7 @@
         <parameters>
         </parameters>
       </function>
-      <function event="" loc="56:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/RadioSend.nc" name="sendDone" provided="0" ref="0x2b9d556679a0">
+      <function event="" loc="56:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/RadioSend.nc" name="sendDone" provided="0" ref="0x2b3f427b59a0">
         <documentation loc="50:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/RadioSend.nc">
           <short>
  Signals the completion of the send command, exactly once for each 
@@ -73,14 +73,14 @@
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+              <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="56:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/RadioSend.nc" name="error" ref="0x2b9d55667730">
+          <variable loc="56:/home/tinyos/tinyos-main/tos/lib/rfxlink/util/RadioSend.nc" name="error" ref="0x2b3f427b5730">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+              <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
             </type-int>
           </variable>
         </parameters>

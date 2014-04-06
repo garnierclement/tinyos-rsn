@@ -10,19 +10,19 @@
 </long>
       </documentation>
       <module/>
-    <specification><interface loc="54:/home/tinyos/tinyos-main/tos/system/ActiveMessageAddressC.nc" name="ActiveMessageAddress" provided="1" ref="0x2b9d5541d560">
+    <specification><interface loc="54:/home/tinyos/tinyos-main/tos/system/ActiveMessageAddressC.nc" name="ActiveMessageAddress" provided="1" ref="0x2b3f42595560">
       <component-ref nicename="tos.system.ActiveMessageAddressC" qname="ActiveMessageAddressC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="ActiveMessageAddress" ref="0x2b9d5541d560" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="ActiveMessageAddress" ref="0x2b3f42595560" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.interfaces.ActiveMessageAddress" qname="ActiveMessageAddress"/>
       </instance>
       <interface-functions>
-        <function-ref name="amAddress" ref="0x2b9d5541d8b0" scoped=""/>
-        <function-ref name="changed" ref="0x2b9d5541da38" scoped=""/>
-        <function-ref name="amGroup" ref="0x2b9d5541dbc0" scoped=""/>
-        <function-ref name="setAddress" ref="0x2b9d5541dd48" scoped=""/>
+        <function-ref name="amAddress" ref="0x2b3f425958b0" scoped=""/>
+        <function-ref name="changed" ref="0x2b3f42595a38" scoped=""/>
+        <function-ref name="amGroup" ref="0x2b3f42595bc0" scoped=""/>
+        <function-ref name="setAddress" ref="0x2b3f42595d48" scoped=""/>
       </interface-functions>
-    </interface><function command="" loc="106:/home/tinyos/tinyos-main/tos/system/ActiveMessageAddressC.nc" name="amAddress" provided="1" ref="0x2b9d5541c440" safe="">
+    </interface><function command="" loc="106:/home/tinyos/tinyos-main/tos/system/ActiveMessageAddressC.nc" name="amAddress" provided="1" ref="0x2b3f42594440" safe="">
       <documentation loc="101:/home/tinyos/tinyos-main/tos/system/ActiveMessageAddressC.nc">
         <short>
  Get the node's default AM address.</short>
@@ -40,7 +40,7 @@
       </type-function>
       <parameters>
       </parameters>
-    </function><function command="" loc="118:/home/tinyos/tinyos-main/tos/system/ActiveMessageAddressC.nc" name="setAmAddress" provided="1" ref="0x2b9d5541cd58" safe="">
+    </function><function command="" loc="118:/home/tinyos/tinyos-main/tos/system/ActiveMessageAddressC.nc" name="setAmAddress" provided="1" ref="0x2b3f42594d58" safe="">
       <documentation loc="112:/home/tinyos/tinyos-main/tos/system/ActiveMessageAddressC.nc">
         <short>
  Set the node's default AM address.</short>
@@ -59,9 +59,9 @@
         </function-parameters>
       </type-function>
       <parameters>
-        <variable loc="56:/home/tinyos/tinyos-main/tos/system/ActiveMessageAddressC.nc" name="a" ref="0x2b9d5541cae8">
+        <variable loc="56:/home/tinyos/tinyos-main/tos/system/ActiveMessageAddressC.nc" name="a" ref="0x2b3f42594ae8">
           <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-            <typename><typedef-ref name="am_addr_t" ref="0x2b9d54fd3020"/></typename>
+            <typename><typedef-ref name="am_addr_t" ref="0x2b3f4206d520"/></typename>
           </type-int>
         </variable>
       </parameters>

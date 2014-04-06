@@ -1,0 +1,133 @@
+<?xml version="1.0" ?><component loc="6:RsnAppC.nc" nicename="RsnAppC" qname="RsnAppC">
+      <module/>
+    <specification><interface loc="13:RsnAppC.nc" name="GetAutoConfigInfo" provided="0" ref="0x2b3f41fc2240">
+      <component-ref nicename="RsnAppC" qname="RsnAppC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="GetAutoConfigInfo" ref="0x2b3f41fc2240" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Get" qname="Get"/>
+        <arguments>
+          <type-tag alignment="I:1" size="I:11"><struct-ref name="NodeInfo" ref="0x2b3f41dda330"/>
+            <typename><typedef-ref name="NodeInfo" ref="0x2b3f41dd9228"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="get" ref="0x2b3f41fc2d88" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="12:RsnAppC.nc" name="Sync" provided="0" ref="0x2b3f41fb2398">
+      <component-ref nicename="RsnAppC" qname="RsnAppC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Sync" ref="0x2b3f41fb2398" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.SplitControl" qname="SplitControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="startDone" ref="0x2b3f41fb26e8" scoped=""/>
+        <function-ref name="stopDone" ref="0x2b3f41fb2870" scoped=""/>
+        <function-ref name="start" ref="0x2b3f41fb29f8" scoped=""/>
+        <function-ref name="stop" ref="0x2b3f41fb2b80" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="9:RsnAppC.nc" name="Boot" provided="0" ref="0x2b3f41fa83a0">
+      <component-ref nicename="RsnAppC" qname="RsnAppC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Boot" ref="0x2b3f41fa83a0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Boot" qname="Boot"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="booted" ref="0x2b3f41fa86f0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="15:RsnAppC.nc" name="SetSyncInfo" provided="0" ref="0x2b3f41fbc9b8">
+      <component-ref nicename="RsnAppC" qname="RsnAppC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SetSyncInfo" ref="0x2b3f41fbc9b8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Set" qname="Set"/>
+        <arguments>
+          <type-tag alignment="I:1" size="I:11"><struct-ref name="NodeInfo" ref="0x2b3f41dda330"/>
+            <typename><typedef-ref name="NodeInfo" ref="0x2b3f41dd9228"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="set" ref="0x2b3f41fbe528" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="16:RsnAppC.nc" name="AMControl" provided="0" ref="0x2b3f41fbeab0">
+      <component-ref nicename="RsnAppC" qname="RsnAppC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="AMControl" ref="0x2b3f41fbeab0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.SplitControl" qname="SplitControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="startDone" ref="0x2b3f41fbee00" scoped=""/>
+        <function-ref name="stopDone" ref="0x2b3f41fbd020" scoped=""/>
+        <function-ref name="start" ref="0x2b3f41fbd1a8" scoped=""/>
+        <function-ref name="stop" ref="0x2b3f41fbd330" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="14:RsnAppC.nc" name="GetSyncInfo" provided="0" ref="0x2b3f41fc1430">
+      <component-ref nicename="RsnAppC" qname="RsnAppC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="GetSyncInfo" ref="0x2b3f41fc1430" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Get" qname="Get"/>
+        <arguments>
+          <type-tag alignment="I:1" size="I:11"><struct-ref name="NodeInfo" ref="0x2b3f41dda330"/>
+            <typename><typedef-ref name="NodeInfo" ref="0x2b3f41dd9228"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="get" ref="0x2b3f41fbf020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="10:RsnAppC.nc" name="Leds" provided="0" ref="0x2b3f41fa7020">
+      <component-ref nicename="RsnAppC" qname="RsnAppC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Leds" ref="0x2b3f41fa7020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Leds" qname="Leds"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="led0Off" ref="0x2b3f41fa7370" scoped=""/>
+        <function-ref name="led0Toggle" ref="0x2b3f41fa74f8" scoped=""/>
+        <function-ref name="led1On" ref="0x2b3f41fa7680" scoped=""/>
+        <function-ref name="led1Toggle" ref="0x2b3f41fa7808" scoped=""/>
+        <function-ref name="led2Toggle" ref="0x2b3f41fa7990" scoped=""/>
+        <function-ref name="get" ref="0x2b3f41fa7b18" scoped=""/>
+        <function-ref name="led1Off" ref="0x2b3f41fa7ca0" scoped=""/>
+        <function-ref name="led2Off" ref="0x2b3f41fa6330" scoped=""/>
+        <function-ref name="set" ref="0x2b3f41fa7e28" scoped=""/>
+        <function-ref name="led0On" ref="0x2b3f41fa6020" scoped=""/>
+        <function-ref name="led2On" ref="0x2b3f41fa61a8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="17:RsnAppC.nc" name="LedTimer" provided="0" ref="0x2b3f41fc6c20">
+      <component-ref nicename="RsnAppC" qname="RsnAppC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="LedTimer" ref="0x2b3f41fc6c20" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.timer.Timer" qname="Timer"/>
+        <arguments>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d4f020"/>
+            <typename><typedef-ref name="TMilli" ref="0x2b3f41d4f378"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="getNow" ref="0x2b3f41fc4e78" scoped=""/>
+        <function-ref name="fired" ref="0x2b3f41fb95a8" scoped=""/>
+        <function-ref name="startPeriodicAt" ref="0x2b3f41fc42d8" scoped=""/>
+        <function-ref name="isOneShot" ref="0x2b3f41fb9e48" scoped=""/>
+        <function-ref name="getdt" ref="0x2b3f41fc3748" scoped=""/>
+        <function-ref name="gett0" ref="0x2b3f41fc32f8" scoped=""/>
+        <function-ref name="isRunning" ref="0x2b3f41fb99f8" scoped=""/>
+        <function-ref name="startPeriodic" ref="0x2b3f41fbb7e8" scoped=""/>
+        <function-ref name="startOneShotAt" ref="0x2b3f41fc48a8" scoped=""/>
+        <function-ref name="startOneShot" ref="0x2b3f41fbbc88" scoped=""/>
+        <function-ref name="stop" ref="0x2b3f41fb9158" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="11:RsnAppC.nc" name="AutoConfig" provided="0" ref="0x2b3f41fad6d8">
+      <component-ref nicename="RsnAppC" qname="RsnAppC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="AutoConfig" ref="0x2b3f41fad6d8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.SplitControl" qname="SplitControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="startDone" ref="0x2b3f41fada28" scoped=""/>
+        <function-ref name="stopDone" ref="0x2b3f41fadbb0" scoped=""/>
+        <function-ref name="start" ref="0x2b3f41fadd38" scoped=""/>
+        <function-ref name="stop" ref="0x2b3f41fb2020" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

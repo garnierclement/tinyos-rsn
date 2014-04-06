@@ -11,7 +11,7 @@
  @author David Moss
 </long>
       </documentation>
-      <function command="" loc="65:/home/tinyos/tinyos-main/tos/interfaces/LowPowerListening.nc" name="setRemoteWakeupInterval" provided="0" ref="0x2b9d5522c2a0">
+      <function command="" loc="65:/home/tinyos/tinyos-main/tos/interfaces/LowPowerListening.nc" name="setRemoteWakeupInterval" provided="0" ref="0x2b3f4238b608">
         <documentation loc="59:/home/tinyos/tinyos-main/tos/interfaces/LowPowerListening.nc">
           <short>
  Configure this outgoing message so it can be transmitted to a neighbor mote
@@ -28,31 +28,31 @@
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
             <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-              <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+              <typename><typedef-ref name="uint16_t" ref="0x2b3f416e7b98"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="65:/home/tinyos/tinyos-main/tos/interfaces/LowPowerListening.nc" name="msg" ref="0x2b9d5522dc78">
+          <variable loc="65:/home/tinyos/tinyos-main/tos/interfaces/LowPowerListening.nc" name="msg" ref="0x2b3f4238b020">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>
-          <variable loc="65:/home/tinyos/tinyos-main/tos/interfaces/LowPowerListening.nc" name="intervalMs" ref="0x2b9d5522c020">
+          <variable loc="65:/home/tinyos/tinyos-main/tos/interfaces/LowPowerListening.nc" name="intervalMs" ref="0x2b3f4238b388">
             <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-              <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+              <typename><typedef-ref name="uint16_t" ref="0x2b3f416e7b98"/></typename>
             </type-int>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="71:/home/tinyos/tinyos-main/tos/interfaces/LowPowerListening.nc" name="getRemoteWakeupInterval" provided="0" ref="0x2b9d5522b370">
+      <function command="" loc="71:/home/tinyos/tinyos-main/tos/interfaces/LowPowerListening.nc" name="getRemoteWakeupInterval" provided="0" ref="0x2b3f42389758">
         <documentation loc="67:/home/tinyos/tinyos-main/tos/interfaces/LowPowerListening.nc">
           <short>
  </short>
@@ -64,27 +64,27 @@
         <interfacedef-ref nicename="tos.interfaces.LowPowerListening" qname="LowPowerListening"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+            <typename><typedef-ref name="uint16_t" ref="0x2b3f416e7b98"/></typename>
           </type-int>
           <function-parameters>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="71:/home/tinyos/tinyos-main/tos/interfaces/LowPowerListening.nc" name="msg" ref="0x2b9d5522b100">
+          <variable loc="71:/home/tinyos/tinyos-main/tos/interfaces/LowPowerListening.nc" name="msg" ref="0x2b3f423894e8">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="57:/home/tinyos/tinyos-main/tos/interfaces/LowPowerListening.nc" name="getLocalWakeupInterval" provided="0" ref="0x2b9d5522d4f8">
+      <function command="" loc="57:/home/tinyos/tinyos-main/tos/interfaces/LowPowerListening.nc" name="getLocalWakeupInterval" provided="0" ref="0x2b3f4238c7b0">
         <documentation loc="54:/home/tinyos/tinyos-main/tos/interfaces/LowPowerListening.nc">
           <short>
  </short>
@@ -95,7 +95,7 @@
         <interfacedef-ref nicename="tos.interfaces.LowPowerListening" qname="LowPowerListening"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-            <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+            <typename><typedef-ref name="uint16_t" ref="0x2b3f416e7b98"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>
@@ -103,7 +103,7 @@
         <parameters>
         </parameters>
       </function>
-      <function command="" loc="52:/home/tinyos/tinyos-main/tos/interfaces/LowPowerListening.nc" name="setLocalWakeupInterval" provided="0" ref="0x2b9d55237b70">
+      <function command="" loc="52:/home/tinyos/tinyos-main/tos/interfaces/LowPowerListening.nc" name="setLocalWakeupInterval" provided="0" ref="0x2b3f4238fc98">
         <documentation loc="42:/home/tinyos/tinyos-main/tos/interfaces/LowPowerListening.nc">
           <short>
  Set this this node's radio wakeup interval, in milliseconds.</short>
@@ -123,14 +123,14 @@
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
             <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-              <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+              <typename><typedef-ref name="uint16_t" ref="0x2b3f416e7b98"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="52:/home/tinyos/tinyos-main/tos/interfaces/LowPowerListening.nc" name="intervalMs" ref="0x2b9d55237900">
+          <variable loc="52:/home/tinyos/tinyos-main/tos/interfaces/LowPowerListening.nc" name="intervalMs" ref="0x2b3f4238fa28">
             <type-int alignment="I:1" cname="unsigned short" size="I:2" unsigned="">
-              <typename><typedef-ref name="uint16_t" ref="0x2b9d5467fb98"/></typename>
+              <typename><typedef-ref name="uint16_t" ref="0x2b3f416e7b98"/></typename>
             </type-int>
           </variable>
         </parameters>

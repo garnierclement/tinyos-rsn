@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Interface: tos.interfaces.Get</title>
+  </head>
+  <body>
+    <h2>Interface: tos.interfaces.Get</h2>
+    <b>interface Get&lt;typedef val_t&gt;</b><p>
+ The Get interface is intended for synchronous reading of small
+ values. The type of the value is given as a template
+ argument. Generally, these values are backed by memory or
+ computation. Because no error code is included, the get() call must
+ be guaranteed to succeed.
+
+ <p>
+ See TEP114 - SIDs: Source and Sink Independent Drivers for details.
+ 
+ 
+    <p>
+    <dl>
+      <dt><b>Parameters:</b>
+      <dd>
+        <code>val_t</code> -  the type of the object that will be returned
+
+ 
+      </dd>
+      <dt><b>Author:</b>
+      <dd>
+        Gilman Tolle &lt;gtolle@archrock.com&gt;
+ 
+      </dd>
+      <dt><b>Version:</b>
+      <dd>
+        $Revision: 1.4 $ $Date: 2006-12-12 18:23:14 $
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Commands</div><div id=funcsig><span id=funcnameshort>command val_t <a href="#get">get</a>()
+      </span><menu>
+ Retrieves a value of type val_t.
+      </menu>
+    </div><p><div id=heading>Commands - Details</div>
+    <a name="get"></a>
+    <h4>get
+    </h4>
+    <span id=funcnameshort>command val_t <b>get</b>()
+    </span>
+    <p>
+    <menu>
+      
+ Retrieves a value of type val_t.
+
+ 
+      <p>
+      <dl>
+        <dt><b>Returns:</b>
+        <dd>
+          the value itself
+
+        </dd>
+      </dl>
+    </menu>
+  </body>
+</html>

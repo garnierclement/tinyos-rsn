@@ -1,5 +1,5 @@
 <?xml version="1.0" ?><interfacedef loc="55:/home/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc" nicename="tos.interfaces.TaskBasic" qname="TaskBasic">
-      <function command="" loc="67:/home/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc" name="postTask" provided="0" ref="0x2b9d54c89a38">
+      <function command="" loc="67:/home/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc" name="postTask" provided="0" ref="0x2b3f41cf0070">
         <documentation loc="57:/home/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc">
           <short>
  Post this task to the TinyOS scheduler.</short>
@@ -16,7 +16,7 @@
         <interfacedef-ref nicename="tos.interfaces.TaskBasic" qname="TaskBasic"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+            <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>
@@ -24,7 +24,7 @@
         <parameters>
         </parameters>
       </function>
-      <function event="" loc="75:/home/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc" name="runTask" provided="0" ref="0x2b9d54c87258">
+      <function event="" loc="75:/home/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc" name="runTask" provided="0" ref="0x2b3f41cf0860">
         <documentation loc="69:/home/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc">
           <short>
  Event from the scheduler to run this task.</short>

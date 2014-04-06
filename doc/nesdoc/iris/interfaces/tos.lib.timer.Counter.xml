@@ -25,16 +25,16 @@
 </long>
       </documentation>
       <parameters>
-        <typedef loc="57:/home/tinyos/tinyos-main/tos/lib/timer/Counter.nc" name="precision_tag" ref="0x2b9d5508a3f8">
+        <typedef loc="57:/home/tinyos/tinyos-main/tos/lib/timer/Counter.nc" name="precision_tag" ref="0x2b3f4214e7b8">
           <interfacedef-ref nicename="tos.lib.timer.Counter" qname="Counter"/>
-          <type-var alignment="U:" size="U:"><typedef-ref name="precision_tag" ref="0x2b9d5508a3f8" scoped=""/></type-var>
+          <type-var alignment="U:" size="U:"><typedef-ref name="precision_tag" ref="0x2b3f4214e7b8" scoped=""/></type-var>
         </typedef>
-        <typedef loc="57:/home/tinyos/tinyos-main/tos/lib/timer/Counter.nc" name="size_type" ref="0x2b9d5508a628">
+        <typedef loc="57:/home/tinyos/tinyos-main/tos/lib/timer/Counter.nc" name="size_type" ref="0x2b3f4214e9e8">
           <interfacedef-ref nicename="tos.lib.timer.Counter" qname="Counter"/>
-          <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b9d5508a628" scoped=""/></type-var>
+          <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b3f4214e9e8" scoped=""/></type-var>
         </typedef>
       </parameters>
-      <function command="" loc="64:/home/tinyos/tinyos-main/tos/lib/timer/Counter.nc" name="get" provided="0" ref="0x2b9d55089020">
+      <function command="" loc="64:/home/tinyos/tinyos-main/tos/lib/timer/Counter.nc" name="get" provided="0" ref="0x2b3f4214a2a8">
         <documentation loc="59:/home/tinyos/tinyos-main/tos/lib/timer/Counter.nc">
           <short> 
  Return counter value.</short>
@@ -46,14 +46,14 @@
         </documentation>
         <interfacedef-ref nicename="tos.lib.timer.Counter" qname="Counter"/>
         <type-function alignment="I:1" size="I:1">
-          <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b9d5508a628" scoped=""/></type-var>
+          <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b3f4214e9e8" scoped=""/></type-var>
           <function-parameters>
           </function-parameters>
         </type-function>
         <parameters>
         </parameters>
       </function>
-      <function command="" loc="76:/home/tinyos/tinyos-main/tos/lib/timer/Counter.nc" name="clearOverflow" provided="0" ref="0x2b9d55088070">
+      <function command="" loc="76:/home/tinyos/tinyos-main/tos/lib/timer/Counter.nc" name="clearOverflow" provided="0" ref="0x2b3f42149328">
         <documentation loc="73:/home/tinyos/tinyos-main/tos/lib/timer/Counter.nc">
           <short>
  Cancel a pending overflow interrupt.</short>
@@ -67,7 +67,7 @@
         <parameters>
         </parameters>
       </function>
-      <function command="" loc="71:/home/tinyos/tinyos-main/tos/lib/timer/Counter.nc" name="isOverflowPending" provided="0" ref="0x2b9d55089838">
+      <function command="" loc="71:/home/tinyos/tinyos-main/tos/lib/timer/Counter.nc" name="isOverflowPending" provided="0" ref="0x2b3f4214aac0">
         <documentation loc="66:/home/tinyos/tinyos-main/tos/lib/timer/Counter.nc">
           <short> 
  Return TRUE if an overflow event will occur after the outermost atomic
@@ -81,7 +81,7 @@
         <interfacedef-ref nicename="tos.lib.timer.Counter" qname="Counter"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="bool" ref="0x2b9d54c5c4c8"/></typename>
+            <typename><typedef-ref name="bool" ref="0x2b3f41cc59b8"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>
@@ -89,7 +89,7 @@
         <parameters>
         </parameters>
       </function>
-      <function event="" loc="82:/home/tinyos/tinyos-main/tos/lib/timer/Counter.nc" name="overflow" provided="0" ref="0x2b9d55088760">
+      <function event="" loc="82:/home/tinyos/tinyos-main/tos/lib/timer/Counter.nc" name="overflow" provided="0" ref="0x2b3f42149a18">
         <documentation loc="78:/home/tinyos/tinyos-main/tos/lib/timer/Counter.nc">
           <short>
  Signals that the current time has overflowed.</short>

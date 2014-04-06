@@ -1,5 +1,5 @@
 <?xml version="1.0" ?><interfacedef loc="55:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" nicename="tos.interfaces.Packet" qname="Packet">
-      <function command="" loc="65:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" name="clear" provided="0" ref="0x2b9d54fea4e8">
+      <function command="" loc="65:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" name="clear" provided="0" ref="0x2b3f42085798">
         <documentation loc="58:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc">
           <short>
  Clear out this packet.</short>
@@ -15,23 +15,23 @@
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="65:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" name="msg" ref="0x2b9d54fea278">
+          <variable loc="65:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" name="msg" ref="0x2b3f42085528">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="78:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" name="payloadLength" provided="0" ref="0x2b9d550014e8">
+      <function command="" loc="78:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" name="payloadLength" provided="0" ref="0x2b3f42084778">
         <documentation loc="67:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc">
           <short>
  Return the length of the payload of msg.</short>
@@ -49,27 +49,27 @@
         <interfacedef-ref nicename="tos.interfaces.Packet" qname="Packet"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
           </type-int>
           <function-parameters>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="78:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" name="msg" ref="0x2b9d55001278">
+          <variable loc="78:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" name="msg" ref="0x2b3f42084508">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="126:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" name="getPayload" provided="0" ref="0x2b9d54ffe690">
+      <function command="" loc="126:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" name="getPayload" provided="0" ref="0x2b3f42099890">
         <documentation loc="109:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc">
           <short>
  Return a pointer to a protocol's payload region in a packet.</short>
@@ -98,31 +98,31 @@
           </type-pointer>
           <function-parameters>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="126:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" name="msg" ref="0x2b9d54ffe0c8">
+          <variable loc="126:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" name="msg" ref="0x2b3f420992c8">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>
-          <variable loc="126:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" name="len" ref="0x2b9d54ffe3d8">
+          <variable loc="126:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" name="len" ref="0x2b3f420995d8">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="106:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" name="maxPayloadLength" provided="0" ref="0x2b9d54ffd7c8">
+      <function command="" loc="106:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" name="maxPayloadLength" provided="0" ref="0x2b3f42098a00">
         <documentation loc="96:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc">
           <short>
  Return the maximum payload length that this communication layer
@@ -141,7 +141,7 @@
         <interfacedef-ref nicename="tos.interfaces.Packet" qname="Packet"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+            <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>
@@ -149,7 +149,7 @@
         <parameters>
         </parameters>
       </function>
-      <function command="" loc="94:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" name="setPayloadLength" provided="0" ref="0x2b9d550008d8">
+      <function command="" loc="94:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" name="setPayloadLength" provided="0" ref="0x2b3f4209ab28">
         <documentation loc="80:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc">
           <short>
  Set the length field of the packet.</short>
@@ -172,26 +172,26 @@
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="94:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" name="msg" ref="0x2b9d55000348">
+          <variable loc="94:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" name="msg" ref="0x2b3f4209a598">
             <type-pointer alignment="I:1" size="I:2">
-              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b9d54fed510"/>
-                <typename><typedef-ref name="message_t" ref="0x2b9d54fecaa8"/></typename>
+              <type-tag alignment="I:1" size="I:47"><nx_struct-ref name="message_t" ref="0x2b3f42088860"/>
+                <typename><typedef-ref name="message_t" ref="0x2b3f42087da8"/></typename>
               </type-tag>
             </type-pointer>
           </variable>
-          <variable loc="94:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" name="len" ref="0x2b9d55000658">
+          <variable loc="94:/home/tinyos/tinyos-main/tos/interfaces/Packet.nc" name="len" ref="0x2b3f4209a8a8">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="uint8_t" ref="0x2b9d5467f160"/></typename>
+              <typename><typedef-ref name="uint8_t" ref="0x2b3f416e7160"/></typename>
             </type-int>
           </variable>
         </parameters>

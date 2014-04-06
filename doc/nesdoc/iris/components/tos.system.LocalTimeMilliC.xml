@@ -11,37 +11,37 @@
       <configuration/>
       <wiring>
         <wire loc="26:/home/tinyos/tinyos-main/tos/system/LocalTimeMilliC.nc">
-          <from><interface-ref name="LocalTime" ref="0x2b9d557b3dc8" scoped=""/></from>
-          <to><interface-ref name="LocalTime" ref="0x2b9d55068590" scoped=""/></to>
+          <from><interface-ref name="LocalTime" ref="0x2b3f42911dc8" scoped=""/></from>
+          <to><interface-ref name="LocalTime" ref="0x2b3f42142108" scoped=""/></to>
         </wire>
       </wiring>
-    <specification><interface loc="20:/home/tinyos/tinyos-main/tos/system/LocalTimeMilliC.nc" name="LocalTime" provided="1" ref="0x2b9d557b3dc8">
+    <specification><interface loc="20:/home/tinyos/tinyos-main/tos/system/LocalTimeMilliC.nc" name="LocalTime" provided="1" ref="0x2b3f42911dc8">
       <component-ref nicename="tos.system.LocalTimeMilliC" qname="LocalTimeMilliC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="LocalTime" ref="0x2b9d557b3dc8" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="LocalTime" ref="0x2b3f42911dc8" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.lib.timer.LocalTime" qname="LocalTime"/>
         <arguments>
-          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54ce7020"/>
-            <typename><typedef-ref name="TMilli" ref="0x2b9d54ce7378"/></typename>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d4f020"/>
+            <typename><typedef-ref name="TMilli" ref="0x2b3f41d4f378"/></typename>
           </type-tag>
         </arguments>
       </instance>
       <interface-functions>
-        <function-ref name="get" ref="0x2b9d557b0a18" scoped=""/>
+        <function-ref name="get" ref="0x2b3f4290ea18" scoped=""/>
       </interface-functions>
-    </interface></specification><referenced><interface loc="47:/home/tinyos/tinyos-main/tos/platforms/mica/HilTimerMilliC.nc" name="LocalTime" provided="1" ref="0x2b9d55068590">
+    </interface></specification><referenced><interface loc="47:/home/tinyos/tinyos-main/tos/platforms/mica/HilTimerMilliC.nc" name="LocalTime" provided="1" ref="0x2b3f42142108">
       <component-ref nicename="tos.platforms.mica.HilTimerMilliC" qname="HilTimerMilliC"/>
-      <type-interface alignment="I:1" size="I:2"><interface-ref name="LocalTime" ref="0x2b9d55068590" scoped=""/></type-interface>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="LocalTime" ref="0x2b3f42142108" scoped=""/></type-interface>
       <instance>
         <interfacedef-ref nicename="tos.lib.timer.LocalTime" qname="LocalTime"/>
         <arguments>
-          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b9d54ce7020"/>
-            <typename><typedef-ref name="TMilli" ref="0x2b9d54ce7378"/></typename>
+          <type-tag alignment="I:1" size="I:2"><struct-ref ref="0x2b3f41d4f020"/>
+            <typename><typedef-ref name="TMilli" ref="0x2b3f41d4f378"/></typename>
           </type-tag>
         </arguments>
       </instance>
       <interface-functions>
-        <function-ref name="get" ref="0x2b9d55069150" scoped=""/>
+        <function-ref name="get" ref="0x2b3f42142c88" scoped=""/>
       </interface-functions>
     </interface><component loc="44:/home/tinyos/tinyos-main/tos/platforms/mica/HilTimerMilliC.nc" nicename="tos.platforms.mica.HilTimerMilliC" qname="HilTimerMilliC">
       <documentation loc="34:/home/tinyos/tinyos-main/tos/platforms/mica/HilTimerMilliC.nc">
@@ -58,28 +58,28 @@
       <configuration/>
       <wiring>
         <wire loc="61:/home/tinyos/tinyos-main/tos/platforms/mica/HilTimerMilliC.nc">
-          <from><interface-ref name="TimerMilli" ref="0x2b9d55070020" scoped=""/></from>
-          <to><interface-ref name="Timer" ref="0x2b9d551ee5e0" scoped=""/></to>
+          <from><interface-ref name="TimerMilli" ref="0x2b3f4212db68" scoped=""/></from>
+          <to><interface-ref name="Timer" ref="0x2b3f422b95e0" scoped=""/></to>
         </wire>
         <wire loc="65:/home/tinyos/tinyos-main/tos/platforms/mica/HilTimerMilliC.nc">
-          <from><interface-ref name="LocalTime" ref="0x2b9d55068590" scoped=""/></from>
-          <to><interface-ref name="LocalTime" ref="0x2b9d551fe128" scoped=""/></to>
+          <from><interface-ref name="LocalTime" ref="0x2b3f42142108" scoped=""/></from>
+          <to><interface-ref name="LocalTime" ref="0x2b3f422cc128" scoped=""/></to>
         </wire>
         <wire loc="59:/home/tinyos/tinyos-main/tos/platforms/mica/HilTimerMilliC.nc">
-          <from><interface-ref name="Init" ref="0x2b9d55071300" scoped=""/></from>
-          <to><interface-ref name="Init" ref="0x2b9d55067bd0" scoped=""/></to>
+          <from><interface-ref name="Init" ref="0x2b3f42131e40" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x2b3f4213f730" scoped=""/></to>
         </wire>
         <wire loc="62:/home/tinyos/tinyos-main/tos/platforms/mica/HilTimerMilliC.nc">
-          <from><interface-ref name="TimerFrom" ref="0x2b9d55208858" scoped=""/></from>
-          <to><interface-ref name="Timer" ref="0x2b9d5519dab0" scoped=""/></to>
+          <from><interface-ref name="TimerFrom" ref="0x2b3f422d6858" scoped=""/></from>
+          <to><interface-ref name="Timer" ref="0x2b3f42280ab0" scoped=""/></to>
         </wire>
         <wire loc="63:/home/tinyos/tinyos-main/tos/platforms/mica/HilTimerMilliC.nc">
-          <from><interface-ref name="Alarm" ref="0x2b9d551b6c70" scoped=""/></from>
-          <to><interface-ref name="AlarmMilli32" ref="0x2b9d55075748" scoped=""/></to>
+          <from><interface-ref name="Alarm" ref="0x2b3f4227bc70" scoped=""/></from>
+          <to><interface-ref name="AlarmMilli32" ref="0x2b3f4213b020" scoped=""/></to>
         </wire>
         <wire loc="66:/home/tinyos/tinyos-main/tos/platforms/mica/HilTimerMilliC.nc">
-          <from><interface-ref name="Counter" ref="0x2b9d55215330" scoped=""/></from>
-          <to><interface-ref name="CounterMilli32" ref="0x2b9d55088e40" scoped=""/></to>
+          <from><interface-ref name="Counter" ref="0x2b3f422e5330" scoped=""/></from>
+          <to><interface-ref name="CounterMilli32" ref="0x2b3f4214d150" scoped=""/></to>
         </wire>
       </wiring>
     </component></referenced></component>

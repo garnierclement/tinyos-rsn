@@ -20,7 +20,7 @@
  @date $Date: 2010-06-29 22:07:46 $
 </long>
       </documentation>
-      <function event="" loc="53:/home/tinyos/tinyos-main/tos/interfaces/ResourceRequested.nc" name="requested" provided="0" ref="0x2b9d5545dc98">
+      <function event="" loc="53:/home/tinyos/tinyos-main/tos/interfaces/ResourceRequested.nc" name="requested" provided="0" ref="0x2b3f425b4c98">
         <documentation loc="47:/home/tinyos/tinyos-main/tos/interfaces/ResourceRequested.nc">
           <short>
  This event is signalled whenever the user of this interface
@@ -42,7 +42,7 @@
         <parameters>
         </parameters>
       </function>
-      <function event="" loc="61:/home/tinyos/tinyos-main/tos/interfaces/ResourceRequested.nc" name="immediateRequested" provided="0" ref="0x2b9d5545a5c0">
+      <function event="" loc="61:/home/tinyos/tinyos-main/tos/interfaces/ResourceRequested.nc" name="immediateRequested" provided="0" ref="0x2b3f425b15c0">
         <documentation loc="55:/home/tinyos/tinyos-main/tos/interfaces/ResourceRequested.nc">
           <short>
  This event is signalled whenever the user of this interface

@@ -1,5 +1,5 @@
 <?xml version="1.0" ?><interfacedef loc="35:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/DummyConfig.nc" nicename="tos.lib.rfxlink.layers.DummyConfig" qname="DummyConfig">
-      <function command="" loc="40:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/DummyConfig.nc" name="nothing" provided="0" ref="0x2b9d552cacc8">
+      <function command="" loc="40:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/DummyConfig.nc" name="nothing" provided="0" ref="0x2b3f4241fcc8">
         <documentation loc="37:/home/tinyos/tinyos-main/tos/lib/rfxlink/layers/DummyConfig.nc">
           <short>
  We need to put something here, but this is not going to get called

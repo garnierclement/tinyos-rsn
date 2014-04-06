@@ -20,7 +20,7 @@
  @author Kevin Klues (klueska@cs.wustl.edu)
 </long>
       </documentation>
-      <function event="" loc="113:/home/tinyos/tinyos-main/tos/interfaces/SplitControl.nc" name="startDone" provided="0" ref="0x2b9d55023e40">
+      <function event="" loc="113:/home/tinyos/tinyos-main/tos/interfaces/SplitControl.nc" name="startDone" provided="0" ref="0x2b3f41fb0e40">
         <documentation loc="106:/home/tinyos/tinyos-main/tos/interfaces/SplitControl.nc">
           <short> 
  Notify caller that the component has been started and is ready to
@@ -38,19 +38,19 @@
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+              <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="113:/home/tinyos/tinyos-main/tos/interfaces/SplitControl.nc" name="error" ref="0x2b9d55023bd0">
+          <variable loc="113:/home/tinyos/tinyos-main/tos/interfaces/SplitControl.nc" name="error" ref="0x2b3f41fb0bd0">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+              <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
             </type-int>
           </variable>
         </parameters>
       </function>
-      <function event="" loc="138:/home/tinyos/tinyos-main/tos/interfaces/SplitControl.nc" name="stopDone" provided="0" ref="0x2b9d55021290">
+      <function event="" loc="138:/home/tinyos/tinyos-main/tos/interfaces/SplitControl.nc" name="stopDone" provided="0" ref="0x2b3f41fad290">
         <documentation loc="132:/home/tinyos/tinyos-main/tos/interfaces/SplitControl.nc">
           <short>
  Notify caller that the component has been stopped.</short>
@@ -66,19 +66,19 @@
           <type-void alignment="I:1" size="I:1"/>
           <function-parameters>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+              <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="138:/home/tinyos/tinyos-main/tos/interfaces/SplitControl.nc" name="error" ref="0x2b9d55021020">
+          <variable loc="138:/home/tinyos/tinyos-main/tos/interfaces/SplitControl.nc" name="error" ref="0x2b3f41fad020">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+              <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
             </type-int>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="104:/home/tinyos/tinyos-main/tos/interfaces/SplitControl.nc" name="start" provided="0" ref="0x2b9d55023258">
+      <function command="" loc="104:/home/tinyos/tinyos-main/tos/interfaces/SplitControl.nc" name="start" provided="0" ref="0x2b3f41fb0258">
         <documentation loc="89:/home/tinyos/tinyos-main/tos/interfaces/SplitControl.nc">
           <short>
  Start this component and all of its subcomponents.</short>
@@ -101,7 +101,7 @@
         <interfacedef-ref nicename="tos.interfaces.SplitControl" qname="SplitControl"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+            <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>
@@ -109,7 +109,7 @@
         <parameters>
         </parameters>
       </function>
-      <function command="" loc="130:/home/tinyos/tinyos-main/tos/interfaces/SplitControl.nc" name="stop" provided="0" ref="0x2b9d55022680">
+      <function command="" loc="130:/home/tinyos/tinyos-main/tos/interfaces/SplitControl.nc" name="stop" provided="0" ref="0x2b3f41fae680">
         <documentation loc="115:/home/tinyos/tinyos-main/tos/interfaces/SplitControl.nc">
           <short>
  Start this component and all of its subcomponents.</short>
@@ -132,7 +132,7 @@
         <interfacedef-ref nicename="tos.interfaces.SplitControl" qname="SplitControl"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+            <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>

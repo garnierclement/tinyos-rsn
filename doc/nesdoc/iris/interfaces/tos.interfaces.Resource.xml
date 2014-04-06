@@ -20,7 +20,7 @@
  @date $Date: 2010-06-29 22:07:46 $
 </long>
       </documentation>
-      <function command="" loc="120:/home/tinyos/tinyos-main/tos/interfaces/Resource.nc" name="release" provided="0" ref="0x2b9d55280780">
+      <function command="" loc="120:/home/tinyos/tinyos-main/tos/interfaces/Resource.nc" name="release" provided="0" ref="0x2b3f423f1780">
         <documentation loc="104:/home/tinyos/tinyos-main/tos/interfaces/Resource.nc">
           <short>
  Release a shared resource you previously acquired.</short>
@@ -44,7 +44,7 @@
         <interfacedef-ref nicename="tos.interfaces.Resource" qname="Resource"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+            <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>
@@ -52,7 +52,7 @@
         <parameters>
         </parameters>
       </function>
-      <function command="" loc="97:/home/tinyos/tinyos-main/tos/interfaces/Resource.nc" name="immediateRequest" provided="0" ref="0x2b9d55281760">
+      <function command="" loc="97:/home/tinyos/tinyos-main/tos/interfaces/Resource.nc" name="immediateRequest" provided="0" ref="0x2b3f423f2760">
         <documentation loc="90:/home/tinyos/tinyos-main/tos/interfaces/Resource.nc">
           <short>
  Request immediate access to a shared resource.</short>
@@ -67,7 +67,7 @@
         <interfacedef-ref nicename="tos.interfaces.Resource" qname="Resource"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+            <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>
@@ -75,7 +75,7 @@
         <parameters>
         </parameters>
       </function>
-      <function command="" loc="88:/home/tinyos/tinyos-main/tos/interfaces/Resource.nc" name="request" provided="0" ref="0x2b9d5528bdc8">
+      <function command="" loc="88:/home/tinyos/tinyos-main/tos/interfaces/Resource.nc" name="request" provided="0" ref="0x2b3f423d6dc8">
         <documentation loc="78:/home/tinyos/tinyos-main/tos/interfaces/Resource.nc">
           <short>
  Request access to a shared resource.</short>
@@ -93,7 +93,7 @@
         <interfacedef-ref nicename="tos.interfaces.Resource" qname="Resource"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+            <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>
@@ -101,7 +101,7 @@
         <parameters>
         </parameters>
       </function>
-      <function event="" loc="102:/home/tinyos/tinyos-main/tos/interfaces/Resource.nc" name="granted" provided="0" ref="0x2b9d55280020">
+      <function event="" loc="102:/home/tinyos/tinyos-main/tos/interfaces/Resource.nc" name="granted" provided="0" ref="0x2b3f423f1020">
         <documentation loc="99:/home/tinyos/tinyos-main/tos/interfaces/Resource.nc">
           <short>
  You are now in control of the resource.</short>
@@ -118,7 +118,7 @@
         <parameters>
         </parameters>
       </function>
-      <function command="" loc="128:/home/tinyos/tinyos-main/tos/interfaces/Resource.nc" name="isOwner" provided="0" ref="0x2b9d5527f1d8">
+      <function command="" loc="128:/home/tinyos/tinyos-main/tos/interfaces/Resource.nc" name="isOwner" provided="0" ref="0x2b3f423f01d8">
         <documentation loc="122:/home/tinyos/tinyos-main/tos/interfaces/Resource.nc">
           <short>
   Check if the user of this interface is the current
@@ -134,7 +134,7 @@
         <interfacedef-ref nicename="tos.interfaces.Resource" qname="Resource"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="bool" ref="0x2b9d54c5c4c8"/></typename>
+            <typename><typedef-ref name="bool" ref="0x2b3f41cc59b8"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>

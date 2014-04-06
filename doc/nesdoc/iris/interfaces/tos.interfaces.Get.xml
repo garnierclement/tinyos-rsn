@@ -1,0 +1,47 @@
+<?xml version="1.0" ?><interfacedef loc="49:/home/tinyos/tinyos-main/tos/interfaces/Get.nc" nicename="tos.interfaces.Get" qname="Get">
+      <documentation loc="33:/home/tinyos/tinyos-main/tos/interfaces/Get.nc">
+        <short>
+ The Get interface is intended for synchronous reading of small
+ values.</short>
+        <long>
+ The Get interface is intended for synchronous reading of small
+ values. The type of the value is given as a template
+ argument. Generally, these values are backed by memory or
+ computation. Because no error code is included, the get() call must
+ be guaranteed to succeed.
+
+ &lt;p&gt;
+ See TEP114 - SIDs: Source and Sink Independent Drivers for details.
+ 
+ @param val_t the type of the object that will be returned
+
+ @author Gilman Tolle &lt;gtolle@archrock.com&gt;
+ @version $Revision: 1.4 $ $Date: 2006-12-12 18:23:14 $
+</long>
+      </documentation>
+      <parameters>
+        <typedef loc="49:/home/tinyos/tinyos-main/tos/interfaces/Get.nc" name="val_t" ref="0x2b3f41fb1470">
+          <interfacedef-ref nicename="tos.interfaces.Get" qname="Get"/>
+          <type-var alignment="U:" size="U:"><typedef-ref name="val_t" ref="0x2b3f41fb1470" scoped=""/></type-var>
+        </typedef>
+      </parameters>
+      <function command="" loc="55:/home/tinyos/tinyos-main/tos/interfaces/Get.nc" name="get" provided="0" ref="0x2b3f41fb1c88">
+        <documentation loc="50:/home/tinyos/tinyos-main/tos/interfaces/Get.nc">
+          <short>
+ Retrieves a value of type val_t.</short>
+          <long>
+ Retrieves a value of type val_t.
+
+ @return the value itself
+</long>
+        </documentation>
+        <interfacedef-ref nicename="tos.interfaces.Get" qname="Get"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-var alignment="U:" size="U:"><typedef-ref name="val_t" ref="0x2b3f41fb1470" scoped=""/></type-var>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>

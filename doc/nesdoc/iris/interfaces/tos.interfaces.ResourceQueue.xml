@@ -13,7 +13,7 @@
   @date   $Date: 2010-06-29 22:07:46 $
 </long>
       </documentation>
-      <function command="" loc="79:/home/tinyos/tinyos-main/tos/interfaces/ResourceQueue.nc" name="enqueue" provided="0" ref="0x2b9d55475290">
+      <function command="" loc="79:/home/tinyos/tinyos-main/tos/interfaces/ResourceQueue.nc" name="enqueue" provided="0" ref="0x2b3f425d0ac8">
         <documentation loc="72:/home/tinyos/tinyos-main/tos/interfaces/ResourceQueue.nc">
           <short>
  Enqueue a client id
@@ -30,23 +30,23 @@
         <interfacedef-ref nicename="tos.interfaces.ResourceQueue" qname="ResourceQueue"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="error_t" ref="0x2b9d54c815d8"/></typename>
+            <typename><typedef-ref name="error_t" ref="0x2b3f41ceaae0"/></typename>
           </type-int>
           <function-parameters>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="resource_client_id_t" ref="0x2b9d55456c48"/></typename>
+              <typename><typedef-ref name="resource_client_id_t" ref="0x2b3f425dbc48"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="79:/home/tinyos/tinyos-main/tos/interfaces/ResourceQueue.nc" name="id" ref="0x2b9d55475020">
+          <variable loc="79:/home/tinyos/tinyos-main/tos/interfaces/ResourceQueue.nc" name="id" ref="0x2b3f425d0858">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="resource_client_id_t" ref="0x2b9d55456c48"/></typename>
+              <typename><typedef-ref name="resource_client_id_t" ref="0x2b3f425dbc48"/></typename>
             </type-int>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="53:/home/tinyos/tinyos-main/tos/interfaces/ResourceQueue.nc" name="isEmpty" provided="0" ref="0x2b9d55477328">
+      <function command="" loc="53:/home/tinyos/tinyos-main/tos/interfaces/ResourceQueue.nc" name="isEmpty" provided="0" ref="0x2b3f425d6af0">
         <documentation loc="47:/home/tinyos/tinyos-main/tos/interfaces/ResourceQueue.nc">
           <short>
  Check to see if the queue is empty.</short>
@@ -60,7 +60,7 @@
         <interfacedef-ref nicename="tos.interfaces.ResourceQueue" qname="ResourceQueue"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="bool" ref="0x2b9d54c5c4c8"/></typename>
+            <typename><typedef-ref name="bool" ref="0x2b3f41cc59b8"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>
@@ -68,7 +68,7 @@
         <parameters>
         </parameters>
       </function>
-      <function command="" loc="62:/home/tinyos/tinyos-main/tos/interfaces/ResourceQueue.nc" name="isEnqueued" provided="0" ref="0x2b9d55477da8">
+      <function command="" loc="62:/home/tinyos/tinyos-main/tos/interfaces/ResourceQueue.nc" name="isEnqueued" provided="0" ref="0x2b3f425d25e8">
         <documentation loc="55:/home/tinyos/tinyos-main/tos/interfaces/ResourceQueue.nc">
           <short>
  Check to see if a given client id has already been enqueued
@@ -84,23 +84,23 @@
         <interfacedef-ref nicename="tos.interfaces.ResourceQueue" qname="ResourceQueue"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="bool" ref="0x2b9d54c5c4c8"/></typename>
+            <typename><typedef-ref name="bool" ref="0x2b3f41cc59b8"/></typename>
           </type-int>
           <function-parameters>
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="resource_client_id_t" ref="0x2b9d55456c48"/></typename>
+              <typename><typedef-ref name="resource_client_id_t" ref="0x2b3f425dbc48"/></typename>
             </type-int>
           </function-parameters>
         </type-function>
         <parameters>
-          <variable loc="62:/home/tinyos/tinyos-main/tos/interfaces/ResourceQueue.nc" name="id" ref="0x2b9d55477b38">
+          <variable loc="62:/home/tinyos/tinyos-main/tos/interfaces/ResourceQueue.nc" name="id" ref="0x2b3f425d2378">
             <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-              <typename><typedef-ref name="resource_client_id_t" ref="0x2b9d55456c48"/></typename>
+              <typename><typedef-ref name="resource_client_id_t" ref="0x2b3f425dbc48"/></typename>
             </type-int>
           </variable>
         </parameters>
       </function>
-      <function command="" loc="70:/home/tinyos/tinyos-main/tos/interfaces/ResourceQueue.nc" name="dequeue" provided="0" ref="0x2b9d554766d8">
+      <function command="" loc="70:/home/tinyos/tinyos-main/tos/interfaces/ResourceQueue.nc" name="dequeue" provided="0" ref="0x2b3f425d0020">
         <documentation loc="64:/home/tinyos/tinyos-main/tos/interfaces/ResourceQueue.nc">
           <short>
  Retreive the client id of the next resource in the queue.</short>
@@ -114,7 +114,7 @@
         <interfacedef-ref nicename="tos.interfaces.ResourceQueue" qname="ResourceQueue"/>
         <type-function alignment="I:1" size="I:1">
           <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
-            <typename><typedef-ref name="resource_client_id_t" ref="0x2b9d55456c48"/></typename>
+            <typename><typedef-ref name="resource_client_id_t" ref="0x2b3f425dbc48"/></typename>
           </type-int>
           <function-parameters>
           </function-parameters>

@@ -11,7 +11,7 @@
  @date   January 5 2005
 </long>
       </documentation>
-      <function event="" loc="60:/home/tinyos/tinyos-main/tos/interfaces/Boot.nc" name="booted" provided="0" ref="0x2b9d54d7aa18">
+      <function event="" loc="60:/home/tinyos/tinyos-main/tos/interfaces/Boot.nc" name="booted" provided="0" ref="0x2b3f41de4690">
         <documentation loc="51:/home/tinyos/tinyos-main/tos/interfaces/Boot.nc">
           <short>
  Signaled when the system has booted successfully.</short>
