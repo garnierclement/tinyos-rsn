@@ -37,10 +37,11 @@ implementation {
   	bool isConfigurated = FALSE;
   	bool lastNode = FALSE;
   	uint16_t nodeCount = 0;					// Numeber of nodes in the network (including BS)
+  	uint8_t doneCount = 0;
 
   	/* Functions */
   	void createAutoConfigMsg(uint8_t pwr);
-  	void handleAck();
+  	void handleAck(AutoConfigMsg* ackpkt);
 	void sendAutoConfigMsg(uint8_t pwr);
 	AutoConfigMsg* getAutoConfigPayload(message_t* msg);
 	uint16_t electWinner();
@@ -95,7 +96,7 @@ implementation {
 		new_acpkt->type = AUTOCONFIGMSG;
 		new_acpkt->srcRank = myRank;
 		new_acpkt->txPower = pwr;
-		new_acpkt->dstRank = (pwr == ONE_HOP_POWER) ? (myRank + ONE_HOP) : (myRank + TWO_HOP);
+		new_acpkt->dstRank = 0xFFFF; //broadcast
 		new_acpkt->data = 0xFFFF; // undefined
 	}
 
@@ -147,9 +148,10 @@ implementation {
       		//acpkt = (AutoConfigMsg*)payload;
       		// Handle messages
       		switch(acpkt->type){
-      			case AUTOCONFIGACK : handleAck();
+      			case AUTOCONFIGACK : handleAck((AutoConfigMsg*)payload);
       				break;
       			case AUTOCONFIGDONE : handleDone((AutoConfigMsg*)payload);
+      			doneCount++;
       				break;
       		}
 	    }
@@ -157,13 +159,13 @@ implementation {
 	}
 
 	/* Upon receiving an Ack for a previous sent AutoConfigMsg */
-	void handleAck() {
-		if (myRank != NOT_DEFINED){
+	void handleAck(AutoConfigMsg* ackpkt) {
+		if (ackpkt->dstRank == myRank){
       		if (sentAutoConfig) 
       		{
       			receivedAck+=1;
-      			neighborsTemp[receivedAck-1] = acpkt->srcRank;
-      			neighborsRssi[receivedAck-1] = acpkt->data;
+      			neighborsTemp[receivedAck-1] = ackpkt->srcRank;
+      			neighborsRssi[receivedAck-1] = ackpkt->data;
       		}
       	}
       	// ELSE if the node rank not defined, we can overhear broadcasted Ack
@@ -221,7 +223,7 @@ implementation {
 
     /* Notify the winner */
     void sendAutoConfigWin(uint16_t winner){
-    	neighborsRank[1] = (acpkt->txPower == ONE_HOP_POWER)? myRank+1 : myRank+2;
+    	neighborsRank[1] = (acpkt->txPower == ONE_HOP_POWER) ? (myRank+1) : (myRank+2);
     	createAutoConfigWin(winner);
     	call  PacketTransmitPower.set(&pkt,acpkt->txPower);
 		if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
@@ -237,7 +239,7 @@ implementation {
 		winpkt->srcRank = myRank;
 		winpkt->dstRank = winner;	
 		winpkt->txPower = acpkt->txPower;
-		winpkt->data = 0xFFFF;	// Undefined
+		winpkt->data = neighborsRank[1];
 	}
 
 	/* Reinit values */
@@ -258,10 +260,16 @@ implementation {
 
 	/* Handle Done message */
 	void handleDone(AutoConfigMsg* donepkt) {
-		if (!lastNode && donepkt->dstRank == myRank)
+		//ledSet(doneCount);
+		if (donepkt->dstRank == 0)
+		{
+			ledSet(7);
+		}
+
+		if (!lastNode && donepkt->dstRank == myRank && donepkt->srcRank == neighborsRank[1])
 		{
 			nodeCount = donepkt->data + 1;
-			ledSet(neighborsRank[1]);
+			ledSet(4);
 			signal AutoConfig.startDone(SUCCESS);
 		}
 	}

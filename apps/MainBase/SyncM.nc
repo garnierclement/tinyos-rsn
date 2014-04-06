@@ -49,7 +49,7 @@ implementation {
 			if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(SyncMsg)) == SUCCESS)
 			{
 				radioBusy = TRUE;
-				ledDownLink();
+			//	ledDownLink();
 			}
 		}
 	}
@@ -75,7 +75,7 @@ implementation {
 	void handleSyncMsg(SyncMsg* syncpkt) {
 		if (syncpkt->dstRank == info.myRank) {
 			// Sync OK 
-			ledUpLink();
+			//ledUpLink();
 			signal Sync.startDone(SUCCESS);
 		}
 	}

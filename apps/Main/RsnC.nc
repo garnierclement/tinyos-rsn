@@ -6,6 +6,7 @@ configuration RsnC {
 implementation {
 	components MainC;
 	components RsnAppC as App;
+	components LedsC;
 
 	components AutoConfigC;
 	components SyncC;
@@ -21,4 +22,5 @@ implementation {
 	App.Sync -> SyncC.Sync;
 	App.AMControl -> ActiveMessageC;
 	App.LedTimer -> LedTimer;
+	App.Leds -> LedsC;
 }

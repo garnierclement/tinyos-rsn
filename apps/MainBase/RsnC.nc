@@ -11,6 +11,7 @@ implementation {
 	components SyncC;
 	components ActiveMessageC;
 	components new TimerMilliC() as LedTimer;
+	components LedsC;
 
 
 	/* Wiring components */
@@ -22,4 +23,5 @@ implementation {
 	App.Sync -> SyncC.Sync;
 	App.AMControl -> ActiveMessageC;
 	App.LedTimer -> LedTimer;
+	App.Leds -> LedsC;
 }

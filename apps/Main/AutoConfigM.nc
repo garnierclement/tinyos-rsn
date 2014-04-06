@@ -45,7 +45,7 @@ implementation {
   	/* Functions */
   	void createAutoConfigMsg(uint8_t pwr);
   	void createAutoConfigAck();
-  	void handleAck();
+  	void handleAck(AutoConfigMsg* ackpkt);
 	void handleAutoConfig(); 
 	void handleWin(AutoConfigMsg* winpkt);	
 	void sendAck();
@@ -70,6 +70,7 @@ implementation {
 	void ledMaxPower();
 	void ledDone();
 	void ledAutoConfigDone();
+	void ledSet(uint8_t);
 
 
 	command error_t AutoConfig.start() {
@@ -100,7 +101,7 @@ implementation {
       				break;
       			case AUTOCONFIGWIN : handleWin((AutoConfigMsg*)payload);
       				break;
-      			case AUTOCONFIGACK : handleAck();
+      			case AUTOCONFIGACK : handleAck((AutoConfigMsg*)payload);
       				break;
       			case AUTOCONFIGDONE : handleDone((AutoConfigMsg*)payload);
       				break;
@@ -178,7 +179,7 @@ implementation {
 				ledIsWinner();
 				// I won, bitches
 				// I define myRank according to the txPower and to the sender's rank
-				myRank = (winpkt->txPower == ONE_HOP_POWER) ? (winpkt->srcRank + 1) : (winpkt->srcRank + 2);
+				myRank = winpkt->data;
 				neighborsRank[0] = winpkt->srcRank;	
 				sendAutoConfigMsg(ONE_HOP_POWER);
 			}else{
@@ -217,7 +218,7 @@ implementation {
 		new_acpkt->type = AUTOCONFIGMSG;
 		new_acpkt->srcRank = myRank;
 		new_acpkt->txPower = pwr;
-		new_acpkt->dstRank = (pwr == ONE_HOP_POWER) ? (myRank + ONE_HOP) : (myRank + TWO_HOP);
+		new_acpkt->dstRank = 0xFFFF; //broadcast
 		new_acpkt->data = 0xFFFF; // undefined
 	}
 
@@ -254,13 +255,13 @@ implementation {
 	}
 
 	/* Upon receiving an Ack for a previous sent AutoConfigMsg */
-	void handleAck() {
-		if (myRank != NOT_DEFINED){
+	void handleAck(AutoConfigMsg* ackpkt) {
+		if (myRank != NOT_DEFINED && ackpkt->dstRank == myRank){
       		if (sentAutoConfig) 
       		{
       			receivedAck += 1;
-      			neighborsTemp[receivedAck-1] = acpkt->srcRank;
-      			neighborsRssi[receivedAck-1] = acpkt->data;
+      			neighborsTemp[receivedAck-1] = ackpkt->srcRank;
+      			neighborsRssi[receivedAck-1] = ackpkt->data;
       		}
       	}
       	// ELSE if the node rank not defined, we can overhear broadcasted Ack
@@ -296,7 +297,7 @@ implementation {
 			isConfigurated = TRUE;
 			lastNode = TRUE;
 			sendAutoConfigDone();
-			ledAutoConfigDone();
+			//ledAutoConfigDone();
 			signal AutoConfig.startDone(SUCCESS);
 
 		}
@@ -320,7 +321,7 @@ implementation {
 
     /* Notify the winner */
     void sendAutoConfigWin(uint16_t winner){
-    	neighborsRank[1] = (acpkt->txPower > ONE_HOP_POWER ? myRank+2 : myRank+1);
+    	neighborsRank[1] = (acpkt->txPower == ONE_HOP_POWER) ? (myRank+1) : (myRank+2);
     	createAutoConfigWin(winner);
     	call  PacketTransmitPower.set(&pkt,acpkt->txPower);
 		if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
@@ -336,7 +337,7 @@ implementation {
 		winpkt->srcRank = myRank;
 		winpkt->dstRank = winner;	
 		winpkt->txPower = acpkt->txPower;
-		winpkt->data = 0xFFFF;	// Undefined
+		winpkt->data = neighborsRank[1];	// Undefined
 	}
 
 	/* Reinit values */
@@ -367,19 +368,18 @@ implementation {
 
     /* Forge Done message */
 	uint8_t createAutoConfigDone(uint16_t counter) {
-		AutoConfigMsg* donepkt = (AutoConfigMsg*)(call Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
-		donepkt->type = AUTOCONFIGDONE;
-		donepkt->srcRank = myRank;
-		donepkt->dstRank = neighborsRank [0];	
-		donepkt->txPower = ( (myRank - neighborsRank [0]) > 1) ? TWO_HOP_POWER : ONE_HOP_POWER;
-		donepkt->data = counter;
-
-		return donepkt->txPower;
+		AutoConfigMsg* new_donepkt = (AutoConfigMsg*)(call Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
+		new_donepkt->type = AUTOCONFIGDONE;
+		new_donepkt->srcRank = myRank;
+		new_donepkt->dstRank = neighborsRank[0];	
+		new_donepkt->txPower = ( (myRank - neighborsRank[0]) > ONE_HOP) ? TWO_HOP_POWER : ONE_HOP_POWER;
+		new_donepkt->data = counter;
+		return new_donepkt->txPower;
 	}
 
 	/* Handle Done message */
 	void handleDone(AutoConfigMsg* donepkt) {
-		if (!lastNode && donepkt->dstRank == myRank)
+		if (!lastNode && donepkt->dstRank == myRank && donepkt->srcRank == neighborsRank[1])
 		{
 			call Wait.wait(0xFF);			// Delay forwarding Done message
 			forwardDone(donepkt);
@@ -392,13 +392,20 @@ implementation {
 		if (!radioBusy)
 		{
 			uint8_t txPower = createAutoConfigDone(donepkt->data + 1);
-			call Leds.set(donepkt->data + 1);
 			call  PacketTransmitPower.set(&pkt, txPower);
 			if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(AutoConfigMsg)) == SUCCESS)
 			{
 				radioBusy = TRUE;
-				//ledAutoConfigDone();
+				if(myRank == 2 && donepkt->srcRank == 3) ledSet(7);
+				if(myRank == 1 && donepkt->srcRank == 2) {
+					AutoConfigMsg* temp = (AutoConfigMsg*)(call Packet.getPayload(&pkt, sizeof(AutoConfigMsg)));
+					if (temp->dstRank == 0 && temp->srcRank == myRank)
+					{
+						ledSet(7);
+					}
+				}
 			}
+
 		}
 	}
 

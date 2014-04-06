@@ -67,19 +67,19 @@ implementation {
 				syncTime = call LocalTime.get();
 				if (!info.lastNode)
 				{
-					ledDownLink();
+					//ledDownLink();
 					createSyncMsg(info.neighborsRank[1],syncpkt->data);
 					forwardSyncMsg(getPowerNextHop());
 				}
 				else {
-					ledUpLink();
+					//ledUpLink();
 					createSyncMsg(info.neighborsRank[0],info.myRank);
 					forwardSyncMsg(getPowerPreviousHop());
 				}
 				
 			}
 			else {
-				ledUpLink();
+				//ledUpLink();
 				createSyncMsg(info.neighborsRank[0],syncpkt->data);
 				forwardSyncMsg(getPowerPreviousHop());
 

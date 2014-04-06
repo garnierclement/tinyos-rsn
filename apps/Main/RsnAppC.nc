@@ -41,6 +41,7 @@ implementation {
 	event void AutoConfig.startDone(error_t err) {
 		if (err == SUCCESS){
 			info = call GetAutoConfigInfo.get();
+			//call Leds.set(info.neighborsRank[0]);
 			call AutoConfig.stop();
 		    call SetSyncInfo.set(info);
 			call Sync.start();
