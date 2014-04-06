@@ -16,6 +16,7 @@ implementation {
 	components new TimerMilliC() as WaitAck;
 	components new TimerMilliC() as WaitForRadio;
 	components new TimerMilliC() as BackoffForAck;
+	components new TimerMilliC() as BackoffForDone;
 	components RandomC;
 	components new AMSenderC(AM_AUTOCONFIGMSG) as AMSenderC;
 	components new AMReceiverC(AM_AUTOCONFIGMSG) as AMReceiverC;
@@ -34,6 +35,7 @@ implementation {
 	Module.WaitAck -> WaitAck;
 	Module.WaitForRadio -> WaitForRadio;
 	Module.BackoffForAck -> BackoffForAck;
+	Module.BackoffForDone -> BackoffForDone;
 	Module.Packet -> AMSenderC.Packet;
 	Module.AMPacket -> AMSenderC.AMPacket;
 	Module.AMSend -> AMSenderC.AMSend;

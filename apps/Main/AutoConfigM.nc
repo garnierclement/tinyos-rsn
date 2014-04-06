@@ -13,6 +13,7 @@ module AutoConfigM {
 		interface Timer<TMilli> as WaitAck;
 		interface Timer<TMilli> as WaitForRadio;
 		interface Timer<TMilli> as BackoffForAck;
+		interface Timer<TMilli> as BackoffForDone;
 		interface Packet as Packet;
 		interface AMPacket as AMPacket;
 		interface AMSend as AMSend;
@@ -381,10 +382,17 @@ implementation {
 	void handleDone(AutoConfigMsg* donepkt) {
 		if (!lastNode && donepkt->dstRank == myRank && donepkt->srcRank == neighborsRank[1])
 		{
-			call Wait.wait(0xFF);			// Delay forwarding Done message
-			forwardDone(donepkt);
-			signal AutoConfig.startDone(SUCCESS);
+			//call Wait.wait(0xFF);			
+			// Delay forwarding Done message
+			call BackoffForDone.startPeriodic(WAITDONE_PERIOD_MILLI);
+			
 		}
+	}
+
+	/* */
+	event void BackoffForDone.fired() {
+		forwardDone(acpkt);
+		signal AutoConfig.startDone(SUCCESS);
 	}
 
 	/* Forward Done message */
